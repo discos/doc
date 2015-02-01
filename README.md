@@ -19,8 +19,8 @@ to build the HTML output files. Available make targets are:
 
 - **clean**, which removes all build files.
 - **html**, which builds standalone HTML files for offline viewing.
-- **latex**, which builds LaTeX source files as input to "pdflatex" to produce
-- PDF documents.
+- **latex**, which builds LaTeX source files as input to "pdflatex" to produce 
+  PDF documents.
 - **text**, which builds a plain text file for each source file.
 - **epub**, which builds an EPUB document, suitable to be viewed on e-book
   readers.
