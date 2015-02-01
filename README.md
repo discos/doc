@@ -1,13 +1,13 @@
-Nuraghe Documentation README
-============================
+Nuraghe Documentation
+=====================
 This directory contains the reStructuredText (reST) sources to the Nuraghe
 documentation.  You don't need to build them yourself, prebuilt versions are
-available at <http://nuraxi.readthedoc.org/>.
+available [here](http://nuraghe.readthedoc.org/).
 
 
 Building the docs
 -----------------
-You need to have Sphinx <http://sphinx-doc.org/> installed; it is the toolset
+You need to have [Sphinx](http://sphinx-doc.org/) installed; it is the toolset
 used to build the docs. A Makefile has been prepared so that on Unix, provided 
 you have installed Sphinx, you can just run:
 
