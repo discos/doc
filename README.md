@@ -2,7 +2,7 @@ Nuraghe Documentation
 =====================
 This directory contains the reStructuredText (reST) sources to the Nuraghe
 documentation.  You don't need to build them yourself, prebuilt versions are
-available [here](http://nuraghe.readthedoc.org/).
+available [here](http://nuraghe.readthedocs.org/).
 
 
 Building the docs
