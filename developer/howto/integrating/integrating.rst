@@ -12,7 +12,7 @@ It is really easy, just follow this two steps:
 
 * contact the :ref:`project manager <project-manager>` in order to plan the 
   component development
-* from your side, implement the :ref:`protocol <protocols-howto>` related 
+* from your side, implement the :ref:`protocol <protocols>` related 
   to your device
 
 That's all.
