@@ -12,7 +12,8 @@ Custom hardware protocols
    the protocol related to your device. If either your device is not listen 
    in this document or for technical reasons your hardware does not suit
    the protocols listed here, then please do not go ahead on your own 
-   initiative but please, contact the :ref:`team`.
+   initiative but please, contact the :ref:`project-manager` or the
+   :ref:`core-dev`.
    
 
 Contents:
