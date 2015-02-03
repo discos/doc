@@ -7,8 +7,9 @@ HOWTOs
 Contents:
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
 
    testing/index.rst
    installing/index.rst
+   integrating/integrating.rst
 

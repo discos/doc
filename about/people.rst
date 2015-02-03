@@ -1,9 +1,9 @@
 
 .. _team:
 
-******************************
-Nuraghe controlo software team
-******************************
+*****************************
+Nuraghe control software team
+*****************************
 Brief desc.
 
 .. _core-dev:
