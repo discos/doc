@@ -11,7 +11,4 @@ Nuraghe documentation
 
    user/index.rst 
    developer/index.rst
-   about/releasing.rst
    about/people.rst
-   about/responsibilities.rst
-

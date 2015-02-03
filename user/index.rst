@@ -1,8 +1,8 @@
 .. _user:
  
-######################
-Observing with Nuraghe
-######################
+####################################
+User's guide: Observing with Nuraghe
+####################################
 
 Contents:
 
