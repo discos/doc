@@ -112,8 +112,8 @@ whole development process.
 This responsibility is currently assigned to :ref:`mbuttu`. 
 
 
-Deploying
----------
+Deploying and continuous integration
+------------------------------------
 This responsibility is currently assigned to :ref:`mbartolini`.
 
 
