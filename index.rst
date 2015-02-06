@@ -12,3 +12,11 @@ Nuraghe documentation
    user/index.rst 
    developer/index.rst
    about/people.rst
+
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`search`
+
