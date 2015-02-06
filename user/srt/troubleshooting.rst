@@ -22,7 +22,7 @@ Su *acsCommandCenter* (macchina *nuraghe-mng*), controllare la finestra di log d
 
 .. note:: Inserire immagine di tale finestra di log.
 
-Ci sono quattro possibili soluzioni, a seconda del messaggio di errore riportato nella finestra di log: 
+Ci sono tre possibili soluzioni, a seconda del messaggio di errore riportato nella finestra di log: 
 
 * se è riportato "**GFR (o SRP o M3R o PFP) in failure**", non ci si può far nulla, se non contattare il 
   responsabile degli impianti (G.Paolo Vargiu) per avvisarlo del malfunzionamento. Questo è un problema
