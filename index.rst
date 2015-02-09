@@ -10,6 +10,7 @@ Nuraghe documentation
    :maxdepth: 1
 
    user/index.rst 
+   sod/index.rst
    developer/index.rst
    about/people.rst
 

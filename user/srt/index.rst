@@ -1,15 +1,11 @@
 .. _observing_srt:
  
-###
-SRT
-###
-
-.. sectionauthor:: :ref:`srighini`
+#############################
+Observing at SRT with Nuraghe
+#############################
 
 Contents:
 
 .. toctree::
    :maxdepth: 2
-
-   troubleshooting.rst
 
