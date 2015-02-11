@@ -1,8 +1,8 @@
 .. _troubleshooting:
 
-###############
-Troubleshooting
-###############
+####################
+Risolvere i problemi
+####################
 
 
 Contents:
