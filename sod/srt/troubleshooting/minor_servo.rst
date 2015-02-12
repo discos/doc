@@ -2,19 +2,24 @@
 Servo minori
 ************
 
-Stato dei servo minori *unknown*
-================================
+
+.. _ms-setup-problem:
+
+Risolvere un setup non riuscito
+===============================
 
 .. index:: minor servo, servoSetup, actualSetup, setupCCB, setupKKG, setupLLP
-   unknown, emergency stop, failure, reset, GRF, M3R, SRP, PFP, MSCU
+   unknown, emergency stop, failure, reset, GFR, M3R, SRP, PFP, MSCU
 
 Problema
 --------
-Dalla console *OperatorInput* è stato eseguito il setup (comando ``setupXXX`` oppure ``servoSetup=XXX``)
-ma dopo qualche minuto nella console *MinorServo* il flag ``starting`` è passato da verde a rosso ed il campo 
-``actualSetup`` risulta ``unknown``.
+Dalla console *OperatorInput* è stato eseguito il setup (comando ``setupXXX`` 
+oppure ``servoSetup=XXX``) ma dopo qualche minuto nella console *MinorServo* 
+il flag ``starting`` è passato da verde a rosso ed il flag ``ready`` è anche 
+lui rosso.
 
-.. note:: Inserire una immagine della console sei servo minori che mostra la situazione descritta.
+.. note:: Inserire una immagine della console sei servo minori che mostra la 
+   situazione descritta.
 
 Soluzione
 ---------
@@ -30,34 +35,6 @@ Ci sono tre possibili soluzioni, a seconda del messaggio di errore riportato nel
   in avaria
 * se è riportato "**GFR (o SRP o M3R o PFP) in emergency stop**", si vada alla sezione :ref:`ms-emergency-stop`
 * se è riportato un messaggio diverso dai precedenti, si vada alla sezione :ref:`mscu-restart`
-
-.. _ms-emergency-stop:
-
-Fare il reset delle emergenze
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Prima di espletare questa procedura bisogna accertarsi che vi siano le condizioni di sicurezza
-per fare il reset, ovvero che nessuno si trovi nei pressi dei servo minori (GRF, M3R, SRP, PFP).
-Se vi sono le condizioni di sicurezza, si proceda con il reset. 
-
-Il reset da remoto viene fatto...
-
-Il reset può essere fatto anche in antenna, tramite l'appostito *push buttom* presente nel fronte 
-quadro del servo minore.
-
-.. note:: Inserire immagine del pulsante in questione.
-
-Una volta fatto il reset, si può procedere eseguendo da *OperatorInput* il setup globale (``setupXXX``), 
-oppure si può fare il setup del solo sistema dei servo minori, eseguendo il comando ``servoSetup=XXX``. In
-questo ultimo caso, prima di procedere con l'osservazione si verifichi che tutti gli altri sottosistemi
-siano configurati correttamente.
-
-
-.. _mscu-restart:
-
-Riavviare la MSCU
------------------
-Indicare come riavviare la MSCU. Fatto ciò, stoppare i container dei servo minori, chiudere la console dei
-servo minori, riavviare i container dei servo minori, riavviare la console dei servo minori, fare il setup.
 
 Problemi di puntamento
 ======================
