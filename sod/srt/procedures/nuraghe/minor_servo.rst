@@ -95,7 +95,7 @@ In questo caso si consulti la sezione :ref:`ms-setup-problem`.
 .. _mscu-restart:
 
 Riavviare la MSCU
------------------
+=================
 La Minor Servo Control Unit (MSCU) è il server di controllo di tutti i 
 servo minori. E' un PC embedded situato all'interno del quadro elettrico
 di M3R e GFR. Per riavviare il server ci si colleghi con *rdesktop*::
