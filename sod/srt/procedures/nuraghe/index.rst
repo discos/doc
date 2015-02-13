@@ -11,9 +11,9 @@ Contents:
    :maxdepth: 2
 
    before_observing.rst
-   minor_servo.rst
    active_surface.rst
-   receivers.rst
    backends.rst
+   minor_servo.rst
+   receivers.rst
 
 
