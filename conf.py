@@ -87,7 +87,10 @@ latex_font_size = '10pt'
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, document class [howto/manual]).
 latex_documents = [
-  ('howto/index', 'howto.tex', u'TDD in Nuraghe', u'Nuraghe CS team', 'manual'),
+  ('index', 
+   'nuraghe-doc.tex', 
+   u'Nuraghe Documentation', 
+   u'Nuraghe CS team', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of

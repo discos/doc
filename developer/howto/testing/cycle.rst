@@ -11,20 +11,7 @@ Where to put the tests
 The *test* component directory::
 
     $ tree test/
-    test/
-    ├── external
-    │   └── __init__.py
-    ├── functional
-    │   ├── api
-    │   │   └── __init__.py
-    │   ├── command
-    │   │   └── __init__.py
-    │   └── __init__.py
-    ├── Makefile
-    ├── pyunit
-    │   └── __init__.py
-    ├── results
-    └── unittest.cpp
+    ...
 
 The *test/functional* directory and its sub-directories contain the *functional
 tests* and, as you probably figured out, the *api* sub-directory hosts the API 
