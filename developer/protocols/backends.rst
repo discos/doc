@@ -18,7 +18,7 @@ richieste, esegue delle azioni sulla ROACH2 e da indietro una risposta.
 La comunicazione non prevede uno scambio di grandi quantità di informazioni. I dati
 infatti abbiamo detto che verranno scritti direttamente dal SR2, il quale
 recupera le informazioni dell'antenna e il relativo timestamp da un 
-FITS appositamente scritto da Nuraghe. Cio' significa che possiamo utilizzare
+FITS appositamente scritto da DISCOS. Cio' significa che possiamo utilizzare
 un protocollo testuale.
 
 Detto ciò, l'idea è qualla di definire un protocollo generico, in modo

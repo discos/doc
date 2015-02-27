@@ -25,8 +25,8 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General substitutions.
-project = 'Nuraghe Control Software'
-copyright = '2006-%s, Nuraghe Control Software Team' % time.strftime('%Y')
+project = 'DISCOS Control Software'
+copyright = '2006-%s, DISCOS Control Software Team' % time.strftime('%Y')
 
 # We should get this information from somewhere in the sources
 version = '0.4'
@@ -55,7 +55,7 @@ if not on_rtd:  # only import and set the theme if we're building docs locally
     html_theme_path = ['theme', sphinx_rtd_theme.get_html_theme_path()]
 
 # Short title used e.g. for <title> HTML tags.
-html_short_title = 'Nuraghe documentation'
+html_short_title = 'DISCOS documentation'
 
 # Path to find HTML templates.
 templates_path = ['theme/templates']
@@ -89,8 +89,8 @@ latex_font_size = '10pt'
 latex_documents = [
   ('index', 
    'nuraghe-doc.tex', 
-   u'Nuraghe Documentation', 
-   u'Nuraghe CS team', 'manual'),
+   u'DISCOS Documentation', 
+   u'DISCOS CS team', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of

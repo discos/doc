@@ -18,7 +18,7 @@ So, if we want to fix a bug, we have to:
     * update the changes in production
     * run all the tests in production
 
-This is the only way to ensure the Nuraghe stability and 
+This is the only way to ensure the DISCOS stability and 
 robustness, and you will soon realize the TDD is not at all 
 a lose of time.
 

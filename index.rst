@@ -2,15 +2,14 @@
    copyright.rst
    license.rst
 
-#####################
-Nuraghe documentation
-#####################
+####################
+DISCOS documentation
+####################
 
 .. toctree::
    :maxdepth: 1
 
    user/index.rst 
-   sod/index.rst
    developer/index.rst
    about/people.rst
 

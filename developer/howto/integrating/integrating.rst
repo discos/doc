@@ -1,13 +1,13 @@
 .. _integrating-howto:
  
 ####################################
-How to integrate a device in Nuraghe
+How to integrate a device in DISCOS
 ####################################
 
 .. sectionauthor:: :ref:`mbuttu`
 
 The goal of this document is to explain the steps you have to follow
-if you want to integrate a device (a backend, a receiver, etc.) in Nuraghe. 
+if you want to integrate a device (a backend, a receiver, etc.) in DISCOS. 
 It is really easy, just follow this two steps:
 
 * contact the :ref:`project manager <project-manager>` in order to plan the 

@@ -2,7 +2,7 @@
 Introduction
 ************
 
-Nuraghe TDD cycle
+DISCOS TDD cycle
 =================
 From functionals to unit (summary of :ref:`component-dev`).
 

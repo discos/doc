@@ -181,7 +181,7 @@ mentre ``G(AZ, EL)`` è quella di compensazione del contributo dovuto al
 *galactic parallactic angle* (GPA).
 
 Quando viene impostata una configurazione, la posizione del derotatore non viene aggiornata,
-visto che non è ancora noto l'asse di scansione. L'aggiornamento viene comandato da Nuraghe/ESCS
+visto che non è ancora noto l'asse di scansione. L'aggiornamento viene comandato da DISCOS/ESCS
 nel momento in cui inizia lo scan.
 
 
@@ -274,7 +274,7 @@ Configurazione *aligned*
 ~~~~~~~~~~~~~~~~~~~~~~~~
 In questa configurazione, il cui codice identificativo è ``ALIGNED``,
 viene scelto il set di feed che si vuole allineare con l'asse di scansione.
-In Nuraghe/ESCS vi sarà una tabella che riporterà, per ogni derotatore,
+In DISCOS/ESCS vi sarà una tabella che riporterà, per ogni derotatore,
 i possibili set. La posizione del derotatore è data da::
 
    Pa = Pia(AXIS) + D(AZ, EL, AXIS) 
@@ -320,7 +320,7 @@ si vuole avere una posizione iniziale di 30°::
     > derotatorSetConfiguration=CUSTOM
     > derotatorSetPosition=30d
 
-Come al solito l'aggiornamento viene avviato da Nuraghe/ESCS nel momento
+Come al solito l'aggiornamento viene avviato da DISCOS/ESCS nel momento
 in cui viene comandata la scansione lundo un dato asse.
 
 

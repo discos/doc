@@ -1,7 +1,7 @@
 .. _observing_noto:
  
 ##############################
-Observing at Noto with Nuraghe
+Observing at Noto with DISCOS
 ##############################
 
 Contents:

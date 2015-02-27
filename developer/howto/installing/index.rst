@@ -1,7 +1,7 @@
 .. _installing-howto:
  
 ######################
-How to install Nuraghe
+How to install DISCOS
 ######################
 
 .. sectionauthor:: :ref:`mbartolini`

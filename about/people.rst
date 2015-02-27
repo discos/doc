@@ -2,7 +2,7 @@
 .. _team:
 
 *****************************
-Nuraghe control software team
+DISCOS control software team
 *****************************
 Brief desc.
 
@@ -10,7 +10,7 @@ Brief desc.
 
 Core developers
 ===============
-Leading Nuraghe is a small team of core developers, that is people who 
+Leading DISCOS is a small team of core developers, that is people who 
 have made and continue to make a significant contribution to 
 the project, and have a good understanding not only of the code,
 but also the longer-term aims and directions of the project:
@@ -44,7 +44,7 @@ Brief desc of this activity:
 
 Contributors
 ============
-Anyone can be a contributor to Nuraghe project. Being a contributor 
+Anyone can be a contributor to DISCOS project. Being a contributor 
 simply means that you take an interest in the project and contribute 
 in some way, ranging from asking sensible questions (which 
 documents the project and provides feedback to developers) through to 
@@ -54,7 +54,7 @@ If you become a valuable contributor to the project, you may well be
 invited by the :ref:`core developer <core-dev>` to become member of
 the team.
 
-Here is the list of Nuraghe contributors:
+Here is the list of DISCOS contributors:
 
     * :ref:`amelis`
 
@@ -66,7 +66,7 @@ Responsibilities
 
 Project manager
 ---------------
-The *project manager* heads the whole Nuraghe project and has
+The *project manager* heads the whole DISCOS project and has
 in charge the software releasing.
 This responsibility is currently assegned to :ref:`aorlati`. 
 
@@ -76,7 +76,7 @@ This responsibility is currently assegned to :ref:`aorlati`.
 Support scientist
 -----------------
 The *support scientist* is responsible for every communication 
-related to Nuraghe changes that affect the users. This responsibility is 
+related to DISCOS changes that affect the users. This responsibility is 
 currently assegned to:
 
     * Medicina: :ref:`srighini`
@@ -87,7 +87,7 @@ currently assegned to:
 Observation manager
 -------------------
 The *observation manager* is responsible for to the observations 
-with Nuraghe: 
+with DISCOS: 
 
     * Medicina: :ref:`aorlati`
     * Noto: ?

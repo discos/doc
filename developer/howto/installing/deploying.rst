@@ -1,6 +1,6 @@
 .. _deploying:
 
 ******************
-Nuraghe deployment
+DISCOS deployment
 ******************
 Environment and installation

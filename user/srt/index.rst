@@ -1,7 +1,7 @@
 .. _observing_srt:
  
 #############################
-Observing at SRT with Nuraghe
+Observing at SRT with DISCOS
 #############################
 
 Contents:

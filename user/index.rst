@@ -1,7 +1,7 @@
 .. _user:
  
 ####################################
-User's guide: Observing with Nuraghe
+User's guide: Observing with DISCOS
 ####################################
 
 Contents:

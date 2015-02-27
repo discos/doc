@@ -1,7 +1,7 @@
 *******************
 Releasing procedure
 *******************
-Nuraghe uses a *major.minor.patch* nomenclature, so Nuraghe-1.5.2
+DISCOS uses a *major.minor.patch* nomenclature, so Nuraghe-1.5.2
 has a *major version* of 1, a minor version of 5, and a *patch version* of 2.
 The *major version* zero (0.y.z) is for initial development, when anything 
 may change at any time, so the public API, the *operator input* commands
@@ -23,8 +23,8 @@ they only come when strongly incompatible changes are
 deemed necessary, and are planned very long in advance.
 
 That means if an astronomer *schedule* can be executed
-using *Nuraghe-1.x.y*, then it will also be executed using any of the
-next releases of Nuraghe with major version of 1.
+using *DISCOS-1.x.y*, then it will also be executed using any of the
+next releases of DISCOS with major version of 1.
 
 
 New minor versions

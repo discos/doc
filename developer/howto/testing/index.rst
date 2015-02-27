@@ -1,7 +1,7 @@
 .. _testing-howto:
  
 ########################################
-Test Driven Development (TDD) in Nuraghe
+Test Driven Development (TDD) in DISCOS
 ########################################
 
 .. sectionauthor:: :ref:`mbuttu`, :ref:`mbartolini`

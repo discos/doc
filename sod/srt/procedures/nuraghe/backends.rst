@@ -1,5 +1,0 @@
-********
-Backends
-********
-
-.. sectionauthor:: :ref:`spoppi`

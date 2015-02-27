@@ -1,8 +1,8 @@
-Nuraghe Documentation
-=====================
-This directory contains the reStructuredText (reST) sources to the Nuraghe
+DISCOS Documentation
+====================
+This directory contains the reStructuredText (reST) sources to the DISCOS
 documentation.  You don't need to build them yourself, prebuilt versions are
-available [here](http://nuraghe.readthedocs.org/).
+available [here](http://discos.readthedocs.org/).
 
 
 Building the docs

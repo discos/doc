@@ -9,7 +9,7 @@ DewarPositioner
 
 .. topic:: Abstract
 
-   Questo documento è il manuale di utilizzo del component di Nuraghe
+   Questo documento è il manuale di utilizzo del component di DISCOS
    che gestisce i derotatori, chiamato ``DewarPositioner``. Il documento
    è suddiviso in due parti: la sezione :ref:`oi` spiega come
    interagire con il derotatore tramite la console dell'*operator input*, 

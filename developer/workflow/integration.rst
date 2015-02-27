@@ -3,7 +3,7 @@ Integration tests
 *****************
 
 
-Integrate the component in Nuraghe
+Integrate the component in DISCOS
 ==================================
 Write the integration tests (subsytems communication), ...
 
