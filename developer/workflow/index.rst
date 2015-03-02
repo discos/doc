@@ -1,11 +1,8 @@
 .. _workflow:
  
-##############################
-Component development workflow
-##############################
-
-.. sectionauthor:: :ref:`mbuttu`
-
+##################
+Component workflow
+##################
 
 .. topic:: Abstract
 
