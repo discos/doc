@@ -4,8 +4,10 @@ import sys, os, time
 
 # General configuration
 # ---------------------
+sys.path.append(os.path.abspath('ext'))
 
 extensions = [
+    'discos',
     'sphinx.ext.autodoc',
     'sphinx.ext.intersphinx',
     'sphinx.ext.todo',
@@ -60,7 +62,7 @@ html_short_title = 'DISCOS documentation'
 # Path to find HTML templates.
 templates_path = ['theme/templates']
 # Additional static files.
-html_static_path = ['theme/static']
+html_static_path = ['theme/static/']
 
 # Custom sidebar templates, filenames relative to this file.
 #html_sidebars = {}

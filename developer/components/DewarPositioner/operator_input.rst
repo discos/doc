@@ -1,3 +1,5 @@
+.. highlight:: discos
+
 .. _oi:
 
 *********************
@@ -28,7 +30,8 @@ in banda K::
           In altre parole, quando viene dato il comando ``setupKKG``,
           questo esegue a sua volta anche ``derotatorSetup=KKG``.
           
-.. note:: Anche il receiverSetup=KKG fa il derotatorSetup=KKG?
+.. note:: Anche il receiverSetup=KKG fa il derotatorSetup=KKG? Verificare sia questa
+          che la nota di sopra, perche' in realta' questo attualmente non avviene
 
 Al termine del *setup* il derotatore sarà pronto per essere utilizzato. Il
 comando ``derotatorGetActualSetup`` restituisce il setup attuale, mentre il
@@ -41,16 +44,25 @@ movimentato::
     True
 
 Durante il *setup* al derotatore viene comandata la posizione ``0``, che è quella 
-scelta per l'allineamento iniziale. Possiamo verificarlo con il comando
-``derotatorGetPosition``::
+scelta per l'allineamento iniziale. Ad esempio, per il il derotatore del ricevitore 
+in banda K la posizione iniziale è quella in cui i tre feed 1, 0, 4 sono 
+paralleli all'orizzonte, con il feed 1 a est.
+
+Possiamo verificare la posizione con il comando ``derotatorGetPosition``::
 
     > derotatorGetPosition
     0.0084d
 
-.. note:: Dire che e' normale che il valore restituito non e' 0
 
-Ad esempio, per il il derotatore del ricevitore in banda K la posizione iniziale è quella in cui i tre feed 1, 0, 4 sono 
-paralleli all'orizzonte, con il feed 1 a est.
+La ``d`` sta ad indicare che il valore restituito rappresenta un angolo espresso in gradi 
+decimali (*degrees*).
+
+.. note:: Il valore restituito potrebbe essere diverso da zero, per qualche cifra
+   decimale, come nell'esempio appena mostrato. Questo è normale, ed è dovuto al fatto
+   che il movimento del motore avviene a step, per cui i valori di posizionamento sono 
+   discreti.
+
+
 Il *setup* infine imposta i valori di default per la configurazione e la modalità di 
 riavvolgimento::
 
@@ -63,6 +75,7 @@ riavvolgimento::
 Parleremo delle configurazioni e del riavvolgimento nelle prossime sezioni.
 
 .. _oiconfigurations:
+
 
 Configurazione 
 ==============
@@ -78,8 +91,6 @@ di leggerla::
     > derotatorSetConfiguration=FIXED
     > derotatorGetConfiguration
     FIXED
-    > derotatorGetConfiguration
-    BSC
     > derotatorSetConfiguration=CUSTOM
     > derotatorGetConfiguration
     CUSTOM
@@ -120,12 +131,11 @@ derotatore utilizzando il comando ``derotatorSetPosition``::
     > derotatorGetPosition
     30d
 
-Esempio di :math:`a^2`.
+Se il derotatore si trova in una certa posizione :math:`P_x` e viene impostata
+la modalità ``FIXED``, viene tenuta la posizione :math:`P_x`. Il derotatore quindi
+non viene riportato in posizione di zero:
 
-Se il derotatore si trova in una certa posizione ``Px`` e viene impostata
-la modalità ``FIXED``, viene tenuta la posizione ``Px``. Il derotatore quindi
-non viene riportato in posizione di zero sinchè non viene comandata
-una nuova posizione con ``derotatorSetPosition``::
+.. code-block:: discos
 
 
     > derotatorGetPosition
