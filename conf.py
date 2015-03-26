@@ -56,6 +56,19 @@ if not on_rtd:  # only import and set the theme if we're building docs locally
     import sphinx_rtd_theme
     html_theme = 'sphinx_rtd_theme'
     html_theme_path.append(sphinx_rtd_theme.get_html_theme_path())
+    # Override default css to get a larger width for local build                 
+    def setup(app):                                                              
+        # app.add_javascript("custom.js")                                         
+        app.add_stylesheet('pygments.css')                                
+else:                                                                            
+    # Override default css to get a larger width for ReadTheDoc build            
+    html_context = {                                                             
+        'css_files': [                                                           
+            'https://media.readthedocs.org/css/sphinx_rtd_theme.css',            
+            'https://media.readthedocs.org/css/readthedocs-doc-embed.css',       
+            '_static/pygments.css',                                       
+        ],                                                                       
+    }
 
 # Short title used e.g. for <title> HTML tags.
 html_short_title = 'DISCOS documentation'
@@ -64,11 +77,6 @@ html_short_title = 'DISCOS documentation'
 templates_path = ['theme/templates']
 # Additional static files.
 html_static_path = ['theme/static/']
-html_context = {
-    'css_files': [
-        '_static/pygments.css',  
-     ],
-}
 
 # Custom sidebar templates, filenames relative to this file.
 #html_sidebars = {}
