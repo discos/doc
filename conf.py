@@ -64,6 +64,11 @@ html_short_title = 'DISCOS documentation'
 templates_path = ['theme/templates']
 # Additional static files.
 html_static_path = ['theme/static/']
+html_context = {
+    'css_files': [
+        '_static/pygments.css',  
+     ],
+}
 
 # Custom sidebar templates, filenames relative to this file.
 #html_sidebars = {}
