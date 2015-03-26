@@ -9,21 +9,21 @@ import re
 from pygments.lexer import Lexer, RegexLexer, bygroups, include
 from pygments.style import Style
 from pygments.token import Punctuation, Text, Comment, Operator, \
-                           Keyword, Name, String, Number, Generic
+                           Keyword, Name, String, Number, Generic, Token
 
+
+Discos = Token.Discos
 
 class DISCOSStyle(Style):
     default_style = ""
     styles = {
-        Generic: 'noinherit',
-        Generic.Prompt: 'bold #0033ff',
-        Generic.Output: '#006600',
-        Generic.Error: '#8F0000',
+        Discos.Prompt: 'bold #0033ff',
+        Discos.Output: '#006600',
+        Discos.Error: '#8F0000',
     }
 
 
 class DISCOSLexer(RegexLexer):
-
     name = 'discos'
     aliases = ['discos']
     filenames = ['*.discos']
@@ -58,9 +58,9 @@ class DISCOSLexer(RegexLexer):
             (r'<<<', Operator),  # here-string
             (r'<<-?\s*(\'?)\\?(\w+)[\w\W]+?\2', String),
             (r'&&|\|\|', Operator),
-            (r'^>', Generic.Prompt), 
-            (r'^Error -.*\n', Generic.Error),
-            (r'^[^"].*', Generic.Output),
+            (r'^>', Discos.Prompt), 
+            (r'^Error -.*\n', Discos.Error),
+            (r'^[^"].*', Discos.Output),
         ],
         'data': [
             (r'(?s)\$?"(\\\\|\\[0-7]+|\\.|[^"\\$])*"', String.Double),
