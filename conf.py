@@ -40,7 +40,6 @@ release = '0.4'
 show_authors = True
 
 # The name of the Pygments (syntax highlighting) style to use.
-# pygments_style = 'discos.DISCOSStyle'
 pygments_style = 'discos.DISCOSStyle'
 
 # Require Sphinx 1.2 for build.
