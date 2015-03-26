@@ -15,6 +15,7 @@ from pygments.token import Punctuation, Text, Comment, Operator, \
 class DISCOSStyle(Style):
     default_style = ""
     styles = {
+        Generic: 'noinherit',
         Generic.Prompt: 'bold #0033ff',
         Generic.Output: '#006600',
         Generic.Error: '#8F0000',
