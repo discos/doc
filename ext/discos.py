@@ -1,17 +1,25 @@
 # -*- coding: utf-8 -*-
 """
-Lexer for DISCOS
+DISCOS extension for Sphinx
 Author: Marco Buttu <mbuttu@oa-cagliari.inaf.it>
 """
 
 import re
 
 from pygments.lexer import Lexer, RegexLexer, bygroups, include
-from pygments.token import Punctuation, \
-     Text, Comment, Operator, Keyword, Name, String, Number, Generic
+from pygments.style import Style
+from pygments.token import Punctuation, Text, Comment, Operator, \
+                           Keyword, Name, String, Number, Generic
 
 
-line_re  = re.compile('.*?\n')
+class DISCOSStyle(Style):
+    default_style = ""
+    styles = {
+        Generic.Prompt: 'bold #0033ff',
+        Generic.Output: '#006600',
+        Generic.Error: '#8F0000',
+    }
+
 
 class DISCOSLexer(RegexLexer):
 
@@ -49,8 +57,9 @@ class DISCOSLexer(RegexLexer):
             (r'<<<', Operator),  # here-string
             (r'<<-?\s*(\'?)\\?(\w+)[\w\W]+?\2', String),
             (r'&&|\|\|', Operator),
-            (r'^>', Name.Builtin), # Change to Generic.Prompt
-            (r'^Error -.*\n', String),
+            (r'^>', Generic.Prompt), 
+            (r'^Error -.*\n', Generic.Error),
+            (r'^[^"].*', Generic.Output),
         ],
         'data': [
             (r'(?s)\$?"(\\\\|\\[0-7]+|\\.|[^"\\$])*"', String.Double),
