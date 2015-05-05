@@ -1,0 +1,7 @@
+Build/*
+Build
+build
+build/*
+*.pyc
+*.swp
+
