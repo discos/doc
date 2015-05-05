@@ -1,0 +1,349 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Checklist for schedule-based observations &mdash; Observing at the SRT with Nuraghe 1.0 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="Observing at the SRT with Nuraghe 1.0 documentation" href="index.html"/>
+        <link rel="next" title="Nuraghe Startup" href="Startup.html"/>
+        <link rel="prev" title="Overview" href="Introduction.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="index.html" class="fa fa-home"> Observing at the SRT with Nuraghe</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+        
+            <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Introduction.html">Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Introduction.html#what-nuraghe-is">What Nuraghe is</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Introduction.html#glossary-terms-and-abbreviations">Glossary: terms and abbreviations</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Checklist for schedule-based observations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Startup.html">Nuraghe Startup</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Startup.html#login">Login</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Startup.html#what-to-do-in-obs1">What to do in OBS1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Startup.html#what-to-do-in-obs2">What to do in OBS2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Startup.html#input-terminal-and-system-monitors-obs1">Input terminal and system monitors (OBS1)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Setup.html">Initial Setup</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Setup.html#antenna-overall-setup">Antenna overall setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Setup.html#active-surface-setup">Active Surface setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Setup.html#minor-servo-configuration">Minor Servo configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Setup.html#logfile-and-project-code">Logfile and project code</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Antenna.html">Antenna operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Frontend.html">Frontend operations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Frontend.html#general-rules">General rules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Frontend.html#specific-notes-for-the-l-p-receiver">Specific notes for the L/P receiver</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Backend.html">Backend operations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Backend.html#total-power-focus-selector">Total Power - focus selector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Backend.html#xarcos">XARCOS</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Command-line.html">Command-line measurements and acquisitions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Command-line.html#raw-counts-readouts">Raw counts readouts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Command-line.html#tsys">Tsys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Command-line.html#weather-parameters">Weather parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Command-line.html#manual-acquisitions">Manual acquisitions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Command-line.html#caveat-on-offsets">Caveat on offsets</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Schedules.html">Generating and launching a schedule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Quicklook.html">Data formats and online quick-look</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Quicklook.html#if-writer-is-management-fitszilla">If writer is MANAGEMENT/FitsZilla</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Quicklook.html#if-writer-is-management-point-or-management-calibrationtool">If writer is MANAGEMENT/Point or MANAGEMENT/CalibrationTool</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="DataRetrieval.html">Retrieving the data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Appendix_A.html">Appendix A - monitor panels full description</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Appendix_A.html#operatorinput">operatorInput</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Appendix_A.html#antennaboss">AntennaBoss</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Appendix_A.html#observatory">Observatory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Appendix_A.html#mount">Mount</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Appendix_A.html#genericbackend">GenericBackend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Appendix_A.html#receiversboss">ReceiversBoss</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Appendix_A.html#scheduler">Scheduler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Appendix_A.html#minorservo">MinorServo</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Appendix_B.html">Appendix B - Complete command list</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Appendix_C.html">Appendix C - Output files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Appendix_D.html">Appendix D - Source catalogue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Troubleshooting.html">Troubleshooting &amp; temporary procedures</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Troubleshooting.html#setup">Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Troubleshooting.html#schedules">Schedules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Troubleshooting.html#end-of-session">End of session</a></li>
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">Observing at the SRT with Nuraghe</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Checklist for schedule-based observations</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="_sources/Checklist.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            
+  <div class="section" id="checklist-for-schedule-based-observations">
+<h1>Checklist for schedule-based observations<a class="headerlink" href="#checklist-for-schedule-based-observations" title="Permalink to this headline">¶</a></h1>
+<p>Notice that actions take place in three different “locations”:</p>
+<blockquote>
+<div><ul class="simple">
+<li><strong>(1)</strong> = action to be performed in a terminal on the observing machine</li>
+<li><strong>(2)</strong> = action to be performed in a terminal on the data-access machine</li>
+<li><strong>(op)</strong> = command to be given in the <em>operatorInput</em> panel of Nuraghe</li>
+</ul>
+</div></blockquote>
+<p><strong>Login on both (1) and (2)</strong></p>
+<p><strong>Launch the monitors, if necessary</strong> (1):</p>
+<div class="highlight-python"><div class="highlight"><pre>$ nuragheConsole
+</pre></div>
+</div>
+<p><strong>Initial setup</strong> (op):</p>
+<div class="highlight-python"><div class="highlight"><pre>&gt; antennaReset  (if resuming after the emergency stop button is released)
+&gt; setupCCB      (or other receiver code)
+&gt; asSetup=S     (or other AS code)
+&gt; setServoASConfiguration=ON    (if using a secondary focus receiver)
+&gt; setServoElevationTracking=ON  (if using a secondary focus receiver)
+</pre></div>
+</div>
+<p><strong>Tune the local oscillator, if any</strong> (op):</p>
+<div class="highlight-python"><div class="highlight"><pre>&gt; setLO=[freq]
+—&gt; e.g. setLO=6600 - start frequency of the observed band will depend on the backend
+</pre></div>
+</div>
+<p><strong>Point the antenna to a reference position</strong> (op):</p>
+<div class="highlight-python"><div class="highlight"><pre>&gt; goTo=[Az]d,[El]d
+—&gt; e.g. goTo=180d,45d
+</pre></div>
+</div>
+<p><strong>Always explicitly choose the Total Power backend (XARCOS might have been left active)</strong> (op):</p>
+<div class="highlight-python"><div class="highlight"><pre>&gt; chooseRecorder=BACKENDS/TotalPower
+</pre></div>
+</div>
+<p><strong>Measure the cold sky signal level</strong> (op):</p>
+<div class="highlight-python"><div class="highlight"><pre>&gt; getTpi
+&gt; setAttenuation=[sect],[att]
+—&gt; iteratively adjust attenuations until the level is about 850 counts
+</pre></div>
+</div>
+<p><strong>Get a Tsys</strong> (op):</p>
+<div class="highlight-python"><div class="highlight"><pre>&gt; tsys
+</pre></div>
+</div>
+<p><strong>Pointing and focusing optimisation</strong> (op):</p>
+<div class="highlight-python"><div class="highlight"><pre>&gt; track=name                    (choose a proper calibrator from source catalogue)
+&gt; chooseRecorder=MANAGEMENT/Point
+—&gt; the following command on (1):
+        $ calibrationtoolclient MANAGEMENT/Point            (to display the plots)
+&gt; crossScan=HOR,0.5d,00:00:20   (set proper parameters according to your beamsize)
+&gt; azelOffsets=0d,0d             (only if wanting to reject the measured offsets!)
+&gt; focusScan=60,00:01:00
+&gt; clearServoOffsets             (only if wanting to reject the updated focus position!)
+</pre></div>
+</div>
+<p><strong>If needed, choose and set the spectrometer</strong> (op):</p>
+<div class="highlight-python"><div class="highlight"><pre>&gt; chooseBackend=BACKENDS/XBackends
+&gt; initialize=[code]
+</pre></div>
+</div>
+<p><strong>Create a schedule</strong> (1):</p>
+<div class="highlight-python"><div class="highlight"><pre>Use schedulecreator (see its own guide):
+$ schedulecreator –c [configfile] [out_directory]
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If using XARCOS, edit schedule in order to tune its internal frequency and the frontend LO</p>
+</div>
+<p><strong>Parse the schedule</strong> (1):</p>
+<div class="highlight-python"><div class="highlight"><pre>$ scheduleChecker [schedulename].scd
+—&gt; Move the schedule files to the observing machine
+</pre></div>
+</div>
+<p><strong>Launch the schedule</strong> (op):</p>
+<div class="highlight-python"><div class="highlight"><pre>&gt; startSchedule=[project/][schedulename].scd,[N]
+</pre></div>
+</div>
+<p><strong>Data quick-look (continuum only)</strong></p>
+<blockquote>
+<div><ul>
+<li><p class="first"><em>Case A:</em> when using MANAGEMENT/Fitszilla, launch the quick-look (2):</p>
+<div class="highlight-python"><div class="highlight"><pre>$ idl
+IDL&gt; .r fits_look    (or fits_look_mf if observing with the MF receiver)
+IDL&gt; fits_look
+</pre></div>
+</div>
+</li>
+<li><p class="first"><em>Case B:</em> when using MANAGEMENT/Point, launch the quick-look (1):</p>
+<div class="highlight-python"><div class="highlight"><pre>$ calibrationtoolclient MANAGEMENT/Point
+</pre></div>
+</div>
+</li>
+<li><p class="first"><em>Case C:</em> when using MANAGEMENT/CalibrationTool, launch the quick-look (1):</p>
+<div class="highlight-python"><div class="highlight"><pre>$ calibrationtoolclient MANAGEMENT/CalibrationTool
+</pre></div>
+</div>
+</li>
+</ul>
+</div></blockquote>
+<p><strong>Stop the schedule</strong> (op):</p>
+<div class="highlight-python"><div class="highlight"><pre>&gt; stopSchedule
+</pre></div>
+</div>
+<dl class="docutils">
+<dt><strong>Copy the data</strong> (2)</dt>
+<dd>—&gt; Get the latest subfolders written in the main data folder</dd>
+</dl>
+<p><strong>Stow the antenna</strong> (op):</p>
+<div class="highlight-python"><div class="highlight"><pre>&gt; antennaStop
+&gt; telescopePark
+</pre></div>
+</div>
+<p><strong>Close the monitors, if necessary</strong> (1):</p>
+<div class="highlight-python"><div class="highlight"><pre>$ nuragheConsole —-stop   (individual panels are closed typing “exit” in their command lines)
+</pre></div>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Startup.html" class="btn btn-neutral float-right" title="Nuraghe Startup"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Introduction.html" class="btn btn-neutral" title="Overview"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, SRT software group.
+    </p>
+  </div>
+
+  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

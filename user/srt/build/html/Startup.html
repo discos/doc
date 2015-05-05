@@ -1,0 +1,350 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Nuraghe Startup &mdash; Observing at the SRT with Nuraghe 1.0 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="Observing at the SRT with Nuraghe 1.0 documentation" href="index.html"/>
+        <link rel="next" title="Initial Setup" href="Setup.html"/>
+        <link rel="prev" title="Checklist for schedule-based observations" href="Checklist.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="index.html" class="fa fa-home"> Observing at the SRT with Nuraghe</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+        
+            <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Introduction.html">Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Introduction.html#what-nuraghe-is">What Nuraghe is</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Introduction.html#glossary-terms-and-abbreviations">Glossary: terms and abbreviations</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Checklist.html">Checklist for schedule-based observations</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Nuraghe Startup</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#login">Login</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#what-to-do-in-obs1">What to do in OBS1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#what-to-do-in-obs2">What to do in OBS2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#input-terminal-and-system-monitors-obs1">Input terminal and system monitors (OBS1)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Setup.html">Initial Setup</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Setup.html#antenna-overall-setup">Antenna overall setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Setup.html#active-surface-setup">Active Surface setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Setup.html#minor-servo-configuration">Minor Servo configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Setup.html#logfile-and-project-code">Logfile and project code</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Antenna.html">Antenna operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Frontend.html">Frontend operations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Frontend.html#general-rules">General rules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Frontend.html#specific-notes-for-the-l-p-receiver">Specific notes for the L/P receiver</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Backend.html">Backend operations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Backend.html#total-power-focus-selector">Total Power - focus selector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Backend.html#xarcos">XARCOS</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Command-line.html">Command-line measurements and acquisitions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Command-line.html#raw-counts-readouts">Raw counts readouts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Command-line.html#tsys">Tsys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Command-line.html#weather-parameters">Weather parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Command-line.html#manual-acquisitions">Manual acquisitions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Command-line.html#caveat-on-offsets">Caveat on offsets</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Schedules.html">Generating and launching a schedule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Quicklook.html">Data formats and online quick-look</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Quicklook.html#if-writer-is-management-fitszilla">If writer is MANAGEMENT/FitsZilla</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Quicklook.html#if-writer-is-management-point-or-management-calibrationtool">If writer is MANAGEMENT/Point or MANAGEMENT/CalibrationTool</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="DataRetrieval.html">Retrieving the data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Appendix_A.html">Appendix A - monitor panels full description</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Appendix_A.html#operatorinput">operatorInput</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Appendix_A.html#antennaboss">AntennaBoss</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Appendix_A.html#observatory">Observatory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Appendix_A.html#mount">Mount</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Appendix_A.html#genericbackend">GenericBackend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Appendix_A.html#receiversboss">ReceiversBoss</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Appendix_A.html#scheduler">Scheduler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Appendix_A.html#minorservo">MinorServo</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Appendix_B.html">Appendix B - Complete command list</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Appendix_C.html">Appendix C - Output files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Appendix_D.html">Appendix D - Source catalogue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Troubleshooting.html">Troubleshooting &amp; temporary procedures</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Troubleshooting.html#setup">Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Troubleshooting.html#schedules">Schedules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Troubleshooting.html#end-of-session">End of session</a></li>
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">Observing at the SRT with Nuraghe</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Nuraghe Startup</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="_sources/Startup.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            
+  <div class="section" id="nuraghe-startup">
+<h1>Nuraghe Startup<a class="headerlink" href="#nuraghe-startup" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="login">
+<h2>Login<a class="headerlink" href="#login" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/Postazioni_Nuraghe.jpg"><img alt="Observing machines" src="_images/Postazioni_Nuraghe.jpg" style="width: 953.6px; height: 559.2px;" /></a>
+</div>
+<p>Observations take place using the <strong>nuraghe-obs1</strong> machine.
+You can login with:</p>
+<div class="highlight-python"><div class="highlight"><pre>username: observer       pwd:  **********
+</pre></div>
+</div>
+<p>Data inspection ad pre-reduction is allowed on a Windows machine, located on the right of OBS1 and connected to a very large display fixed on the wall.
+If this machine is shut down, or if exiting from the screensaver asks for a login, use:</p>
+<div class="highlight-python"><div class="highlight"><pre>username: oper           pwd:  **********
+</pre></div>
+</div>
+<p>On the desktop you’ll find a <strong>VNC icon</strong> providing connection to the remote desktop of <strong>nuraghe-obs2</strong> (op):</p>
+<div class="highlight-python"><div class="highlight"><pre>login: [projectcode]     pwd: **********
+</pre></div>
+</div>
+<p>You can start a single VNC session on OBS2: if you start another session (e.g. from a laptop), the first one will be closed. You are allowed to open remote ssh sessions from a laptop to nuraghe-obs1 and nuraghe-obs2.
+The VNC desktop is larger than the monitor; you can scroll them horizontally using the bottom scrollbar. Beware that, when launching programs, they might open windows in the invisible desktop area!</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><strong>passwords are provided locally</strong>. As the control room logistics might be updated, be sure to contact the local personnel before your session starts, in order to get the latest information.</p>
+</div>
+</div>
+<div class="section" id="what-to-do-in-obs1">
+<h2>What to do in OBS1<a class="headerlink" href="#what-to-do-in-obs1" title="Permalink to this headline">¶</a></h2>
+<p>Use OBS1 to produce/write/copy the schedules and to run the system (nuragheConsole, etc…).
+In order to be read by Nuraghe, the schedules must end up in a specific folder.
+Open a terminal and launch:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ myschedules
+</pre></div>
+</div>
+<p>to know what that folder is.</p>
+<p>The logfile location can be retrieved as well:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ mylogs
+</pre></div>
+</div>
+</div>
+<div class="section" id="what-to-do-in-obs2">
+<h2>What to do in OBS2<a class="headerlink" href="#what-to-do-in-obs2" title="Permalink to this headline">¶</a></h2>
+<p>Use OBS2 for the FITS <strong>quicklook and data retrieval</strong> (see dedicated sections).</p>
+</div>
+<div class="section" id="input-terminal-and-system-monitors-obs1">
+<h2>Input terminal and system monitors (OBS1)<a class="headerlink" href="#input-terminal-and-system-monitors-obs1" title="Permalink to this headline">¶</a></h2>
+<p>Once logged in on OBS1, <em>you should find the input terminal and all the monitors already running</em>.
+If, instead, you need to start them, open a new terminal, then:</p>
+<div class="highlight-python"><div class="highlight"><pre>$  nuragheConsole
+</pre></div>
+</div>
+<p>This command opens 8 panels at once:</p>
+<blockquote>
+<div><ul class="simple">
+<li>operatorInput - terminal for command line input</li>
+<li>antennaBoss</li>
+<li>genericBackend</li>
+<li>mount</li>
+<li>observatory</li>
+<li>receiversBoss</li>
+<li>scheduler</li>
+<li>MinorServo</li>
+</ul>
+</div></blockquote>
+<p>Rearrange the panels on the desktop.
+In case any of them does not automatically start, you can manually open them by means of individual command lines, to be given in the open terminal:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ operatorInput
+$ antennaBossTui
+$ genericBackendTui BACKENDS/TotalPower  (or other backend code)
+$ mountTui
+$ observatoryTui
+$ receiversBossTui
+$ schedulerTui
+$ minorservoBossTui
+</pre></div>
+</div>
+<p>All the antenna/receiver/backend setup procedures are performed via the operatorInput window, which is also used to start/stop the schedules.</p>
+<p>The other panels are monitors used to display a vast amount of information, see Appendix A – Monitor panels full description and Appendix B – Complete command list for a comprehensive description of their content and a list of all the commands available for the operatorInput (they can be inserted in schedules as well).</p>
+<p>The operatorInput panel supports &#8220;TAB-completion&#8221;.
+For example (op):</p>
+<div class="highlight-python"><div class="highlight"><pre>&gt; f&lt;TAB&gt;
+flush      flushAll     focusScan
+
+&gt; fo&lt;TAB&gt;
+&gt; focusScan
+</pre></div>
+</div>
+<p>Online help is available:</p>
+<div class="highlight-python"><div class="highlight"><pre>&gt; help(focusScan)
+
+   focusScan=span,duration
+   commands a focus scan on a previously selected target
+   (by means of the track or sidereal commands).
+   Parameters:
+
+   * span: the length run on the z-axis expressed in mm,
+   * duration: the time length espressed in hh:mm:ss,
+
+   e.g. &gt; focusScan=60,00:01:00
+</pre></div>
+</div>
+<p>TAB-completion is active for the online help as well:</p>
+<div class="highlight-python"><div class="highlight"><pre>&gt; help(fo&lt;TAB&gt;
+&gt; help(focusScan
+</pre></div>
+</div>
+<p>The help() command shows the complete command list:</p>
+<div class="highlight-python"><div class="highlight"><pre>&gt; help()
+
+    antennaPark
+    antennaReset
+    antennaSetup
+    ...
+    tsys
+    wait
+    wx
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Setup.html" class="btn btn-neutral float-right" title="Initial Setup"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Checklist.html" class="btn btn-neutral" title="Checklist for schedule-based observations"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, SRT software group.
+    </p>
+  </div>
+
+  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

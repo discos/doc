@@ -1,0 +1,46 @@
+
+*****************************************
+Checklist for schedule-based observations
+*****************************************
+
+Notice that actions take place in three different “locations”:
+
+  * **(1)** = action to be performed in a terminal on the observing machine
+  * **(2)** = action to be performed in a terminal on the data-access machine  * **(op)** = command to be given in the *operatorInput* panel of Nuraghe
+
+**Login on both (1) and (2)** 
+
+**Launch the monitors, if necessary** (1):: 
+	$ nuragheConsole **Initial setup** (op)::
+
+	> antennaReset  (if resuming after the emergency stop button is released)  
+	> setupCCB      (or other receiver code) 
+	> asSetup=S     (or other AS code)
+	> setServoASConfiguration=ON    (if using a secondary focus receiver)	
+	> setServoElevationTracking=ON  (if using a secondary focus receiver)**Tune the local oscillator, if any** (op)::
+	> setLO=[freq] 
+	—> e.g. setLO=6600 - start frequency of the observed band will depend on the backend**Point the antenna to a reference position** (op)::
+
+	> goTo=[Az]d,[El]d 
+	—> e.g. goTo=180d,45d**Always explicitly choose the Total Power backend (XARCOS might have been left active)** (op)::	
+	> chooseRecorder=BACKENDS/TotalPower    **Measure the cold sky signal level** (op)::
+	> getTpi 	> setAttenuation=[sect],[att] 
+	—> iteratively adjust attenuations until the level is about 850 counts **Get a Tsys** (op)::
+	> tsys**Pointing and focusing optimisation** (op):: 
+	> track=name                    (choose a proper calibrator from source catalogue) 
+	> chooseRecorder=MANAGEMENT/Point 	—> the following command on (1): 
+		$ calibrationtoolclient MANAGEMENT/Point            (to display the plots) 	> crossScan=HOR,0.5d,00:00:20   (set proper parameters according to your beamsize) 	> azelOffsets=0d,0d             (only if wanting to reject the measured offsets!)		> focusScan=60,00:01:00 	> clearServoOffsets             (only if wanting to reject the updated focus position!)**If needed, choose and set the spectrometer** (op)::
+ 	> chooseBackend=BACKENDS/XBackends 	> initialize=[code]**Create a schedule** (1):: 
+	Use schedulecreator (see its own guide): 	$ schedulecreator –c [configfile] [out_directory] 
+
+.. NOTE::
+   If using XARCOS, edit schedule in order to tune its internal frequency and the frontend LO**Parse the schedule** (1):: 
+	$ scheduleChecker [schedulename].scd 	—> Move the schedule files to the observing machine **Launch the schedule** (op):: 
+			> startSchedule=[project/][schedulename].scd,[N] **Data quick-look (continuum only)**	* *Case A\:* when using MANAGEMENT/Fitszilla, launch the quick-look (2)::
+ 		$ idl 		IDL> .r fits_look    (or fits_look_mf if observing with the MF receiver) 		IDL> fits_look	* *Case B\:* when using MANAGEMENT/Point, launch the quick-look (1)::
+ 		$ calibrationtoolclient MANAGEMENT/Point	* *Case C\:* when using MANAGEMENT/CalibrationTool, launch the quick-look (1):: 
+		$ calibrationtoolclient MANAGEMENT/CalibrationTool	**Stop the schedule** (op)::
+	> stopSchedule**Copy the data** (2) 	—> Get the latest subfolders written in the main data folder **Stow the antenna** (op)::
+ 	> antennaStop 	> telescopePark**Close the monitors, if necessary** (1)::
+	$ nuragheConsole —-stop   (individual panels are closed typing “exit” in their command lines) 
+

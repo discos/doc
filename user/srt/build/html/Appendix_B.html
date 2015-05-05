@@ -1,0 +1,431 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Appendix B - Complete command list &mdash; Observing at the SRT with Nuraghe 1.0 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="Observing at the SRT with Nuraghe 1.0 documentation" href="index.html"/>
+        <link rel="next" title="Appendix C - Output files" href="Appendix_C.html"/>
+        <link rel="prev" title="Appendix A - monitor panels full description" href="Appendix_A.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="index.html" class="fa fa-home"> Observing at the SRT with Nuraghe</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+        
+            <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="ReleaseNotes.html">Release notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Introduction.html">Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Introduction.html#what-nuraghe-is">What Nuraghe is</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Introduction.html#glossary-terms-and-abbreviations">Glossary: terms and abbreviations</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Checklist.html">Checklist for schedule-based observations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Startup.html">Nuraghe Startup</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Startup.html#login">Login</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Startup.html#what-to-do-in-obs1">What to do in OBS1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Startup.html#what-to-do-in-obs2">What to do in OBS2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Startup.html#input-terminal-and-system-monitors-obs1">Input terminal and system monitors (OBS1)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Setup.html">Initial Setup</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Setup.html#antenna-overall-setup">Antenna overall setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Setup.html#active-surface-setup">Active Surface setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Setup.html#minor-servo-configuration">Minor Servo configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Setup.html#logfile-and-project-code">Logfile and project code</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Antenna.html">Antenna operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Frontend.html">Frontend operations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Frontend.html#general-rules">General rules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Frontend.html#specific-notes-for-the-l-p-receiver">Specific notes for the L/P receiver</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Backend.html">Backend operations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Backend.html#total-power-focus-selector">Total Power - focus selector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Backend.html#xarcos">XARCOS</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Command-line.html">Command-line measurements and acquisitions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Command-line.html#raw-counts-readouts">Raw counts readouts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Command-line.html#tsys">Tsys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Command-line.html#weather-parameters">Weather parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Command-line.html#manual-acquisitions">Manual acquisitions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Command-line.html#caveat-on-offsets">Caveat on offsets</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Schedules.html">Generating and launching a schedule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Quicklook.html">Data formats and online quick-look</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Quicklook.html#if-writer-is-management-fitszilla">If writer is MANAGEMENT/FitsZilla</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Quicklook.html#if-writer-is-management-point-or-management-calibrationtool">If writer is MANAGEMENT/Point or MANAGEMENT/CalibrationTool</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="DataRetrieval.html">Retrieving the data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Appendix_A.html">Appendix A - monitor panels full description</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Appendix_A.html#operatorinput">operatorInput</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Appendix_A.html#antennaboss">AntennaBoss</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Appendix_A.html#observatory">Observatory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Appendix_A.html#mount">Mount</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Appendix_A.html#genericbackend">GenericBackend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Appendix_A.html#receiversboss">ReceiversBoss</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Appendix_A.html#scheduler">Scheduler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Appendix_A.html#minorservo">MinorServo</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Appendix B - Complete command list</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Appendix_C.html">Appendix C - Output files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Appendix_D.html">Appendix D - Source catalogue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Troubleshooting.html">Troubleshooting &amp; temporary procedures</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Troubleshooting.html#setup">Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Troubleshooting.html#schedules">Schedules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Troubleshooting.html#end-of-session">End of session</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="FaultReport.html">Fault Report</a></li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">Observing at the SRT with Nuraghe</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Appendix B - Complete command list</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="_sources/Appendix_B.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            
+  <div class="section" id="appendix-b-complete-command-list">
+<h1>Appendix B - Complete command list<a class="headerlink" href="#appendix-b-complete-command-list" title="Permalink to this headline">¶</a></h1>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p><strong>COMMAND TEMPORISATION</strong> All commands can be temporised (i.e. associated to a starting time) adding a proper <strong>suffix</strong>. There are two possibilities:</p>
+<ul class="last simple">
+<li><strong>absolute temporisation</strong> (the operation will be performed at the indicated time):
+“&#64;DOY-HH:MM:SS”, where DOY is the Day-Of-Year (1-366) and HH:MM:SS is the UT time;</li>
+<li><strong>iterative temporisation</strong> (the operation is performed now, then periodically according to
+the indicated time interval):
+“&#64;!DAYS-HH:MM:SS”, where DAYS is the number of days and HH:MM:SS is hours, minutes, seconds.</li>
+</ul>
+</div>
+<p>Commands (temporised or not) can be used also in the init/pre-scan/post-scan procedures
+inside schedules.
+<em>Observers</em> are in charge of considering <em>if</em> and <em>when</em> the use of a certain command
+makes sense in their schedule, according to their specific needs and goals: this is
+something that no schedule parser can check!</p>
+<p>Here follow all the commands exploitable in Nuraghe:</p>
+<blockquote>
+<div><dl class="docutils">
+<dt><strong>&gt; antennaPark</strong></dt>
+<dd>sends the antenna to stow position</dd>
+<dt><strong>&gt; antennaReset</strong></dt>
+<dd>resets the alarm conditions</dd>
+<dt><strong>&gt; antennaSetup=[code]</strong> (CCB, KKG, …)</dt>
+<dd>unstows the antenna, sets it to tracking mode and configures the
+pointing model according to the specified receiver. It does NOT
+perform the receiver and backend setup</dd>
+<dt><strong>&gt; antennaStop</strong></dt>
+<dd>stops the antenna. Activities can start again only commanding a
+mode change as antennaTrack (which does not affect the overall setup) or a new setup</dd>
+<dt><strong>&gt; antennaTrack</strong></dt>
+<dd>sets the antenna to PROGRAMTRACK mode.
+It does not change the pointing model or any receiver setup</dd>
+<dt><strong>&gt; asSetup=[code]</strong>  (code = S, SF, P, PF)</dt>
+<dd>performs the setup of the active surface</dd>
+<dt><strong>&gt; azelOffsets=[double]d,[double]d</strong></dt>
+<dd>sets the Az-El offsets (degrees). They are intended “on sky”, i.e.
+it is the actual offset run on the sky at the source Elevation.
+Example: &gt; azelOffsets=-0.05d,0.05d</dd>
+<dt><strong>&gt; calOn</strong></dt>
+<dd>switches the calibration mark on</dd>
+<dt><strong>&gt; calOff</strong></dt>
+<dd>switches the calibration mark off</dd>
+<dt><strong>&gt; chooseBackend=[string]</strong></dt>
+<dd>selects the backend; string can be BACKENDS/TotalPower or BACKENDS/XBackends</dd>
+<dt><strong>&gt;  chooseRecorder=[string]</strong></dt>
+<dd>selects the backend; string can be MANAGEMENT/FitsZilla,
+MANAGEMENT/MBFitsWriter or MANAGEMENT/Point</dd>
+<dt><strong>&gt; clearServoOffsets</strong></dt>
+<dd>zeroes the subreflector system-defined offsets (e.g. the ones resulting from a focus scan)</dd>
+<dt><strong>&gt; crossScan=[scanFrame],[span],[duration]</strong></dt>
+<dd>performs a cross-scan on the previously selected target (indicated using the <em>track</em> or
+<em>sidereal</em> commands), along the scanFrame (‘eq’,’hor’ or ‘gal’), spanning <em>span</em> degrees
+in <em>duration</em> seconds</dd>
+<dt><strong>&gt; device=[sect]</strong></dt>
+<dd>computes the beamsize, taking into account the present receiver and backend
+configurations relative to section sect</dd>
+<dt><strong>&gt; flush=[N]</strong></dt>
+<dd>deletes the N-th element in the queue of temporised commands</dd>
+<dt><strong>&gt; flushAll</strong></dt>
+<dd>deletes all the queue of the temporised commands</dd>
+<dt><strong>&gt; focusScan=[span],[duration]</strong></dt>
+<dd>performs a focus scan over the tracked source, span is in mm along
+the z-axis, duration is expressed in hh:mm:ss.
+Example: &gt; focusScan=60,00:01:00</dd>
+<dt><strong>&gt; getAttenuations</strong></dt>
+<dd>reads the attenuation values (dB) currently configured for the active sections,
+and lists them according to increasing section number</dd>
+<dt><strong>&gt; getTpi</strong></dt>
+<dd>reads the signal intensity (raw counts) for the active sections,
+and lists them according to increasing section number</dd>
+<dt><strong>&gt; goOff=[frame],[offset]</strong></dt>
+<dd>slews the antenna to an offset position, in the indicated coordinate
+frame (‘eq’, ‘hor’ or ‘gal’). The user provides the offset value (degrees only),
+but the system automatically chooses on which axis to perform the slewing,
+taking into account the present position of the antenna</dd>
+<dt><strong>&gt; goTo=[double]d,[double]d</strong></dt>
+<dd><p class="first">sends the antenna, while in TRACKING mode, to the specified Az-El position
+Example: goTo=180d,45d
+The arguments are always rounded in the range 0-360 and 0-90 for azimuth and elevation
+respectively (in any case the ranges are limited to mechanical contraints).
+The jolly character is valid and is considered as: keep the present value.
+The differences from the <em>preset</em> command are:</p>
+<blockquote class="last">
+<div><ul class="simple">
+<li>once the antenna reaches the destination, the
+system will acknowledge the “on source” status;</li>
+<li>the pointing corrections (pointing model and refraction)
+are applied. In case they are not required they must be turned off explicitly.</li>
+</ul>
+</div></blockquote>
+</dd>
+<dt><strong>&gt; haltSchedule</strong></dt>
+<dd>completes the current scan and then stops the schedule</dd>
+<dt><strong>&gt; initialize=[code]</strong> (CCB, KKG, ..., XC00, XK77, …)</dt>
+<dd>configures the backend using the default parameters relative to
+the selected receiver. It does NOT act on the receiver, pointing model
+or antenna mount mode.</dd>
+<dt><strong>&gt; integration=[double]</strong></dt>
+<dd>sets the backend integration time (ms)</dd>
+<dt><strong>&gt; log=[filename]</strong></dt>
+<dd>defines a custom name for the logfile (do not specify the extension)</dd>
+<dt><strong>&gt; lonlatOffsets=[double]d,[double]d</strong></dt>
+<dd>sets the Galactic b-l offsets (degrees). They are intended “on sky”, i.e.
+it is the actual offset run on the sky at the source latitude.
+Example: &gt; lonlatOffsets=2.0d,-1.0d</dd>
+<dt><strong>&gt; moon</strong></dt>
+<dd>points the antenna to the present coordinates of the center of the Moon</dd>
+<dt><strong>&gt; preset=[double]d,[double]d</strong></dt>
+<dd>sends the antenna, if in PRESET mode, to the specified Az-El position,
+without applying any pointing correction. This is useful when needing to
+point to a position next to the zenith. Beware: the antenna will reach the
+destination but no “on source” flag will be raised.
+Example: &gt; preset=180d,45d</dd>
+<dt><strong>&gt; project=[code]</strong></dt>
+<dd>lets the system know which project is observing (the code/name must correspond
+to the one provided by the TAC). This code/name is then considered as default
+when launching schedules: the system will search for them in a folder named
+“project/schedules”. This code/name also forms part of the output FITS filename.
+Notice that the PROJECT keyword indicated inside the schedule, which is then written
+in the “Project Name” keyword in the FITS main header, is a free string and might
+differ from the project official name.</dd>
+<dt><strong>&gt; radecOffsets=[double]d,[double]d</strong></dt>
+<dd>sets the RA-Dec offsets (degrees). They are intended “on sky”, i.e.
+it is the actual offset run on the sky at the source Declination.
+Example: &gt; radecOffsets=1.0d,0.0d</dd>
+<dt><strong>&gt; receiversMode=[code]</strong></dt>
+<dd>configures the working mode of the receiver, according to its peculiar characteristics</dd>
+<dt><strong>&gt; receiversSetup=[code]</strong> (CCB, KKG, etc...)</dt>
+<dd>configures the receiver using the default parameters.
+It does NOT act on the backend, pointing model or antenna mount mode</dd>
+<dt><strong>&gt; servoPark</strong></dt>
+<dd>stows the minor servo system</dd>
+<dt><strong>&gt; servoSetup=[code]</strong> (CCB, KKG, etc...)</dt>
+<dd>configures the minor servo system only</dd>
+<dt><strong>&gt; setAttenuation=[sect],[att]</strong></dt>
+<dd>sets to att (dB) the attenuator of section sect</dd>
+<dt><strong>&gt; setLO=[freq]</strong></dt>
+<dd>Local Oscillator frequency, in MHz (one per IF, separated by “;”,
+usually the values are identical) This LO frequency corresponds to:
+SkyFreq(&#64;band start) – 100 MHz when using the TPB</dd>
+<dt><strong>&gt; setSection=[sect],[startFreq],[bw],[feed],[sampleRate],[bins]</strong></dt>
+<dd>configures the backend section sect.</dd>
+<dt><strong>&gt; setServoASConfiguration=ON</strong> (or OFF)</dt>
+<dd>chooses the subreflector pointing model according to the AS being enabled (ON) or disabled (OFF)</dd>
+<dt><strong>&gt; setServoElevationTracking=ON</strong></dt>
+<dd>sets the subreflector to tracking mode, with OFF tracking is disabled</dd>
+<dt><strong>&gt; setServoOffset=[axis_code],[value]</strong></dt>
+<dd>(see details in Antenna Operations)</dd>
+<dt><strong>&gt; setupCCB</strong> (setupLLP, setupKKG, etc…)</dt>
+<dd><p class="first">unstows the antenna, sets it to tracking mode, selects the pointing model,
+and configures the receiver and the backend using default parameters.
+In practice, it is a shortcut corresponding to this sequence:</p>
+<blockquote class="last">
+<div><ul class="simple">
+<li>antennaSetup=[code]</li>
+<li>receiversSetup=[receiverCode]</li>
+<li>initialize=[receiverCode]</li>
+<li>device=0</li>
+<li>calOff</li>
+</ul>
+</div></blockquote>
+</dd>
+<dt><strong>&gt; sidereal=[sourcename],[RA],[Dec],[epoch],[sector]</strong></dt>
+<dd>points to the supplied RA-Dec position and temporarily assigns the sourcename
+label to it. Epoch can be ‘1950’, ‘2000’ or ‘-1’, the last one meaning that the provided
+coordinates are precessed to the observing epoch. The sector keyword forces the cable wrap
+sector, if needed: its value can be ‘cw’, ‘ccw’ or ‘neutral’.
+The last option means the system will automatically choose the optimal alternative.
+Example:  &gt; sidereal=src12,319.256d,70.864d,2000,neutral</dd>
+<dt><strong>&gt; skydip=[El1]d,[El2]d,[duration]</strong></dt>
+<dd>performs an OTF acquisition at the current azimuth position, spanning in elevation from
+<em>El1</em> to <em>El2</em> (both expressed in degrees, with ‘d’ suffix), in <em>duration</em> seconds.
+A recorded must have previously been enabled in order to save the data.</dd>
+<dt><strong>&gt; startSchedule=[project/][schedulename].scd,[N]</strong></dt>
+<dd>runs schedule <em>schedulename</em>.scd (project is the ID of the observing project,
+it is optional if it has already been input through the <em>projectCode</em> command),
+reading it from line <em>N</em></dd>
+<dt><strong>&gt; stopSchedule</strong></dt>
+<dd>immediately stops the running schedule, truncating the acquisition</dd>
+<dt><strong>&gt; telescopePark</strong></dt>
+<dd>stows the antenna and parks both the AS and the MS</dd>
+<dt><strong>&gt; ti</strong></dt>
+<dd>lists all the active temporised commands</dd>
+<dt><strong>&gt; track=[sourcename]</strong></dt>
+<dd>points the antenna, in sidereal tracking, to the specified source,
+which must be present in the local catalogue</dd>
+<dt><strong>&gt; tsys</strong></dt>
+<dd>measures the system temperature (K) in the position the antenna is pointing to.
+It returns a list of values, one for each section in use. Intermediate steps
+and calculations are stored in the active logfile</dd>
+<dt><strong>&gt; wait=[double]</strong></dt>
+<dd>sets a delay (in seconds) which is applied before the system reads/executes the next command</dd>
+<dt><strong>&gt; wx</strong></dt>
+<dd>returns the current weather parameters: ground temperature (°C), relative humidity (%),
+atmospheric pressure (hPa), wind speed (km/h).</dd>
+</dl>
+</div></blockquote>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Appendix_C.html" class="btn btn-neutral float-right" title="Appendix C - Output files"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Appendix_A.html" class="btn btn-neutral" title="Appendix A - monitor panels full description"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, SRT software group.
+    </p>
+  </div>
+
+  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

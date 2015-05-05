@@ -1,0 +1,364 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Backend operations &mdash; Observing at the SRT with Nuraghe 1.0 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="Observing at the SRT with Nuraghe 1.0 documentation" href="index.html"/>
+        <link rel="next" title="Command-line measurements and acquisitions" href="Command-line.html"/>
+        <link rel="prev" title="Frontend operations" href="Frontend.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="index.html" class="fa fa-home"> Observing at the SRT with Nuraghe</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+        
+            <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Introduction.html">Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Introduction.html#what-nuraghe-is">What Nuraghe is</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Introduction.html#glossary-terms-and-abbreviations">Glossary: terms and abbreviations</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Checklist.html">Checklist for schedule-based observations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Startup.html">Nuraghe Startup</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Startup.html#login">Login</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Startup.html#what-to-do-in-obs1">What to do in OBS1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Startup.html#what-to-do-in-obs2">What to do in OBS2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Startup.html#input-terminal-and-system-monitors-obs1">Input terminal and system monitors (OBS1)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Setup.html">Initial Setup</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Setup.html#antenna-overall-setup">Antenna overall setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Setup.html#active-surface-setup">Active Surface setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Setup.html#minor-servo-configuration">Minor Servo configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Setup.html#logfile-and-project-code">Logfile and project code</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Antenna.html">Antenna operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Frontend.html">Frontend operations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Frontend.html#general-rules">General rules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Frontend.html#specific-notes-for-the-l-p-receiver">Specific notes for the L/P receiver</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Backend operations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#total-power-focus-selector">Total Power - focus selector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#xarcos">XARCOS</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Command-line.html">Command-line measurements and acquisitions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Command-line.html#raw-counts-readouts">Raw counts readouts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Command-line.html#tsys">Tsys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Command-line.html#weather-parameters">Weather parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Command-line.html#manual-acquisitions">Manual acquisitions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Command-line.html#caveat-on-offsets">Caveat on offsets</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Schedules.html">Generating and launching a schedule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Quicklook.html">Data formats and online quick-look</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Quicklook.html#if-writer-is-management-fitszilla">If writer is MANAGEMENT/FitsZilla</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Quicklook.html#if-writer-is-management-point-or-management-calibrationtool">If writer is MANAGEMENT/Point or MANAGEMENT/CalibrationTool</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="DataRetrieval.html">Retrieving the data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Appendix_A.html">Appendix A - monitor panels full description</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Appendix_A.html#operatorinput">operatorInput</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Appendix_A.html#antennaboss">AntennaBoss</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Appendix_A.html#observatory">Observatory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Appendix_A.html#mount">Mount</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Appendix_A.html#genericbackend">GenericBackend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Appendix_A.html#receiversboss">ReceiversBoss</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Appendix_A.html#scheduler">Scheduler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Appendix_A.html#minorservo">MinorServo</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Appendix_B.html">Appendix B - Complete command list</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Appendix_C.html">Appendix C - Output files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Appendix_D.html">Appendix D - Source catalogue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Troubleshooting.html">Troubleshooting &amp; temporary procedures</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Troubleshooting.html#setup">Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Troubleshooting.html#schedules">Schedules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Troubleshooting.html#end-of-session">End of session</a></li>
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">Observing at the SRT with Nuraghe</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Backend operations</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="_sources/Backend.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            
+  <div class="section" id="backend-operations">
+<h1>Backend operations<a class="headerlink" href="#backend-operations" title="Permalink to this headline">¶</a></h1>
+<p>The backend to be used can be manually selected as follows:</p>
+<div class="highlight-python"><div class="highlight"><pre>&gt; chooseBackend=BACKENDS/[bckname]
+</pre></div>
+</div>
+<p>where [bckname] is the name of the backend. At present, the only available choices are:</p>
+<blockquote>
+<div><ul class="simple">
+<li>TotalPower</li>
+<li>XBackends   (for the XARCOS spectrometer)</li>
+</ul>
+</div></blockquote>
+<div class="section" id="total-power-focus-selector">
+<h2>Total Power - focus selector<a class="headerlink" href="#total-power-focus-selector" title="Permalink to this headline">¶</a></h2>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">The TotalPower backend works as a <strong>“focus selector”</strong>, sending the signal from the wanted receiver to any other backend. For this reason, it <strong>must</strong> be set up even when acquisitions take place using another backend.  This is accomplished simply using the overall setup commands (such as setupCCB, etc…).</p>
+</div>
+<p>Bandwidth and sampling rate can be changed using:</p>
+<div class="highlight-python"><div class="highlight"><pre>&gt; setSection=[sect],[startFreq],[bw],[feed],[mode],[sampleRate],[bins]
+</pre></div>
+</div>
+<p>where:</p>
+<blockquote>
+<div><ul class="simple">
+<li><em>[sect]</em>              is an integer specifying the section number</li>
+<li><em>[startFreq]</em>         is the initial frequency for the section (not applicable for TPB)</li>
+<li><em>[bw]</em>                is a double for the bandwidth (MHz)</li>
+<li><em>[feed]</em>              is the number of the feed connected to the section (not applicable for TPB)</li>
+<li><em>[mode]</em>              is the polarisation mode (not applicable for TPB)</li>
+<li><em>[sampleRate]</em>        is also given in MHz</li>
+<li><em>[bins]</em>              is the number of frequency bins for the given section (not applicable for TPB)</li>
+</ul>
+</div></blockquote>
+<p>To leave a parameter at its previously set value, or equivalently skip it when it is not applicable, use an asterisk *.
+For the TPB, in particular, always use:</p>
+<div class="highlight-python"><div class="highlight"><pre>&gt; setSection=[sect],*,[bw],*,*,[sampleRate],*
+</pre></div>
+</div>
+<p>where [bw] can be chosen from a restricted range of options (MHz):</p>
+<blockquote>
+<div><ul class="simple">
+<li>300.0</li>
+<li>730.0</li>
+<li>1250.0</li>
+<li>2000.0</li>
+</ul>
+</div></blockquote>
+<p>These values do not correspond to the true observed bandwidth, for the reason discussed in Initial Setup.
+When accumulations of the data “dumps” are required before integrating them to the output file, it is possible to set the integration time as follows:</p>
+<div class="highlight-python"><div class="highlight"><pre>&gt; integration=[N]
+</pre></div>
+</div>
+<p>where [N] is given in milliseconds.</p>
+<p>Each section is provided with an attenuator, to manage the signal intensity. To set the desired attenuation:</p>
+<div class="highlight-python"><div class="highlight"><pre>&gt; setAttenuation=[sect],[att]
+</pre></div>
+</div>
+<p>where [sect] is the section number and [att] can vary, for the TPB, form 0 dB to 15 dB, with a 1 dB step.</p>
+<p>If a backend re-initialization is needed, use:</p>
+<div class="highlight-python"><div class="highlight"><pre>&gt; initialize=[code]   (CCB, KKG, or other code)
+</pre></div>
+</div>
+<p>This command resets the backend only, setting it to the default values foreseen for the specified focus/receiver.</p>
+<p>After the frontend/backend configuration is changed, it is necessary to update the value for the beamsize (HPBW), which is computed as a function of the actually observed band and is used – during the observations – to evaluate the pointing accuracy. This is accomplished using the command:</p>
+<div class="highlight-python"><div class="highlight"><pre>&gt; device=[sect]
+</pre></div>
+</div>
+<p>which uploads to the system the parameters relative to section number [sect] (you can generally use 0, which exists for all the receivers, unless you need to observe only with a different feed).</p>
+</div>
+<div class="section" id="xarcos">
+<h2>XARCOS<a class="headerlink" href="#xarcos" title="Permalink to this headline">¶</a></h2>
+<p>This spectrometer is fully integrated in Nuraghe, which means that Nuraghe can command the device, receive data from it and then write these data using a standard output (FITS format).</p>
+<p>In order to configure the spectrometer, select it with the chooseBackend command and use one of the following commands in operatorInput:</p>
+<blockquote>
+<div><dl class="docutils">
+<dt><strong>&gt; initialize=XK77</strong></dt>
+<dd>This is to use the full K-band MF; each digital sample has a 6-bit representation.
+Full-Stokes sections are recorded, each having a 62.5 MHz bandwidth and 2048(x4) channels.</dd>
+<dt><strong>&gt; initialize=XK01</strong></dt>
+<dd>It exploits the K-band feeds 0 and 1.
+Each feed produces two full-Stokes sections respectively having bandwidths of 62.5 MHz and 4 MHz and 2048(x4) channels.
+Each digital sample has an 8-bit representation.</dd>
+<dt><strong>&gt; initialize=XK04</strong></dt>
+<dd>It enables the K-band feeds 0 and 4.
+Each feed produces two full-Stokes sections respectively having bandwidths of 62.5 MHz and 4 MHz and 2048(x4) channels.
+Each digital sample has an 8-bit representation.</dd>
+<dt><strong>&gt; initialize=XK00</strong></dt>
+<dd>This configuration is for the usage of the K-band central feed.
+It produces four full-Stokes sections respectively with bandwidths of 62.5 MHz, 8 MHz, 2 MHz and 0.5 MHz, each having 2048(x4) channels.
+Each digital sample has an 8-bit representation.</dd>
+<dt><strong>&gt; initialize=XC00</strong></dt>
+<dd>This configuration is C-band usage.
+It produces four full-Stokes sections respectively with bandwidths of 62.5 MHz, 8 MHz, 2 MHz and 0.5 MHz, each having 2048(x4) channels.
+Each digital sample has an 8-bit representation.</dd>
+</dl>
+</div></blockquote>
+<p>Ideally, configuration details can be changed using the setSection command:</p>
+<div class="highlight-python"><div class="highlight"><pre>&gt; setSection=[sect],[startFreq],[bw],[feed],[mode],[sampleRate],[bins]
+</pre></div>
+</div>
+<p>where:</p>
+<blockquote>
+<div><ul class="simple">
+<li><em>[sect]</em>              is an integer specifying the section number</li>
+<li><em>[startFreq]</em>         is the initial frequency for the section</li>
+<li><em>[bw]</em>                is a double for the bandwidth</li>
+<li><em>[feed]</em>              is the number of the feed connected to the section</li>
+<li><em>[mode]</em>              is the polarisation mode</li>
+<li><em>[sampleRate]</em>        is also given in MHz</li>
+<li><em>[bins]</em>              is the number of frequency bins for the given section</li>
+</ul>
+</div></blockquote>
+<p>However, the present implementation allows the user to change only part of these parameters, in particular:</p>
+<blockquote>
+<div><ul class="simple">
+<li><em>[startFreq]</em> – initial frequency, it must be in the 125-250 MHz range. This value, added to the LO frequency, gives the lowest sky frequency observed by the section. Different sections can have different start frequencies (contrarily to what happens for the TPB);</li>
+<li><em>[bw]</em> – bandwidth must be chosen from the following values (all are expressed in MHz): 125.0, 62.5, 31.25, 15.625, 7.8125, 3.90625, 1.953125, 0.9765625, 0.48828125;</li>
+<li><em>[sampleRate]</em> – its value (MHz) must be twice the bandwidth.</li>
+</ul>
+</div></blockquote>
+<p>Users must not change the feed, mode and bins parameters, which are fixed as described in the configuration defaults.</p>
+<p>A valid example of setup and setSection usage, then, is:</p>
+<div class="highlight-python"><div class="highlight"><pre>&gt; chooseBackend=BACKENDS/XBackends
+&gt; initialize=XC00
+&gt; setSection=0,155.0,31.25,*,*,62.5,*
+</pre></div>
+</div>
+<p>where asterisks indicate which parameters are to be set according to default values.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">At present, integration time is equal to <strong>10 seconds</strong>. Shorter integrations will be available in the future. Data transfer requires about <strong>2 seconds</strong> for each integration, thus take this overhead into consideration when estimating how long your schedules are going to last.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Command-line.html" class="btn btn-neutral float-right" title="Command-line measurements and acquisitions"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Frontend.html" class="btn btn-neutral" title="Frontend operations"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, SRT software group.
+    </p>
+  </div>
+
+  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

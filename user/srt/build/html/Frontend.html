@@ -1,0 +1,338 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Frontend operations &mdash; Observing at the SRT with Nuraghe 1.0 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="Observing at the SRT with Nuraghe 1.0 documentation" href="index.html"/>
+        <link rel="next" title="Backend operations" href="Backend.html"/>
+        <link rel="prev" title="Antenna operations" href="Antenna.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="index.html" class="fa fa-home"> Observing at the SRT with Nuraghe</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+        
+            <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Introduction.html">Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Introduction.html#what-nuraghe-is">What Nuraghe is</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Introduction.html#glossary-terms-and-abbreviations">Glossary: terms and abbreviations</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Checklist.html">Checklist for schedule-based observations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Startup.html">Nuraghe Startup</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Startup.html#login">Login</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Startup.html#what-to-do-in-obs1">What to do in OBS1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Startup.html#what-to-do-in-obs2">What to do in OBS2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Startup.html#input-terminal-and-system-monitors-obs1">Input terminal and system monitors (OBS1)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Setup.html">Initial Setup</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Setup.html#antenna-overall-setup">Antenna overall setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Setup.html#active-surface-setup">Active Surface setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Setup.html#minor-servo-configuration">Minor Servo configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Setup.html#logfile-and-project-code">Logfile and project code</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Antenna.html">Antenna operations</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Frontend operations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#general-rules">General rules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#specific-notes-for-the-l-p-receiver">Specific notes for the L/P receiver</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Backend.html">Backend operations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Backend.html#total-power-focus-selector">Total Power - focus selector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Backend.html#xarcos">XARCOS</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Command-line.html">Command-line measurements and acquisitions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Command-line.html#raw-counts-readouts">Raw counts readouts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Command-line.html#tsys">Tsys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Command-line.html#weather-parameters">Weather parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Command-line.html#manual-acquisitions">Manual acquisitions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Command-line.html#caveat-on-offsets">Caveat on offsets</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Schedules.html">Generating and launching a schedule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Quicklook.html">Data formats and online quick-look</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Quicklook.html#if-writer-is-management-fitszilla">If writer is MANAGEMENT/FitsZilla</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Quicklook.html#if-writer-is-management-point-or-management-calibrationtool">If writer is MANAGEMENT/Point or MANAGEMENT/CalibrationTool</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="DataRetrieval.html">Retrieving the data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Appendix_A.html">Appendix A - monitor panels full description</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Appendix_A.html#operatorinput">operatorInput</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Appendix_A.html#antennaboss">AntennaBoss</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Appendix_A.html#observatory">Observatory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Appendix_A.html#mount">Mount</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Appendix_A.html#genericbackend">GenericBackend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Appendix_A.html#receiversboss">ReceiversBoss</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Appendix_A.html#scheduler">Scheduler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Appendix_A.html#minorservo">MinorServo</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Appendix_B.html">Appendix B - Complete command list</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Appendix_C.html">Appendix C - Output files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Appendix_D.html">Appendix D - Source catalogue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Troubleshooting.html">Troubleshooting &amp; temporary procedures</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Troubleshooting.html#setup">Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Troubleshooting.html#schedules">Schedules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Troubleshooting.html#end-of-session">End of session</a></li>
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">Observing at the SRT with Nuraghe</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Frontend operations</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="_sources/Frontend.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            
+  <div class="section" id="frontend-operations">
+<h1>Frontend operations<a class="headerlink" href="#frontend-operations" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="general-rules">
+<h2>General rules<a class="headerlink" href="#general-rules" title="Permalink to this headline">¶</a></h2>
+<p>To change the frontend Local Oscillator frequency, use the following command:</p>
+<div class="highlight-python"><div class="highlight"><pre>&gt; setLO=[freq1];[freq2];…;[freqN]
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>Notice the semicolon. Ideally, different values could be assigned to different IFs, thus tuning each section to a different sub-band. For the present hardware, though, this is not possible, so a single value must be specified:</dt>
+<dd>e.g.  &gt; setLO=5600</dd>
+</dl>
+<p>Remember that the actually observed band begins at a frequency which is usually different from the LO one (see Initial setup)</p>
+<p>The L-P band receiver is not provided with a tunable Local Oscillator, and the observed band is fixed. Filters are available in order to set the observed sub-band and select the polarisation (circular or linear), specifying a code with the command:</p>
+<div class="highlight-python"><div class="highlight"><pre>&gt; receiversMode=[code]  see the next section for the details.
+</pre></div>
+</div>
+<p>The temperature of the calibration mark in use is recorded in the logfile whenever a Tsys is measured. It is also stored in the FITS/MBFITS output files.
+The calibration mark can be manually switched on and off respectively with:</p>
+<div class="highlight-python"><div class="highlight"><pre>&gt; calOn
+&gt; calOff
+</pre></div>
+</div>
+<p>If the user wants to perform the setup for the frontend only (without affecting the mount, the minor servo or the backend), the command is:</p>
+<div class="highlight-python"><div class="highlight"><pre>&gt; receiversSetup=[code]   (PPP, LLP, PLP, CCB, KKG)
+</pre></div>
+</div>
+</div>
+<div class="section" id="specific-notes-for-the-l-p-receiver">
+<h2>Specific notes for the L/P receiver<a class="headerlink" href="#specific-notes-for-the-l-p-receiver" title="Permalink to this headline">¶</a></h2>
+<p>The L/P receiver is actually seen by Nuraghe as a group of three different receivers, each having its own setup code:</p>
+<blockquote>
+<div><ul class="simple">
+<li><strong>PPP</strong>       for the usage of the P band only</li>
+<li><strong>LLP</strong>       for the usage of the L band only</li>
+<li><strong>PLP</strong>       for the dual-feed usage</li>
+</ul>
+</div></blockquote>
+<p>These are the codes to be used in the <em>setupXXX</em> command.
+Then the configuration of the band filter and of the polarisation mode must be performed, by means of the <em>receiversMode</em> command. Here follows the list of options.</p>
+<div class="section" id="ppp">
+<h3>PPP<a class="headerlink" href="#ppp" title="Permalink to this headline">¶</a></h3>
+<p>Only the P band can be used. The possible configurations are:</p>
+<div class="highlight-python"><div class="highlight"><pre>&gt; receiversMode=C1XX
+&gt; receiversMode=C2XX
+&gt; receiversMode=C3XX   (default)
+&gt; receiversMode=L1XX
+&gt; receiversMode=L2XX
+&gt; receiversMode=L3XX
+</pre></div>
+</div>
+<p>The first two characters in the code identify the polarisation mode (C = Circular, L = linear) and the band filter index, where:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>all band, 305-410 MHz (no filter)</li>
+<li>310-350 MHz</li>
+<li>305-410 MHz (band-pass filter)</li>
+</ol>
+</div></blockquote>
+<p>The <strong>XX chars are placeholders</strong> for the L-band configuration, which is not allowed in PPP mode.</p>
+</div>
+<div class="section" id="llp">
+<h3>LLP<a class="headerlink" href="#llp" title="Permalink to this headline">¶</a></h3>
+<p>Only the L band can be used. The possible configurations are:</p>
+<div class="highlight-python"><div class="highlight"><pre>&gt; receiversMode=XXC1
+&gt; receiversMode=XXC2
+&gt; receiversMode=XXC3
+&gt; receiversMode=XXC4  (default)
+&gt; receiversMode=XXC5
+&gt; receiversMode=XXL1
+&gt; receiversMode=XXL2
+&gt; receiversMode=XXL3
+&gt; receiversMode=XXL4
+&gt; receiversMode=XXL5
+</pre></div>
+</div>
+<p>The last two characters in the code identify the polarisation mode (C = Circular, L = linear) and the band filter index, where:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>all band, 1300-1800 MHz (no filter)</li>
+<li>1320-1780 MHz</li>
+<li>1350-1450 MHz (VLBI)</li>
+<li>1300-1800 MHz (band-pass)</li>
+<li>1625-1715 MHz (VLBI)</li>
+</ol>
+</div></blockquote>
+<p>The <strong>XX chars are placeholders</strong> for the P-band configuration, which is not allowed in LLL mode.</p>
+</div>
+<div class="section" id="plp-dual-band">
+<h3>PLP (dual band)<a class="headerlink" href="#plp-dual-band" title="Permalink to this headline">¶</a></h3>
+<p>In this setup, both bands are used and can be configured, according to the following scheme, based on the permutation of all the previously described codes:</p>
+<div class="highlight-python"><div class="highlight"><pre>&gt; receiversMode=C1C1
+&gt; receiversMode=C2C1
+&gt; receiversMode=C3C1
+&gt; receiversMode=C1C2
+...
+&gt; receiversMode=C3C4  (default)
+&gt; receiversMode=C3C5
+...
+&gt; receiversMode=L1C1
+...
+&gt; receiversMode=C1L1
+...
+&gt; receiversMode=L1L1
+...
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Backend.html" class="btn btn-neutral float-right" title="Backend operations"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Antenna.html" class="btn btn-neutral" title="Antenna operations"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, SRT software group.
+    </p>
+  </div>
+
+  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

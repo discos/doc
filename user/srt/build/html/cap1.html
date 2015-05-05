@@ -1,0 +1,239 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Overview and Summary &mdash; NuragheManual 1.0 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="NuragheManual 1.0 documentation" href="index.html"/>
+        <link rel="prev" title="Welcome to NuragheManual’s documentation!" href="index.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="index.html" class="fa fa-home"> NuragheManual</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+        
+            <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="">Overview and Summary</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#what-nuraghe-is">What Nuraghe is</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#glossary-terms-and-abbreviations">Glossary: terms and abbreviations</a></li>
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">NuragheManual</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Overview and Summary</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="_sources/cap1.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            
+  <div class="section" id="overview-and-summary">
+<h1>Overview and Summary<a class="headerlink" href="#overview-and-summary" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="what-nuraghe-is">
+<h2>What Nuraghe is<a class="headerlink" href="#what-nuraghe-is" title="Permalink to this headline">¶</a></h2>
+<p>Nuraghe is the control software produced for the Sardinia Radio Telescope.
+It is a distributed system based on ACS (ALMA Common Software), commanding all the devices of the telescope and allowing the user to perform single-dish observations in the most common modes.
+As of today, the code actually implemented for the telescopes (i.e. excluding the huge ACS framework) amounts to about 548000 lines (467400 if not considering comments).
+Even VLBI (or guest-backend) observations partly rely on Nuraghe, as it must be used to perform the focus selection and the frontend setup.</p>
+<p>This guide is meant to help the observer in the use of Nuraghe, without dealing with the “behind-the-curtains” complex details of the system.
+This release focuses on <strong>single-dish continuum and spectroscopy observations</strong>, as the fully integrated backends available on-site are the analog total power one and the XARCOS spectrometer. Since both the hardware and software implementations are still going on at SRT, this manual will forcibly undergo continuous revisions.</p>
+<p>Here follows a simple schematization of the observing system, helpful to visualize all the main devices Nuraghe deals with and the most important operations it performs.
+<em>Notice: the features not yet available in this release are shown in brackets</em>.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/NuragheTasks.png"><img alt="Nuraghe overall tasks" src="_images/NuragheTasks.png" style="width: 911.0px; height: 670.0px;" /></a>
+</div>
+</div>
+<div class="section" id="glossary-terms-and-abbreviations">
+<h2>Glossary: terms and abbreviations<a class="headerlink" href="#glossary-terms-and-abbreviations" title="Permalink to this headline">¶</a></h2>
+<p>:&gt; this symbol precedes commands to be given in the operatorInput panel
+:$ this symbol precedes commands to be given in a system shell
+:AS active surface
+:Beam-parking: the antenna points to a fixed Azimuth-Elevation position
+:Bin: frequency channel
+:FWHM: Full-Width Half-Maximum
+:HPBW: Half-Power BeamWidth
+:MF: Multi-Feed
+:MS: Minor Servo system, which includes the subreflector and the PFP
+:Nodding (aka “beam switching”): it involves two or more feeds. The source is alternatively observed with each of the feeds, so that there is always one feed “on source”
+:OTF: On-The-Fly acquisition. The antenna moves according to user-defined parameters, scanning the sky at constant speed. Data acquisition is active during the scan
+:PFP: Primary Focus Positioner, the servo which allows to put the primary focus receivers in place
+:Position switching (aka “on-off”): the beam is alternatively pointed to the source (on) and to a properly defined offset position (off)
+:Preset: mount mode allowing only beam-parking observations, with no pointing model applied
+:ProgramTrack: mount mode allowing tracking, OTF/raster scans, beam-parking
+:Raster: acquisition is performed via discrete pointings (in tracking or beam-parking mode), planned to sample a certain path/area on the sky
+:Section: acquisition stream (aka “logical channel”). E.g.: the 7-feeds of the K-band receiver used with the continuum backend produce 7 feeds x 2 polarisations = 14 sections
+:SF: Single-Feed
+:Slewing: motion of the antenna when it is going to the target position. Slewing is always performed at maximum speed, with no data acquisition taking place
+:Temporised commands: user-input or schedule commands that are launched to a specific UT time by means of the “&#64;” symbol
+:Time-tagged commands: when commands are not temporised, the philosophy for their execution is asap (as soon as possible), but the system internally schedules them associating each operation to a properly computed time. This is particularly relevant for the positions commanded to the mount, so that the antenna motions take place along a fully controlled path (except in slewing)
+:TPB: Total Power Backend
+:Tracking: the antenna points to a target and, if it’s a celestial target, follows its sidereal motion</p>
+<div class="section" id="subsection">
+<h3>Subsection<a class="headerlink" href="#subsection" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="subsubsection">
+<h4>SubSubsection<a class="headerlink" href="#subsubsection" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="subsubsubsection">
+<h5>SubSubSubsection<a class="headerlink" href="#subsubsubsection" title="Permalink to this headline">¶</a></h5>
+<p>Il mio <strong>bold</strong>, il mio <em>italic</em>, i miei elenchi:</p>
+<ul class="simple">
+<li>Voce 1</li>
+<li>Voce 2</li>
+<li>Voce 3</li>
+</ul>
+<p>Inserire immagine (lasciare una riga):</p>
+<div class="figure align-center" id="id1">
+<a class="reference internal image-reference" href="_images/gainBWG_post.jpg"><img alt="C-band Gain curves" src="_images/gainBWG_post.jpg" style="width: 5125.6px; height: 3844.0px;" /></a>
+<p class="caption"><span class="caption-text">Figura 1: Curva di guadagno</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Questa è una nota</p>
+</div>
+<p>Questo è il mio codice:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">print</span><span class="p">(</span><span class="s">&quot;ciao&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>E questo è bash:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ ls
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="Welcome to NuragheManual’s documentation!"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Simona Righini.
+    </p>
+  </div>
+
+  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
