@@ -11,5 +11,5 @@ Contents:
 
    Medicina <medicina/index.rst>
    Noto <noto/index.rst>
-   Sardinia Radio Telescope (SRT) <srt/index.rst>
+   Sardinia Radio Telescope (SRT) <srt/source/index.rst>
 
