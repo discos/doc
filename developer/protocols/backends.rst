@@ -131,22 +131,63 @@ as per the table below:
 Request and Reply Messages
 ==========================
 
+For each command we give a brief description of how the command can be used and
+the description of the reply to the command. We then provide a simple example.
+
 .. _status:
 
 status
 ~~~~~~
 
-Get status ask the DBE to return a status
+Asks the status of the backend. The request message has no arguments.
+The Reply message has 3 arguments:
+
+  * **timestamp** the timestamp of the answer message according to the backend
+    clock
+  * **status code** can be one of *unconfigured* or *configured*
+  * **acquiring** is a boolean value indicating if the backend is performing an
+    acquisition, can be 0 for *false* or 1 for *true*
+
+Example communication::
+
+  request: "?status\n"
+    reply: "!status,ok,1430922782.97088300,configured,0\n"
 
 .. _version:
 
 version
 ~~~~~~~
 
+Asks the backend server what version of the protocol it is implementing. The
+Request message has no argument. The Reply message has 1 argument:
+
+  * **version id** a string representing the protocol version
+
+Example communication::
+
+  request: "?version\n"
+    reply: "!version,1.0.1\n"
+
 .. _configuration:
 
 configuration
 ~~~~~~~~~~~~~
+
+Asks the backend server what configuration is loaded at the moment.
+Request message has no argument. The Reply message has 1 argument:
+
+  * **configuration id** a string representing the loaded configuration
+
+If the backend has not yet been configured a special value of **unconfigured**
+is returned as reply argument.
+
+Example communication::
+
+  request: "?configuration\n"
+    reply: "!configuration,K2000\n"
+
+  request: "?configuration\n"
+    reply: "!configuration,unconfigured\n"
 
 .. _set-configuration:
 
