@@ -2,6 +2,9 @@
 
 .. _backend_protocols:
 
+.. danger::
+   This protocol is still a draft and is subject to potentially disruptive changes
+
 *****************
 Backend protocols
 *****************
@@ -15,6 +18,7 @@ for device communication ([KAT]_) as we found that work of really good quality.
 ==================== ===============
 **Protocol Version** 1.0
 **Last revision**    06/05/2015
+**Status**           DRAFT
 ==================== ===============
 
 Introduction
@@ -179,8 +183,8 @@ definition does **not** :
  * Permit biderectional requests
  * Permit to send the same message to multiple recipients
 
-Bibliography
-============
+References
+==========
 
 .. [EBNF] http://www.cl.cam.ac.uk/~mgk25/iso-14977.pdf
 .. [KAT] https://casper.berkeley.edu/wiki/images/1/11/NRF-KAT7-6.0-IFCE-002-Rev4.pdf
