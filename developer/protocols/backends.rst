@@ -6,8 +6,45 @@
 Backend protocols
 *****************
 
-Scrivo in italiano che facciamo prima, poi quando ci siamo accordati traduco e
-scrivo il documento finale.
+This section describes the protocol used by DISCOS to communicate with external
+backends. You can find reported the protocol definition, the grammar definition
+and a simple example implementation of the protocol server as a twisted
+protocol. This definition is liberally inspired by the one used by KAT telescope
+for device communication ([KAT]_) as we found that work of really good quality.
+
+==================== ===============
+**Protocol Version** 1.0
+**Last revision**    06/05/2015
+==================== ===============
+
+Introduction
+============
+
+*DISCOS BACKEND PROTOCOL* (from here called **BDP**) consits of newline separated
+text messages sent synchronously over a TCP/IP connection. Messages can be of
+two kinds: request and reply. Requests are sent from a client to a server,
+while replies are sent from the server in response to a client's request. Each
+request must receive one and only one reply message back. In this kind of
+topology the client will be tipically represented by a DISCOS component, while
+the server is represented by the backend controller. This version of the
+protocol does not impose any constraint to the number of clients connecting to a
+server but leaves to the clients the responsibility of orchestrating their
+requests in a consistent way. Implementations consisting of a single client will
+be the first and foremost ones.
+
+Here you can find a quick list of the requests defined by the protocol, which
+will be better described in next sections:
+
+================= =======================================
+Request           Description
+================= =======================================
+get-status        get the backend status code
+get-configuration get the backend actual configuration
+set-configuration set a new backend configuration
+get-time          get the backend time
+start             start the acquisition [at a given time]
+stop              stop the acquisition [at a given time]
+================= =======================================
 
 Introduzione
 ============
@@ -19,15 +56,7 @@ La comunicazione non prevede uno scambio di grandi quantità di informazioni. I 
 infatti abbiamo detto che verranno scritti direttamente dal SR2, il quale
 recupera le informazioni dell'antenna e il relativo timestamp da un 
 FITS appositamente scritto da DISCOS. Cio' significa che possiamo utilizzare
-un protocollo testuale.
-
-Detto ciò, l'idea è qualla di definire un protocollo generico, in modo
-da scrivere la libreria una volta, e utilizzarla anche per futuri backend
-o altri dispositivi che lo implementano. Ci occorre:
-
-1. impostare qualcosa (*set*)
-2. leggere qualcosa (*get*)
-
+un protocollo testuale line-based.
 
 Request-response socket
 =======================
@@ -81,17 +110,8 @@ La risposta potrebbe esser::
 Dove ``timestamp`` è il tempo di processamento della risposta da parte
 del sistema backend.
 
+Bibliography
+============
 
-HTTP
-====
-Oppure, visto che in questo modo stiamo praticamente reinventando la ruota,
-che dite se usiamo direttamente qualcosa di pronto, come HTTP?
-In questo caso abbiamo un sacco di opzioni e tutto pronto (anche lato 
-server, ci sarebbe solo da mappare le API REST agli script eseguiti dal SR2).
-
-Inoltre avremo multiclient, e potremmo scambiare anche informazioni complesse,
-di più alto livello, come ad esempio un content-type application/json.
-Lo svantaggio rispetto al primo caso è che è più pesante.
-
-
-
+.. [EBNF] http://www.cl.cam.ac.uk/~mgk25/iso-14977.pdf
+.. [KAT] https://casper.berkeley.edu/wiki/images/1/11/NRF-KAT7-6.0-IFCE-002-Rev4.pdf
