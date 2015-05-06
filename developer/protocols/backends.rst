@@ -35,16 +35,57 @@ be the first and foremost ones.
 Here you can find a quick list of the requests defined by the protocol, which
 will be better described in next sections:
 
-================= =======================================
-Request           Description
-================= =======================================
-get-status        get the backend status code
-get-configuration get the backend actual configuration
-set-configuration set a new backend configuration
-get-time          get the backend time
-start             start the acquisition [at a given time]
-stop              stop the acquisition [at a given time]
-================= =======================================
+======================== =======================================
+Request                  Description
+======================== =======================================
+:ref:`status`            get the backend status code
+:ref:`version`           get the server protocol version
+:ref:`configuration`     get the backend actual configuration
+:ref:`set-configuration` set a new backend configuration
+:ref:`time`              get the backend time
+:ref:`start`             start the acquisition [at a given time]
+:ref:`stop`              stop the acquisition [at a given time]
+======================== =======================================
+
+Messages
+========
+
+.. _status:
+
+status
+~~~~~~
+
+Get status ask the DBE to return a status
+
+.. _version:
+
+version
+~~~~~~~
+
+.. _configuration:
+
+configuration
+~~~~~~~~~~~~~
+
+.. _set-configuration:
+
+set-configuration
+~~~~~~~~~~~~~~~~~
+
+.. _time:
+
+time
+~~~~
+
+.. _start:
+
+start
+~~~~~
+
+.. _stop:
+
+stop
+~~~~
 
 Introduzione
 ============
