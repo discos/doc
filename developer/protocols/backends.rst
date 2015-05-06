@@ -87,6 +87,13 @@ start
 stop
 ~~~~
 
+
+Bibliography
+============
+
+.. [EBNF] http://www.cl.cam.ac.uk/~mgk25/iso-14977.pdf
+.. [KAT] https://casper.berkeley.edu/wiki/images/1/11/NRF-KAT7-6.0-IFCE-002-Rev4.pdf
+
 Introduzione
 ============
 Lo scopo è definire un protocollo per comunicare con il *sistema ROACH2*
@@ -150,9 +157,3 @@ La risposta potrebbe esser::
 
 Dove ``timestamp`` è il tempo di processamento della risposta da parte
 del sistema backend.
-
-Bibliography
-============
-
-.. [EBNF] http://www.cl.cam.ac.uk/~mgk25/iso-14977.pdf
-.. [KAT] https://casper.berkeley.edu/wiki/images/1/11/NRF-KAT7-6.0-IFCE-002-Rev4.pdf
