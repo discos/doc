@@ -19,7 +19,8 @@ class DISCOSStyle(Style):
     styles = {
         Discos.Prompt: 'bold #0033ff',
         Discos.Output: '#006600',
-        Discos.Error: '#8F0000',
+        Discos.Error: '#660000',
+        Discos.Text: '#006600',
     }
 
 
@@ -53,7 +54,8 @@ class DISCOSLexer(RegexLexer):
              Name.Builtin),
             (r'#.*\n', Comment),
             (r'\\[\w\W]', String.Escape),
-            (r'(\b\w+)(\s*)(=)', bygroups(Name.Variable, Text, Operator)),
+            (r'(\b\w+)(\s*)(=)', 
+             bygroups(Name.Variable, Text, Operator)),
             (r'[\[\]{}()=]', Operator),
             (r'<<<', Operator),  # here-string
             (r'<<-?\s*(\'?)\\?(\w+)[\w\W]+?\2', String),
@@ -72,7 +74,7 @@ class DISCOSLexer(RegexLexer):
             (r'\|', Punctuation),
             (r'\s+', Text),
             (r'\d+(?= |\Z)', Number),
-            (r'[^=\s\[\]{}()$"\'`\\<&|;]+', Text),
+            (r'[^=\s\[\]{}()$"\'`\\<&|;]+', Discos.Text),
             (r'<', Text),
         ],
         'string': [

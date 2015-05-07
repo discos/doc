@@ -4,7 +4,7 @@
 DewarPositioner
 ###############
 
-.. sectionauthor:: :ref:`mbuttu`, :ref:`aorlati`, :ref:`srighini`, :ref:`spoppi`
+.. sectionauthor:: :ref:`mbuttu`, :ref:`aorlati`, :ref:`spoppi`, :ref:`srighini` 
 
 
 .. topic:: Abstract

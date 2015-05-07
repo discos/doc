@@ -6,7 +6,11 @@
 Guida per l'astronomo
 *********************
 In questa sezione viene descritto come interagire con il ``DewarPositioner``
-tramite la console *operator input*.
+tramite la sua console di *operator input*. Per avviare tale console, si esegua
+il comando ``operatorIpunt`` specificando come target 
+``RECEIVERS/DewarPositioner``::
+
+    $ operatorInput RECEIVERS/DewarPositioner
 
 .. _oisetup:
 
@@ -19,19 +23,12 @@ che si intende utilizzare. Il setup viene eseguito con il comando
 
    > derotatorSetup=CODE
 
-I codici sono i medesimi che vengono utilizzati per effettuare il setup dell'antenna.
+I codici sono i medesimi che vengono utilizzati per effettuare il setup 
+dell'antenna.
 Ad esempio, se si vuole utilizzare il derotatore del ricevitore
-in banda K::
+in banda K di SRT::
 
     > derotatorSetup=KKG
-
-.. note:: Quando viene eseguito il *setup* del telescopio viene
-          automaticamente eseguito anche il *setup* del ``DewarPositioner``.
-          In altre parole, quando viene dato il comando ``setupKKG``,
-          questo esegue a sua volta anche ``derotatorSetup=KKG``.
-          
-.. note:: Anche il receiverSetup=KKG fa il derotatorSetup=KKG? Verificare sia questa
-          che la nota di sopra, perche' in realta' questo attualmente non avviene
 
 Al termine del *setup* il derotatore sarà pronto per essere utilizzato. Il
 comando ``derotatorGetActualSetup`` restituisce il setup attuale, mentre il
@@ -45,27 +42,24 @@ movimentato::
 
 Durante il *setup* al derotatore viene comandata la posizione ``0``, che è quella 
 scelta per l'allineamento iniziale. Ad esempio, per il il derotatore del ricevitore 
-in banda K la posizione iniziale è quella in cui i tre feed 1, 0, 4 sono 
-paralleli all'orizzonte, con il feed 1 a est.
+in banda K di SRT, la posizione iniziale è quella in cui i tre feed 3, 0, 6 sono 
+paralleli all'orizzonte, con il feed 3 a est.
 
 Possiamo verificare la posizione con il comando ``derotatorGetPosition``::
 
     > derotatorGetPosition
     0.0084d
 
+La ``d`` sta ad indicare che il valore numerico rappresenta un angolo 
+espresso in gradi decimali.
 
-La ``d`` sta ad indicare che il valore restituito rappresenta un angolo espresso in gradi 
-decimali (*degrees*).
+.. note:: Il valore restituito potrebbe essere diverso da zero, per qualche 
+   cifra decimale, come nell'esempio appena mostrato. Questo è normale, ed è 
+   dovuto al fatto che il movimento del motore avviene a step, per cui i 
+   valori di posizionamento sono discreti.
 
-.. note:: Il valore restituito potrebbe essere diverso da zero, per qualche cifra
-   decimale, come nell'esempio appena mostrato. Questo è normale, ed è dovuto al fatto
-   che il movimento del motore avviene a step, per cui i valori di posizionamento sono 
-   discreti.
-
-
-Il *setup* infine imposta i valori di default per la configurazione e la modalità di 
-riavvolgimento::
-
+Il *setup* infine imposta i valori di default per la configurazione e la 
+modalità di riavvolgimento::
 
     > derotatorGetConfiguration
     FIXED
@@ -80,10 +74,11 @@ Parleremo delle configurazioni e del riavvolgimento nelle prossime sezioni.
 Configurazione 
 ==============
 
-Il ``DewarPositioner`` ha cinque configurazioni:
+Il ``DewarPositioner`` ha sette configurazioni:
 :ref:`fixed <fixed>`,
-:ref:`best space coverage <bsc>`, :ref:`optimized <optimized>`,
-:ref:`aligned <aligned>` e :ref:`custom <custom>`.
+:ref:`best space coverage <bsc>`, :ref:`bsc optimized <bsc_opt>`,
+:ref:`custom <custom>`, :ref:`custom optimized <custom_opt>`, *aligned*
+e *aligned optimized*.
 Il comando ``derotatorSetConfiguration`` consente all'utente di impostare
 la configurazione desiderata, mentre il comando ``derotatorGetConfiguration``
 di leggerla::
@@ -95,15 +90,14 @@ di leggerla::
     > derotatorGetConfiguration
     CUSTOM
 
-Le configurazioni ``OPTIMIZED`` e ``ALIGNED`` non sono al momento disponibili::
+Le configurazioni *aligned* e *aligned_opt* non sono al momento 
+disponibili::
 
-    > derotatorSetConfiguration=OPTIMIZED
-    Error - configuration OPTIMIZED not available
     > derotatorSetConfiguration=ALIGNED
     Error - configuration ALIGNED not available
 
 Vediamo ora nel dettaglio le varie configurazioni, suddividendole in
-:ref:`statiche <statics>` e :ref:`dinamiche <dinamics>`.
+:ref:`statiche <statics>` e :ref:`dinamiche <dynamics>`.
 
 
 .. _statics:
@@ -149,50 +143,77 @@ non viene riportato in posizione di zero:
     > derotatorGetPosition
     10d
 
-.. _dinamics:
+.. _dynamics:
 
 Configurazioni dinamiche
 ------------------------
-Nelle configurazioni statiche la posizione del derotatore non viene
-aggiornata al variare della posizione dell'antenna.
-Nelle configurazioni *dinamiche* invece 
+Nelle configurazioni *dinamiche*, a differenza di quelle statiche,
 il ``DewarPositioner`` aggiorna la posizione del derotatore in funzione
 della posizione dell'antenna, al fine di compensare l'angolo parallatico
 (più un eventuale contributo del *galactic parallactic angle*, 
 a seconda dell'asse di scansione). 
 
-Nelle configurazioni dinamiche la posizione del derotatore è data
-dalla seguente equazione::
+Nelle configurazioni dinamiche la posizione del derotatore è data dalla 
+seguente equazione per le configurazioni non ottimizzate (``BSC`` e 
+``CUSTOM``):
 
-    P = Pis(AXIS) + Pip(AZ0,EL0) + Pdp(AZ,EL) 
+.. math::
 
-dove ``Pis`` è una *posizione statica*, mentre ...
-è la cosidetta *funzione di derotazione*, che serve
-per compensare l'angolo parallattico (o il contributo del
-*galactic parallactic angle*).
+    P(az, el) = P_{is} + P_{ip}(az_0, el_0) + P_{dp}(az, el) 
 
-.. note:: In alcune configurazioni (S-Band) il contributo Pip è nullo.
+dove ``az`` ed ``el`` sono rispettivamente l'azimuth e l'elevazione 
+dell'antenna, mentre il valore:
 
-Ciò che differenzia una configurazione
-dinamica dall'altra è la posizione iniziale, mentre la 
-funzione di derotazione non cambia, ed è data da:
+* :math:`P_{is}` è la *initial static position*, ovvero una posizione 
+  (letta dal Configuration Data Base, CDB) che non dipende dall'azimuth ed
+  elevazione dell'antenna ma solamente dall'asse di scansione
 
-    * ``D = 0`` quando ``AXIS`` è ``HOR_LON`` o ``HOR_LAT``
-    * ``D = P(AZ, EL)`` quando ``AXIS`` è ``TRACK``, ``EQ_LON``, ``EQ_LAT`` 
-      o ``GCIRCLE``
-    * ``D = G(AZ, EL)`` quando ``AXIS`` è ``GAL_LON`` o ``GAL_LAT``
+* :math:`P_{ip}` è la *initial parallactic position*, ovvero il valore
+  dell'angolo parallatico ad inizio scansione: questo dipende sia dall'asse 
+  di scansione (vale 0 per gli assi ``HOR_LON`` e ``HOR_LAT``) sia dal
+  dal puntamento (azimuth, elevazione e settore)
 
-.. note:: Dire che nel caso di D=0 (HOR_LON e HOR_LAT), il valore di Pip è zero
-          In generale, se D=N, con N fisso indipendentemente da AXIS, EL e AZ,
-          allora Pip=N
+* :math:`P_{dt}` è il delta di angolo parallatico rispetto a :math:`P_{ip}`
 
-dove ``P(AZ, EL)`` è la funzione di compensazione dell'angolo parallatico,
-mentre ``G(AZ, EL)`` è quella di compensazione del contributo dovuto al
-*galactic parallactic angle* (GPA).
+Nelle configurazioni ottimizzate (``BSC_OPT`` e ``CUSTOM_OPT``) 
+si ha :math:`P_{ip} = 0`. Queste configurazioni sono utili quando si
+utilizza un derotatore con un limitato range di escursione (ad esempio,
+quello del ricevitore S-Band di SRT).
 
-Quando viene impostata una configurazione, la posizione del derotatore non viene aggiornata,
-visto che non è ancora noto l'asse di scansione. L'aggiornamento viene comandato da DISCOS/ESCS
-nel momento in cui inizia lo scan.
+Oltre al fatto che sia ottimizzata o meno, ciò che differenzia una 
+configurazione dinamica dall'altra è il valore della posizione iniziale 
+:math:`P_{ip}`, perchè la funzione di compensazione dell'angolo parallatico
+non cambia, e vale 0 quando l'asse di scansione è ``HOR_LAT`` o ``HOR_LON``,
+è il risultato della funzione ``getParallacticAngle()`` quando 
+l'asse di scansione è ``TRACK``, ``EQ_LON``, ``EQ_LAT`` o ``GCIRCLE``:
+
+.. code-block:: python
+
+   def getParallacticAngle(latitude, az, el):
+       p = atan2(-sin(az), tan(latitude)*cos(el) - sin(el)*cos(az))
+       return degrees(p)
+
+mentre è dato dalla funzione ``getGalacticParallacticAngle()`` quando l'asse è
+``GAL_LON`` o ``GAL_LAT``:
+
+.. code-block:: python
+
+   def getGalacticParallacticAngle(latitude, az, el, ra, dec):
+       p = PosGenerator.getParallacticAngle(latitude, az, el) 
+       g = PosGenerator.getGalacticAngle(ra, dec)
+       return p + g 
+
+   def getGalacticAngle(ra, dec):
+       # North celestial pole coordinates - equatorial celestial frame (j2000)
+       # ncp = ('12 51 26.28', '27 07 41.7') 
+       ra0 = 3.3660332687500043
+       dec0 = 0.47347728280415174
+       g = atan2(sin(ra-ra0), cos(dec)*tan(dec0) - sin(dec)*cos(ra-ra0))
+       return degrees(g)
+
+Quando viene impostata una configurazione, la posizione del derotatore non 
+viene aggiornata, visto che non è ancora noto l'asse di scansione. 
+L'aggiornamento viene comandato nel momento in cui inizia lo scan.
 
 
 .. _bsc:
@@ -205,133 +226,99 @@ Il codice associatò a questa configurazione è ``BSC``::
     > derotatorGetConfiguration
     BSC
 
-Quando questa configurazione è attiva, il sistema prima posiziona il derotatore
-in una posizione iniziale che indicheremo con ``Pis`` (il pedice *i* sta per
-*initial*, mentre il secondo pedice indica il tipo di
-configurazione, e in questo caso significa *space*),
-dopodiché aggiunge a ``Pis`` il contributo alla *derotazione* (che indicheremo
-con ``D``) dovuto alla
-compensazione dell'angolo parallatico più eventuale contributo del
-*galactic parallactic angle*, a seconda
-dell'asse di scansione scelto. 
-La posizione del derotatore, che in questa configurazione indichiamo 
-con ``Ps``, è quindi data dalla seguente equazione:
+In questa configurazione il valore della posizione iniziale :math:`P_{ip}` 
+viene letto da un database di configurazione ed è tale da garantire che
+i feed vengano disposti in modo da avere la miglior copertura spaziale della 
+sorgente durante una scansione.
 
-.. code-block:: none
+.. note:: Tipicamente la miglior copertura viene ottenuta equispaziando, quando 
+   possibile, i beam nella direzione ortogonale a quella di scansione (se 
+   si sta facendo una scansione in azimuth i feed vengono equispaziati in 
+   elevazione, in modo da ottimizzare la scansione dell'area osservata).
 
-   Ps = Pis(AXIS) + D(AZ, EL, AXIS) # BSC (Best Space Coverage)
-
-.. note:: Per un dato derotatore, il valore della posizione iniziale ``Pi`` 
-          viene letto da una tabella di configurazione e
-          dipende dall'asse di scansione, per cui abbiamo utilizzato
-          la notazione ``Pi(AXIS)`` per indicare che ``Pi`` è funzione 
-          dell'asse. Allo stesso modo, la funzione di compensazione
-          dell'angolo (parallatico più eventuale contributo del GPA) dipende dai 
-          valori dell'azimuth, dell'elevazione e dell'asse di scansione,
-          per cui la abbiamo indicata con ``D(AZ, EL, AXIS)``.
-
-I feed vengono disposti in modo tale da 
-avere la miglior copertura spaziale della sorgente durante una scansione.
-Tipicamente la miglior copertura viene ottenuta
-equispaziando, quando possibile, i beam nella 
-direzione ortogonale a quella di scansione (se si sta facendo una scansione in 
-azimuth i feed vengono equispaziati in elevazione, in modo da ottimizzare la 
-scansione dell'area osservata).
-
-Quando è impostata la modalità ``BSC`` all'utente non è consentito il posizionamento
-del derotatore::
+Quando è impostata la modalità ``BSC`` all'utente non è consentito il 
+posizionamento del derotatore::
 
     > derotatorSetConfiguration=BSC
     > derotatorSetPosition=50d
     Error - setPosition() not allowed in BSC configuration
 
-In questa modalità il set di feed posizionati in modo da garantire la
-massima copertura spaziale sono stabilti a priori (ad esempio per il
-banda K sono i feed 1, 0 e 4), e questo significa che la configurazione
-``BSC`` non è ottimizzata per garantire la massima escursione del derotatore.
+In questa modalità l'insieme dei feed posizionati in modo da garantire la
+massima copertura spaziale sono stabiliti a priori (ad esempio per il
+banda K sono i feed 3, 0 e 6, con il 3 a est).
 
-.. _optimized:
+.. _bsc_opt:
 
-Configurazione *optimized*
-~~~~~~~~~~~~~~~~~~~~~~~~~~
-Questa configurazione è analoga alla :ref:`best space coverage <bsc>` ma a differenza di
-quest'ultima, all'inizio di ogni scan la posizione del derotatore
-viene calcolata oltre che per ottenere la massima copertura spaziale del
-multifeed lungo l'asse di scansione, anche per massimizzare
-la durata dello scan prima che si renda necessario riavvolgere, per cui
-la posizione iniziale va scelta in modo che il set di feed garantisca
-la massima copertura spaziale durante lo scan, e che sia tale da
-essere la più vicina possibile a uno dei fine corsa del derotatore (quello
-dal quale ci si allontana durante lo scan).
+Configurazione BSC *optimized*
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Questa configurazione è analoga alla :ref:`best space coverage <bsc>` ma a 
+differenza di quest'ultima, come abbiamo detto nella sezione :ref:`dynamics`,
+il valore dell'angolo parallatico iniziale :math:`P_{ip}` non viene preso in 
+considerazione. Questa configurazione è identificata dal codice ``BSC_OPT``::
 
-La configurazione *optimized* è identificata con il codice ``OPTIMIZED``::
-
-    > derotatorSetConfiguration=OPTIMIZED
+    > derotatorSetConfiguration=BSC_OPT
     > derotatorGetConfiguration
-    OPTIMIZED
+    BSC_OPT
 
-Quando è impostata la modalità ``OPTIMIZED`` all'utente non è consentito il posizionamento
+Analogamente alla ``BSC``, all'utente non è consentito il posizionamento
 del derotatore::
 
-    > derotatorSetConfiguration=OPTIMIZED
+    > derotatorSetConfiguration=BSC_OPT
     > derotatorSetPosition=50d
-    Error - setPosition() not allowed in OPTIMIZED configuration
+    Error - setPosition() not allowed in BSC_OPT configuration
 
 
-.. _aligned:
-
-Configurazione *aligned*
-~~~~~~~~~~~~~~~~~~~~~~~~
-In questa configurazione, il cui codice identificativo è ``ALIGNED``,
-viene scelto il set di feed che si vuole allineare con l'asse di scansione.
-In DISCOS/ESCS vi sarà una tabella che riporterà, per ogni derotatore,
-i possibili set. La posizione del derotatore è data da::
-
-   Pa = Pia(AXIS) + D(AZ, EL, AXIS) 
-
-.. attention:: Se il derotatore non compre un angolo di almento 360°, non
-   è detto che sia possibile allineare un certo set di feed con un dato
-   asse. In generale però se non è possibile allinearli con un asse, è 
-   probabile che li si possa allineare con quello ortogonale.
-
-Rispetto alle altre configurazioni dinamiche, nella configurazione *aligned*
-vi è un ulteriore comando da utilizzare, chiamato ``derotatorSetAlignment``,
-che prende come argomento una stringa identificativa dei feed che si 
-vuole allineare.
-Nella stringa i feed devono essere separati da un segno meno::
-
-    > derotatorSetConfiguration=ALIGNED
-    > derotatorSetAlignment=0-4
-
-In questo caso viene scelto il set a cui appartengono
-i feed 0 e 4 (ad esempio, nel caso del banda K verrebbe scelto il set ``{1, 0, 4}``).
-
-.. note:: Se non viene scelto un allineamento, allora viene utilizzato
-   un allineamento di default (nel caso del banda K è quello ``{1, 0, 4}``).
-
-Concludiamo dicendo che così come per la configurazione ``BSC`` e ``OPTIMIZED``, 
-anche la ``ALIGNED`` non consente l'utilizzo del comando ``derotatorSetPosition``.
+..
+    .. _aligned:
+    Configurazione *aligned*
+    ~~~~~~~~~~~~~~~~~~~~~~~~
+    In questa configurazione, il cui codice identificativo è ``ALIGNED``,
+    viene scelto il set di feed che si vuole allineare con l'asse di scansione.
+    In DISCOS/ESCS vi sarà una tabella che riporterà, per ogni derotatore,
+    i possibili set. La posizione del derotatore è data da::
+    
+       Pa = Pia(AXIS) + D(AZ, EL, AXIS) 
+    
+    .. attention:: Se il derotatore non compre un angolo di almento 360°, non
+       è detto che sia possibile allineare un certo set di feed con un dato
+       asse. In generale però se non è possibile allinearli con un asse, è 
+       probabile che li si possa allineare con quello ortogonale.
+    
+    Rispetto alle altre configurazioni dinamiche, nella configurazione *aligned*
+    vi è un ulteriore comando da utilizzare, chiamato ``derotatorSetAlignment``,
+    che prende come argomento una stringa identificativa dei feed che si 
+    vuole allineare.
+    Nella stringa i feed devono essere separati da un segno meno::
+    
+        > derotatorSetConfiguration=ALIGNED
+        > derotatorSetAlignment=0-4
+    
+    In questo caso viene scelto il set a cui appartengono
+    i feed 0 e 4 (ad esempio, nel caso del banda K verrebbe scelto il set 
+    ``{1, 0, 4}``).
+    
+    .. note:: Se non viene scelto un allineamento, allora viene utilizzato
+       un allineamento di default (nel caso del banda K è quello ``{1, 0, 4}``).
+    
+    Concludiamo dicendo che così come per la configurazione ``BSC`` e 
+    ``OPTIMIZED``, anche la ``ALIGNED`` non consente l'utilizzo del comando 
+    ``derotatorSetPosition``.
 
 .. _custom:
 
 Configurazione *custom*
 ~~~~~~~~~~~~~~~~~~~~~~~
-In questa configurazione la posizione iniziale può essere impostata 
-dall'utente, e per tale motivo a questa configurazione è stato assegnato
-il codice identificativo ``CUSTOM``. La posizione del derotatore è data da::
+In questa configurazione la posizione iniziale statica :math:`P_{is}`
+viene impostata dall'utente, e per tale motivo a questa configurazione è 
+stato assegnato il codice identificativo ``CUSTOM``.
 
-   Pc = Pic + D(AZ, EL, AXIS) 
+.. _custom_opt:
 
-Rispetto ai casi di configurazione dinamica appena visti, nella modalità
-*custom* è necessario specificare la posizione iniziale, altrimenti
-verrà utilizzata come ``Pic`` la posizione attuale. Ad esempio, se
-si vuole avere una posizione iniziale di 30°::
-
-    > derotatorSetConfiguration=CUSTOM
-    > derotatorSetPosition=30d
-
-Come al solito l'aggiornamento viene avviato da DISCOS/ESCS nel momento
-in cui viene comandata la scansione lundo un dato asse.
+Configurazione *custom* optimized
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Analogamente a quanto abbiamo visto per la configurazione ``BSC_OPT``, anche
+in questo caso ciò che differezia la ``CUSTOM_OPT`` dalla ``CUSTOM`` è la 
+mancanza del contributo dell'angolo parallattico iniziale :math:`P_{ip}`.
 
 
 Interrompere l'aggiornamento
@@ -340,4 +327,26 @@ Se si vuole interrompere l'aggiornamento della posizione, si deve
 impostare la configurazione :ref:`fixed <fixed>`. In questo caso il derotatore si 
 fermerà all'ultima posizione comandata.
 
+Riavvolgimento
+~~~~~~~~~~~~~~
+Il derotatore ha una corsa limitata, per cui la sua posizione ha un limite
+massimo e uno minimo. Ad esempio, il derotatore del ricevitore in banda K di 
+SRT ha un limite massimo di 125.23 gradi, e uno minimo di -85.77 gradi::
 
+    > derotatorSetup=KKG
+    > derotatorGetMaxLimit
+    125.2300d
+    > derotatorGetMinLimit
+    -85.7700d
+
+Quando il derotatore sta aggiornado la sua posizione per tener conto
+dell'angolo parallattico, è quindi possibile che si arrivi a fine corsa.
+In questo caso, per default il derotatore viene riavvolto in modo automatico,
+e l'effetto del riavvolgimento è che il feed più vicino al fine corsa viene
+rimpiazzato da un altro, in modo da garantire che il derotaotre abbia
+la massima corsa.
+
+Durante il riavvolgimento, la console dei ricevitori indicherà che il
+derotatore è in fase di riavvolgimento, e il campo *rewindingOffset* della
+medesima console riporterà l'offset della posizione al termine del
+riavvolgimento.
