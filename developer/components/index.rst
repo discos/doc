@@ -1,8 +1,8 @@
 .. _nuraghe-components:
  
-######################
-DISCOS components API
-######################
+#################
+DISCOS components
+#################
 
 .. topic:: Abstract
     

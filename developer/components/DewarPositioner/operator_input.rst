@@ -112,7 +112,7 @@ variare della posizione dell'antenna o dell'asse di scansione.
 
 Configurazione *fixed*
 ~~~~~~~~~~~~~~~~~~~~~~
-In questa configurazione, che è quella che viene impostata come default dal
+In questa configurazione, che è quella che viene impostata per default dal
 *setup*, la posizione del derotatore viene mantenuta
 fissa al variare della posizione dell'antenna, e questo è il motivo 
 per cui le è stato assegnato il codice identificativo ``FIXED``. 
@@ -154,15 +154,14 @@ della posizione dell'antenna, al fine di compensare l'angolo parallatico
 a seconda dell'asse di scansione). 
 
 Nelle configurazioni dinamiche la posizione del derotatore è data dalla 
-seguente equazione per le configurazioni non ottimizzate (``BSC`` e 
-``CUSTOM``):
+seguente equazione:
 
 .. math::
 
     P(az, el) = P_{is} + P_{ip}(az_0, el_0) + P_{dp}(az, el) 
 
 dove ``az`` ed ``el`` sono rispettivamente l'azimuth e l'elevazione 
-dell'antenna, mentre il valore:
+dell'antenna, mentre:
 
 * :math:`P_{is}` è la *initial static position*, ovvero una posizione 
   (letta dal Configuration Data Base, CDB) che non dipende dall'azimuth ed
@@ -204,7 +203,7 @@ mentre è dato dalla funzione ``getGalacticParallacticAngle()`` quando l'asse è
        return p + g 
 
    def getGalacticAngle(ra, dec):
-       # North celestial pole coordinates - equatorial celestial frame (j2000)
+       # North celestial pole coordinates - (j2000)
        # ncp = ('12 51 26.28', '27 07 41.7') 
        ra0 = 3.3660332687500043
        dec0 = 0.47347728280415174
@@ -213,7 +212,7 @@ mentre è dato dalla funzione ``getGalacticParallacticAngle()`` quando l'asse è
 
 Quando viene impostata una configurazione, la posizione del derotatore non 
 viene aggiornata, visto che non è ancora noto l'asse di scansione. 
-L'aggiornamento viene comandato nel momento in cui inizia lo scan.
+L'aggiornamento viene comandato nel momento in cui DISCOS avvia lo scan.
 
 
 .. _bsc:
@@ -229,14 +228,14 @@ Il codice associatò a questa configurazione è ``BSC``::
 In questa configurazione il valore della posizione iniziale :math:`P_{ip}` 
 viene letto da un database di configurazione ed è tale da garantire che
 i feed vengano disposti in modo da avere la miglior copertura spaziale della 
-sorgente durante una scansione.
+sorgente durante la scansione.
 
-.. note:: Tipicamente la miglior copertura viene ottenuta equispaziando, quando 
+.. note:: Tipicamente la miglior copertura viene ottenuta equispaziando, quando
    possibile, i beam nella direzione ortogonale a quella di scansione (se 
    si sta facendo una scansione in azimuth i feed vengono equispaziati in 
    elevazione, in modo da ottimizzare la scansione dell'area osservata).
 
-Quando è impostata la modalità ``BSC`` all'utente non è consentito il 
+Quando è impostata la modalità ``BSC``, all'utente non è consentito il 
 posizionamento del derotatore::
 
     > derotatorSetConfiguration=BSC
@@ -324,14 +323,15 @@ mancanza del contributo dell'angolo parallattico iniziale :math:`P_{ip}`.
 Interrompere l'aggiornamento
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Se si vuole interrompere l'aggiornamento della posizione, si deve 
-impostare la configurazione :ref:`fixed <fixed>`. In questo caso il derotatore si 
-fermerà all'ultima posizione comandata.
+impostare la configurazione :ref:`fixed <fixed>`. In questo caso il derotatore
+si fermerà all'ultima posizione comandata.
 
 Riavvolgimento
 ~~~~~~~~~~~~~~
 Il derotatore ha una corsa limitata, per cui la sua posizione ha un limite
-massimo e uno minimo. Ad esempio, il derotatore del ricevitore in banda K di 
-SRT ha un limite massimo di 125.23 gradi, e uno minimo di -85.77 gradi::
+massimo e uno minimo. Ad esempio, per il derotatore del ricevitore in banda K 
+di SRT la massima posizione raggiungibile è 125.23 gradi, mentre la  minima 
+è di -85.77 gradi::
 
     > derotatorSetup=KKG
     > derotatorGetMaxLimit
@@ -343,10 +343,10 @@ Quando il derotatore sta aggiornado la sua posizione per tener conto
 dell'angolo parallattico, è quindi possibile che si arrivi a fine corsa.
 In questo caso, per default il derotatore viene riavvolto in modo automatico,
 e l'effetto del riavvolgimento è che il feed più vicino al fine corsa viene
-rimpiazzato da un altro, in modo da garantire che il derotaotre abbia
-la massima corsa.
+rimpiazzato da un altro, in modo da garantire che il derotatore abbia (durante
+il proseguo dello scan) la massima corsa.
 
 Durante il riavvolgimento, la console dei ricevitori indicherà che il
 derotatore è in fase di riavvolgimento, e il campo *rewindingOffset* della
-medesima console riporterà l'offset della posizione al termine del
+medesima console riporterà l'offset che avrà la posizione al termine del
 riavvolgimento.
