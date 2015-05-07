@@ -24,7 +24,7 @@ for device communication ([KAT]_) as we found that work of really good quality.
 Introduction
 ============
 
-*DISCOS BACKEND PROTOCOL* consits of newline separated
+*DISCOS BACKEND PROTOCOL* consits of carriage-return  + newline separated
 text messages sent synchronously over a TCP/IP connection. Messages can be of
 two kinds: request and reply. Requests are sent from a client to a server,
 while replies are sent from the server in response to a client's request. Each
@@ -85,6 +85,13 @@ human-readable form:
 |fail       |Valid request that could not be processed. Second argument is a|
 |           |human-readable description of the error.                       |
 +-----------+---------------------------------------------------------------+
+
+Line Separation
+~~~~~~~~~~~~~~~
+
+Each message is terminated by the sequence **CR LF** as specified by the TELNET
+standad ([TELNET]_) . This will make the protocol easily usable also for debug
+purposes using simple telnet clients.
 
 Message Grammar
 ~~~~~~~~~~~~~~~
@@ -151,11 +158,11 @@ The Reply message has 3 arguments:
 
 Example communication::
 
-  request: "?status\n"
-    reply: "!status,ok,1430922782.97088300,ok,0\n"
+  request: "?status\r\n"
+    reply: "!status,ok,1430922782.97088300,ok,0\r\n"
 
-  request: "?status\n"
-    reply: "!status,ok,1430922782.97088300,clock error,0\n"
+  request: "?status\r\n"
+    reply: "!status,ok,1430922782.97088300,clock error,0\r\n"
 
 .. _version:
 
@@ -169,8 +176,8 @@ Request message has no argument. The Reply message has 1 argument:
 
 Example communication::
 
-  request: "?version\n"
-    reply: "!version,1.0.1\n"
+  request: "?version\r\n"
+    reply: "!version,1.0.1\r\n"
 
 .. _configuration:
 
@@ -187,11 +194,11 @@ is returned as reply argument.
 
 Example communication::
 
-  request: "?configuration\n"
-    reply: "!configuration,K2000\n"
+  request: "?configuration\r\n"
+    reply: "!configuration,K2000\r\n"
 
-  request: "?configuration\n"
-    reply: "!configuration,unconfigured\n"
+  request: "?configuration\r\n"
+    reply: "!configuration,unconfigured\r\n"
 
 .. _set-configuration:
 
@@ -206,11 +213,11 @@ message has one argument:
 
 Example communication::
 
-  request: "?set-configuration,K2000\n"
-    reply: "!set-configuration,ok\n"
+  request: "?set-configuration,K2000\r\n"
+    reply: "!set-configuration,ok\r\n"
 
-  request: "?set-configuration,nonexistent\n"
-    reply: "!set-configuration,fail,cannot find configuration 'nonexistent'\n"
+  request: "?set-configuration,nonexistent\r\n"
+    reply: "!set-configuration,fail,cannot find configuration 'nonexistent'\r\n"
 
 .. _time:
 
@@ -227,8 +234,8 @@ argument:
 
 Example communication::
 
-  request: "?time\n"
-    reply: "!time,ok,1430922782.97088300\n"
+  request: "?time\r\n"
+    reply: "!time,ok,1430922782.97088300\r\n"
 
 .. _start:
 
@@ -247,14 +254,14 @@ recent start command will overwrite the pending one.
 
 Example communication::
 
-  request: "?start\n"
-    reply: "!start,ok\n"
+  request: "?start\r\n"
+    reply: "!start,ok\r\n"
 
-  request: "?start,1430922782.97088300\n"
-    reply: "!start,ok\n"
+  request: "?start,1430922782.97088300\r\n"
+    reply: "!start,ok\r\n"
 
-  request: "?start,1430922782.97088300\n"
-    reply: "!start,fail,cannot start at given time\n"
+  request: "?start,1430922782.97088300\r\n"
+    reply: "!start,fail,cannot start at given time\r\n"
 
 .. _stop:
 
@@ -272,14 +279,14 @@ recent stop command will overwrite the pending one.
 
 Example communication::
 
-  request: "?stop\n"
-    reply: "!stop,ok\n"
+  request: "?stop\r\n"
+    reply: "!stop,ok\r\n"
 
-  request: "?stop,1430922782.97088300\n"
-    reply: "!stop,ok\n"
+  request: "?stop,1430922782.97088300\r\n"
+    reply: "!stop,ok\r\n"
 
-  request: "?stop,1430922782.97088300\n"
-    reply: "!stop,fail,cannot stop at given time\n"
+  request: "?stop,1430922782.97088300\r\n"
+    reply: "!stop,fail,cannot stop at given time\r\n"
 
 .. note::
    In general we note that the correct behaviour of 
@@ -303,20 +310,20 @@ Both responses permit a second argument to specify a description of the error.
 
 Example communication::
 
-  request: "?nonexistentcommand\n"
-    reply: "!nonexistentcommand,invalid,cannot find command\n"
+  request: "?nonexistentcommand\r\n"
+    reply: "!nonexistentcommand,invalid,cannot find command\r\n"
 
-  request: "?--asdf\n"
-    reply: "!--asdf,invalid,invalid characters in command name\n"
+  request: "?--asdf\r\n"
+    reply: "!--asdf,invalid,invalid characters in command name\r\n"
 
-  request: "ciao\n"
-    reply: "!ciao,invalid,requests must start with '?'\n"
+  request: "ciao\r\n"
+    reply: "!ciao,invalid,requests must start with '?'\r\n"
 
-  request: "?start,0\n"
-    reply: "!start,fail,invalid timestamp\n"
+  request: "?start,0\r\n"
+    reply: "!start,fail,invalid timestamp\r\n"
 
-  request: "?start,0\n"
-    reply: "!start,fail,invalid timestamp\n"
+  request: "?start,0\r\n"
+    reply: "!start,fail,invalid timestamp\r\n"
 
 Considerations
 ==============
@@ -332,10 +339,12 @@ definition does **not** :
  * Permit to send asynchronous messages
  * Permit biderectional requests
  * Permit to send the same message to multiple recipients
+ * Enable any security mechanism
 
 References
 ==========
 
 .. [EBNF] http://www.cl.cam.ac.uk/~mgk25/iso-14977.pdf
 .. [KAT] https://casper.berkeley.edu/wiki/images/1/11/NRF-KAT7-6.0-IFCE-002-Rev4.pdf
+.. [TELNET] http://www.freesoft.org/CIE/RFC/1123/31.htm
 
