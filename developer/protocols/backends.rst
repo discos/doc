@@ -144,14 +144,18 @@ The Reply message has 3 arguments:
 
   * **timestamp** the timestamp of the answer message according to the backend
     clock
-  * **status code** can be one of *unconfigured* or *configured*
+  * **status code** in normal working condition should be **ok**, any other
+    value should be used for representing any possible failure state
   * **acquiring** is a boolean value indicating if the backend is performing an
     acquisition, can be 0 for *false* or 1 for *true*
 
 Example communication::
 
   request: "?status\n"
-    reply: "!status,ok,1430922782.97088300,configured,0\n"
+    reply: "!status,ok,1430922782.97088300,ok,0\n"
+
+  request: "?status\n"
+    reply: "!status,ok,1430922782.97088300,clock error,0\n"
 
 .. _version:
 
@@ -194,20 +198,125 @@ Example communication::
 set-configuration
 ~~~~~~~~~~~~~~~~~
 
+Instruct the backend to configure itself according to the specified
+configuration code given as argument. Reply message has no argument. Request
+message has one argument: 
+
+  * **configuration id** a string identifying the configuration to be loaded
+
+Example communication::
+
+  request: "?set-configuration,K2000\n"
+    reply: "!set-configuration,ok\n"
+
+  request: "?set-configuration,nonexistent\n"
+    reply: "!set-configuration,fail,cannot find configuration 'nonexistent'\n"
+
 .. _time:
 
 time
 ~~~~
 
+Asks the backend to return its own timestamp, this command should be used to
+verify that the backend has an acceptable clock working before issuing time
+tagged acquisition commands. Request has no argument. The reply has one only
+argument:
+
+  * **timestamp** the timestamp of the answer message according to the backend
+    clock
+
+Example communication::
+
+  request: "?time\n"
+    reply: "!time,ok,1430922782.97088300\n"
+
 .. _start:
 
-start
-~~~~~
+start [timestamp]
+~~~~~~~~~~~~~~~~~
+
+Tell the backend to start the acquisition. The reply has no parameter. The reqeust has one optional
+parameter:
+
+  * **timestamp** the exact time at which the acquisition should start
+
+If given with a timestamp the backend should continue to accept commands while
+waiting for the start time. A stop command will cancel any further pending
+acquisition. If a new start command is issued while waiting for a start time, the most
+recent start command will overwrite the pending one. 
+
+Example communication::
+
+  request: "?start\n"
+    reply: "!start,ok\n"
+
+  request: "?start,1430922782.97088300\n"
+    reply: "!start,ok\n"
+
+  request: "?start,1430922782.97088300\n"
+    reply: "!start,fail,cannot start at given time\n"
 
 .. _stop:
 
-stop
-~~~~
+stop [timestamp]
+~~~~~~~~~~~~~~~~
+
+Tell the backend to stop the acquisition. The reply has no parameter. The reqeust has one optional
+parameter:
+
+  * **timestamp** the exact time at which the acquisition should stop
+
+If given with a timestamp the backend should continue to accept commands while
+waiting for the stop time. If a new stop command is issued while waiting for a stop time, the most
+recent stop command will overwrite the pending one. 
+
+Example communication::
+
+  request: "?stop\n"
+    reply: "!stop,ok\n"
+
+  request: "?stop,1430922782.97088300\n"
+    reply: "!stop,ok\n"
+
+  request: "?stop,1430922782.97088300\n"
+    reply: "!stop,fail,cannot stop at given time\n"
+
+.. note::
+   In general we note that the correct behaviour of 
+   time tagged commands is left as a responsibility to
+   the backend itself and not to the protocol. It will be duty of the
+   particoular implementation to keep track of pending start and stop timestamps
+   during the acquisition process. For example it is possible to have both a
+   start timestamp and a stop timestamp issued in the future, and these should
+   work as expected.
+
+Handling Errors
+===============
+
+As specified above, the protocol permits to distinguish between two kinds of
+errors, both of which are identified in the response messages:
+
+  * **protocol errors** are identified by the response argument **invalid** 
+  * **application errors** are identified by the response argument **fail**
+
+Both responses permit a second argument to specify a description of the error.
+
+Example communication::
+
+  request: "?nonexistentcommand\n"
+    reply: "!nonexistentcommand,invalid,cannot find command\n"
+
+  request: "?--asdf\n"
+    reply: "!--asdf,invalid,invalid characters in command name\n"
+
+  request: "ciao\n"
+    reply: "!ciao,invalid,requests must start with '?'\n"
+
+  request: "?start,0\n"
+    reply: "!start,fail,invalid timestamp\n"
+
+  request: "?start,0\n"
+    reply: "!start,fail,invalid timestamp\n"
 
 Considerations
 ==============
