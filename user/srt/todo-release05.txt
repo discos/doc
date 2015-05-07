@@ -11,3 +11,17 @@ http://www.med.ira.inaf.it/mantisbt/view.php?id=182
 [/ITEM]
 [/Review]
 [/Andrea]
+
+[Marco Buttu]
+    [Addition]
+        [ITEM]
+        Supporto per il derotatore:
+        http://discos.readthedocs.org/en/latest/developer/components/DewarPositioner/index.html
+        http://www.med.ira.inaf.it/mantisbt/view.php?id=153
+            [/NOTE]
+            Indicare come attivare il derotatore dalla console globale
+            dell'operatorInupt (parte relativa boss ricevitori)
+            [/NOTE}
+        [/ITEM]
+    [/Addition]
+[/Marco Buttu]
