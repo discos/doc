@@ -133,7 +133,7 @@ as per the table below:
   * **boolean** True as 1 and False as 0 i.e. 1, 0
   * **timestamp** XXXX.YYYYYYYY where XXXX is the number of seconds since epoch 
     and YYYYYYYY is the remaining fraction of seconds with centinanosecond 
-    precision i.e. 1430922782.97088300
+    precision. All times are intended to be **UT** i.e. 1430922782.97088300
 
 Request and Reply Messages
 ==========================
