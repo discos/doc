@@ -124,7 +124,7 @@ This monitor summarizes the frontend setup.   * **Current setup**: receiver co
 Scheduler
 =========
 
-.. figure:: images/SchedulerTui.jpg
+.. figure:: images/schedulerTui.jpg
    :scale: 100%
    :alt: Scheduler
    :align: left
