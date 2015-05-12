@@ -325,6 +325,18 @@ Example communication::
   request: "?start,0\r\n"
     reply: "!start,fail,invalid timestamp\r\n"
 
+Reference Implementation
+========================
+
+You can find a reference implementation of the protocol at
+https://github.com/discos/discos-backend . This package implements all the
+logics related to the protocol, including parsing and serialization
+of messages, transmission, checks for correctness and error management. 
+The package also defines a server implementation which enables a
+pluggable protocol to be used. The developer can just look at the
+tests (as described in the package docs) in order to define its own protocol
+implementation.
+
 Considerations
 ==============
 
