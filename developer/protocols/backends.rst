@@ -5,39 +5,39 @@
 .. danger::
    This protocol is still a draft and is subject to potentially disruptive changes
 
-*****************
-Backend protocols
-*****************
+****************
+Backend protocol
+****************
 
 This section describes the protocol used by DISCOS to communicate with external
-backends. You can find reported the protocol definition, the grammar definition
+backends. Here you can find the protocol definition, the grammar definition
 and a simple example implementation of the protocol server as a twisted
 protocol. This definition is liberally inspired by the one used by KAT telescope
 for device communication ([KAT]_) as we found that work of really good quality.
 
 ==================== ===============
 **Protocol Version** 1.0
-**Last revision**    06/05/2015
+**Last revision**    12/05/2015
 **Status**           DRAFT
 ==================== ===============
 
 Introduction
 ============
 
-*DISCOS BACKEND PROTOCOL* consits of carriage-return  + newline separated
+*DISCOS BACKEND PROTOCOL* consits of newline separated
 text messages sent synchronously over a TCP/IP connection. Messages can be of
 two kinds: request and reply. Requests are sent from a client to a server,
 while replies are sent from the server in response to a client's request. Each
-request must receive one and only one reply message back. In this kind of
+request must receive one and only one reply message back and in this kind of
 topology the client will be tipically represented by a DISCOS component, while
-the server is represented by the backend controller. This version of the
-protocol does not impose any constraint to the number of clients connecting to a
-server but leaves to the clients the responsibility of orchestrating their
-requests in a consistent way. Implementations consisting of a single client will
-be the first and foremost ones.
+the server is represented by the backend controller. 
+This version of the protocol does not impose any constraint to the number of 
+clients connecting to a server but leaves to the clients the responsibility of 
+orchestrating their requests in a consistent way. Implementations consisting 
+of a single client will be the first and foremost ones.
 
 Here you can find a quick list of the requests defined by the protocol, which
-will be better described in next sections:
+will be better described in the next sections:
 
 ======================== =======================================
 Request                  Description
@@ -55,23 +55,25 @@ Messaging Protocol
 ==================
 
 Communication consists of a number of messages, each message consisting of a
-line of text.  The protocol supports requests and replies messages.
-Requests are indicated by "?", replies by "!". Each request should be
-acknowledged by a reply. 
-Replies should not be sent except in response to a request.
+line of text.  The protocol supports requests and replies messages, identified
+by the first character of the message:
+requests are indicated by '**?**', replies by '**!**'. 
+Each message is made up of a **type code** followed by the message **name**, and
+optionally by one or many message **arguments**; name and arguments are
+separated one each other using the character '**,**' . 
+
 A reply is necessary for every request, however the nature of the reply may
-change depending on the request.
-The reply message should have the same name as the request message.
-The first parameter of a reply message should always be a return code. A return
-code of *ok* indicates successful
-processing of the request, while anything else indicates failure. 
-The recommended failure strings are
-*invalid* (for malformed requests) and
-*fail* (for valid requests which could not be processed) but backends may return
-other failure strings. On success, further parameters are specific to the type
-of request made while in the case of
-failure a second parameter should describe the failure in more detail and in
-human-readable form:
+change depending on the request:
+
+  * The reply message should have the same name as the request message.
+  * The first argument of a reply message should always be a return code. 
+  * A return code of **ok** indicates successful processing of the request, 
+    while anything else indicates failure. 
+  * The recommended failure strings are **invalid** (for malformed requests) 
+    and **fail** (for valid requests which could not be processed). 
+  * On success, further reply arguments are specific to the type of request.
+  * In the case of failure a second argument should describe the failure 
+    in more detail and in human-readable form.
 
 +-----------+---------------------------------------------------------------+
 |Return Code|Description                                                    |
@@ -89,7 +91,8 @@ human-readable form:
 Line Separation
 ~~~~~~~~~~~~~~~
 
-Each message is terminated by the sequence **CR LF** as specified by the TELNET
+Each message is terminated by the sequence **CR LF** (carriage-return + line
+feed) as specified by the TELNET
 standad ([TELNET]_) . This will make the protocol easily usable also for debug
 purposes using simple telnet clients.
 
