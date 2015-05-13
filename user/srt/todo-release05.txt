@@ -3,6 +3,12 @@
 [ITEM title="Scan di fuoco supportati anche da schedula"]
 Al posto della descizione aggiungo il link alla pagina del mantis dove ho riportato tutto: http://www.med.ira.inaf.it/mantisbt/view.php?id=168 
 [/ITEM]
+[ITEM title="introdotto summary.fits"]
+il file viene creato alla fine dello scan dal FitsZilla. Contiene tutte le
+keyword stabilite dal documento di riferimento. Alcune hanno valori
+significativi, molte sono ancora NULL. Ecco il link:
+http://www.med.ira.inaf.it/mantisbt/view.php?id=188 
+[/ITEM]
 [/Addition]
 [Rewiev]
 [ITEM title="il comando focusScan da operatorInput, cambiato col comando più generico peakerScan"]
