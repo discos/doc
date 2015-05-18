@@ -319,7 +319,7 @@ To close the monitor, type ``exit`` in its prompt (the grey line).
 Scheduler
 =========
 
-.. figure:: images/SchedulerTui.jpg
+.. figure:: images/schedulerTui.jpg
    :scale: 100%
    :alt: Scheduler
    :align: left
