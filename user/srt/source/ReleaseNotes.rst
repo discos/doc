@@ -5,8 +5,6 @@ Release notes
 Authors: 
 
 	* Righini, S. (INAF-IRA)
-	* Orlati, A. (INAF-IRA)
-	* Poppi, S. (INAF-OAC)
 	* and the SRT software group
 
 
