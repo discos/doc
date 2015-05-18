@@ -79,7 +79,7 @@ change depending on the request:
 |Return Code|Description                                                    |
 +===========+===============================================================+
 |ok         || Request successfully processed.                              |
-|           || Further arguments are request specific.                      |
+|           |  Further arguments are request specific.                      |
 +-----------+---------------------------------------------------------------+
 |invalid    || Request  malformed. Second argument is a human-readable      |
 |           || description of the error.                                    |
