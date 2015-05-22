@@ -131,6 +131,8 @@ where string can be:
 
 	* **MANAGEMENT/Point** (default) text output in the logfile, used for 
 	  pointing calibration	
+	* **MANAGEMENT/CalibrationTool** text output in .dat file, used for 
+	  pointing calibration  
 	* **MANAGEMENT/FitsZilla** if FITS output is desired
 	* (MANAGEMENT/MBFitsWriter) if MBFITS is preferred – not yet available
 
@@ -142,7 +144,6 @@ where string can be:
    system administrator in order to retrieve the data, will be corrected in 
    the next release of Nuraghe. 
 
- 
 Once the recorder is set, acquisitions on a target can be performed as follows. 
 First, set the target:: 
 
@@ -155,8 +156,45 @@ or::
 	
 (see Antenna operations for details)
 	                      
+Here follow the commands to be used to manually record your data (remember
+that the backend must have been properly set up and the target must have 
+been specified as explained above)::
 
+    > initRecording=[scn]
+    
+where [scn] in the scan number to be assigned to the acquisition.
+The ``initRecording`` command prepares the data recording. Then::
 
+    > startRecording=[sub_scn],[duration]
+     
+creates the output file and begins the data recording; [sub_scn] is the subscan
+number, [duration] is the acquisition duration, expressed as ``hh:mm:ss``.
+Once the acquisition is completed, the user can launch another subscan and 
+record the data with another ``startRecording`` command. 
+ 
+Finally, once the user wants to close the scan, the command to be used
+is:: 
+
+    > terminateScan
+
+Output files will be found in the usual auxiliary folder where all the manual 
+acquisitions are destined. 
+
+Example: acquisition of a sidereal scan on 3c123 composed by 2 subscans, each 
+lasting 40 s, preceded by an off-source Tsys measurement::
+
+    > chooseRecorder=MANAGEMENT/FitsZilla
+    > track=3c123
+    > goOff=HOR,3.0
+    > waitOnSource
+    > tsys
+    > azelOffsets=0.0d,0.0d 
+    > initRecording=1
+    > startRecording=1,00:00:40
+    > startRecording=2,00:00:40
+    > terminateScan
+    
+    
 
 Pointing scans
 -------------- 
@@ -171,7 +209,7 @@ where subscanFrame is the coordinate frame along which the scan is performed
 individual subscan (i.e. one line of the cross) expressed in degrees, duration i
 s the time length espressed in hh:mm:ss, 
 
-	e.g. ``> crossScan=hor,1.0d,00:00:30``
+	e.g. ``> crossScan=HOR,1.0d,00:00:30``
 
 corresponds to one cross-scan carried out in Horizontal coordinates (one line 
 along El, one line along Az), each line being 1\° in span. Each subscan lasts 
@@ -257,6 +295,9 @@ where span is the length run on the z-axis expressed in mm, duration is the
 time length expressed in ``hh:mm:ss``
 
 	e.g. ``> focusScan=60,00:01:00`` 
+	
+The ``focusScan`` command can be used inside schedules as well. See the 
+separate guide to schedules for details. 	
 
 
 Skydips
@@ -290,8 +331,6 @@ schedules for details.
    elevation is 88°**, since the skydip, being an OTF subscan, will be 
    additioned of an initial acceleration ramp – the length of which is 
    proportional to the scanning speed. 
-
-
 
 
 Caveat on offsets

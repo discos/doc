@@ -107,16 +107,16 @@ command and use one of the following commands in operatorInput:
    representation. Full-Stokes sections are recorded, each having a 62.5 
    MHz bandwidth and 2048(x4) channels 
 
-.. describe: > initialize=XK01 
+.. describe: > initialize=XK03 
 
-   It exploits the K-band feeds 0 and 1. 
+   It exploits the K-band feeds 0 and 3. 
    Each feed produces two full-Stokes sections respectively having bandwidths 
    of 62.5 MHz and 4 MHz and 2048(x4) channels. Each digital sample has an 
    8-bit representation.
 
-.. describe: > initialize=XK04
+.. describe: > initialize=XK06
  
-   It enables the K-band feeds 0 and 4. 
+   It enables the K-band feeds 0 and 6. 
    Each feed produces two full-Stokes sections respectively having 
    bandwidths of 62.5 MHz and 4 MHz and 2048(x4) channels. 
    Each digital sample has an 8-bit representation.
