@@ -20,6 +20,7 @@ Contents:
    Frontend.rst
    Backend.rst
    Command-line.rst
+   Derotator.rst
    Spectroscopy.rst
    Schedules.rst
    Quicklook.rst
