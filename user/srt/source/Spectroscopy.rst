@@ -103,6 +103,7 @@ The command lets the user select which device [dev] is asked to perform the
 tuning:
 
   * **LO**: only the front-end local oscillator is moved
+  
   * **ALL**: first of all the front-end local oscillator is tuned, then 
     the back-end - if it allows such a sub-tuning - also performs a further 
     frequency adjustment, in order to centre the line(s) in the various 

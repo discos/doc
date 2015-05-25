@@ -64,7 +64,7 @@ steering/pointing:
    position and temporarily assigns the sourcename label to it. Epoch can 
    be ``1950``, ``2000`` or ``-1``, the last one meaning that the provided 
    coordinates are precessed to the observing epoch. The sector keyword 
-   forces the cable wrap sector, if needed: its value can be ``cw``, ``ccw``
+   forces the cable wrap sector, if needed: its value can be ``CW``, ``CCW``
    or ``neutral``. The last option means the system will automatically choose
    the optimal alternative
    
@@ -86,14 +86,15 @@ steering/pointing:
 Back to the commands:
 
 
-.. describe:: > goOff=[frame],[offset]d   
+.. describe:: > goOff=[frame],[beams]  
    
-   it slews the antenna to an offset position, in the indicated coordinate 
-   frame (``eq``, ``hor`` or ``gal``). The user provides the offset value 
-   (degrees only), but the system automatically chooses on which axis to 
-   perform the slewing, taking into account the present position of the antenna
+   it slews the antenna to an offset position, wrt a previously commanded 
+   target, along the longitude axis of the indicated coordinate frame (``EQ``, 
+   ``HOR`` or ``GAL``). The user provides the offset value expressed in 
+   beamsizes. If the frame is HOR and target lies beyond the Elevation cutoff 
+   limits, the offset is applied in Elevation. 
    
-   e.g.   ``> goOff=eq,1.0d``
+   e.g. ``> goOff=HOR,5``
    
 
 .. describe:: > azelOffsets=[azoff]d,[eloff]d

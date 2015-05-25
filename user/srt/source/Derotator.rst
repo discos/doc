@@ -26,18 +26,16 @@ central feed.
 The static x-y offsets corresponding to this rest position, also 
 provided in the output FITS files (see dedicated documentation), are:
 
-====  ========  ========  
-Feed  x-offset  y-offset 
-----  --------  --------  
-      [arcsec]  [arcsec]
-====  ========  ========
-1       68.800  -119.165
-2      -68.800  -119.165
-3     -137.600     0.000
-4      -68.800   119.165
-5       68.800   119.165
-6      137.600     0.000
-====  ========  ========  
+==== ================= =================  
+Feed x-offset (arcsec) y-offset (arcsec)
+==== ================= =================
+1    |     68.800          -119.165
+2    |    -68.800          -119.165
+3    |   -137.600             0.000
+4    |    -68.800           119.165
+5    |     68.800           119.165
+6    |    137.600             0.000
+==== ================= =================  
 
 In order to be transformed in Az-El offsets, a cos(El) factor must be taken 
 into account for the Azimuth (x) offsets.  

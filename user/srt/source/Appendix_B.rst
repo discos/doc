@@ -86,8 +86,22 @@ Here follow all the commands exploitable in Nuraghe:
 .. describe:: > crossScan=[scanFrame],[span],[duration] 
 
    performs a cross-scan on the previously selected target (indicated using the
-   ``track`` or ``sidereal`` commands), along the *scanFrame* (``eq``, ``hor`` 
-   or ``gal``), spanning *span* degrees in *duration* seconds 
+   ``track`` or ``sidereal`` commands), along the *scanFrame* (``EQ``, ``HOR`` 
+   or ``GAL``), spanning *span* degrees in *duration* seconds 
+
+.. describe:: > derotatorGetPosition
+
+   reads out the present dewar position angle (degrees)
+   
+.. describe:: > derotatorSetConfiguration=[conf] 
+
+   [conf] can have one of the following values: ``FIXED``, ``BSC``, ``CUSTOM``
+   
+.. describe:: > derotatorSetPosition=[ang]d   
+
+    sets the dewar angle (degrees). Positive angles = CW. According to the 
+    derotator configuration in use, the command has different meanings. It is
+    illegal for the ``BSC`` configuration  
 
 .. describe:: > device=[sect]
    
@@ -105,10 +119,24 @@ Here follow all the commands exploitable in Nuraghe:
 .. describe:: > focusScan=[span],[duration]
   
    performs a focus scan over the tracked source, span is in mm along the 
-   z-axis, duration is expressed in ``hh:mm:ss``. 
+   z-axis, duration is expressed in ``hh:mm:ss``
    
-   Example: ``> focusScan=60,00:01:00``
+   Example: ``> focusScan=60,00:01:00`` 
 
+.. describe:: > fTrack=[dev]
+
+   It collects all the required data from the antenna, the back-end and the 
+   front-end, plus the information provided by the user (see the 
+   ``radialVelocity`` and ``restFrequency`` commands), then it tunes the 
+   telescope devices in order to centre the line(s) in each section bandwidth. 
+   The command lets the user select which device [dev] is asked to perform the 
+   tuning:
+
+   * **LO**: only the front-end local oscillator is moved
+ 
+   * **ALL**: the back-end performa a sub-tuning in the various sections 
+
+ 
 .. describe:: > getAttenuations
  
    reads the attenuation values (dB) currently configured for the active 
@@ -119,12 +147,13 @@ Here follow all the commands exploitable in Nuraghe:
    reads the signal intensity (raw counts) for the active sections, and lists 
    them according to increasing section number
 
-.. describe:: > goOff=[frame],[offset] 
+.. describe:: > goOff=[frame],[beams] 
 		
-   slews the antenna to an offset position, in the indicated coordinate 
-   frame (``eq``, ``hor`` or ``gal``). The user provides the offset value 
-   (degrees only), but the system automatically chooses on which axis to 
-   perform the slewing, taking into account the present position of the antenna
+   slews the antenna to an offset position, wrt a previously commanded target,
+   along the longitude axis of the indicated coordinate frame (``EQ``, ``HOR`` 
+   or ``GAL``). The user provides the offset value expressed in beamsizes. 
+   If the frame is HOR and target lies beyond the Elevation cutoff limits, the 
+   offset is applied in Elevation. 
 
 .. describe:: > goTo=[double]d,[double]d
 
@@ -201,6 +230,29 @@ Here follow all the commands exploitable in Nuraghe:
    
    Example: ``> radecOffsets=1.0d,0.0d``
 
+.. describe:: > radialVelocity=[vrad],[vref],[vdef]
+
+    * [vrad] (radial velocity) is in km/sec if vdef is *not* Z
+    
+    * [vref] (reference frame) can be one of the following:
+    
+       * **BARY**: Solar System BARYCENTRE
+       * **LSRK**: Kinematic Local Standard of Rest
+       * **LSRD**: Dynamical Local Standard of Rest
+       * **LGRP**: Local Group
+       * **GALCEN**: Galactic Centre
+       * **TOPOCEN**: TOPOCENTRIC (observer's frame)
+       
+    * [vdef] (velocity definition) can either be:
+    
+        * **RD**: Radio Definition
+        * **OP**: Optical Definition
+        * **Z**: stands for Redshift
+ 
+    The specified velocity parameters are valid until a new target is 
+    commanded. The ``radialVelocity`` command overrides any other velocity 
+    value that might have been differently expressed 
+
 .. describe:: > receiversMode=[code]
 		
    configures the working mode of the receiver, according to its peculiar 
@@ -211,7 +263,18 @@ Here follow all the commands exploitable in Nuraghe:
    (``code`` can be ``CCB``, ``KKG``, …)		
    configures the receiver using the default parameters. 
    It does *not* act on the backend, pointing model or antenna mount mode
-
+   
+   
+.. describe:: > restFrequency=[freq1];...;[freqN]
+     
+   [freq] is given in MHz and is a multiple argument: it can list a 
+   different value for each of the N sections - as long as XARCOS is the 
+   backend in use(not all the backends allow this sub-tuning). 
+   Specifying a single value assigns the rest frequency to *all* the sections. 
+   The specified values will hold until different ones are commanded, or 
+   until a new general *setup* command is entered. 
+   
+   
 .. describe:: > servoPark 
 
    stows the minor servo system
@@ -252,13 +315,13 @@ Here follow all the commands exploitable in Nuraghe:
 
    unstows the antenna, sets it to tracking mode, selects the pointing model, 
    and configures the receiver and the backend using default parameters. 
-   In practice, it is a shortcut corresponding to this sequence: 
+   In practice, it is a shortcut corresponding to this sequence:: 
 
-			* ``antennaSetup=[code]``
-			* ``receiversSetup=[receiverCode]`` 
-			* ``initialize=[receiverCode]`` 
-			* ``device=0`` 
-			* ``calOff`` 
+			> antennaSetup=[code]
+			> receiversSetup=[receiverCode]
+			> initialize=[receiverCode] 
+			> device=0 
+			> calOff 
 
 .. describe:: > sidereal=[sourcename],[RA],[Dec],[epoch],[sector]
  
@@ -267,7 +330,7 @@ Here follow all the commands exploitable in Nuraghe:
    one meaning that the provided coordinates are precessed to the observing 
    epoch. 
    The sector keyword forces the cable wrap sector, if needed: its value can be
-   ``cw``, ``ccw`` or ``neutral``. 
+   ``CW``, ``CCW`` or ``NEUTRAL``. 
    The last option means the system will automatically choose the optimal 
    alternative.
    

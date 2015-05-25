@@ -185,7 +185,7 @@ lasting 40 s, preceded by an off-source Tsys measurement::
 
     > chooseRecorder=MANAGEMENT/FitsZilla
     > track=3c123
-    > goOff=HOR,3.0
+    > goOff=HOR,5
     > waitOnSource
     > tsys
     > azelOffsets=0.0d,0.0d 
