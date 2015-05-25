@@ -52,38 +52,38 @@ Glossary: terms and abbreviations
 :HPBW: Half-Power BeamWidth
 :MF: Multi-Feed
 :MS: Minor Servo system, which includes the subreflector and the PFP
-:Nodding (aka “beam switching”): it involves two or more feeds. The source is
-alternatively observed with each of the feeds, so that there is always one feed
-“on source”
+:Nodding (aka “beam switching”): it involves two or more feeds. The source is 
+ alternatively observed with each of the feeds, so that there is always one 
+ feed “on source”
 :OTF: On-The-Fly acquisition. The antenna moves according to user-defined
-parameters, scanning the sky at constant speed. Data acquisition is active
-during the scan
+ parameters, scanning the sky at constant speed. Data acquisition is active
+ during the scan
 :PFP: Primary Focus Positioner, the servo which allows to put the primary focus
-receivers in place 
+ receivers in place 
 :Position switching (aka “on-off”): the beam is alternatively pointed to the
-source (on) and to a properly defined offset position (off)
+ source (on) and to a properly defined offset position (off)
 :Preset: mount mode allowing only beam-parking observations, with no pointing
-model applied
+ model applied
 :ProgramTrack: mount mode allowing tracking, OTF/raster scans, beam-parking 
 :Raster: acquisition is performed via discrete pointings (in tracking or
-beam-parking mode), planned to sample a certain path/area on the sky 
+ beam-parking mode), planned to sample a certain path/area on the sky 
 :Section: acquisition stream (aka “logical channel”). E.g.: the 7-feeds of the
-K-band receiver used with the continuum backend produce 7 feeds x 2
-polarisations = 14 sections  
+ K-band receiver used with the continuum backend produce 7 feeds x 2
+ polarisations = 14 sections  
 :SF: Single-Feed
 :Slewing: motion of the antenna when it is going to the target position.
-Slewing is always performed at maximum speed, with no data acquisition taking
-place
+ Slewing is always performed at maximum speed, with no data acquisition taking
+ place
 :Temporised commands: user-input or schedule commands that are launched to a
-specific UT time by means of the “@” symbol
+ specific UT time by means of the “@” symbol
 :Time-tagged commands: when commands are not temporised, the philosophy for
-their execution is asap (as soon as possible), but the system internally
-schedules them associating each operation to a properly computed time. This is
-particularly relevant for the positions commanded to the mount, so that the
-antenna motions take place along a fully controlled path (except in slewing)
+ their execution is asap (as soon as possible), but the system internally
+ schedules them associating each operation to a properly computed time. This is
+ particularly relevant for the positions commanded to the mount, so that the
+ antenna motions take place along a fully controlled path (except in slewing)
 :TPB: Total Power Backend
 :Tracking: the antenna points to a target and, if it’s a celestial target,
-follows its sidereal motion
+ follows its sidereal motion
 
 
 

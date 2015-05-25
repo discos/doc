@@ -396,7 +396,7 @@ To close the monitor, type ``exit`` in its prompt (the grey line).
 .. note:: All the monitors can be closed at a time using the command (in a 
    terminal on OBS1)::
 
-	``$ nuragheConsole --stop``
+	$ nuragheConsole --stop
 
  
 

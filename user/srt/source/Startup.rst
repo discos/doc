@@ -134,7 +134,7 @@ Online help is available::
        * span: the length run on the z-axis expressed in mm,
        * duration: the time length espressed in hh:mm:ss,
 
-       e.g. ``> focusScan=60,00:01:00``
+       e.g. > focusScan=60,00:01:00
 
 TAB-completion is active for the online help as well::
 
