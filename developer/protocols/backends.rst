@@ -17,7 +17,7 @@ for device communication ([KAT]_) as we found that work of really good quality.
 
 ==================== ===============
 **Protocol Version** 1.0
-**Last revision**    12/05/2015
+**Last revision**    25/05/2015
 **Status**           DRAFT
 ==================== ===============
 
@@ -324,12 +324,12 @@ operation.
 cal-on [interleave=0]
 ~~~~~~~~~~~~~~~~~~~~~
 
-Activate the noise diode for calibration purposes. The commands takes in input
-one mandatory parameter:
+Activate the noise diode for calibration purposes using a cal switching
+acquisition mode. The command takes in input one mandatory parameter:
 
   * **interleave** the number of backend samples to be acquired with the mark
     on and off alternatively. If **0** is given (default) as parameter the mark
-    is always off
+    is always off, this can be used to turn the fast mark off.
 
 Handling Errors
 ===============
