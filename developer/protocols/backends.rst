@@ -318,6 +318,19 @@ The server should respond **ok** if the operation succeds, and **fail** if the s
 could not perform the operation or the backend does not support this kind of
 operation.
 
+Example communication::
+
+  request: "?set-section,1,50.0,200.0,1,CP,10,2048\r\n"
+    reply: "!set-section,ok\r\n"
+
+  request: "?set-section,1,*,*,*,*,*,*\r\n"
+    reply: "!set-section,ok\r\n"
+
+  request: "?set-section,1,*\r\n"
+    reply: "!set-section,fail,set-section needs 7 arguments\r\n"
+
+  request: "?set-section,1,badparam,200.0,1,CP,10,2048\r\n"
+    reply: "!set-section,fail,wrong parameter format\r\n"
 
 .. _backend-protocol-cal-on:
 
@@ -330,6 +343,18 @@ acquisition mode. The command takes in input one mandatory parameter:
   * **interleave** the number of backend samples to be acquired with the mark
     on and off alternatively. If **0** is given (default) as parameter the mark
     is always off, this can be used to turn the fast mark off.
+
+Example communication::
+
+  request: "?cal-on\r\n"
+    reply: "!cal-on,ok\r\n"
+
+  request: "?cal-on,10\r\n"
+    reply: "!cal-on,ok\r\n"
+
+  request: "?cal-on,-10\r\n"
+    reply: "!cal-on,fail,interleave samples must be a positive int\r\n"
+
 
 Handling Errors
 ===============
