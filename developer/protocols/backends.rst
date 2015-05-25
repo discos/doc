@@ -50,8 +50,7 @@ Request                                   Description
 :ref:`backend-protocol-start`             start the acquisition [at a given time]
 :ref:`backend-protocol-stop`              stop the acquisition [at a given time]
 :ref:`backend-protocol-set-section`       configure a section of the backend
-:ref:`backend-protocol-cal-on`            activate the calibration mark [in switching mode]
-:ref:`backend-protocol-cal-off`           deactivate the calibration mark 
+:ref:`backend-protocol-cal-on`            (de)activate the calibration mark
 ========================================= =======================================
 
 Messaging Protocol
@@ -322,19 +321,15 @@ operation.
 
 .. _backend-protocol-cal-on:
 
-cal-on [switching interleave]
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+cal-on [interleave=0]
+~~~~~~~~~~~~~~~~~~~~~
 
-Activate the noise diode for calibration purposes. If the additional argument is
-given it activates the diode in switching mode, interleaving on and off with
-given interleave time 
+Activate the noise diode for calibration purposes. The commands takes in input
+one mandatory parameter:
 
-.. _backend-protocol-cal-off:
-
-cal-off
-~~~~~~~
-
-Sample text
+  * **interleave** the number of backend samples to be acquired with the mark
+    on and off alternatively. If **0** is given (default) as parameter the mark
+    is always off
 
 Handling Errors
 ===============
