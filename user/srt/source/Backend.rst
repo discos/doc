@@ -14,6 +14,8 @@ choices are:
 
 
 
+.. _total-power-focus-selector:
+
 Total Power - focus selector
 ============================
 
