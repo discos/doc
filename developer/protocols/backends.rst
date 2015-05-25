@@ -39,17 +39,20 @@ of a single client will be the first and foremost ones.
 Here you can find a quick list of the requests defined by the protocol, which
 will be better described in the next sections:
 
-======================== =======================================
-Request                  Description
-======================== =======================================
-:ref:`status`            get the backend status code
-:ref:`version`           get the server protocol version
-:ref:`configuration`     get the backend actual configuration
-:ref:`set-configuration` set a new backend configuration
-:ref:`time`              get the backend time
-:ref:`start`             start the acquisition [at a given time]
-:ref:`stop`              stop the acquisition [at a given time]
-======================== =======================================
+========================================= =======================================
+Request                                   Description
+========================================= =======================================
+:ref:`backend-protocol-status`            get the backend status code
+:ref:`backend-protocol-version`           get the server protocol version
+:ref:`backend-protocol-configuration`     get the backend actual configuration
+:ref:`backend-protocol-set-configuration` set a new backend configuration
+:ref:`backend-protocol-time`              get the backend time
+:ref:`backend-protocol-start`             start the acquisition [at a given time]
+:ref:`backend-protocol-stop`              stop the acquisition [at a given time]
+:ref:`backend-protocol-set-section`       configure a section of the backend
+:ref:`backend-protocol-cal-on`            activate the calibration mark [in switching mode]
+:ref:`backend-protocol-cal-off`           deactivate the calibration mark 
+========================================= =======================================
 
 Messaging Protocol
 ==================
@@ -144,7 +147,7 @@ Request and Reply Messages
 For each command we give a brief description of how the command can be used and
 the description of the reply to the command. We then provide a simple example.
 
-.. _status:
+.. _backend-protocol-status:
 
 status
 ~~~~~~
@@ -167,7 +170,7 @@ Example communication::
   request: "?status\r\n"
     reply: "!status,ok,1430922782.97088300,clock error,0\r\n"
 
-.. _version:
+.. _backend-protocol-version:
 
 version
 ~~~~~~~
@@ -182,7 +185,7 @@ Example communication::
   request: "?version\r\n"
     reply: "!version,1.0.1\r\n"
 
-.. _configuration:
+.. _backend-protocol-configuration:
 
 configuration
 ~~~~~~~~~~~~~
@@ -203,7 +206,7 @@ Example communication::
   request: "?configuration\r\n"
     reply: "!configuration,unconfigured\r\n"
 
-.. _set-configuration:
+.. _backend-protocol-set-configuration:
 
 set-configuration
 ~~~~~~~~~~~~~~~~~
@@ -222,7 +225,7 @@ Example communication::
   request: "?set-configuration,nonexistent\r\n"
     reply: "!set-configuration,fail,cannot find configuration 'nonexistent'\r\n"
 
-.. _time:
+.. _backend-protocol-time:
 
 time
 ~~~~
@@ -240,7 +243,7 @@ Example communication::
   request: "?time\r\n"
     reply: "!time,ok,1430922782.97088300\r\n"
 
-.. _start:
+.. _backend-protocol-start:
 
 start [timestamp]
 ~~~~~~~~~~~~~~~~~
@@ -266,7 +269,7 @@ Example communication::
   request: "?start,1430922782.97088300\r\n"
     reply: "!start,fail,cannot start at given time\r\n"
 
-.. _stop:
+.. _backend-protocol-stop:
 
 stop [timestamp]
 ~~~~~~~~~~~~~~~~
@@ -299,6 +302,39 @@ Example communication::
    during the acquisition process. For example it is possible to have both a
    start timestamp and a stop timestamp issued in the future, and these should
    work as expected.
+
+.. _backend-protocol-set-section:
+
+set-section
+~~~~~~~~~~~
+
+Configure a section of the backend, just as explained in 
+:ref:`total-power-focus-selector`. The command expects 7 parameters, all of
+which are mandatory, but can be substituted by an asterisk '*' meaning that the
+corresponding parameter should be left unchanged. The synthax is::
+
+  set-section=sect,startFreq,bw,feed,mode,sampleRate,bins
+
+The server should respond **ok** if the operation succeds, and **fail** if the server
+could not perform the operation or the backend does not support this kind of
+operation.
+
+
+.. _backend-protocol-cal-on:
+
+cal-on [switching interleave]
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Activate the noise diode for calibration purposes. If the additional argument is
+given it activates the diode in switching mode, interleaving on and off with
+given interleave time 
+
+.. _backend-protocol-cal-off:
+
+cal-off
+~~~~~~~
+
+Sample text
 
 Handling Errors
 ===============
