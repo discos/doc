@@ -1,3 +1,5 @@
+.. _Appendix-D-Source-catalogue:
+
 *****************************
 Appendix D - Source catalogue
 *****************************

@@ -1,3 +1,5 @@
+.. _Frontend-operations:
+
 *******************
 Frontend operations
 *******************

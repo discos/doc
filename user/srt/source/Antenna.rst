@@ -1,3 +1,5 @@
+.. _Antenna-operations:
+
 ******************
 Antenna operations
 ******************

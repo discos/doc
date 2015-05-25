@@ -1,6 +1,8 @@
-********************
-Nuraghe Startup
-********************
+.. _Nuraghe-startup:
+
+***************
+Nuraghe startup
+***************
 
 
 Login
@@ -105,9 +107,9 @@ All the antenna/receiver/backend setup procedures are performed via the
 operatorInput window, which is also used to start/stop the schedules. 
 
 The other panels are monitors used to display a vast amount of information, 
-see Appendix A – Monitor panels full description and 
-Appendix B – Complete command list for a comprehensive description of their 
-content and a list of all the commands available for the operatorInput 
+see :ref:`Appendix-A-Monitor-panels-full-description` and 
+:ref:`Appendix-B-Complete-command-list` for a comprehensive description of 
+their content and a list of all the commands available for the operatorInput 
 (they can be inserted in schedules as well).
 
 

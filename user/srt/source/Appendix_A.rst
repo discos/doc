@@ -1,5 +1,7 @@
+.. _Appendix-A-Monitor-panels-full-description:
+
 ********************************************
-Appendix A - monitor panels full description
+Appendix A - Monitor panels full description
 ********************************************
 
 

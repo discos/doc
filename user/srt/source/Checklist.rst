@@ -1,3 +1,4 @@
+.. _Checklist-for-schedule-based-observations: 
 
 *****************************************
 Checklist for schedule-based observations

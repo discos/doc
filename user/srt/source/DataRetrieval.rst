@@ -1,3 +1,5 @@
+.. _Retrieving-the-data: 
+
 *******************
 Retrieving the data
 *******************
@@ -27,12 +29,12 @@ where
 	
     * **HHMMSS** is the UT time associated to the first sample of the 
       acquisition
-	* **Project** is the code/name specified using the ``project=`` command, 
-      or when starting a schedule with 
-      ``startSchedule=[project/][schedulename].scd,[N]``
-	* **Suffix** is a user-defined string retrieved from the schedule files. 
-          Though no control can be applied on the choice/check of this string, 
-          the agreement is that it should coincide with the target name. 
+    * **Project** is the code/name specified using the ``project=`` command, 
+	  or when starting a schedule with 
+	  ``startSchedule=[project/][schedulename].scd,[N]``
+    * **Suffix** is a user-defined string retrieved from the schedule files. 
+	  Though no control can be applied on the choice/check of this string, 
+	  the agreement is that it should coincide with the target name. 
 
 FITS files, each corresponding to a subscan, are composed as: 
 

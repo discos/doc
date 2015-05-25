@@ -1,3 +1,5 @@
+.. _Appendix-B-Complete-command-list:
+
 **********************************
 Appendix B - Complete command list
 **********************************
@@ -309,7 +311,7 @@ Here follow all the commands exploitable in Nuraghe:
 
 .. describe:: > setServoOffset=[axis_code],[value] 
 
-   (see details in Antenna Operations)
+   (see details in :ref:`Antenna-operations`)
 
 .. describe:: > setupCCB (setupLLP, setupKKG, etc…) 
 

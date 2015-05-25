@@ -1,3 +1,5 @@
+.. _Generating-and-launching-a-schedule: 
+
 ***********************************
 Generating and launching a schedule 
 ***********************************

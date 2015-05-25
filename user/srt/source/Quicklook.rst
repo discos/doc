@@ -1,3 +1,5 @@
+.. _Data-formats-and-online-quick-look:
+
 **********************************
 Data formats and online quick-look
 **********************************

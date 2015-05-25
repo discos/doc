@@ -1,6 +1,8 @@
+.. _Release-notes:
 
+*************
 Release notes
-=============
+*************
 
 Authors: 
 

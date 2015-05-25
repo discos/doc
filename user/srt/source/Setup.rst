@@ -1,5 +1,7 @@
+.. _Initial-setup:
+
 *************
-Initial Setup
+Initial setup
 *************
 
 
@@ -50,7 +52,7 @@ which the above table refers to, this offset is 100 MHz.
 In general, the true observed band depends on the **intersection between the 
 frontend IF band and the chosen backend filter**. The actual observed 
 bandwidth and the band starting frequency are recorded in the output files 
-(see Appendix C – Output files).
+(see :ref:`Appendix-C-Output-files`).
 
 
 

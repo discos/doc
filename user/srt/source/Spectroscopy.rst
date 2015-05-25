@@ -1,3 +1,5 @@
+.. _Spectral-line-observations: 
+
 **************************
 Spectral line observations
 **************************
@@ -117,5 +119,5 @@ tuning:
 
 Acquiring data
 ==============
-See Command-line --> Manual Acquisitions section. 
+See :ref:`Command-line-measurements-and-acquisitions`  
 

@@ -1,6 +1,8 @@
-**************************************
-Troubleshooting & temporary procedures
-**************************************
+.. _Troubleshooting-and-temporary-procedures:
+
+****************************************
+Troubleshooting and temporary procedures
+****************************************
 
 The following sections list the solutions to the most common problems 
 encountered by users, including indications on how to deal with present bugs 

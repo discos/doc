@@ -3,12 +3,14 @@
 [ITEM title="Scan di fuoco supportati anche da schedula"]
 Al posto della descizione aggiungo il link alla pagina del mantis dove ho riportato tutto: http://www.med.ira.inaf.it/mantisbt/view.php?id=168 
 [/ITEM]
+
 [ITEM title="introdotto summary.fits"]
 il file viene creato alla fine dello scan dal FitsZilla. Contiene tutte le
 keyword stabilite dal documento di riferimento. Alcune hanno valori
 significativi, molte sono ancora NULL. Ecco il link:
 http://www.med.ira.inaf.it/mantisbt/view.php?id=188 
 [/ITEM]
+
 [ITEM title="supporto per le osservazioni spettroscopiche"]
 il supporto prevede l'introduzione di 3 nuovi comandi
 (restFrequency,radialVelocity e fTrack). Anche la schedula è stata arricchita
@@ -16,6 +18,7 @@ con nuovi campi. Modificate leggermente anche le interfacce utente.
 Tutti i riferimenti a questo link:
 http://www.med.ira.inaf.it/mantisbt/view.php?id=191
 [/ITEM]
+
 [ITEM title="registrazione manuale dei dati, introdotti nuovi comandi da
 operator input"]
 i comandi servono per preparare gli scan e dare lo start e lo stop alle
@@ -24,29 +27,34 @@ comando. I dati così presi finiscono nella sezione "ausiliaria" come quando si
 esegue un "crossScan=".
 http://www.med.ira.inaf.it/mantisbt/view.php?id=167
 [/ITEM]
+
 [ITEM title="nuovo comando waitUntil"]
 col comando è possibile arrestare il flusso di esecuzione dei comando ad un
 tempo UT prestabilito. Funzione anche da schedula. Usare con cautela.
 http://www.med.ira.inaf.it/mantisbt/view.php?id=166
 [/ITEM]
+
 [ITEM Title=interrompere operazioni lunghe"]
 se si volesse interoompere ad esempio un "crossScan=". Vale la pena
 aggiungerlo al manuale? In realtà, al momento, se non di apre un secondo
 operatorInput non ha utilità.
 http://www.med.ira.inaf.it/mantisbt/view.php?id=164
 [/ITEM]
+
 [ITEM Title="Dewar positioning supportato dai ricevitori multifeed"]
 comandi setup e modifica interfaccia utente al link:
 http://www.med.ira.inaf.it/mantisbt/view.php?id=153
 Quando riportato va ad integrazione della descrizione completa del derotatore
 vedi [LINK name="Derotatore"] nota [/LINK]
 [/ITEM]
+
 [/Addition]
 [Rewiev]
 [ITEM title="il comando focusScan da operatorInput, cambiato col comando più generico peakerScan"]
 il comando è più generico e consente di effettuare scansioni con tutti gli assi del subriflettore e PFP. Per SRT al momento è sconsigliato usare assi diversi da SRP_TZ.
 http://www.med.ira.inaf.it/mantisbt/view.php?id=182
 [/ITEM]
+
 [ITEM Title="rivisto funzionamento di goOff="]
 http://www.med.ira.inaf.it/mantisbt/view.php?id=160
 [/ITEM]

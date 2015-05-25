@@ -1,3 +1,5 @@
+.. _Command-line-measurements-and-acquisitions: 
+
 ******************************************
 Command-line measurements and acquisitions
 ******************************************
@@ -148,13 +150,14 @@ Once the recorder is set, acquisitions on a target can be performed as follows.
 First, set the target:: 
 
 	> track=[sourcename]	(if the source is included in the system 
-	                        catalogue, see Appendix D)
+	                        catalogue)
 
-or::
+For the available catalogue see :ref:`Appendix-D-Source-catalogue`.
+To set a generic target::
 	
 	> sidereal=[sourcename],[RA],[Dec],[epoch],[sector] 
 	
-(see Antenna operations for details)
+(see :ref:`Antenna-operations` for details)
 	                      
 Here follow the commands to be used to manually record your data (remember
 that the backend must have been properly set up and the target must have 
@@ -336,7 +339,7 @@ schedules for details.
 Caveat on offsets
 ==================
 
-As seen in Antenna operations, there are commands used to set (or null) 
+As seen in :ref:`Antenna-operations`, there are commands used to set (or null) 
 user-defined offsets.  
 They are: ``radeOffsets``, ``azelOffsets`` and ``lonlatOffsets``.
 Such commands set **overall offsets** which **remain active** until they are 
