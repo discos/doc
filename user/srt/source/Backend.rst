@@ -105,34 +105,34 @@ standard output (FITS format).
 In order to configure the spectrometer, select it with the chooseBackend 
 command and use one of the following commands in operatorInput: 
 
-.. describe: > initialize=XK77
+.. describe:: > initialize=XK77
  
    This is to use the full K-band MF; each digital sample has a 6-bit 
    representation. Full-Stokes sections are recorded, each having a 62.5 
    MHz bandwidth and 2048(x4) channels 
 
-.. describe: > initialize=XK03 
+.. describe:: > initialize=XK03 
 
    It exploits the K-band feeds 0 and 3. 
    Each feed produces two full-Stokes sections respectively having bandwidths 
    of 62.5 MHz and 4 MHz and 2048(x4) channels. Each digital sample has an 
    8-bit representation.
 
-.. describe: > initialize=XK06
+.. describe:: > initialize=XK06
  
    It enables the K-band feeds 0 and 6. 
    Each feed produces two full-Stokes sections respectively having 
    bandwidths of 62.5 MHz and 4 MHz and 2048(x4) channels. 
    Each digital sample has an 8-bit representation.
 
-.. describe: > initialize=XK00 
+.. describe:: > initialize=XK00 
 
    This configuration is for the usage of the K-band central feed. 
    It produces four full-Stokes sections respectively with bandwidths 
    of 62.5 MHz, 8 MHz, 2 MHz and 0.5 MHz, each having 2048(x4) channels. 
    Each digital sample has an 8-bit representation.
 
-.. describe: > initialize=XC00
+.. describe:: > initialize=XC00
  
    This configuration is C-band usage. 
    It produces four full-Stokes sections respectively with bandwidths 
