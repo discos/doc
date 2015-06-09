@@ -10,7 +10,7 @@ operatorInput
 
 .. figure:: images/Screenshot-OperatorInput.png
    :scale: 100%
-   :alt: operatorInput
+   :alt: operatorInput TUI
    :align: center
 
 
@@ -27,20 +27,22 @@ AntennaBoss
 
 .. figure:: images/Screenshot-AntennaBoss.png
    :scale: 100%
-   :alt: AntennaBoss
+   :alt: AntennaBoss TUI
    :align: center
 
-This monitor shows the commanded and 
-actual positions. It also gives a feedback 
-on the pointing accuracy and on the 
-overall antenna status. 
+This monitor shows the target info, indicating the commanded and actual 
+positions pointed by the antenna. It also gives a feedback on the pointing 
+accuracy and on the overall antenna status. 
 
 Parameters: 
 
-  * **Target**: label (as extracted from schedule), 
+  * **Target**: label (as extracted from schedule or commanded), 
     coordinates (RAJ2000.0, DecJ2000.0), 
-    VLSR (km/s, if available), estimated flux 
-    density (Jy, if available).
+    estimated flux density (Jy, if available).
+    
+  * **Radial Velocity**:  (as extracted from schedule or commanded), 
+    value (km/s unless it is a redshift), 
+    velocity reference frame, velocity definition.
 
   * **Horiz. Offs**: Horizontal (Az-El) offsets as 
     read from schedule, degrees.  
@@ -51,17 +53,17 @@ Parameters:
   * **Galac. Offs**: Galactic (l-b) offsets as read 
     from schedule, degrees. 
 
-  * **Raw Horizontal**: commanded Az-El, 
+  * **Raw Horiz.**: commanded Az-El, 
     including pointing model, refraction, etc... 
 
-  * **Observed Horizontal**: Az-El coordinates read from the mount 
-    encoders and cleaned  from the pointing model and refraction contributions. 
+  * **Observed Horiz.**: Az-El coordinates read from the mount 
+    encoders and cleaned from the pointing model and refraction contributions. 
     Because of this, observed coordinates will differ from the raw ones. 
 
-  * **Observed Equatorial**: RA-Dec J2000.0 coordinates, converted from the 
+  * **Observed Equat.**: RA-Dec J2000.0 coordinates, converted from the 
     observed horizontal. 
 
-  * **Observed Galactic**: l-b Galactic coordinates, converted from the 
+  * **Observed Galac.**: l-b Galactic coordinates, converted from the 
     observed horizontal. 
 
   * **Generator Type**: which component is in charge of the generation of the 
@@ -83,8 +85,8 @@ Parameters:
     red **o** only when the antenna is slewing between scans on the same 
     source, or when slewing to/from a new source. 
 
-  * **Correction**: application of the above horizontal coordinates corrections. 
-    If disabled (red circle), all corrections are zeroed. 
+  * **Correction**: application of the above horizontal coordinates 
+    corrections. If disabled (red circle), all corrections are zeroed. 
 
   * **Status**: ``OK``, ``WARNING`` or ``ERROR``. “Warning” needs investigation
     but usually does not stop the ongoing activity (it also appears at startup,
@@ -362,9 +364,9 @@ To close the monitor, type ``exit`` in its prompt (the grey line).
 MinorServo
 ==========
 
-.. figure:: images/minorServoConsole.png
+.. figure:: images/Screenshot-MinorServo.png
    :scale: 100%
-   :alt: Scheduler
+   :alt: Minor Servo TUI
    :align: left
 
 This monitor shows details on the Minor Servo systems:

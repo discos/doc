@@ -378,6 +378,19 @@ Here follow all the commands exploitable in Nuraghe:
  
    sets a delay (in seconds) which is applied before the system reads/executes 
    the next command
+   
+.. describe:: > winkingMark=[integer]
+ 
+   activates the winking (i.e. fast switching) calibration mark, whose period
+   in milliseconds is given as an integer parameter. To switch the mark off, 
+   simply command a zero-ms period. This must **always** be done when the 
+   winking mark is not needed anymore.
+   
+   Example:  ``> winkingMark=40`` activates the mark so that is alternately 
+   stays ON for 40 ms and OFF for 40 ms.
+   
+   While:  ``> winkingMark=0`` switches the mark off 
+   
 
 .. describe:: > wx  
 
