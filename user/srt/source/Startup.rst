@@ -82,15 +82,15 @@ If, instead, you need to start them, open a new terminal, then::
 This command opens 8 panels at once: 
 
 	* **operatorInput** - terminal for command line input
-	* **antennaBoss** 
-	* **genericBackend**
-	* **mount**  
-	* **observatory** 
-	* **receiversBoss**
-	* **scheduler**
+	* **AntennaBoss** 
+	* **GenericBackend**
+	* **Mount**  
+	* **Observatory** 
+	* **Receivers**
+	* **Scheduler**
 	* **MinorServo**
 
-Rearrange the panels on the desktop. 
+Rearrange the panels on the desktop according to your preferences. 
 In case any of them does not automatically start, you can manually open them 
 by means of individual command lines, to be given in the open terminal::
 
