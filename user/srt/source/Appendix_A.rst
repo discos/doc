@@ -216,8 +216,8 @@ Line by line:
     commanded offset (degrees). Then the measured position error and tracking 
     error (both in degrees) are given. Finally, the axis active mode is 
     displayed: it can be ``PRESET`` (fixed Az-El pointing), ``PROGRAMTRACK`` 
-    (for OTF and schedules), STOP (if axes brakes are on), ``UNKNOWN`` (usually 
-    indicating an error condition).
+    (for OTF and schedules), ``STOP`` (if axes brakes are on), ``UNKNOWN`` 
+    (usually indicating an error condition).
 
   * **Cmd El.**: commanded elevation position (degrees) and rate (°/s). 
 
@@ -317,8 +317,7 @@ derotator (dewar positioner), when available.
 
   * **Polarization**: ``LCP``, ``RCP``, ``HLP`` or ``VLP``
   
-  * **Dewar positioner**: under this line all the derotator 
-    it is commanded.
+  * **Dewar positioner**: under this line all the derotator details are given.
 
 In particular: 
 
