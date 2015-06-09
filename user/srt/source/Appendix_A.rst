@@ -150,7 +150,7 @@ Observatory
 
 .. figure:: images/Screenshot-Observatory.png
    :scale: 100%
-   :alt: Observatory
+   :alt: Observatory TUI
    :align: left
 
 
@@ -188,7 +188,7 @@ Mount
 
 .. figure:: images/Screenshot-Mount.png
    :scale: 100%
-   :alt: Mount
+   :alt: Mount TUI
    :align: center
 
 This is a quite complex frame, allowing the technical staff to monitor all the 
@@ -251,7 +251,7 @@ GenericBackend
 
 .. figure:: images/Screenshot-GenericBackend.png
    :scale: 100%
-   :alt: GenericBackend
+   :alt: GenericBackend TUI
    :align: center
 
 The panel shows one row for every section. 
@@ -414,7 +414,7 @@ MinorServo
 
 This monitor shows details on the Minor Servo systems:
 
-  * **Current setup**: current setup code (**CCB**, **KKG**, **KKG_ASACTIVE**,
+  * **Current Setup**: current setup code (**CCB**, **KKG**, **KKG_ASACTIVE**,
     …)
 
   * **Ready**: when green, the receiver is in its working position
