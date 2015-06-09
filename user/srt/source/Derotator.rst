@@ -143,6 +143,12 @@ rotation by N*60° (where N can be 1, 2 or 3). The system will always choose the
 maximum allowed rewind, in order to delay the following rewind as much as 
 possible. 
 
+When a rewind is necessary and during its execution, the antenna status will 
+be labeled as "off-source" (this involving the tracking flag associated to any 
+data sample which might still be under acquisition). The rewinding operations 
+will not stop an ongoing subscan/acquisition, but no further acquisitions will 
+be commanded until the antenna is back on-source.  
+
 
 
 

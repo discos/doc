@@ -42,7 +42,7 @@ Parameters:
     
   * **Radial Velocity**:  (as extracted from schedule or commanded), 
     value (km/s unless it is a redshift), 
-    velocity reference frame, velocity definition.
+    velocity reference frame, velocity definition. 
 
   * **Horiz. Offs**: Horizontal (Az-El) offsets as 
     read from schedule, degrees.  
@@ -293,14 +293,15 @@ ReceiversBoss
 
 .. figure:: images/Screenshot-Receivers.png
    :scale: 100%
-   :alt: ReceiversBoss
+   :alt: Receivers TUI
    :align: left
 
-This monitor summarizes the frontend setup. 
+This monitor summarizes the frontend setup. The bottom part is devoted to the
+derotator (dewar positioner), when available. 
 
-  * **Current setup**: receiver code.
+  * **Current setup**: receiver code
 
-  * **Mode**: ``NORMAL``, ``SINGLEDISH``, ``VLBI``… (other codes to come). 
+  * **Mode**: ``NORMAL``, ``SINGLEDISH``, ``VLBI``… (other codes to come) 
 
   * **Status**: ``OK``, ``WARNING`` or ``FAILURE``
 
@@ -314,7 +315,45 @@ This monitor summarizes the frontend setup.
 
   * **Bandwidth**: actually observed bandwidth (MHz)
 
-  * **Polarisation**: ``LCP``, ``RCP``, ``HLP`` or ``VLP``.
+  * **Polarization**: ``LCP``, ``RCP``, ``HLP`` or ``VLP``
+  
+  * **Dewar positioner**: under this line all the derotator 
+    it is commanded.
+
+In particular: 
+
+  * **Configuration**: shows the current configuration (FIXED, BSC, CUSTOM)
+
+  * **Dewar is ready**: is a green-colored string appearing when the dewar 
+    positioner is ok. It changes to a red "Dewar in not ready" otherwise.
+
+  * **Absolute Position**: shows the present position (encoder readout) wrt 
+    the mechanic zero (degrees). A positive angle means CW. 
+
+  * **I / P / D / R**: notable angles involved in the current derotator usage:
+   
+    I = Initial offset angle set for the current configuration (degrees); for 
+    FIXED or CUSTOM configuration it is the user-set angle, for BSC is a 
+    receiver-dependent angle, -19.2° for the K-band MF) 
+  
+    P = Parallactic angle of the pointed position (degrees)
+    
+    D = variation (Delta) of the parallactic angle since the beginning of the
+    acquisition (degrees)
+    
+    R = reports the angle (degrees) applied if a derotator rewind has occurred.
+       
+  * **Rewinding not required**: is a green-colored string appearing when the 
+    dewar rewind is not necessary. It changes to a red "Rewinding is required" 
+    when the derotator reaches its range limits and to a yellow "Rewinding
+    required (rewinding...)" while the rewind is taking place. When red or
+    yellow, it implies that the general tracking flag in the Antenna TUI will 
+    turn red and the antenna status will be labeled as "off-source" (this 
+    involving the tracking flag associated to any data sample which might 
+    still be under acquisition).
+    The rewinding operations will not stop an ongoing subscan/acquisition, but 
+    no further acquisitions will be commanded until the antenna is back 
+    on-source.  
 
 To close the monitor, type ``exit`` in its prompt (the grey line). 
 
@@ -323,9 +362,9 @@ To close the monitor, type ``exit`` in its prompt (the grey line).
 Scheduler
 =========
 
-.. figure:: images/schedulerTui.jpg
+.. figure:: images/Screenshot-Scheduler.png
    :scale: 100%
-   :alt: Scheduler
+   :alt: Scheduler TUI
    :align: left
 
 This monitor shows details on the selected data acquisition devices and on the 
@@ -345,6 +384,10 @@ running schedule, if any.
     schedule
 
   * **Device**: number of the currently selected device (see device= command)
+  
+  * **Rest Freq.**: rest frequency of the line(s) being observed (MHz). The 
+    number in brackets indicates how many IFs the given rest frequency 
+    refers to.
 
   * **Tracking**: tracking status of the telescope, including antenna, 
     active surface, minor servo. A red ``o`` means the telescope is not 
