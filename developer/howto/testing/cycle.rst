@@ -8,16 +8,30 @@ From functionals to unit (summary of :ref:`component-dev`).
 
 Where to put the tests
 ======================
-The *test* component directory::
+Tests must be defined in the *tests* directory within the module you are writing::
 
-    $ tree test/
-    ...
+    $ tree tests/
 
-The *test/functional* directory and its sub-directories contain the *functional
+    tests
+    |-- Makefile
+    |-- external
+    |   `-- __init__.py
+    |-- functional
+    |   `-- __init__.py
+    |-- procedure.cfg
+    |-- pyunit
+    |   `-- __init__.py
+    |-- results
+    `-- unittest.cpp
+
+This is the default structure for tests definitions but more complex structures
+are also possible, depending on your needs.
+Unit tests are defined in *tests/unittest.cpp* while 
+the *test/functional* directory and its sub-directories contain the *functional
 tests* and, as you probably figured out, the *api* sub-directory hosts the API 
 while the *commands* one hosts the command tests. 
 
-.. note:: Do not warry if you do not now that terminology, in the 
+.. note:: Do not worry if you do not know this terminology, in the 
    next sections we will give a definition and
    an explanation of every of these words.
 
@@ -30,4 +44,4 @@ command. For instance, if you want to create that directory for the
     doc  srt 
     $ getTemplateForTest
     $ ls
-    doc srt test
+    doc srt tests
