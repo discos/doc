@@ -12,4 +12,5 @@ Contents:
    testing/index.rst
    installing/index.rst
    integrating/integrating.rst
+   textformatting/index.rst
 
