@@ -103,6 +103,12 @@ by means of individual command lines, to be given in the open terminal::
    $ schedulerTui
    $ minorservoBossTui
     
+Finally, manually open the **logging display** by giving the following 
+command in a shell::
+
+   $ loggingDisplay    
+
+    
 All the antenna/receiver/backend setup procedures are performed via the 
 operatorInput window, which is also used to start/stop the schedules. 
 
@@ -112,6 +118,8 @@ see :ref:`Appendix-A-Monitor-panels-full-description` and
 their content and a list of all the commands available for the operatorInput 
 (they can be inserted in schedules as well).
 
+   
+.. note:: TAB-completion is available    
 
 The operatorInput panel supports "TAB-completion".
 For example (op):: 

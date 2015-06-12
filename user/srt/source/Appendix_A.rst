@@ -441,6 +441,22 @@ To close the monitor, type ``exit`` in its prompt (the grey line).
    terminal on OBS1)::
 
 	$ nuragheConsole --stop
+	
+	
+Logging Display
+===============
+
+.. figure:: images/Screenshot-loggingDisplay.png
+   :scale: 100%
+   :alt: Logging display
+   :align: left
+
+This panel is not part of the general Console, so it must be individually
+opened/closed. 
+Here all the log messages will appear. New messages are shown on top of the 
+previous ones. 
+To close the window, 
+
 
  
 
