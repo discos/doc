@@ -8,7 +8,7 @@ A schedule is a set of files where all the geometry/timing/frequency details
 of a sequence of data acquisitions are specified, according to a syntax that 
 enables Nuraghe to read and execute them. 
 The detailed structure of the several files composing a schedule is explained 
-in a separate guide. 
+in this separate guide :download:`pdf <attachments/SRT-MAN-10000-004-2.pdf>`
 Schedules for the most common continuum and spectroscopy observing modes (OTF 
 cross-scans and maps, raster maps and ON-OFF) can be easily generated using a 
 tool called **schedulecreator**.   
