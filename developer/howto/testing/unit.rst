@@ -27,8 +27,8 @@ A Library example
 =================
 
 We will demonstrate how to write unit tests and how to integrate the tests
-development into your own workflow by developing a simple library, 
-but the same approach can be used for every code unit defined within discos.
+development into your workflow by developing a simple library, 
+the same approach can be used for every code unit defined within discos.
 
 C++ implementation
 ------------------
