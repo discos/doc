@@ -31,9 +31,9 @@ project = 'DISCOS Control Software'
 copyright = '2006-%s, DISCOS Control Software Team' % time.strftime('%Y')
 
 # We should get this information from somewhere in the sources
-version = '0.4'
+version = '0.5'
 # The full version, including alpha/beta/rc tags.
-release = '0.4'
+release = '0.5'
 
 # If true, sectionauthor and moduleauthor directives will be shown in the
 # output. They are ignored by default.
