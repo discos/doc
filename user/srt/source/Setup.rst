@@ -72,7 +72,19 @@ where \[code\] is:
     * **PF** parabolic configuration in fixed position (optimised for El=45°)
     * **P**  parabolic configuration in tracking – i.e. it adjusts according to 
       the observed elevation position
-
+      
+.. warning:: Check the AS status! 
+   In case the system - or just the AS - was rebooted, pay attention to 
+   give the ``asSetup`` command only once all the AS actuators are online and 
+   ready. You can check this condition selecting the "AS" desktop, where you 
+   will find the GUI shown below. Red pixels in the graphical representation of
+   the AS indicate off-line actuators, while green pixels identify the on-line
+   actuators. 
+   
+.. figure:: images/AS-status.png
+   :scale: 100%
+   :alt: Active Surface GUI
+   :align: center
 
 
 Minor Servo configuration
