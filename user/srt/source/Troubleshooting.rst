@@ -72,19 +72,13 @@ or, if you have already given the project=code command::
 
 
 
-End of session
-==============
+.. admonition:: PROBLEM:  
 
-.. warning:: Bug in command **telescopePark**
+    * **Dead time between consecutive subscans is much longer than expected**
 
-At the end of the session, in order to correctly park the telescope, please 
-use the following sequence of commands:: 
-
-    > goTo=*,89d
-    > asPark
-    > servoPark
-
-Then, once the antenna has reached the elevation of 89°:: 
-
-    > antennaPark
+With Nuraghe 0.5 it is necessary to delete from the schedules all the post-scan 
+wait times, as the system now takes automatically care of computing and 
+applying proper delays according to the deceleration ramps duration. 
+If you specify a wait time in your post-scan procedures, it will add to the 
+system-computed delays. 
 
