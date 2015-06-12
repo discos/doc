@@ -455,7 +455,7 @@ This panel is not part of the general Console, so it must be individually
 opened/closed. 
 Here all the log messages will appear. New messages are shown on top of the 
 previous ones. 
-To close the window, 
+To close the window, click on its dedicated icon. 
 
 
  
