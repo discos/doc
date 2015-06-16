@@ -56,7 +56,9 @@ after executing the command from the *operatorInput* console:
 Well, we are ready to write our functional test. The file and the
 methods must start
 with *test*, so we can create a file called *test_derotatorSetup.py* inside
-the *functional/commands* directory::
+the *functional/commands* directory:
+
+.. code-block:: python
 
     # File: test/functional/commands/test_derotatorSetup.py
     import unittest2
@@ -146,8 +148,6 @@ Let's spin up the test:
 
     OK
 
-
-.. todo:: Show the test execution
 
 If we write a wrong setup code we want the component to behave this way:
 
