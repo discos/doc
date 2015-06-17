@@ -14,6 +14,7 @@ Tests must be defined in the *tests* directory within the module you are writing
 
     tests
     |-- Makefile
+    |-- .discos
     |-- external
     |   `-- __init__.py
     |-- functional
@@ -27,7 +28,7 @@ Tests must be defined in the *tests* directory within the module you are writing
 This is the default structure for tests definitions but more complex structures
 are also possible, depending on your needs.
 Unit tests are defined in *tests/unittest.cpp* while 
-the *test/functional* directory and its sub-directories contain the *functional
+the *tests/functional* directory and its sub-directories contain the *functional
 tests* and, as you probably figured out, the *api* sub-directory hosts the API 
 while the *commands* one hosts the command tests. 
 
