@@ -172,8 +172,13 @@ Andrea Melis
 
 Andrea Orlati
 -------------
-`Andrea <mailto:a.orlati@ira.inaf.it>`_...
-
+`Andrea <mailto:a.orlati@ira.inaf.it>`_ works at the `Medicina Radiotelescope 
+<http://www.med.ira.inaf.it/>`_ of the INAF - Institute of Radioastronomy.
+Address:
+ | via Fiorentina, 3513
+ | 40059 - Medicina (BO) - Italy
+ | Phone: +39 051 696 5831
+ | Fax: +39 051 696 5810
 
 .. _spoppi:
 
@@ -192,4 +197,11 @@ Simona Righini
 --------------
 `Simona <mailto:righin_s@ira.inaf.it>`_: user manual, 
 software specification definition, ...
+
+.. _pcassaro:
+
+Pietro Cassaro
+--------------
+`Pietro <mailto:p.cassaro@ira.inaf.it>`_...
+
 

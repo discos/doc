@@ -1,0 +1,20 @@
+XKa band receiver
+*****************
+.. sectionauthor:: :ref:`mbuttu`, :ref:`aorlati`
+
+The *XKaBandReceiver* component will manage a dual feed receiver, 
+called *Sogliola*, that can operate simultaneously in two bands: 
+X and Ka. The receiver is currently installed in the primary focus of
+the SRT
+
+Roach2 based backend
+*********************
+
+.. sectionauthor:: :ref:`mbuttu`, :ref:`mbartolini`, :ref:`amelis`, 
+   :ref:`cmigoni`, :ref:`aorlati` 
+
+This backend is a spectropolarimeter capable to exploit multifeed receievers
+with large bandwidth and a large number of bins. We are starting the 
+integration process. We plan to rely on communication libraries that will
+allow us to include future backends more easily. More information could be
+found here: :ref:`protocols`. 

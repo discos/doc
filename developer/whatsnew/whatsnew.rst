@@ -1,5 +1,11 @@
-******************************
+##############################
 What's new in the next version
-******************************
+##############################
 
-.. include:: releasenote/nuraghe-0.5.txt
+.. topic:: Abstract
+
+   This section shows the new features we are planning to develop and what's 
+   cooking for next releases of DISCOS.
+
+
+.. include:: nextrelease-0.6.txt 

@@ -7,10 +7,11 @@ Development guide
 Contents:
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
 
    releasing.rst
    whatsnew/whatsnew.rst
+   releasenotes/releasenotes.rst
    workflow/index.rst
    components/index.rst
    protocols/index.rst
