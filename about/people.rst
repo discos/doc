@@ -175,6 +175,7 @@ Andrea Orlati
 `Andrea <mailto:a.orlati@ira.inaf.it>`_ works at the `Medicina Radiotelescope 
 <http://www.med.ira.inaf.it/>`_ of the INAF - Institute of Radioastronomy.
 Address:
+
  | via Fiorentina, 3513
  | 40059 - Medicina (BO) - Italy
  | Phone: +39 051 696 5831

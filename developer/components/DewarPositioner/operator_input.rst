@@ -40,10 +40,10 @@ movimentato::
     > derotatorIsReady
     True
 
-Durante il *setup* al derotatore viene comandata la posizione ``0``, che è quella 
-scelta per l'allineamento iniziale. Ad esempio, per il il derotatore del ricevitore 
-in banda K di SRT, la posizione iniziale è quella in cui i tre feed 3, 0, 6 sono 
-paralleli all'orizzonte, con il feed 3 a est.
+Durante il *setup* al derotatore viene comandata la posizione ``0``, che è 
+quella scelta per l'allineamento iniziale. Ad esempio, per il il derotatore del
+ricevitore in banda K di SRT, la posizione iniziale è quella in cui i tre feed
+3, 0, 6 sono paralleli all'orizzonte, con il feed 3 a est.
 
 Possiamo verificare la posizione con il comando ``derotatorGetPosition``::
 
