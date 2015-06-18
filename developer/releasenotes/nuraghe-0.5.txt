@@ -109,6 +109,19 @@ The schedule now allows to call parametric configuration procedures.
 
 .. sectionauthor:: :ref:`mbartolini`, :ref:`aorlati`
 
+Testing Integration
+~~~~~~~~~~~~~~~~~~~
+The development framework now integrates tools for automatic tests development
+and execution.
+
+.. sectionauthor:: :ref:`mbartolini`
+
+Build automation
+~~~~~~~~~~~~~~~~
+The build process has been reorganized in order to have nightly builds and 
+build status reports
+
+.. sectionauthor:: :ref:`mbartolini`
 
 Change log
 ----------
