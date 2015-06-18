@@ -32,11 +32,11 @@ naturally be divided into code units. Also, dependency management between code
 modules will be better managed if you adhere to `dipendency inversion
 <https://en.wikipedia.org/wiki/Dependency_inversion_principle>`_ principles.  We
 will see how both of these requirements will be necessary for writing effective
-tests and wil lead to better code design and implementation.
+tests and will lead to better code design and implementation.
 
 .. note::
-   Unit tests can be effectively developed also on already written code to
-   ensure its stability and safe refactoring. Even if it is not called TDD it
+   Unit tests can be effectively developed also against already written code to
+   ensure its stability and safe refactoring. Even if it is not proper TDD it
    will provide good value to your code.
 
 
@@ -223,8 +223,12 @@ compiled we need to adjust the test Makefile in
     unittest_LDFLAGS = -lstdc++ -lpthread
 
 Note that in line 3 we are adding the link to the library we want to test, this
-could also be a component library or any other unit of code. Now we can try to
-compile our test:
+could also be a component library or any other unit of code. 
+
+Running the tests
+~~~~~~~~~~~~~~~~~
+
+Now we can try to compile our test:
 
 .. code-block:: bash
 
@@ -269,13 +273,52 @@ And run it with **make unit**:
      [  PASSED  ] 1 test.
       . . . 'unit' done
 
-From the output it should be clear that one of one tests executed has passed.
+From the output it should be clear that the
+*MessageTest.MessageRequestConstruction* unit test has been executed
+successfully.
 
-Exceptions
-~~~~~~~~~~
+Test Failures
+~~~~~~~~~~~~~
 
-Now we want to add a function which will parse a line of text and turn it into a
-reply message. We can proceed like the previous request case:
+What if our implementation does not conform to the expected unit of code defined
+in our test? Well, obviously the test will fail. Suppose for example that the
+string representation of our request should contain a *#* character instead of
+an *?*, the result of our test will look like: 
+
+.. code-block:: bash
+   :linenos:
+
+    [----------] Global test environment set-up.
+    [----------] 1 test from MessageTest
+    [ RUN      ] MessageTest.MessageRequestConstruction
+    unittest.cpp:24: Failure
+    Value of: request.toString()
+      Actual: "?myrequest"
+    Expected: "#myrequest"
+    [  FAILED  ] MessageTest.MessageRequestConstruction (1 ms)
+    [----------] 1 test from MessageTest (1 ms total)
+
+    [----------] Global test environment tear-down
+    [==========] 1 test from 1 test case ran. (6 ms total)
+    [  FAILED  ] 1 test, listed below:
+    [  FAILED  ] MessageTest.MessageRequestConstruction
+
+     1 FAILED TEST
+
+You can see how the test is executed and the result clearly explains what did
+not work and also why by providing insights about what was expected and what has
+been found at runtime.
+
+TDD is essentially this, writing a test and produce the necessary code until the
+test passes stepping through successive failures.
+
+
+Testing Exceptions
+~~~~~~~~~~~~~~~~~~
+
+Now we want to add to our library a function which will parse a line of text and
+turn it into a reply message. We can proceed like in the previous request case
+by defining first the expected behavior in a unit test:
 
 .. code-block:: c++
 
@@ -285,8 +328,7 @@ reply message. We can proceed like the previous request case:
         EXPECT_EQ(msg.toString(), message);
     }
 
-And we define the necessary Reply class in our library module.
-In grammar.h: 
+And we define the necessary Reply class in our library module header:
 
 .. code-block:: c++
 
@@ -307,7 +349,7 @@ In grammar.h:
 
     Reply parseReply(const char*);
 
-And in the grammar.cpp:
+And in the grammar.cpp implementation:
 
 .. code-block:: c++
    :linenos:
@@ -336,10 +378,11 @@ And in the grammar.cpp:
         return Reply(msg_name.c_str(), msg_code.c_str(), msg_arguments);
     }
 
-As you can see in lines 7, 10, 14 and 20, the parsing function raises an exception if the reply string does
-not conform to the protocol. We want to add a check to our test, that the
-exception does not get risen if the string is correct, and obviously we want to
-make sure that the exception is risen when appropriate. Our test will become:
+As you can see in lines 7, 10, 14 and 20, the parsing function raises an
+exception whenever the reply string does not conform to the protocol. We want to
+add a check to our test to ensure that the exception does not get risen if the
+string is correct, and obviously we want to make sure that the exception is
+risen when appropriate. Our test will become:
 
 .. code-block:: c++
 
@@ -368,10 +411,15 @@ successive instructions within the unittest are also executed.
 Test Fixtures
 ~~~~~~~~~~~~~
 
-As you can see we are using some variables within our tests. Now we'll show how
-to add some code to every test by using test fixtures: we will demonstrate it by
-adding the message strings to the test case initialization and using the strings
-so defined in each successive test:
+As you can see we are using some variables within our unit tests. 
+Whenever there's some code that can be shared between different unit tests we
+can incapsulate those definitions in a reusable class that we call a test
+fixture.
+Now each test case exploiting the test fixture will have access to the members
+of that class and will execute some default methods upon initialization and
+destrucion of the unit test. In our example we want to share the message strings
+between all our message tests so that we will have those defined in one common,
+convenient, place. Our test will become:
 
 .. code-block:: c++
    :linenos:
@@ -406,8 +454,8 @@ so defined in each successive test:
 
 Test Fixtures can be much more complex than this simple example, in particular
 they can define special methods such as **setUp** and **tearDown** which get
-executed for each unit test. We will see how to use those procceding in our
-example.
+executed for each unit test. We will see how to use those by procceding in our
+library example.
 
 Mocking
 ~~~~~~~
