@@ -46,8 +46,8 @@ Continuous calibration
 ~~~~~~~~~~~~~~~~~~~~~~
 Some backends can quickly switch the calibration diode on and off 
 (Total Power, DFB). Up to now this capability had to be enabled in the frontend
-control boards. Now the operation is fully auotmatized and does not require
-human intervantion any more.
+control boards. From now on the operation is fully automated and does not require
+the human intervention any more.
 
 .. sectionauthor:: :ref:`mbuttu`, :ref:`aorlati`
 
@@ -74,14 +74,14 @@ automatically issues the commands:
 
 so they are not required any more. 
 The user is asked to issue the correct configuration in case other 
-behviours are required.
+behaviours are required.
 
 .. sectionauthor:: :ref:`mbuttu`
 
 
 User interface
 ~~~~~~~~~~~~~~
-Minor changes to existing panels. Some parameters from the teelscope, mainly
+Minor changes to existing panels. Some parameters from the telescope, mainly
 from the new features are now monitored.
 
 .. sectionauthor:: :ref:`mbuttu`, :ref:`aorlati` 
