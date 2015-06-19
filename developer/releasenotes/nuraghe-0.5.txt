@@ -5,7 +5,6 @@ Nuraghe-0.5-RC (Release Candidate) will be released on Monday
 astronomer feedback, as explained in :ref:`Release Candidate <rc>`, so
 it is not yet decided.
 
-
 New features
 ------------
 
@@ -20,14 +19,12 @@ the derotation system are available :ref:`here <DewarPositioner>`.
 .. sectionauthor:: :ref:`mbuttu`, :ref:`aorlati`, :ref:`spoppi`,
    :ref:`srighini`
 
-
 K band derotator control  
 ~~~~~~~~~~~~~~~~~~~~~~~~
 The derotation system installed with the K band receiever is now completely
 under control.  
 
 .. sectionauthor:: :ref:`mbuttu`
-
 
 Frequency tracking
 ~~~~~~~~~~~~~~~~~~
@@ -87,11 +84,12 @@ from the new features are now monitored.
 .. sectionauthor:: :ref:`mbuttu`, :ref:`aorlati` 
 
 
-logging
+Logging
 ~~~~~~~
 The user commands from operator console are now logged. Logging system is now
 more robust. The management of the system log file is now more crafty,
-avoiding the creation of bigger log files.
+avoiding the creation of bigger log files. System log files are daily rotated
+and stored for 1 year.
 
 .. sectionauthor:: :ref:`mbartolini`, :ref:`afara`
 
