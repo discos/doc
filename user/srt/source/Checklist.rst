@@ -25,9 +25,6 @@ Notice that actions take place in three different “locations”:
 
 	> asSetup=S     (or other AS code)
 
-	> setServoASConfiguration=ON    (if using a secondary focus receiver)	
-	> setServoElevationTracking=ON  (if using a secondary focus receiver)
-
 
 **Tune the local oscillator, if any** (op)::
 

@@ -4,6 +4,7 @@
 Initial setup
 *************
 
+.. _overall_setup:
 
 Antenna overall setup
 =====================
@@ -89,19 +90,19 @@ where \[code\] is:
 
 Minor Servo configuration
 =========================
+When using the Gregorian or BWG focus only, the :ref:`overall_setup`
+automatically configures the minor servo system in order for the
+elevation to be tracked, and assumes the active surface is enabled.
+That means the minor servo setup automatically issues the following
+commands:
 
-When using the Gregorian or BWG focus only, the minor servo must be configured. 
-The MS system configuration requires to specify whether the AS is in use. If 
-it is, give the following command in the operatorInput::
-
-    > setServoASConfiguration=ON
-
-It is then necessary to set the MS in tracking mode, so that the subreflector 
-adjusts its position according to its pointing model::
+.. code-block:: discos
 
     > setServoElevationTracking=ON
+    > setServoASConfiguration=ON
 
-
+The user is asked to issue the correct configuration in case other
+behaviours are required.
 
 
 Logfile and project code
