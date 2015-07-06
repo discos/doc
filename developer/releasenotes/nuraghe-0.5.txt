@@ -60,18 +60,29 @@ just the main header with some keywords describing the current scan.
 
 Minor servo system
 ~~~~~~~~~~~~~~~~~~
-Coming from a setup the minor servo system (subreflector) will be now 
-*tracking as the active surface is on*. That means the system setup 
-automatically issues the commands:
+
+Gregorian and BWG default configuration
+```````````````````````````````````````
+When using the Gregorian or BWG focus only, the :ref:`overall_setup`
+automatically configures the subreflector in order for the
+elevation to be tracked, and assumes the active surface is enabled.
+That means the minor servo setup automatically issues the following
+commands:
 
 .. code-block:: discos
 
     > setServoElevationTracking=ON
     > setServoASConfiguration=ON
 
-so they are not required any more. 
-The user is asked to issue the correct configuration in case other 
-behaviours are required.
+so they are not required any more. The user is asked to issue the correct 
+configuration in case other behaviours are required.
+
+.. sectionauthor:: :ref:`mbuttu`
+
+LP band receiver setup
+``````````````````````
+From now on, the LP setup procedure turns off the encoder of the PFP theta axis,
+That allows to eliminate the encoder RFIs.
 
 .. sectionauthor:: :ref:`mbuttu`
 
