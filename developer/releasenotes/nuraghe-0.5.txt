@@ -81,8 +81,8 @@ configuration in case other behaviours are required.
 
 LP band receiver setup
 ``````````````````````
-From now on, the LP setup procedure turns off the encoder of the PFP theta axis,
-That allows to eliminate the encoder RFIs.
+From now on, the LP setup procedure turns off the encoder of the PFP theta axis.
+That allows to eliminate the encoder RFIs when observing in L and P bands.
 
 .. sectionauthor:: :ref:`mbuttu`
 
