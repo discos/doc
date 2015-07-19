@@ -24,9 +24,9 @@ but also the longer-term aims and directions of the project:
 
 .. _astro_referees:
 
-Astonomical referees
+Astronomical referees
 ====================
-Description of *abstonomical referee*:
+Description of *astronomical referee*:
 
     * :ref:`spoppi`
     * :ref:`srighini`
