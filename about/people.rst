@@ -24,9 +24,12 @@ but also the longer-term aims and directions of the project:
 
 .. _astro_referees:
 
-Astonomical referees
-====================
-Description of *abstonomical referee*:
+Astronomical referees
+=====================
+Astronomers are involved in the various phases of the software design,
+implementation and in-antenna testing, in order to exploit their 
+specific knowledge and ensure that our system answers to the needs of
+the astronomical community:  
 
     * :ref:`spoppi`
     * :ref:`srighini`
