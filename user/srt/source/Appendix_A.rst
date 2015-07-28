@@ -418,7 +418,7 @@ This monitor shows details on the Minor Servo systems:
 
   * **Tracking**: a red ``o`` means the minor servo system is not tracking 
     properly, and a green ``@`` light indicates the minor servo actual position
-    as expected. 
+    is as expected. 
 
   * **Status**: ``OK``, ``WARNING`` or ``FAILURE``. A *warning* needs 
     investigation but usually does not stop the ongoing activity (it also 
