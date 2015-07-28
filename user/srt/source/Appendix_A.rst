@@ -414,25 +414,24 @@ MinorServo
 This monitor shows details on the Minor Servo systems:
 
   * **Current Setup**: current setup code (**CCB**, **KKG**, **KKG_ASACTIVE**,
-    …)
+    ...)
 
-  * **Ready**: when green, the receiver is in its working position
+  * **Tracking**: a red ``o`` means the minor servo system is not tracking 
+    properly, and a green ``@`` light indicates the minor servo actual position
+    as expected. 
 
-  * **Starting** : when green, the minor servo are moving in order to put 
-    the selected receiver in its working position
+  * **Status**: ``OK``, ``WARNING`` or ``FAILURE``. A *warning* needs 
+    investigation but usually does not stop the ongoing activity (it also 
+    appears at startup, before the setup commands), and a *failure* appears 
+    if there is a fault in the system. 
+    In case of failure the tracking field can be green, and that 
+    means the observation can continue (for instance, it is possible to have
+    a PFP fault when the required receiver is on focus).
 
-  * **AS Conf**: when green, the subreflector position is computed by assuming 
-    the primary mirror surface is shaped and active (it is changing 
-    with the antenna elavation)
-
-  * **Elevation Track**: when green, the subreflector is changing its 
-    position with the elevation
-
-  * **Scan active**: when green, a scan is active. That means either the system 
-    is performing a scan or a scan is terminated and so the system is waiting 
-    for a stopScan command or for a new scan 
-
-  * **Scanning**: when green, the system is performing a scan
+  * **Motion Info**: it describes the minor servo movement. It can be:
+    ``Starting``, ``Parking``, ``Elevation Track Mode``,
+    ``No Elevation Track Mode``, and ``Not Ready to Move`` (in that case
+    a setup is required).
 
 To close the monitor, type ``exit`` in its prompt (the grey line). 
 
