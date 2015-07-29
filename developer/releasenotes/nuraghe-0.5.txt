@@ -89,8 +89,21 @@ That allows to eliminate the encoder RFIs when observing in L and P bands.
 
 User interface
 ~~~~~~~~~~~~~~
-Minor changes to existing panels. Some parameters from the telescope, mainly
-from the new features are now monitored.
+A few changes to the existing panels. Some parameters from the telescope, mainly
+from the new features are now monitored, and the minor servo console reports 
+only four fields: ``Current Setup``, ``Tracking``, ``Status``, and 
+``Motion Info``, as shown in Figure 1.
+
+.. figure:: images/minor_servo_console_ok_0.5.png
+   :scale: 80%
+   :alt: New minor servo console
+   :align: center
+
+   Figura 1: The new minor servo console of Nuraghe 0.5
+
+Now the red color is only used in case of improper functioning, either when
+the ``Status`` field indicates ``FAILURE`` or the minor servo system is
+not ``Tracking`` the commanded position.
 
 .. sectionauthor:: :ref:`mbuttu`, :ref:`aorlati` 
 
