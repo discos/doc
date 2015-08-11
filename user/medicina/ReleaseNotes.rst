@@ -6,7 +6,7 @@ Release notes
 
 Authors: 
 
-	* Righini, S. (INAF-ORA)
+	* Righini, S. (INAF-IRA)
 	* and the DISCOS software group
 
 
@@ -14,7 +14,7 @@ Authors:
 Issue	     Release     What’s  
              Date        new
 ===========  =========== =====================================================
-04           31/08/15    | **Release for ESCS 0.4** 
+04           xx/xx/15    | **Release for ESCS 0.5** 
                          | FITS/schedule sections removed from this document
                          | and placed in separate manuals. 
                          | Spectroscopy observations now available. 
