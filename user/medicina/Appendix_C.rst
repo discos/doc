@@ -15,4 +15,4 @@ writer component is still under testing. Each MBFITS contains the
 whole scan, and subscans are hierarchically organized inside its structure.
 
 **Details on both formats are provided in this separate manual** 
-:download:`pdf <attachments/SRT-MAN-10000-003-2.pdf>` 
+:download:`pdf <attachments/MED-MAN-FITS-02.pdf>` 

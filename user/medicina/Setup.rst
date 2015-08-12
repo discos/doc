@@ -70,7 +70,7 @@ named after the schedule: [schedulename].log.
 It is possible, and advisable, to insert the project code/name (a string 
 assigned to the project by the TAC) using the command::
 
-    > project=[projectcode]   (e.g. project=scicom)      
+    > project=[projectcode]   (e.g. project=maintenance)      
 
 This will make the user save time in later stages, as it will not be necessary 
 to specify the project name in schedule-launching commands. The project 
