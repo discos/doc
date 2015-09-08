@@ -105,25 +105,11 @@ standard output (FITS format).
 In order to configure the spectrometer, select it with the chooseBackend 
 command and use one of the following commands in operatorInput: 
 
-.. describe:: > initialize=XK77
+.. describe:: > initialize=XK01
  
-   This is to use the full K-band MF; each digital sample has a 6-bit 
+   This is to use the full K-band dual-feed; each digital sample has a 6-bit 
    representation. Full-Stokes sections are recorded, each having a 62.5 
    MHz bandwidth and 2048(x4) channels 
-
-.. describe:: > initialize=XK03 
-
-   It exploits the K-band feeds 0 and 3. 
-   Each feed produces two full-Stokes sections respectively having bandwidths 
-   of 62.5 MHz and 4 MHz and 2048(x4) channels. Each digital sample has an 
-   8-bit representation.
-
-.. describe:: > initialize=XK06
- 
-   It enables the K-band feeds 0 and 6. 
-   Each feed produces two full-Stokes sections respectively having 
-   bandwidths of 62.5 MHz and 4 MHz and 2048(x4) channels. 
-   Each digital sample has an 8-bit representation.
 
 .. describe:: > initialize=XK00 
 
@@ -180,7 +166,7 @@ where asterisks indicate which parameters are to be set according to default
 values. 
 
 .. warning:: At present, integration time is equal to **10 seconds**. 
-   Shorter integrations will be available in the future. Data transfer requires 
+   Shorter integrations might be available in the future. Data transfer requires 
    about **2 seconds** for each integration, thus take this overhead into 
    consideration when estimating how long your schedules are going to last. 
 
