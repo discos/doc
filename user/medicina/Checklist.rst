@@ -113,7 +113,6 @@ Desktop, connect to (1) as “observer”.
 
 **Stow the antenna** (op)::
  
-	> antennaStop 
 	> telescopePark
 
 **Close the monitors, if necessary** (1)::

@@ -112,7 +112,6 @@ Notice that actions take place in three different “locations”:
 
 **Stow the antenna** (op)::
  
-	> antennaStop 
 	> telescopePark
 
 **Close the monitors, if necessary** (1)::
