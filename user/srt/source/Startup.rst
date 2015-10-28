@@ -18,15 +18,18 @@ You can login with::
 
     username: observer       pwd:  **********
 
-Data inspection ad pre-reduction is allowed on a Windows machine, located on 
-the right of OBS1 and connected to a very large display fixed on the wall.  
-If this machine is shut down, or if exiting from the screensaver asks for a 
-login, use:: 
 
-    username: oper           pwd:  **********
+Data inspection ad pre-reduction can be accessed through a Linux machine, named
+nuraghe-obs3, located on the right of OBS1 and connected to a very large
+display fixed on the wall.
+If this machine is shut down, or if exiting from the screensaver asks for
+a login, use::
 
-On the desktop you’ll find a **VNC icon** providing connection to the remote 
-desktop of **nuraghe-obs2** (op)::    
+    username: observer       pwd:  **********
+
+On the desktop youll find a VNC icon providing connection to the remote
+desktop of **nuraghe-obs2** (op), where data inspection and pre-reduction
+tools are present::    
 
     login: [projectcode]     pwd: **********
 
