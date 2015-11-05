@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/19074/discos/doc.svg)](https://zenodo.org/badge/latestdoi/19074/discos/doc)
+
 DISCOS Documentation v0.5-rc
 ============================
 This directory contains the reStructuredText (reST) sources to the DISCOS
