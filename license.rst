@@ -11,7 +11,7 @@ LICENSE
     src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a><br /><span
     xmlns:dct="http://purl.org/dc/terms/" property="dct:title">DISCOS
     documentation</span> by <a xmlns:cc="http://creativecommons.org/ns#"
-    href="http://discos.readthedocs.org/en/latest/about/people.html"
+    href="http://discos.readthedocs.org/en/v0.5-rc/about/people.html"
     property="cc:attributionName" rel="cc:attributionURL">the DISCOS team</a> is
     licensed under a <a rel="license"
     href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons

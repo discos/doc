@@ -2,9 +2,9 @@
    copyright.rst
    license.rst
 
-####################
-DISCOS documentation
-####################
+############################
+DISCOS documentation v0.5-rc
+############################
 
 .. toctree::
    :maxdepth: 1
