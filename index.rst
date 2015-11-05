@@ -6,6 +6,9 @@
 DISCOS documentation v0.5-rc
 ############################
 
+.. image:: https://zenodo.org/badge/19074/discos/doc.svg
+   :target: https://zenodo.org/badge/latestdoi/19074/discos/doc
+
 .. toctree::
    :maxdepth: 1
 
