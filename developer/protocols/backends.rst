@@ -61,7 +61,7 @@ connection with the server and keep it open for message exchange. In this
 preliminary version a very simple handshake is required: on every new connection
 the server will write to the client a REPLY message containing the version of
 the protocol that the server is implementing. Further decisions are left to the
-client. 
+client.
 
 Example::
 
@@ -70,8 +70,9 @@ Example::
   server -> client 
   reply: "!version,1.0.1\r\n"
 
-  client now can continue communication or close it because it detects an
-  incomptible server version
+
+client now can continue communication or close it because it detects an
+incomptible server version
 
 Note that the message is exactly the same one published in reply to the
 :ref:`backend-protocol-version` command.
