@@ -2,9 +2,6 @@
 
 .. _backend_protocols:
 
-.. danger::
-   This protocol is still a draft and is subject to potentially disruptive changes
-
 ****************
 Backend protocol
 ****************
@@ -16,9 +13,9 @@ protocol. This definition is liberally inspired by the one used by KAT telescope
 for device communication ([KAT]_) as we found that work of really good quality.
 
 ==================== ===============
-**Protocol Version** 1.0
-**Last revision**    25/05/2015
-**Status**           DRAFT
+**Protocol Version** 1.1
+**Last revision**    18/11/2015
+**Status**           PRODUCTION
 ==================== ===============
 
 Introduction
@@ -39,19 +36,23 @@ of a single client will be the first and foremost ones.
 Here you can find a quick list of the requests defined by the protocol, which
 will be better described in the next sections:
 
-========================================= =======================================
+========================================= ========================================
 Request                                   Description
-========================================= =======================================
+========================================= ========================================
 :ref:`backend-protocol-status`            get the backend status code
 :ref:`backend-protocol-version`           get the server protocol version
-:ref:`backend-protocol-configuration`     get the backend actual configuration
+:ref:`backend-protocol-get-configuration` get the backend actual configuration
 :ref:`backend-protocol-set-configuration` set a new backend configuration
+:ref:`backend-protocol-get-integration`   get the backend integration time
+:ref:`backend-protocol-set-integration`   set a new integration time
+:ref:`backend-protocol-get-tpi`           ask the backend a total power level read
+:ref:`backend-protocol-get-tp0`           ask the backend a zero level read
 :ref:`backend-protocol-time`              get the backend time
 :ref:`backend-protocol-start`             start the acquisition [at a given time]
 :ref:`backend-protocol-stop`              stop the acquisition [at a given time]
 :ref:`backend-protocol-set-section`       configure a section of the backend
 :ref:`backend-protocol-cal-on`            (de)activate the calibration mark
-========================================= =======================================
+========================================= ========================================
 
 Handshake
 =========
@@ -209,10 +210,10 @@ Example communication::
   request: "?version\r\n"
     reply: "!version,1.0.1\r\n"
 
-.. _backend-protocol-configuration:
+.. _backend-protocol-get-configuration:
 
-configuration
-~~~~~~~~~~~~~
+get-configuration
+~~~~~~~~~~~~~~~~~
 
 Asks the backend server what configuration is loaded at the moment.
 Request message has no argument. The Reply message has 1 argument:
@@ -224,11 +225,11 @@ is returned as reply argument.
 
 Example communication::
 
-  request: "?configuration\r\n"
-    reply: "!configuration,K2000\r\n"
+  request: "?get-configuration\r\n"
+    reply: "!get-configuration,K2000\r\n"
 
-  request: "?configuration\r\n"
-    reply: "!configuration,unconfigured\r\n"
+  request: "?get-configuration\r\n"
+    reply: "!get-configuration,unconfigured\r\n"
 
 .. _backend-protocol-set-configuration:
 
@@ -248,6 +249,79 @@ Example communication::
 
   request: "?set-configuration,nonexistent\r\n"
     reply: "!set-configuration,fail,cannot find configuration 'nonexistent'\r\n"
+
+.. _backend-protocol-get-integration:
+
+get-integration
+~~~~~~~~~~~~~~~
+
+Asks the backend server what integration time is configured.
+Request message has no argument. The Reply message has 1 argument:
+
+  * **integration time** an integer representing the integration time configured in ms.
+
+If the backend has not yet been configured a special value of **0**
+is returned as reply argument.
+
+Example communication::
+
+  request: "?get-integration\r\n"
+    reply: "!get-integration,20\r\n"
+
+  request: "?get-integration\r\n"
+    reply: "!get-configuration,0\r\n"
+
+.. _backend-protocol-set-integration:
+
+set-integration
+~~~~~~~~~~~~~~~
+
+Instruct the backend to configure itself with the specified integration time given 
+as argument. Reply message has no argument. Request message has one argument: 
+
+  * **integration time** an integer representing the integration time to be set in ms.
+
+Example communication::
+
+  request: "?set-integration,20\r\n"
+    reply: "!set-integration,ok\r\n"
+
+  request: "?set-integration,wrong\r\n"
+    reply: "!set-integration,fail,integration time must be an integer number"
+
+.. _backend-protocol-get-tpi:
+
+get-tpi
+~~~~~~~
+
+Ask the backend a total power level read.
+Request message has no argument. Reply message has as many arguments as the 
+number of sections configured in the backend:
+
+  * **TPI_sec0, TPI_sec1, ...** a sequence of floating point numbers representing the
+    total power intensity level of each section of the backend
+
+Example communication::
+
+  request: "?get-tpi\r\n"
+    reply: "!get-tpi,ok,900.00,1240.00\r\n"
+
+.. _backend-protocol-get-tp0:
+
+get-tp0
+~~~~~~~
+
+Ask the backend a total power read with zero level input.
+Request message has no argument. Reply message has as many arguments as the 
+number of sections configured in the backend:
+
+  * **TP0_sec0, TP0_sec1, ...** a sequence of floating point numbers representing the
+    total power intensity level of each section of the backend with terminated input.
+
+Example communication::
+
+  request: "?get-tp0\r\n"
+    reply: "!get-tp0,ok,00.00,00.00\r\n"
 
 .. _backend-protocol-time:
 
