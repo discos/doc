@@ -52,6 +52,7 @@ Request                                   Description
 :ref:`backend-protocol-stop`              stop the acquisition [at a given time]
 :ref:`backend-protocol-set-section`       configure a section of the backend
 :ref:`backend-protocol-cal-on`            (de)activate the calibration mark
+:ref:`backend-protocol-set-filename`      tell the backend the output file name
 ========================================= ========================================
 
 Handshake
@@ -453,6 +454,21 @@ Example communication::
 
   request: "?cal-on,-10\r\n"
     reply: "!cal-on,fail,interleave samples must be a positive int\r\n"
+
+.. _backend-protocol-set-filename:
+
+set-filename
+~~~~~~~~~~~~
+
+Tell the backend where to find the telescope file with metadata to be 
+merged with the backend data.
+
+  * **filename** absolute path of the file to be merged
+
+Example communication::
+
+  request: "?set-filename,/hi/im/a/file.fits\r\n"
+    reply: "!set-filename,ok\r\n"
 
 
 Handling Errors
