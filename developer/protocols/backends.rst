@@ -163,9 +163,10 @@ as per the table below:
   * **integer** as formatted by printf("%d",i). i.e. 10 -15
   * **float** as formatted by printf("%f",f) i.e. -1209087123.234234 1.0
   * **boolean** True as 1 and False as 0 i.e. 1, 0
-  * **timestamp** XXXX.YYYYYYYY where XXXX is the number of seconds since epoch 
-    and YYYYYYYY is the remaining fraction of seconds with centinanosecond 
-    precision. All times are intended to be **UT** i.e. 1430922782.97088300
+  * **timestamp** is the number of centinanoseconds since epoch. It is the
+    format used by the ACS framework and it can be obtained by multiplying
+    the unix timestamp in floating point format by 10000000.
+    All times are intended to be **UT** i.e. 143092278297088300
 
 Request and Reply Messages
 ==========================
