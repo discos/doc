@@ -1,14 +1,18 @@
+*****************
 XKa band receiver
 *****************
+
 .. sectionauthor:: :ref:`mbuttu`, :ref:`aorlati`
 
-The *XKaBandReceiver* component will manage a dual feed receiver, 
+The ``XKaBandReceiver`` component will manage a dual feed receiver, 
 called *Sogliola*, that can operate simultaneously in two bands: 
 X and Ka. The receiver is currently installed in the primary focus of
-the SRT
+the SRT.
 
+
+********************
 Roach2 based backend
-*********************
+********************
 
 .. sectionauthor:: :ref:`mbuttu`, :ref:`mbartolini`, :ref:`amelis`, 
    :ref:`cmigoni`, :ref:`aorlati` 
@@ -18,3 +22,22 @@ with large bandwidth and a large number of bins. We are starting the
 integration process. We plan to rely on communication libraries that will
 allow us to include future backends more easily. More information could be
 found here: :ref:`protocols`. 
+
+
+****************************************
+Local oscillator for the L band receiver
+****************************************
+
+.. sectionauthor:: :ref:`mbuttu`, :ref:`aorlati`, :ref:`spoppi`
+
+The ``LPBandReceiver`` component will manage the local oscillator. That
+means the LP band receiver will behave as the other receivers, and it will
+be possible to use the ``setLO`` command from the *operator input* console:
+
+.. code-block:: discos
+
+   > receiversSetup=LLP
+   > setLO=2300
+
+This new feature will be only available when using the L band feed (it will
+not be possible to set the local oscillator in the ``PPP`` configuration).

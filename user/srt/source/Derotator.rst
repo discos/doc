@@ -14,10 +14,10 @@ position and it will not update its position along time.
 Rest position
 =============
 
-When the dewar angle is set to 0°, the MF receiver is positioned as 
+When the dewar angle is set to 0°,the MF receiver is positioned as 
 displayed in the following figure. Feeds 3-0-6 are aligned along a line that
-is parallel to the horizon, with feed number 3 being on the East side of the 
-central feed. 
+is parallel to the horizon, with feed number 3 being on the right side of the 
+central feed. Note that the cardinal directions refer to southern azimuth quadrants.
 
  
 .. figure:: images/MF_RestPosition.png

@@ -1,4 +1,4 @@
-.. _Appendix-A-Monitor-panels-full-description:
+.. _E_Appendix-A-Monitor-panels-full-description:
 
 ********************************************
 Appendix A - Monitor panels full description
@@ -14,7 +14,7 @@ operatorInput
    :align: center
 
 
-This is the **input console** where users write Nuraghe commands. 
+This is the **input console** where users write ESCS commands. 
 The prompt is just a sequential number enclosed in <>. 
 If a command is properly read, the system replies repeating the command itself,
 followed by the operation results (if they are foreseen). Otherwise, an error 
@@ -305,8 +305,8 @@ derotator (dewar positioner), when available.
 
   * **Status**: ``OK``, ``WARNING`` or ``FAILURE``
 
-  * **Feeds**: number of feeds (1 fore single-feed receivers, 7 for the K-band 
-    MF)
+  * **Feeds**: number of feeds (1 fore single-feed receivers, 2 for the K-band 
+    DF)
 
   * **LO**: Local Oscillator frequency (MHz)
   
@@ -315,45 +315,8 @@ derotator (dewar positioner), when available.
 
   * **Bandwidth**: actually observed bandwidth (MHz)
 
-  * **Polarization**: ``LCP``, ``RCP``, ``HLP`` or ``VLP``
+  * **Polarization**: ``LCP``, ``RCP``
   
-  * **Dewar positioner**: under this line all the derotator details are given.
-
-In particular: 
-
-  * **Configuration**: shows the current configuration (FIXED, BSC, CUSTOM)
-
-  * **Dewar is ready**: is a green-colored string appearing when the dewar 
-    positioner is ok. It changes to a red "Dewar in not ready" otherwise.
-
-  * **Absolute Position**: shows the present position (encoder readout) wrt 
-    the mechanic zero (degrees). A positive angle means CW. 
-
-  * **I / P / D / R**: notable angles involved in the current derotator usage:
-   
-    I = Initial offset angle set for the current configuration (degrees); for 
-    FIXED or CUSTOM configuration it is the user-set angle, for BSC is a 
-    receiver-dependent angle, -19.2° for the K-band MF) 
-  
-    P = Parallactic angle of the pointed position (degrees)
-    
-    D = variation (Delta) of the parallactic angle since the beginning of the
-    acquisition (degrees)
-    
-    R = reports the angle (degrees) applied if a derotator rewind has occurred.
-       
-  * **Rewinding not required**: is a green-colored string appearing when the 
-    dewar rewind is not necessary. It changes to a red "Rewinding is required" 
-    when the derotator reaches its range limits and to a yellow "Rewinding
-    required (rewinding...)" while the rewind is taking place. When red or
-    yellow, it implies that the general tracking flag in the Antenna TUI will 
-    turn red and the antenna status will be labeled as "off-source" (this 
-    involving the tracking flag associated to any data sample which might 
-    still be under acquisition).
-    The rewinding operations will not stop an ongoing subscan/acquisition, but 
-    no further acquisitions will be commanded until the antenna is back 
-    on-source.  
-
 To close the monitor, type ``exit`` in its prompt (the grey line). 
 
 
@@ -413,33 +376,34 @@ MinorServo
 
 This monitor shows details on the Minor Servo systems:
 
-  * **Current Setup**: current setup code (**CCB**, **KKG**, **KKG_ASACTIVE**,
-    ...)
+  * **Current Setup**: current setup code (**CCC**, **XXP**, **KKC**,
+    …)
 
-  * **Tracking**: a red ``o`` means the minor servo system is not tracking 
-    properly, and a green ``@`` light indicates the minor servo actual position
-    is as expected. 
+  * **Ready**: when green, the receiver is in its working position
 
-  * **Status**: ``OK``, ``WARNING`` or ``FAILURE``. A *warning* needs 
-    investigation but usually does not stop the ongoing activity (it also 
-    appears at startup, before the setup commands), and a *failure* appears 
-    if there is a fault in the system. 
-    In case of failure the tracking field can be green, and that 
-    means the observation can continue (for instance, it is possible to have
-    a PFP fault when the required receiver is on focus).
+  * **Starting** : when green, the minor servo are moving in order to put 
+    the selected receiver in its working position
 
-  * **Motion Info**: it describes the minor servo movement. It can be:
-    ``Starting``, ``Parking``, ``Elevation Track Mode``,
-    ``No Elevation Track Mode``, and ``Not Ready to Move`` (in that case
-    a setup is required).
+  * **AS Conf**: when green, the subreflector position is computed by assuming 
+    the primary mirror surface is shaped and active (it is changing 
+    with the antenna elavation)
+
+  * **Elevation Track**: when green, the subreflector is changing its 
+    position with the elevation
+
+  * **Scan active**: when green, a scan is active. That means either the system 
+    is performing a scan or a scan is terminated and so the system is waiting 
+    for a stopScan command or for a new scan 
+
+  * **Scanning**: when green, the system is performing a scan
 
 To close the monitor, type ``exit`` in its prompt (the grey line). 
 
 
 .. note:: All the monitors can be closed at a time using the command (in a 
-   terminal on OBS1)::
+   terminal on escsRemote)::
 
-	$ nuragheConsole --stop
+	$ escsConsole --stop
 	
 	
 Logging Display

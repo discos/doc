@@ -1,4 +1,4 @@
-.. _Checklist-for-schedule-based-observations: 
+.. _E_Checklist-for-schedule-based-observations: 
 
 *****************************************
 Checklist for schedule-based observations
@@ -6,30 +6,31 @@ Checklist for schedule-based observations
 
 Notice that actions take place in three different “locations”:
 
-  * **(1)** = action to be performed in a terminal on the observing machine
-  * **(2)** = action to be performed in a terminal on the data-access machine
-  * **(op)** = command to be given in the *operatorInput* panel of Nuraghe
+  * **(1)** = action to be performed in a terminal on escsRemote
+  * **(2)** = action to be performed in a terminal on escsConsole
+  * **(op)** = command to be given in the *operatorInput* panel of ESCS
 
 
 **Login on both (1) and (2)** 
+*Locally*: login on (2) using your projectName, then Using the VNC icon on the 
+Desktop, connect to (1) as “observer”.
+*Remotely*: connect via VNC to (1) as "observer", then use ssh to access (2). 
+
 
 **Launch the monitors, if necessary** (1):: 
 
-	$ nuragheConsole 
+	$ escsConsole 
 
 **Initial setup** (op)::
 
 	> antennaReset  (if resuming after the emergency stop button is released)  
 
-	> setupCCB      (or other receiver code) 
-
-	> asSetup=S     (or other AS code)
-
+	> setupCCC      (or other receiver code) 
 
 **Tune the local oscillator, if any** (op)::
 
 	> setLO=[freq] 
-	—> e.g. setLO=6600 - start frequency of the observed band will depend on the backend
+	—> e.g. setLO=4900 - start frequency of the observed band will depend on the backend
 
 
 **Point the antenna to a reference position** (op)::
@@ -70,7 +71,7 @@ Notice that actions take place in three different “locations”:
 	> chooseBackend=BACKENDS/XBackends 
 	> initialize=[code]
 
-**Create a schedule** (1):: 
+**Create a schedule** (2):: 
 
 	Use schedulecreator (see its own guide): 
 	$ schedulecreator –c [configfile] [out_directory] 
@@ -78,7 +79,7 @@ Notice that actions take place in three different “locations”:
 .. NOTE::
    If using XARCOS, edit schedule in order to tune its internal frequency and the frontend LO
 
-**Parse the schedule** (1):: 
+**Parse the schedule** (2):: 
 
 	$ scheduleChecker [schedulename].scd 
 	—> Move the schedule files to the observing machine 
@@ -95,11 +96,11 @@ Notice that actions take place in three different “locations”:
 		IDL> .r fits_look    (or fits_look_mf if observing with the MF receiver) 
 		IDL> fits_look
 
-	* *Case B\:* when using MANAGEMENT/Point, launch the quick-look (1)::
+	* *Case B\:* when using MANAGEMENT/Point, launch the quick-look (2)::
  
 		$ calibrationtoolclient MANAGEMENT/Point
 
-	* *Case C\:* when using MANAGEMENT/CalibrationTool, launch the quick-look (1):: 
+	* *Case C\:* when using MANAGEMENT/CalibrationTool, launch the quick-look (2):: 
 
 		$ calibrationtoolclient MANAGEMENT/CalibrationTool
 	
@@ -116,7 +117,7 @@ Notice that actions take place in three different “locations”:
 
 **Close the monitors, if necessary** (1)::
 
-	$ nuragheConsole —-stop   (individual panels are closed typing “exit” in their command lines)
+	$ escsConsole —-stop   (individual panels are closed typing “exit” in their command lines)
  
 
 

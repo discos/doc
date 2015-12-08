@@ -12,6 +12,7 @@ DISCOS documentation
    user/index.rst 
    developer/index.rst
    about/people.rst
+   license.rst
 
 
 Indices and tables

@@ -7,7 +7,7 @@ Release notes
 Authors: 
 
 	* Righini, S. (INAF-IRA)
-	* and the SRT software group
+	* and the DISCOS software group
 
 
 ===========  =========== =====================================================

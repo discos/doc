@@ -1,40 +1,37 @@
 NURAGHE 0.5
 ===========
-
-The RC (Release Candidate) release date is 22/06/2015
-The release date of the stable version is not yet decided
+Nuraghe-0.5-RC (Release Candidate) will be released on Monday
+22 June 2015. The release date of the stable version depends on the
+astronomer feedback, as explained in :ref:`Release Candidate <rc>`, so
+it is not yet decided.
 
 New features
 ------------
 
 Dewar positioning
 ~~~~~~~~~~~~~~~~~
-
-The *DewarPositioner* component is in charge of compensating the field
+The :ref:`DewarPositioner` component is in charge of compensating the field
 rotation when dealing with  multi-pixel receivers (if equipped with a 
 derotation system). Details on supported modes,
-configurations and more precice information required when dealing with
-derotation system are here: :ref: `DewarPositioner`
+configurations and more precise information required when dealing with
+the derotation system are available :ref:`here <DewarPositioner>`.
 
 .. sectionauthor:: :ref:`mbuttu`, :ref:`aorlati`, :ref:`spoppi`,
    :ref:`srighini`
 
 K band derotator control  
 ~~~~~~~~~~~~~~~~~~~~~~~~
-
 The derotation system installed with the K band receiever is now completely
 under control.  
 
 .. sectionauthor:: :ref:`mbuttu`
 
-
 Frequency tracking
 ~~~~~~~~~~~~~~~~~~
-
-In order to fullfil the requirements for spectroscopy observations, the system
+In order to fulfill the requirements for spectroscopy observations, the system
 can now keep a requested rest frequency in centre of the band of the backend 
 (section). Both frontend and backend local oscillator could be tuned during
-this operation. Ths capability is now supported from both command line and
+this operation. This capability is now supported from both command line and
 schedule.
 
 .. sectionauthor:: :ref:`aorlati`, :ref:`srighini`
@@ -42,55 +39,87 @@ schedule.
 System changes
 -------------- 
 
-Continuos calibration
-~~~~~~~~~~~~~~~~~~~~~
-
+Continuous calibration
+~~~~~~~~~~~~~~~~~~~~~~
 Some backends can quickly switch the calibration diode on and off 
-(Total Power, DFB). Up to now this capability had to  enabled in the frontend
-control boards. Now the operation is fully auotmatized and does not require
-human intervantion any more.
+(Total Power, DFB). Up to now this capability had to be enabled in the frontend
+control boards. From now on the operation is fully automated and does not require
+the human intervention any more.
 
 .. sectionauthor:: :ref:`mbuttu`, :ref:`aorlati`
 
+
 FitsZilla fits file
 ~~~~~~~~~~~~~~~~~~~
-
 Some keywords added (mainly belonging to spectroscopy). In the output scan
 folder, when the scan is closed a *summary.fits* is created. The file contains
 just the main header with some keywords describing the current scan.
 
 .. sectionauthor:: :ref:`aorlati`, :ref:`srighini`
 
+
 Minor servo system
 ~~~~~~~~~~~~~~~~~~
 
-Coming from a setup the minor servo system (subreflector) will be now "tracking
-as the active surface is on". To get this configuration, user commands are 
-then not required any more. The user is asked to issue the correct
-configuration in case  other behviours are required.
+Gregorian and BWG default configuration
+```````````````````````````````````````
+When using the Gregorian or BWG focus only, the :ref:`overall_setup`
+automatically configures the subreflector in order for the
+elevation to be tracked, and assumes the active surface is enabled.
+That means the minor servo setup automatically issues the following
+commands:
+
+.. code-block:: discos
+
+    > setServoElevationTracking=ON
+    > setServoASConfiguration=ON
+
+so they are not required any more. The user is asked to issue the correct 
+configuration in case other behaviours are required.
 
 .. sectionauthor:: :ref:`mbuttu`
 
+LP band receiver setup
+``````````````````````
+From now on, the LP setup procedure turns off the encoder of the PFP theta axis.
+That allows to eliminate the encoder RFIs when observing in L and P bands.
+
+.. sectionauthor:: :ref:`mbuttu`
+
+
 User interface
 ~~~~~~~~~~~~~~
+A few changes to the existing panels. Some parameters from the telescope, mainly
+from the new features are now monitored, and the minor servo console reports 
+only four fields: ``Current Setup``, ``Tracking``, ``Status``, and 
+``Motion Info``, as shown in Figure 1.
 
-Minor changes to existing panels. Some parameters from the teelscope, mainly
-from the new features are now monitored.
+.. figure:: images/minor_servo_console_ok_0.5.png
+   :scale: 80%
+   :alt: New minor servo console
+   :align: center
+
+   Figura 1: The new minor servo console of Nuraghe 0.5
+
+Now the red color is only used in case of improper functioning, either when
+the ``Status`` field indicates ``FAILURE`` or the minor servo system is
+not ``Tracking`` the commanded position.
 
 .. sectionauthor:: :ref:`mbuttu`, :ref:`aorlati` 
 
-logging
-~~~~~~~
 
+Logging
+~~~~~~~
 The user commands from operator console are now logged. Logging system is now
 more robust. The management of the system log file is now more crafty,
-avoiding the creation of bigger log files
+avoiding the creation of bigger log files. System log files are daily rotated
+and stored for 1 year.
 
 .. sectionauthor:: :ref:`mbartolini`, :ref:`afara`
 
+
 Xarcos
 ~~~~~~
-
 Fully supported and integrated in the system. Integration time is now in
 milliseconds.
 
@@ -98,17 +127,25 @@ milliseconds.
 
 Schedules
 ~~~~~~~~~
-
 The schedule now allows to call parametric configuration procedures.
 
 .. sectionauthor:: :ref:`mbartolini`, :ref:`aorlati`
 
+Testing Integration
+~~~~~~~~~~~~~~~~~~~
+The development framework now integrates tools for automatic tests development
+and execution.
+
+.. sectionauthor:: :ref:`mbartolini`
+
+Build automation
+~~~~~~~~~~~~~~~~
+The build process has been reorganized in order to have nightly builds and 
+build status reports
+
+.. sectionauthor:: :ref:`mbartolini`
 
 Change log
 ----------
-
 A complete and browsable change log of this release may be consulted from our
-`tracking system <http://www.med.ira.inaf.it/mantisbt/search.php?project_id=13&sticky_issues=off&fixed_in_version=NURAGHE-0.5&sortby=last_updated&dir=DESC&hide_status_id=-2&match_type=0>`_
-
-
-
+`tracking system <http://www.med.ira.inaf.it/mantisbt/search.php?project_id=13&sticky_issues=off&fixed_in_version=NURAGHE-0.5&sortby=last_updated&dir=DESC&hide_status_id=-2&match_type=0>`_.
