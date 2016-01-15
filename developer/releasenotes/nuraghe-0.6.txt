@@ -1,0 +1,58 @@
+NURAGHE 0.6
+===========
+Nuraghe-0.6 will be released on Thursday 28 January 2016.
+
+New features
+------------
+
+Local Oscillator for the LP-band receiver
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Now the ``LPBandReceiver`` component can set the local oscillator, so
+the component behaves as the other receivers, and it is possible to use 
+the ``setLO`` command from the operator input console:
+
+.. code-block:: discos
+
+    > receiversSetup=LLP
+    > setLO=2300
+
+This new feature is only available using the L band feed (it is not 
+possible to set the local oscillator in the ``PPP`` configuration). 
+
+It is not allowed to set the LO inside the observed sky band. For instance:
+
+.. code-block:: discos
+
+    > receiversMode=XXL5 # Bandwidth 1625:1715
+    > setLO=1650
+    Error - Value not allowed. It is within the band...
+
+It is also not possible to set a receiver mode in case the current LO value 
+is inside the mode band:
+
+.. code-block:: discos
+
+    > receiversMode=XXL5 # Bandwidth 1625:1715
+    > setLO=1500 # Ok, it is outside the RF band
+    > receiversMode=XXL4 # Bandwidth 1300:1800
+    Error - Mode not allowed. The LO value is within the band...
+
+A 1000MHz low pass filter is applyed to the IFs, so it is not possible to 
+set a LO value that puts the IFs over the low pass filter:
+
+.. code-block:: discos
+
+    > receiversMode=XXL4 # Band 1300:1800
+    > setLO=200 # IF band: 1100:1600
+    Error - Value not allowed. The IF bandwidth is outside the low pass filter.
+
+.. sectionauthor:: :ref:`mbuttu`, :ref:`aorlati`, :ref:`spoppi`.
+
+System changes
+-------------- 
+
+
+Change log
+----------
+A complete and browsable change log of this release may be consulted from our
+`tracking system <http://www.med.ira.inaf.it/mantisbt/search.php?project_id=13&sticky_issues=off&fixed_in_version=NURAGHE-0.5&sortby=last_updated&dir=DESC&hide_status_id=-2&match_type=0>`_.
