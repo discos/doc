@@ -8,4 +8,4 @@ What's new in the next version
    cooking for next releases of DISCOS.
 
 
-.. include:: nextrelease-0.6.txt 
+.. include:: nextrelease-1.0.txt 

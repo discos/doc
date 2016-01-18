@@ -5,6 +5,16 @@ Nuraghe-0.6 will be released on Thursday 28 January 2016.
 New features
 ------------
 
+SARDARAS backend integrated
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**TO BE DONE** 
+
+Acknowledgement to SARDARAS development team: Andrea Melis, Raimondo concu, Alessio Trois.
+
+.. sectionauthor:: :ref:`cmigoni`, :ref:`amelis`, :ref:`mbartolini`, :ref:`aorlati`.
+
+
 Local Oscillator for the LP-band receiver
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Now the ``LPBandReceiver`` component can set the local oscillator, so
@@ -48,11 +58,80 @@ set a LO value that puts the IFs over the low pass filter:
 
 .. sectionauthor:: :ref:`mbuttu`, :ref:`aorlati`, :ref:`spoppi`.
 
+
 System changes
 -------------- 
 
+FitsZilla fits file
+~~~~~~~~~~~~~~~~~~~
+A keyword "signal" has been added to the mian header. Presently three possible values are avilable:
+
+.. code-block:: discos
+
+    * SIGNAL #indicating that the subscan has been done on source
+    * REFERENCE # indicating the telescope was off source during the subscan
+    * NONE # meaning the the keyword is unknown or the keyword is not pertinet 
+             for the current subscan
+
+.. sectionauthor:: :ref:`aorlati`, :ref:`srighini`
+
+Alias name for fully integrated backends
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The command *chooseBackend* now allows the use of aliases for backends. Standard names continue to work regularly.
+The mnemonic names or aliases are the following:
+
+=================== ============
+Standard name       Alias
+=================== ============
+BACKENDS/TotalPower TotalPower
+BACKENDS/XBackends  XArcos
+BACKENDS/Roach      Roach	
+=================== ============
+ 
+.. sectionauthor:: :ref:`aorlati`.
+
+Continuos calibration
+~~~~~~~~~~~~~~~~~~~~~
+In order to control the calibration mark from an external source (i.e. backends like the DFB or DBBC) the Total Power backend (focus selector) 
+should be configured accordingly. Also the frontend requires an identical configuration, this part has been addressed in previous release 
+(see command *externalCalOn*).
+The command *calSwitch*, when the Total Power is the current backend, has been slightly modified. It now allows for the following sintax :
+
+.. code-block:: discos
+
+    > calSwitch=N # where N is a integer value. One sample every N is acquired with the noise cal turned on. This is the old behaviour of  the Total Power. It also disable the configuration EXT
+    > calSwitch=OFF # turns off all the previous setup and disable the calibration mark control through the Total Power backend
+    > calSwitch=EXT # the mark will be controlled from external sources (DBBC, DFB .....)
+
+.. sectionauthor:: :ref:`aorlati`.
+
+User Interface
+~~~~~~~~~~~~~~
+The backend panel associated to the Total Power backend shows an extended status word. Four bits have been added:
+
+.. code-block:: discos
+
+    * ExternalMark # it turns yellow when the external mark control is enabled
+    * FastSwitching # it turns yellow when the total power is sampling with the mark swicthing under its direct control. Note only when sampling is effectively done.
+    * Calon # it turn yellow when the noise mark is turned on (non-fast mode) under the control of the Backend. This is not implemented yet. 	
+    * ZeroRef # it turns yellow when the backend inputs are connected to the 500hm. It may be yellow during a system temperature measurement.
+         
+.. figure:: images/totalpower_extended_statusword.png
+   :scale: 80%
+   :alt: New Total Power Console
+   :align: center
+
+   Figura 1: The Total Power console of Nuraghe 0.6
+
+.. sectionauthor:: :ref:`aorlati` 
+
+Auto stow for wind
+~~~~~~~~~~~~~~~~~~
+The telescope will be parked (and the running schedule stopped) if an excessive wind is detected.
+
+.. sectionauthor:: :ref:`spoppi` 
 
 Change log
 ----------
 A complete and browsable change log of this release may be consulted from our
-`tracking system <http://www.med.ira.inaf.it/mantisbt/search.php?project_id=13&sticky_issues=off&fixed_in_version=NURAGHE-0.5&sortby=last_updated&dir=DESC&hide_status_id=-2&match_type=0>`_.
+`tracking system <http://www.med.ira.inaf.it/mantisbt/search.php?project_id=13&sticky_issues=off&target_version=NURAGHE-0.6&sortby=last_updated&dir=DESC&hide_status_id=-2&match_type=0>`_.

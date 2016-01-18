@@ -1,0 +1,11 @@
+*****************
+XKa band receiver
+*****************
+
+.. sectionauthor:: :ref:`mbuttu`, :ref:`aorlati`
+
+The ``XKaBandReceiver`` component will manage a dual feed receiver, 
+called *Sogliola*, that can operate simultaneously in two bands: 
+X and Ka. The receiver is currently installed in the primary focus of
+the SRT.
+
