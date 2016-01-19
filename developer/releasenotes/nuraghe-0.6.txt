@@ -47,6 +47,16 @@ is inside the mode band:
     > receiversMode=XXL4 # Bandwidth 1300:1800
     Error - Mode not allowed. The LO value is within the band...
 
+The bandwith value is always positive, while the IFs could be negative,
+indicating that the IF band is inverted. For instance, in the following case:
+
+.. code-block:: discos
+
+    > receiversMode=XXL5 # Bandwidth 1625:1715
+    > setLO=2300
+
+the receiver panel will show ``startFreq=-675`` and ``bandwidth=90``. 
+
 A 1000MHz low pass filter is applyed to the IFs, so it is not possible to 
 set a LO value that puts the IFs over the low pass filter:
 
@@ -134,4 +144,4 @@ The telescope will be parked (and the running schedule stopped) if an excessive 
 Change log
 ----------
 A complete and browsable change log of this release may be consulted from our
-`tracking system <http://www.med.ira.inaf.it/mantisbt/search.php?project_id=13&sticky_issues=off&target_version=NURAGHE-0.6&sortby=last_updated&dir=DESC&hide_status_id=-2&match_type=0>`_.
+`tracking system`_.

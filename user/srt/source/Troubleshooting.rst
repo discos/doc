@@ -43,7 +43,7 @@ For other receivers, the codes of course vary.
 
 .. admonition:: PROBLEM: 
 
-   * **I am using correct commands, but they are not recognized or I am told 
+   \* **I am using correct commands, but they are not recognized or I am told 
    that arguments are missing**
 
 Are you inserting blank spaces in your command line? Remember that they are not 

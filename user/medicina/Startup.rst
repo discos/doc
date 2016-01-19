@@ -87,8 +87,8 @@ you can find the following folders, whose names are self-explanatory::
     ~/logs
 
 .. note:: users can generate subfolders according to their needs to store 
-their schedules, but, in order to be executed, schedules must be places 
-exactly in their ~/schedules folder. 
+   their schedules, but, in order to be executed, schedules must be places 
+   exactly in their ~/schedules folder. 
 
 
 Remotely controlled observations
