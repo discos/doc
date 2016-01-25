@@ -13,8 +13,8 @@ protocol. This definition is liberally inspired by the one used by KAT telescope
 for device communication ([KAT]_) as we found that work of really good quality.
 
 ==================== ===============
-**Protocol Version** 1.1
-**Last revision**    18/11/2015
+**Protocol Version** 1.2
+**Last revision**    25/01/2016
 **Status**           PRODUCTION
 ==================== ===============
 
@@ -53,6 +53,7 @@ Request                                   Description
 :ref:`backend-protocol-set-section`       configure a section of the backend
 :ref:`backend-protocol-cal-on`            (de)activate the calibration mark
 :ref:`backend-protocol-set-filename`      tell the backend the output file name
+:ref:`backend-protocol-convert-data`      instructs the backend to convert file
 ========================================= ========================================
 
 Handshake
@@ -471,6 +472,23 @@ Example communication::
   request: "?set-filename,/hi/im/a/file.fits\r\n"
     reply: "!set-filename,ok\r\n"
 
+
+.. _backend-protocol-convert-data:
+
+convert-data
+~~~~~~~~~~~~
+
+.. NOTE::
+   Added in protocol version 1.2
+
+Instructs the backend to convert data. This means that the control system has
+successfully closed the auxiliary metadata file which can now be completed with
+collected data from the backend.
+
+Example communication::
+
+  request: "?convert-data\r\n"
+    reply: "!convert-data,ok\r\n"
 
 Handling Errors
 ===============
