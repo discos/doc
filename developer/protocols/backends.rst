@@ -478,8 +478,7 @@ Example communication::
 convert-data
 ~~~~~~~~~~~~
 
-.. NOTE::
-   Added in protocol version 1.2
+.. versionadded:: 1.2
 
 Instructs the backend to convert data. This means that the control system has
 successfully closed the auxiliary metadata file which can now be completed with
