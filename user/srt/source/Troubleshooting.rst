@@ -10,7 +10,7 @@ or inefficiencies in the code. The records are sorted according to the main
 operation areas in which the problems arise. 
 
 .. note:: **Users are advised to read these “hints” at the beginning of the 
-   session and before attempting a (possibly unnecessary) reboot of 
+   session and before attempting a (likely unnecessary) reboot of 
    the system.** 
 
 
@@ -86,9 +86,11 @@ or, if you have already given the project=code command::
 
     * **Dead time between consecutive subscans is much longer than expected**
 
-With Nuraghe 0.5 it is necessary to delete from the schedules all the post-scan 
-wait times, as the system now takes automatically care of computing and 
-applying proper delays according to the deceleration ramps duration. 
-If you specify a wait time in your post-scan procedures, it will add to the 
-system-computed delays. 
+Maybe you are using old schedules that still contain  ``wait`` commands in the 
+post-scan procedures.
+With Nuraghe >0.5 it is incorrect to insert post-scan waiting times in the
+schedules, as the system takes automatically care of computing and 
+applying proper delays, according to the deceleration ramps duration. 
+If you specify a wait time in your post-scan procedures, it will **add** to the 
+system-computed delays.  
 

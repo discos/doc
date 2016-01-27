@@ -14,6 +14,16 @@ Authors:
 Issue	     Release     What’s  
              Date        new
 ===========  =========== =====================================================
+12           29/01/16    | **Release of NURAGHE 0.6**
+                         | Addition of the SARDARA back-end. 
+                         | New instructions for LLP LO setup.
+                         | Updates in the Startup, Data retrieval and 
+                         | Quick-look sections. 
+                         | This release is to be paired to the following
+                         | documents
+                         | * Nuraghe schedule structure (v. 2)
+                         | * FITS and MBFITS output formats in Nuraghe (v. 3)
+-----------  ----------- -----------------------------------------------------
 11           25/05/15    | **Release of NURAGHE 0.5**
                          | Addition of Spectroscopy and Derotator sections.
                          | Changes in goOff command. 

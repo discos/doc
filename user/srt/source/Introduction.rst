@@ -13,8 +13,8 @@ Nuraghe is the control software produced for the Sardinia Radio Telescope.
 It is a distributed system based on ACS (ALMA Common Software), commanding all
 the devices of the telescope and allowing the user to perform single-dish
 observations in the most common modes. 
-As of today, the code actually implemented for the telescopes (i.e. excluding
-the huge ACS framework) amounts to about 548000 lines (467400 if not
+As of today, the code specifically implemented for the telescopes (i.e. 
+excluding the huge ACS framework) amounts to about 612500 lines (512600 if not
 considering comments). 
 Even VLBI (or guest-backend) observations partly rely on Nuraghe, as it must be
 used to perform the focus selection and the frontend setup. 
@@ -22,23 +22,27 @@ used to perform the focus selection and the frontend setup.
 This guide is meant to help the observer in the use of Nuraghe, without dealing
 with the “behind-the-curtains” complex details of the system. 
 This release focuses on **single-dish continuum and spectroscopy
-observations**, as the fully integrated backends available on-site are the
-analog total power one and the XARCOS spectrometer. Since both the hardware and
-software implementations are still going on at SRT, this manual will forcibly
-undergo continuous revisions. 
+observations**; the fully integrated backends available on-site are the
+analog total power one and the XARCOS spectrometer. A Roach-based back-end is
+also available, but it is not yet completely integrated in Nuraghe.
+Since both the hardware and software implementations are still going on at SRT, 
+this manual will forcibly undergo continuous revisions. 
  
 Here follows a simple schematization of the observing system, helpful to
 visualize all the main devices Nuraghe deals with and the most important
 operations it performs. 
-*Notice: the features not yet available in this release are shown in brackets*.
-
 
 .. figure:: images/NuragheTasks.png
    :scale: 100%
    :alt: Nuraghe overall tasks
    :align: center
 
-
+.. note:: (1) This backend is only partially integrated. This mainly means 
+   that its setup can be performed in Nuraghe but the output files are produced 
+   externally to it
+   (2) Frequency switching is possible only manually editing the schedules, as
+   the schedule-creating tool does not foresee this specific mode, yet. 
+   (3) MBFITS files are planned to be available in the future.  
 
 Glossary: terms and abbreviations
 =================================
@@ -82,7 +86,7 @@ Glossary: terms and abbreviations
  particularly relevant for the positions commanded to the mount, so that the
  antenna motions take place along a fully controlled path (except in slewing)
 :TPB: Total Power Backend
-:Tracking: the antenna points to a target and, if it’s a celestial target,
+:Tracking: the antenna points to a target and, if it is a celestial target,
  follows its sidereal motion
 
 

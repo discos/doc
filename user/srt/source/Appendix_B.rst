@@ -72,8 +72,8 @@ Here follow all the commands exploitable in Nuraghe:
 
 .. describe:: > chooseBackend=[string]  
 
-   selects the backend; *string* can be ``BACKENDS/TotalPower`` or 
-   ``BACKENDS/XBackends``
+   selects the backend; *string* can be ``BACKENDS/TotalPower``,  
+   ``BACKENDS/XBackends``, ``BACKENDS/Roach``
 
 .. describe:: >  chooseRecorder=[string]
   
@@ -271,7 +271,7 @@ Here follow all the commands exploitable in Nuraghe:
      
    [freq] is given in MHz and is a multiple argument: it can list a 
    different value for each of the N sections - as long as XARCOS is the 
-   backend in use(not all the backends allow this sub-tuning). 
+   backend in use (not all the backends allow this sub-tuning). 
    Specifying a single value assigns the rest frequency to *all* the sections. 
    The specified values will hold until different ones are commanded, or 
    until a new general *setup* command is entered. 
@@ -381,13 +381,15 @@ Here follow all the commands exploitable in Nuraghe:
    
 .. describe:: > winkingMark=[integer]
  
-   activates the winking (i.e. fast switching) calibration mark, whose period
-   in milliseconds is given as an integer parameter. To switch the mark off, 
-   simply command a zero-ms period. This must **always** be done when the 
-   winking mark is not needed anymore.
+   activates the winking (i.e. fast switching) calibration mark 
+   **for the TPB**. 
+   The duty cycle is specified by the integer parameter, which indicates the 
+   number of off-cal samples after which an on-cal sample is acquired. 
+   To switch the mark off, simply command a zero-sample period. This must 
+   **always** be done when the winking mark is not needed anymore.
    
-   Example:  ``> winkingMark=40`` activates the mark so that is alternately 
-   stays ON for 40 ms and OFF for 40 ms.
+   Example:  ``> winkingMark=3`` activates the mark so that it is ON for one 
+   sample every 3 samples OFF. 
    
    While:  ``> winkingMark=0`` switches the mark off 
    

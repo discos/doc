@@ -50,28 +50,25 @@ open windows in the invisible desktop area!
 What to do in OBS1
 ==================
 
-Use OBS1 to produce/write/copy the schedules and to run the system 
-(nuragheConsole, etc…).
-In order to be read by Nuraghe, the schedules must end up in a specific folder. 
-Open a terminal and launch::
-
-    $ myschedules
-
-to know what that folder is. 
-
-The logfile location can be retrieved as well::
-
-    $ mylogs
-
-
+OBS1 is the destination for your schedules, and is the machine where you 
+run the system (with commands such as nuragheConsole, etc…).
 
 
 What to do in OBS2
 ==================
 
-Use OBS2 for the FITS **quicklook and data retrieval** (see dedicated 
-sections).
+OBS2 is used to generate schedules with **basie** and to retrieve the data 
+(with the exception of the files produced by the Roach spectrometer). See
+details in :ref:`Retrieving-the-data`. 
+You can check the name and location of the relevant folders - where your 
+schedules, data and logfiles are stored - by opening a terminal and launching::
 
+    $ mySession
+
+Remember to always copy your schedules to the foreseen folder on OBS1.
+
+On OBS2 you can also launch the online quick-look. Read details in the 
+dedicated section :ref:`Data-formats-and-online-quick-look`.
 
 Input terminal and system monitors (OBS1)
 =========================================

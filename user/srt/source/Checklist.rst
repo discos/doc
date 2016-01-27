@@ -67,17 +67,20 @@ Notice that actions take place in three different “locations”:
 
 **If needed, choose and set the spectrometer** (op)::
  
-	> chooseBackend=BACKENDS/XBackends 
+	> chooseBackend=BACKENDS/XBackends  (or Roach)
 	> initialize=[code]
 
-**Create a schedule** (1):: 
+**Create a schedule** (2):: 
 
-	Use schedulecreator (see its own guide): 
-	$ schedulecreator –c [configfile] [out_directory] 
+	Use the *basie* schedule creator (read its guide for details): 
+	$ basie –c [configfile] [out_directory] 
 
-.. NOTE::
-   If using XARCOS, edit schedule in order to tune its internal frequency and the frontend LO
+**Copy all the schedule files** (2):: 
 
+    Copy the schedule to the destination folder on OBS1.
+    If needed, be reminded of the folder location using: 
+    $ mySession
+    
 **Parse the schedule** (1):: 
 
 	$ scheduleChecker [schedulename].scd 
@@ -87,13 +90,13 @@ Notice that actions take place in three different “locations”:
 		
 	> startSchedule=[project/][schedulename].scd,[N]
  
-**Data quick-look (continuum only)**
+**Data quick-look (TPB and XARCOS FITS only)**
 
 	* *Case A\:* when using MANAGEMENT/Fitszilla, launch the quick-look (2)::
  
 		$ idl 
-		IDL> .r fits_look    (or fits_look_mf if observing with the MF receiver) 
-		IDL> fits_look
+		IDL> .r fitslook     
+		IDL> fitslook
 
 	* *Case B\:* when using MANAGEMENT/Point, launch the quick-look (1)::
  

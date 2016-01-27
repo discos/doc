@@ -4,73 +4,47 @@
 Data formats and online quick-look
 **********************************
 
+Details on the FITS file structure are given in a separate document. Download 
+it here: :download:`pdf <attachments/SRT-MAN-10000-003-3.pdf>` 
+
 Waiting for a comprehensive GUI which is going to include also a real-time 
 preview of the data under acquisition, users are provided with two different 
-tools in order to inspect the data produced by the TPB. 
+tools in order to inspect the data produced by the TPB and XARCOS. 
 
 If writer is MANAGEMENT/FitsZilla
 =================================
 When acquiring FITS files through a schedule, there is an IDL tool available 
-for the semi-realtime quick-look of the saved data.
+for the almost-realtime quick-look of the saved data.
  
 Open a terminal on *nuraghe-obs2*. Launch IDL::
 
     $ idl
 
-At the IDL prompt, compile and run the program fits_look.pro:: 
+At the IDL prompt, compile and run the program fitslook.pro:: 
 
-    IDL> .r fits_look
-    IDL> fits_look
+    IDL> .r fitslook
+    IDL> fitslook
 
-The last available FITS file will be plotted. Full usage::
+The last completed FITS file (i.e. the most recent subscan carried out) will be 
+displayed. 
 
-    IDL> fits_look  [,pin=] [,x=] [,y=] [,/help]
+.. note:: The program automatically identifies the recorded sections and 
+   plots them all. If you are using the multi-feed receiver with the aim of 
+   actually exploiting only the central feed, adjust your schedule so that only
+   sections 0 and 1 are enabled, otherwise all the sections will be recorded 
+   and displayed. 
 
-where: 
-	* **pin** = full path to data storage folder (the one containing 
-	  the scan subfolders) 
-	* **x** = letter indicating the choice for the x-axis label, default is 's' 
-	* **y** = choice of the data stream, default is 'raw', displaying raw 
-	  counts, while using 'atemp' the antenna temperature - *if available* - 
-	  is shown.
+The plots show the proper file content, according to its continuum or spectral 
+nature. Read all the program options using::
 
-The procedure iteratively lists all the folders in the given path (pin) and 
-displays on screen the Feed0L and Feed0R data of the last surely complete FITS 
-file recorded in the last written folder. 
-If pin is not provided, the path to the data is **by default** to the folder 
-where data is currently being written. 
+    IDL> fitslook, /help
 
-The x-axis can be represented as: 
+.. note:: By default, fitslook displays raw data (in arbitrary counts). 
+   Data streams in antenna temperature are available - and selectable - only 
+   for the TPB and under the condition that a Tsys has been correctly acquired 
+   prior to the execution of the scan. 
 
- |  sample number (if x='s'),  (default) 
- |  elapsed time from the acquisition start (if x='t'), 
- |  scanning axis (if x='x'),
- |  azimuth degrees (if x='a'), 
- |  elevation degrees (if x='e'), 
- |  declination degrees (if x='d'), 
- |  right ascension hh.hhh (if x='r').
-
-
-Data can be represented as:
-
- |  raw counts (if y='raw'),  (default)
- |  antenna temperature (if y='atemp'). 
-
-
-In order to display all the sections of a **multi-feed receiver**, use the 
-specific procedure:: 
-
-    IDL> .r fits_look_mf
-    IDL> fits_look_mf
-
-
-Please report any problem/request about these tools, as they are very basic 
-and still under development.
-
-.. note:: The antenna temperature data streams are available only if a Tsys 
-   has been correctly acquired prior to the execution of the scan. See the 
-   FITS-related document for details.
-
+Please report any problem/request about this tool, as it is under development.
 
 
 If writer is MANAGEMENT/Point or MANAGEMENT/CalibrationTool

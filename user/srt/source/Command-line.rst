@@ -109,9 +109,8 @@ which contains:
 	* atmospheric temperature;
 	* wind speed and direction.   
 
-These logfiles are stored in a dedicated folder on OBS1: 
-
-	/archive/logs/WindLog  (see also section “Retrieving the data”).
+These logfiles are stored in a dedicated folder on OBS1. See section 
+:ref:`Retrieving-the-data`.
 
 Filenames are assigned according to date and time of the script execution. For 
 example, if the script is launched on November 26th 2013 at 13:46:31 UT, the 
@@ -138,13 +137,6 @@ where string can be:
 	* **MANAGEMENT/FitsZilla** if FITS output is desired
 	* (MANAGEMENT/MBFitsWriter) if MBFITS is preferred – not yet available
 
-
-.. note:: When recording **manually-acquired** data in FITS format, the 
-   **output files** are stored in a peculiar path which is not accessible to 
-   users. This implies that they also cannot be shown by the quick-look 
-   procedure. This temporary situation, which requires the involvement of a 
-   system administrator in order to retrieve the data, will be corrected in 
-   the next release of Nuraghe. 
 
 Once the recorder is set, acquisitions on a target can be performed as follows. 
 First, set the target:: 

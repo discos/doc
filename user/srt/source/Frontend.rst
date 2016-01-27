@@ -13,20 +13,19 @@ To change the frontend Local Oscillator frequency, use the following command::
     > setLO=[freq1];[freq2];…;[freqN]
 
 Notice the semicolon. Ideally, different values could be assigned to different 
-IFs, thus tuning each section to a different sub-band. For the present 
-hardware, though, this is not possible, so a single value must be specified: 
+IFs, thus tuning each section to a different sub-band. For the TPB, though, 
+this is not possible, so a single value must be specified:: 
 
 	e.g. ``> setLO=5600`` 
 
 Remember that the actually observed band begins at a frequency which is 
-usually different from the LO one (see Initial setup)
+usually different from the LO one (see :ref:`overall_setup`)
 
-The L-P band receiver is not provided with a tunable Local Oscillator, and the 
-observed band is fixed. Filters are available in order to set the observed 
+For the L-P band receiver, filters are available in order to set the observed 
 sub-band and select the polarisation (circular or linear), specifying a code 
 with the command::
 
-    > receiversMode=[code]  see the next section for the details. 
+    > receiversMode=[code]    (see the next section for the details) 
 
 The temperature of the calibration mark in use is recorded in the logfile 
 whenever a Tsys is measured. It is also stored in the FITS/MBFITS output files. 
@@ -36,14 +35,12 @@ The calibration mark can be manually switched on and off respectively with::
     > calOff
 
 
-If the user wants to perform the setup for the frontend only (without 
+If users want to perform the setup for the frontend only (without 
 affecting the mount, the minor servo or the backend), the command is:: 
 
     > receiversSetup=[code]   (PPP, LLP, PLP, CCB, KKG)
 
  
-
-
 
 Specific notes for the L/P receiver
 ===================================
@@ -58,7 +55,8 @@ receivers, each having its own setup code:
 These are the codes to be used in the *setupXXX* command.
 Then the configuration of the band filter and of the polarisation mode must 
 be performed, by means of the *receiversMode* command. Here follows the list 
-of options. 
+of options.
+
 
 
 PPP
@@ -92,7 +90,7 @@ Only the L band can be used. The possible configurations are::
     > receiversMode=XXC1
     > receiversMode=XXC2
     > receiversMode=XXC3
-    > receiversMode=XXC4  (default)
+    > receiversMode=XXC4   (default)
     > receiversMode=XXC5
     > receiversMode=XXL1
     > receiversMode=XXL2
@@ -111,6 +109,49 @@ The last two characters in the code identify the polarisation mode
 
 The **XX chars are placeholders** for the P-band configuration, which is not 
 allowed in LLL mode. 
+
+Local Oscillator for L-band observations
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Starting from the release of Nuraghe 0.6, it is possible to use the ``setLO`` 
+command for this receiver, in the operator input console::
+
+    > receiversSetup=LLP
+    > setLO=2300
+
+This new feature is only available using the L-band feed (it is not 
+possible to set the LO in the ``PPP`` configuration). 
+
+It is not allowed to set the LO inside the observed sky band. For instance::
+
+    > receiversMode=XXL5    (Bandwidth 1625:1715)
+    > setLO=1650
+    Error - Value out of legal ranges
+
+It is also not possible to set a receiver mode in case the current LO value 
+is inside the mode band::
+
+    > receiversMode=XXL5    (Bandwidth 1625:1715)
+    > setLO=1500            (Ok, it is outside the RF band)
+    > receiversMode=XXL4    (Bandwidth 1300:1800)
+    Error - Value out of legal ranges
+
+Notice that, for this receiver, the LO frequency is higher than the
+observed frequency. For this reason the bandwidth value displayed in the 
+``Receivers`` monitor is positive while the IF is negative,
+indicating that the IF band is inverted. For instance, in the following case::
+
+    > receiversMode=XXL5    (Bandwidth 1625:1715)
+    > setLO=2300
+
+the receiver panel will show ``startFreq=-675`` and ``bandwidth=90``. 
+The band initial frequency can be obtained as LO+startFreq.
+
+A 1000 MHz low-pass filter is applied to the IFs, so it is not possible to 
+set a LO value that brings the IFs outside the range of the low-pass filter::
+
+    > receiversMode=XXL4    (Band 1300:1800)
+    > setLO=200             (IF band: 1100:1600)
+    Error - Value out of legal ranges
 
 
 PLP (dual band)

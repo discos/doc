@@ -8,12 +8,12 @@ The backend to be used can be manually selected as follows::
 
     > chooseBackend=BACKENDS/[bckname]
 
-where *bckname* is the name of the backend. At present, the only available 
+where *bckname* is the name of the backend. The currently available 
 choices are: 
  
 	* TotalPower
-	* XBackends   (for the XARCOS spectrometer)  
-
+	* XBackends   (for the XARCOS spectrometer)
+	* Roach       (for SARDARA, the ROACH-based spectrometer)  
 
 
 .. _total-power-focus-selector:
@@ -94,6 +94,7 @@ which uploads to the system the parameters relative to section number [sect]
 to observe only with a different feed).   
 
 
+.. _xarcos:
 
 XARCOS
 ======
@@ -102,8 +103,8 @@ This spectrometer is fully integrated in Nuraghe, which means that Nuraghe can
 command the device, receive data from it and then write these data using a 
 standard output (FITS format).
 
-In order to configure the spectrometer, select it with the chooseBackend 
-command and use one of the following commands in operatorInput: 
+In order to configure the spectrometer, select it with the ``chooseBackend`` 
+command and use one of the following commands in the operatorInput: 
 
 .. describe:: > initialize=XK77
  
@@ -180,7 +181,62 @@ where asterisks indicate which parameters are to be set according to default
 values. 
 
 .. warning:: At present, integration time is equal to **10 seconds**. 
-   Shorter integrations will be available in the future. Data transfer requires 
-   about **2 seconds** for each integration, thus take this overhead into 
+   Shorter integrations might be available in the future. Data transfer 
+   requires about **2 seconds** for each integration; take this overhead into
    consideration when estimating how long your schedules are going to last. 
+
+
+.. _sardara:
+
+SARDARA
+=======
+This is a ROACH-based spectrometer. 
+In order to configure it, select it with the chooseBackend command as described
+above and use one of the following commands in the operatorInput: 
+
+.. describe:: > initialize=RP00 
+   This is to use P-band receiver 
+   
+.. describe:: > initialize=RL00 
+   This is to use L-band receiver 
+
+.. describe:: > initialize=RC00 
+   This is to use C-band receiver 
+   
+.. describe:: > initialize=RK00 
+   This is to use K-band receiver (central feed only)
+   
+By default, the spectral bin number is set to 1024 and the filter bandwidth 
+to 1500 MHz (except for the RP00 configuration, which uses a 500 MHz bandwidth).
+These nominal bandwidths do not correspond to the actual ones, even if they are
+the ones written in the output files. 
+The reason is the following: in order to avoid aliasing, it is necessary to 
+set narrower bandwidths in the focus selector (the TPB). In particular, the TPB
+bandwidth is automatically set, when initializing SARDARA, to 1250 MHz (300 MHz 
+when observing with the P-band receiver).  
+
+Users can change the frequency bin number to 16384, using:: 
+
+    > setSection=0,*,*,*,*,*,16384
+
+Notice that, when using the ``setSection`` command, the only accepted section
+number will be 0. 
+Users can also change the integration time::
+
+    > integration=[N] 
+
+where *N* is given in milliseconds.
+Attenuations can be handled with the command:: 
+
+    > setAttenuation=0,[att] 
+
+where *att* can vary form 0 dB to 15 dB, with a 1 dB step. This attenuation 
+is actually applied at the focus selector level. 
+
+
+
+
+
+ 
+ 
 
