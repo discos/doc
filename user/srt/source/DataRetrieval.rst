@@ -4,6 +4,9 @@
 Retrieving the data
 *******************
 
+    
+TPB and XARCOS
+==============    
 To know where your data folders are located, open a terminal on OBS2 and 
 execute::
 
@@ -51,4 +54,25 @@ Data can be copied from *nuraghe-obs2* to your laptop using  'ssh’  or
 The above-mentioned 'mySession' command also indicates where the logfiles are 
 stored. A subfolder named */WindLog* is devoted to the meteoClient output, when 
 this client is used. 
- 
+
+
+SARDARA
+=======
+
+To know where your data folders are located, and how to access them, open a 
+terminal on OBS2 and execute::
+
+    $ mySession 
+    
+The acquired raw data do not contain any information other than a timestamp and 
+the data streams. In order to complete them with all the info relative to the 
+telescope (e.g. the pointed coordinates, etc.) and obtain the usual FITS files, 
+it is necessary to perform a merging procedure. 
+**Once the schedule has ended** (or was stopped), open a terminal on OBS1 and 
+use:: 
+
+    $ _send_backend_command 
+  
+
+
+   

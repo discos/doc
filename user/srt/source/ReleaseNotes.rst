@@ -15,7 +15,7 @@ Current release: what's new
 ***************************
 
 Nuraghe 0.6 is the present release. 
-Here are the main new elements it introduces:
+Here are the new elements it introduces:
 
   * **New backend**: SARDARA, ROACH-based spectro-polarimeter. SARDARA can now 
     be configured via Nuraghe (see :ref:`sardara`)
