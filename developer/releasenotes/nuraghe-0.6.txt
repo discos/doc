@@ -10,7 +10,8 @@ SARDARAS backend integrated
 
 **TO BE DONE** 
 
-Acknowledgement to SARDARAS development team: Andrea Melis, Raimondo concu, Alessio Trois.
+Acknowledgement to SARDARAS development team: Andrea Melis, Raimondo concu, 
+Alessio Trois.
 
 .. sectionauthor:: :ref:`cmigoni`, :ref:`amelis`, :ref:`mbartolini`, :ref:`aorlati`.
 
@@ -74,20 +75,22 @@ System changes
 
 FitsZilla fits file
 ~~~~~~~~~~~~~~~~~~~
-A keyword "signal" has been added to the mian header. Presently three possible values are avilable:
+The "signal" keyword was added to the mian header. Presently, three possible 
+values are avilable:
 
 .. code-block:: discos
 
-    * SIGNAL #indicating that the subscan has been done on source
-    * REFERENCE # indicating the telescope was off source during the subscan
+    * SIGNAL #indicating that the subscan was performed on-source
+    * REFERENCE # indicating the telescope was off-source during the subscan
     * NONE # meaning the the keyword is unknown or the keyword is not pertinet 
-             for the current subscan
+             to the current subscan
 
 .. sectionauthor:: :ref:`aorlati`, :ref:`srighini`
 
 Alias name for fully integrated backends
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-The command *chooseBackend* now allows the use of aliases for backends. Standard names continue to work regularly.
+The command *chooseBackend* now allows the use of aliases for backends. 
+Standard names continue to work regularly.
 The mnemonic names or aliases are the following:
 
 =================== ============
@@ -102,29 +105,40 @@ BACKENDS/Roach      Roach
 
 Continuos calibration
 ~~~~~~~~~~~~~~~~~~~~~
-In order to control the calibration mark from an external source (i.e. backends like the DFB or DBBC) the Total Power backend (focus selector) 
-should be configured accordingly. Also the frontend requires an identical configuration, this part has been addressed in previous release 
-(see command *externalCalOn*).
-The command *calSwitch*, when the Total Power is the current backend, has been slightly modified. It now allows for the following sintax :
+In order to control the calibration mark from an external source (i.e. backends 
+like the DFB or DBBC) the Total Power backend (focus selector) should be 
+configured accordingly. The frontend also requires an identical configuration, 
+this part has been addressed in previous release (see command *externalCalOn*).
+The command *calSwitch*, when the Total Power is the current backend, has been 
+slightly modified. It now allows for the following sintax :
 
 .. code-block:: discos
 
-    > calSwitch=N # where N is a integer value. One sample every N is acquired with the noise cal turned on. This is the old behaviour of  the Total Power. It also disable the configuration EXT
-    > calSwitch=OFF # turns off all the previous setup and disable the calibration mark control through the Total Power backend
-    > calSwitch=EXT # the mark will be controlled from external sources (DBBC, DFB .....)
+    > calSwitch=N # where N is an integer value. One sample every N is acquired 
+      with the noise cal turned on. This is the old behaviour of the Total 
+      Power. It also disables the configuration EXT
+    > calSwitch=OFF # switches off all the previous setup and disables the 
+      calibration mark control through the Total Power backend
+    > calSwitch=EXT # the mark will be controlled from external sources 
+      (DBBC, DFB .....)
 
 .. sectionauthor:: :ref:`aorlati`.
 
 User Interface
 ~~~~~~~~~~~~~~
-The backend panel associated to the Total Power backend shows an extended status word. Four bits have been added:
+The backend panel associated to the Total Power backend shows an extended 
+status word. Four bits were added:
 
 .. code-block:: discos
 
     * ExternalMark # it turns yellow when the external mark control is enabled
-    * FastSwitching # it turns yellow when the total power is sampling with the mark swicthing under its direct control. Note only when sampling is effectively done.
-    * Calon # it turn yellow when the noise mark is turned on (non-fast mode) under the control of the Backend. This is not implemented yet. 	
-    * ZeroRef # it turns yellow when the backend inputs are connected to the 500hm. It may be yellow during a system temperature measurement.
+    * FastSwitching # it turns yellow when the total power is sampling with the 
+      mark swicthing under its direct control. Note: only when the sampling 
+      is active.
+    * Calon # it turns yellow when the noise mark is on (non-fast mode) 
+      under the control of the Backend. This is not implemented yet. 	
+    * ZeroRef # it turns yellow when the backend inputs are connected to the 
+      500hm. It may be yellow during a system temperature measurement.
          
 .. figure:: images/totalpower_extended_statusword.png
    :scale: 80%
@@ -137,7 +151,8 @@ The backend panel associated to the Total Power backend shows an extended status
 
 Auto stow for wind
 ~~~~~~~~~~~~~~~~~~
-The telescope will be parked (and the running schedule stopped) if an excessive wind is detected.
+The telescope will be parked (and the running schedule stopped) if an 
+excessive wind is detected.
 
 .. sectionauthor:: :ref:`spoppi` 
 

@@ -285,6 +285,21 @@ When observing with the TPB, look for:
   * **Busy**: when schedules are running, it must turn yellow. 
     If it does not, the backend is not acquiring.
 
+With Nuraghe 0.6, an additional set of keywords was inserted: 
+
+  * **ExternalMark**: it turns yellow when the external mark control is enabled
+  
+  * **FastSwitching**: it turns yellow when the total power is sampling with 
+    the mark swicthing under its direct control. Note: only when the sampling 
+    is active.
+    
+  * **Calon**: it turns yellow when the noise mark is on (non-fast mode) 
+    under the control of the Backend. This is not implemented yet. 	
+      
+  * **ZeroRef**: it turns yellow when the backend inputs are connected to the 
+    500hm. It may be yellow during a system temperature measurement.
+
+
 To close the monitor, type ``exit`` in its prompt (the grey line). 
 
 
