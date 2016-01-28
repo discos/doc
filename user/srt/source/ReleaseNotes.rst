@@ -10,9 +10,9 @@ Authors:
 	* and the DISCOS software group
 
 
-***************************
+
 Current release: what's new
-***************************
+===========================
 
 Nuraghe 0.6 is the present release. 
 Here are the new elements it introduces:
@@ -31,7 +31,7 @@ Here are the new elements it introduces:
     in the primary header. The 'DATE' keyword inside the primary header has 
     been replaced by the 'DATE-OBS' one  (see the external PDF linked in
     the :ref:`Retrieving-the-data` section)
-    
+     
   * **Generation of schedules**: schedules must now be generated on nuraghe-obs2,
     where a new tool is available; it is called *basie* and it is an evolved
     version of the previous software. It produces schedules also for the XARCOS 
@@ -53,9 +53,9 @@ Here are the new elements it introduces:
 
 
 
-*******
+
 History 
-*******
+=======
 
 ===========  =========== =====================================================
 Issue	     Release     What’s  
