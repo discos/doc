@@ -12,7 +12,7 @@ in this separate guide :download:`pdf <attachments/SRT-MAN-10000-004-3.pdf>`
 Schedules for the most common continuum and spectroscopy observing modes (OTF 
 cross-scans and maps, raster maps and ON-OFF) can be easily generated using a 
 tool called **basie**. It can be found, together with its user manual, here:
-`Basie repository <http://github.com/discos/basie/`_ 
+`Basie repository <http://github.com/discos/basie/>`_ 
   
 Once a schedule is ready, it must be copied to the folder reserved to the 
 project.

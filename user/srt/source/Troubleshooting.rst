@@ -17,7 +17,15 @@ operation areas in which the problems arise.
 Hints and warnings
 ==================
 
-.. warning:: WARNING: 
+.. warning:: L/P-BAND OBSERVATIONS: INCOMPATIBLE BACKENDS 
+
+   * **When using the LLP configuration, it is recommended not to use the TPB
+     for data acquisition, as the ancillary data recorded inside the FITS
+     files are at present inconsistent. It is also important to remember 
+     that XARCOS is not compatible with the L/P-band receiver**
+
+
+.. warning:: DEROTATOR:  
 
    * **When performing typical cross-scans with the derotator configured in BSC 
      mode, the derotator cannot keep up with the fast axis changes. This does 
@@ -121,5 +129,7 @@ General failures
       intervention**
 
 For obvious safety reasons, in case of excessively strong winds the system
-interrupts the activities and auto-stows the antenna ("wind park").   
+interrupts the activities and auto-stows the antenna ("wind park"). 
+Do **not** unstow the antenna unless you have been given explicit permission 
+by the support staff.    
 

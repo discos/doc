@@ -62,8 +62,9 @@ of sections (2 for single-feed receivers and 14 for the MF).
    a new Tsys is measured. The FITS file will contain the raw data (in counts) 
    and also a table with the data stream calibrated (in K) using this 
    counts-to-Kelvin factor.
+   
 
-
+.. _Weather-parameters:
 
 Weather parameters
 ==================
@@ -122,7 +123,9 @@ To interrupt the acquisition, use CTRL+C from the keyboard.
 Wind park
 ---------
 For safety reasons, in case of excessively strong winds the system
-interrupts the activities and auto-stows the antenna ("wind park").   
+interrupts the activities and auto-stows the antenna ("wind park"). 
+Do **not** unstow the antenna unless you have been given explicit permission 
+by the support staff.   
 
 
 
