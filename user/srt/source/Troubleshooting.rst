@@ -20,9 +20,9 @@ Hints and warnings
 .. warning:: WARNING: 
 
    * **When performing typical cross-scans with the derotator configured in BSC 
-   mode, the derotator cannot keep up with the fast axis changes. This does 
-   not impact on the observations performed with the central feed, yet the 
-   tracking flag will be affected.**
+     mode, the derotator cannot keep up with the fast axis changes. This does 
+     not impact on the observations performed with the central feed, yet the 
+     tracking flag will be affected.**
 
 If your tools rely on the tracking flag for any operation, they will assume the
 pointing was not good, while the central feed was very likely pointing 
@@ -59,8 +59,8 @@ For other receivers, the codes of course vary.
 
 .. admonition:: PROBLEM: 
 
-   \* **I am using correct commands, but they are not recognized or I am told 
-   that arguments are missing**
+   * **I am using correct commands, but they are not recognized or I am told 
+     that arguments are missing**
 
 Are you inserting blank spaces in your command line? Remember that they are not 
 allowed. 
@@ -118,7 +118,7 @@ General failures
 .. admonition:: PROBLEM:  
 
     * **Activities were interrupted and the antenna stowed without my 
-    intervention**
+      intervention**
 
 For obvious safety reasons, in case of excessively strong winds the system
 interrupts the activities and auto-stows the antenna ("wind park").   
