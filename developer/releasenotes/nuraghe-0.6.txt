@@ -1,6 +1,6 @@
 NURAGHE 0.6
 ===========
-Nuraghe-0.6 will be released on Thursday 28 January 2016.
+Nuraghe-0.6 will be released on Friday 29 January 2016.
 
 New features
 ------------
@@ -8,9 +8,66 @@ New features
 SARDARAS backend integrated
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**TO BE DONE** 
+The Roach component was integrated, even if some caveat must be taken
+into account.
 
-Acknowledgement to SARDARAS development team: Andrea Melis, Raimondo concu, 
+The Roach backend is connected directly to the focus selector (total
+power backend) so bandwidth and signal level fed into the Roach are controlled
+through the total power component. For example the attenuation (command
+*setAttenuation*) of the Raoch component is binded to the TP.
+
+
+There are 4 available configuration. Each configuration is specific for a single
+installed receiver. The following table shows the deafulat value for each
+setup:
+
+============= ========= ========= ============ =========== =====
+Configuration  FrontEnd Bandwidth TP bandwidth integration bins
+============= ========= ========= ============ =========== =====
+RK00	      KKG	1500MHz   1250Mhz      40 ms       1024
+RC00	      CCB	1500MHz   1250MHz      40 ms	   1024 
+RL00	      LLP	1500MHz   2000MHz      40 ms       1024
+RP00	      PPP	1500MHz   2000MHz      40 ms       1024
+============= ========= ========= ============ =========== =====
+
+A system temperature is also available. The measurment is relative to the
+bandwith portion selected by the *setSection* command.
+
+The merging phase (the raw data coming from the roach are merged with the meta
+data coming from the telescope control system) is, temporarly, perfomed
+offline. At the end of the schedule a command *_send_backend_command* must be
+issued from a shell of the user workstation.
+
+Typically the configuration of the roach backend is done by the schedules.
+Also it is possible to manullay configure the backenf to a sequence of
+commands:
+
+.. code-block:: discos
+
+    > chooseBackend=Roach
+    > initialize=RK00
+    > integration=100
+    > setSection=
+ 
+The setSection syntax follows the general rules:
+
+.. code-block:: discos
+
+    > setSection=input,freq,bw,feed,pol,sr,bins
+
+where:
+	* input: it could only be 0
+	* freq: start frequency (MHz), placeholder \* allowed
+	* bw: band width (MHz), placeholder \* allowed
+	* feed: feed identifier, it cannot be changed, placeholder \* allowed
+	* pol: polarization, it cannot be changed, placeholder \* allowed
+	* sr: sample rate, it cannot be changed, placeholder \* allowed
+	* bins: number of frequency channels,  it could be 1024 or 16384, placeholder \* allowed
+
+At present, the Roach component does not provide a user interface. 
+
+
+Acknowledgement to SARDARAS development team: Andrea Melis, Raimondo Concu, 
 Alessio Trois.
 
 .. sectionauthor:: :ref:`cmigoni`, :ref:`amelis`, :ref:`mbartolini`, :ref:`aorlati`.
