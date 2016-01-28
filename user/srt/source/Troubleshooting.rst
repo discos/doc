@@ -14,6 +14,22 @@ operation areas in which the problems arise.
    the system.** 
 
 
+Hints and warnings
+==================
+
+.. warning:: WARNING: 
+
+   * **When performing typical cross-scans with the derotator configured in BSC 
+   mode, the derotator cannot keep up with the fast axis changes. This does 
+   not impact on the observations performed with the central feed, yet the 
+   tracking flag will be affected.**
+
+If your tools rely on the tracking flag for any operation, they will assume the
+pointing was not good, while the central feed was very likely pointing 
+correctly. In this case, for cross-scans remember to configure the derotator 
+in fixed mode (by editing your schedule). 
+
+
 Setup
 =====
 
@@ -60,7 +76,7 @@ Schedules
       it contains errors and does not run it.** 
 
 Check for typos, as the system does not acknowledge with a proper error 
-message when the commanded schedule is not found – e.g. because you wrote 
+message the impossibility to find the schedule – e.g. because you wrote 
 a **wrong schedule name** – instead it replies that “the schedule contains 
 errors”. 
 
@@ -92,5 +108,18 @@ With Nuraghe >0.5 it is incorrect to insert post-scan waiting times in the
 schedules, as the system takes automatically care of computing and 
 applying proper delays, according to the deceleration ramps duration. 
 If you specify a wait time in your post-scan procedures, it will **add** to the 
-system-computed delays.  
+system-computed delays. 
+
+
+General failures
+================
+
+
+.. admonition:: PROBLEM:  
+
+    * **Activities were interrupted and the antenna stowed without my 
+    intervention**
+
+For obvious safety reasons, in case of excessively strong winds the system
+interrupts the activities and auto-stows the antenna ("wind park").   
 

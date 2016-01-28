@@ -119,6 +119,12 @@ During the acquisition, the shell must not be closed.
 To interrupt the acquisition, use CTRL+C from the keyboard. 
 
 
+Wind park
+---------
+For safety reasons, in case of excessively strong winds the system
+interrupts the activities and auto-stows the antenna ("wind park").   
+
+
 
 Manual acquisitions
 ===================
