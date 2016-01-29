@@ -195,15 +195,19 @@ In order to configure it, select it with the chooseBackend command as described
 above and use one of the following commands in the operatorInput: 
 
 .. describe:: > initialize=RP00 
+   
    This is to use P-band receiver 
    
 .. describe:: > initialize=RL00 
+   
    This is to use L-band receiver 
 
 .. describe:: > initialize=RC00 
+   
    This is to use C-band receiver 
    
 .. describe:: > initialize=RK00 
+   
    This is to use K-band receiver (central feed only)
    
 By default, the spectral bin number is set to 1024 and the filter bandwidth 
