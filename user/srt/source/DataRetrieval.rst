@@ -78,7 +78,7 @@ Browse your data through the web
 ================================
 
 A really basic web-browsing and retrieving system is available 
-from the account observer@nuraghe-obs3
+from the account observer @nuraghe-obs3
 
 The web link is
 
@@ -128,9 +128,8 @@ If you want to take away your data you can:
 **Please be careful**
 
 If you start getting data from a folder in the local /home/observer home disk 
-on observer@nuraghe-obs3, you will have no more than 390 GB of available space, 
+on observer @nuraghe-obs3, you will have no more than 390 GB of available space, 
 depending on the previously loaded files.
-
 This is a only a **scratch and common area**: it will be cleaned at least once 
 a week, so don't park there any critical data or info.
 
