@@ -16,28 +16,28 @@ Current release: what's new
 **Nuraghe 0.6** is the present release. 
 Here are the new elements it introduces:
 
-.. describe:: **New backend**
+.. describe:: New backend
  
    SARDARA, ROACH-based spectro-polarimeter. SARDARA can now be configured via 
    Nuraghe (see :ref:`sardara`)
 
-.. describe:: **L-band receiver tunable LO** 
+.. describe:: L-band receiver tunable LO 
 
    when exploiting the LLP receiver configuration, it is possible to tune the 
    Local Oscillator (see :ref:`Frontend-operations`)
     
-.. describe:: **Wind Park** 
+.. describe:: Wind Park 
 
    an auto-stow procedure activates in the presence of excessively strong wind 
    (see :ref:`Weather-parameters`)
     
-.. describe:: **Updates in the spectral FITS content** 
+.. describe:: Updates in the spectral FITS content 
   
    addition of the 'SIGNAL' keyword in the primary header. The 'DATE' keyword 
    inside the primary header has been replaced by the 'DATE-OBS' one  (see the 
    external PDF linked in the :ref:`Retrieving-the-data` section)
      
-.. describe:: **Generation of schedules** 
+.. describe:: Generation of schedules 
 
    schedules must now be generated on nuraghe-obs2, where a new tool is 
    available; it is called *basie* and it is an evolved version of the previous 
@@ -46,7 +46,7 @@ Here are the new elements it introduces:
    designed in order to optimally exploit the multi-feed receiver, including 
    its derotation (see `basie repository <http://github.com/discos/basie/>`_ )
     
-.. describe:: **FITS Quick-look** 
+.. describe:: FITS Quick-look
    
    files produced both by the Total Power Backend and XARCOS are now displayed 
    by the IDL tool *fitslook* (notice the underscore was removed from its name). 
@@ -54,7 +54,7 @@ Here are the new elements it introduces:
    display features according to the continuum/spectral content of the FITS 
    files (see :ref:`Data-formats-and-online-quick-look`)
     
-.. describe:: **mySession command** 
+.. describe:: mySession command 
 
    when using your terminals on nuraghe-obs2, you can have all the info about 
    where your data, schedules and logfiles are located with the unified 

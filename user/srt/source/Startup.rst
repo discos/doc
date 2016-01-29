@@ -70,6 +70,15 @@ Remember to always copy your schedules to the foreseen folder on OBS1.
 On OBS2 you can also launch the online quick-look. Read details in the 
 dedicated section :ref:`Data-formats-and-online-quick-look`.
 
+
+What to do in OBS3
+==================
+
+OBS3 is a support server used to open VNC connections to nuraghe-obs2 and to 
+connect external usb drives to copy your data.  
+See details in :ref:`Retrieving-the-data`.
+
+
 Input terminal and system monitors (OBS1)
 =========================================
 

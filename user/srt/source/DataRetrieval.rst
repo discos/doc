@@ -5,8 +5,8 @@ Retrieving the data
 *******************
 
     
-TPB and XARCOS
-==============    
+TPB and XARCOS FILES
+====================    
 To know where your data folders are located, open a terminal on OBS2 and 
 execute::
 
@@ -56,8 +56,8 @@ stored. A subfolder named */WindLog* is devoted to the meteoClient output, when
 this client is used. 
 
 
-SARDARA
-=======
+SARDARA FILES
+=============
 
 To know where your data folders are located, and how to access them, open a 
 terminal on OBS2 and execute::
@@ -74,5 +74,64 @@ use::
     $ _send_backend_command 
   
 
+Browse your data through the web
+================================
+
+A really basic web-browsing and retrieving system is available 
+from the account observer@nuraghe-obs3
+
+The web link is
+
+  * http://nuraghe-data
+
+For each [project] you will find a browsable folder for schedules, 
+manually-acquired data, Total Power and XARCOS data, SARDARA data and logfiles 
+respectively at: 
+
+  * http://nuraghe-data/[project]/schedules
+  
+  * http://nuraghe-data/[project]/auxiliary 
+  
+  * http://nuraghe-data/[project]/tp-xarcos  
+  
+  * http://nuraghe-data/[project]/sardara 
+  
+  * http://nuraghe-data/logs 
+
+You can retrieve your data using wget Linux standard command. The basic 
+syntax to download recursively directories starting from [project]/[somefolder] 
+is::
+
+  $ wget -r -c -l2 -np http://nuraghe-data/[project]/[somefolder]
+
+This will make a nuraghe-data/[project]/[somefolder] directory tree into your 
+home.  
+
+You can also start the 'wget' user interface giving:: 
+
+  $ guiwget 
+
+and choose options by checkbuttons. 
+
+
+Copying the data
+================
+
+If you want to take away your data you can: 
+
+  * start wget or scp command from your laptop, or
+
+  * connect an external usb2/3 disk to the nuraghe-obs3 workstation (usb ports 
+    are available on its rear side), then change directory to put yourself into 
+    a folder of your disk and finally start a wget or scp command. 
+
+**Please be careful**
+
+If you start getting data from a folder in the local /home/observer home disk 
+on observer@nuraghe-obs3, you will have no more than 390 GB of available space, 
+depending on the previously loaded files.
+
+This is a only a **scratch and common area**: it will be cleaned at least once 
+a week, so don't park there any critical data or info.
 
    
