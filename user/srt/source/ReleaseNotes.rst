@@ -44,7 +44,7 @@ Here are the new elements it introduces:
    software. It produces schedules also for the XARCOS and SARDARA backends 
    (for spectro-polarimetry observations). OTF and raster mapping schedules are 
    designed in order to optimally exploit the multi-feed receiver, including 
-   its derotation (see `basie repository <http://github.com/discos/basie/>`_ )
+   its derotation (download `basie documentation <http://github.com/discos/basie/raw/master/Basie_user_manual.pdf>`_ )
     
 .. describe:: FITS Quick-look
    
