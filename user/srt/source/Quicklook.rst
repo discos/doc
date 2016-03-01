@@ -46,6 +46,11 @@ nature. Read all the program options using::
 
 Please report any problem/request about this tool, as it is under development.
 
+.. figure:: images/Quicklook.png
+   :scale: 100%
+   :alt: Quick-look of a continuum OTF scan acquired with the MF receiver
+   :align: center
+
 
 If writer is MANAGEMENT/Point or MANAGEMENT/CalibrationTool
 ===========================================================
