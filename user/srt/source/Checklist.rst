@@ -24,7 +24,10 @@ Notice that actions take place in three different “locations”:
 	> setupCCB      (or other receiver code) 
 
 	> asSetup=S     (or other AS code)
+	
+**Project declaration** (op)::
 
+	> project=[projectID]    (to correctly store all your data and more easily retrieve schedules)
 
 **Tune the local oscillator, if any** (op)::
 

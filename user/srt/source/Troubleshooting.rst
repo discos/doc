@@ -122,6 +122,27 @@ system-computed delays.
 General failures
 ================
 
+.. admonition:: PROBLEM:  
+
+    * **Power errors are notified in the ACU control panel**
+
+These errors appear *in the monitoring PCP panel* used by the SD operators, not 
+on the observing machines. However, as it is very important to properly deal 
+with these errors, we report also in this user's guide how to handle them. 
+
+When the ACU power supply is facing misfunctionings, the error labels 
+are enabled (thus they are red) and indicate the "err_Power_Error" label. 
+In the jlog window, a "MAIN POWER ERROR" message appears, being assigned a 
+CRITICAL priority. 
+
+In these cases, give the following commands in the operatorInput console:: 
+
+    > antennaReset
+    > antennaTrack
+    
+These commands do *NOT* change any previous mount, back-end or front-end setup. 
+Thus, after their usage, you do not need to re-configure any device.     
+
 
 .. admonition:: PROBLEM:  
 
