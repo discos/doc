@@ -11,3 +11,5 @@ Release Notes
 .. include:: nuraghe-0.6.txt
 
 .. include:: nuraghe-0.5.txt
+
+.. include:: escs-0.4.txt
