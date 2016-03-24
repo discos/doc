@@ -1,0 +1,121 @@
+ESCS 0.4
+===========
+ESCS 0.4 was released March the 24th, 2016. 
+The previuos version was released on October 2012 so this release contains lots of new updates and improvements coming from 3 years and a half of developments mainly driven by SRT requirements.
+
+New features
+------------
+
+Frequency tracking
+~~~~~~~~~~~~~~~~~~
+In order to fulfill the requirements for spectroscopy observations, the system
+can now keep a requested rest frequency in centre of the band of the backend 
+(section). Both frontend and backend local oscillator could be tuned during
+this operation. This capability is now supported from both command line and
+schedule.
+
+.. sectionauthor:: :ref:`aorlati`, :ref:`srighini`
+
+Continuous calibration
+~~~~~~~~~~~~~~~~~~~~~~
+TotalPower backend can quickly switch the calibration diode on and off 
+(Total Power). This capabilities can also be exposed to other backends (DBBC) after a proper configuration. THis is now fully under software control.
+
+.. sectionauthor:: :ref:`aorlati`
+
+Xarcos
+~~~~~~
+Fully supported and integrated in the system. Integration time is now in
+milliseconds.
+
+.. sectionauthor:: :ref:`cmigoni`, :ref:`amelis`
+
+System changes
+-------------- 
+
+FitsZilla fits file
+~~~~~~~~~~~~~~~~~~~
+Some keywords added (mainly belonging to spectroscopy). In the output scan
+folder, when the scan is closed a *summary.fits* is created. The file contains
+just the main header with some keywords describing the current scan.
+The "signal" keyword was added to the main header. Presently, three possible 
+values are available:
+
+.. code-block:: discos
+
+    * SIGNAL #indicating that the subscan was performed on-source
+    * REFERENCE # indicating the telescope was off-source during the subscan
+    * NONE # meaning the the keyword is unknown or the keyword is not pertinet 
+             to the current subscan
+
+.. sectionauthor:: :ref:`aorlati`, :ref:`srighini`
+
+Alias name for fully integrated backends
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The command *chooseBackend* now allows the use of aliases for backends. 
+Standard names continue to work regularly.
+The mnemonic names or aliases are the following:
+
+=================== ============
+Standard name       Alias
+=================== ============
+BACKENDS/TotalPower TotalPower
+BACKENDS/XBackends  XArcos
+=================== ============
+ 
+.. sectionauthor:: :ref:`aorlati`.
+
+User interface
+~~~~~~~~~~~~~~
+The console will now present an additional panel (genericBackend) that shows the current configuration and status of XArcos.
+
+.. sectionauthor:: :ref:`aorlati` 
+
+Manual Recording
+~~~~~~~~~~~~~~~~
+
+The user now could manage a recording from the currently selected backend to the defualt data writer(see commands *chooseBackend* and *chooseRecorder*).
+Three new commands are now availble from the operatorInput:
+
+.. code-block:: discos
+
+	> initRecording : prepares the data recording
+	> startRecording: starts the recording and file creation
+	> terminateScan: closes the scan
+
+
+.. sectionauthor:: :ref:`aorlati` 
+
+Logging
+~~~~~~~
+The user commands from operator console are now logged. Logging system is now
+more robust. The management of the system log file is now more crafty,
+avoiding the creation of bigger log files. System log files are daily rotated
+and stored for 1 year.
+
+.. sectionauthor:: :ref:`mbartolini`, :ref:`afara`
+
+Schedules
+~~~~~~~~~
+The schedule now allows to call parametric configuration procedures.
+
+.. sectionauthor:: :ref:`mbartolini`, :ref:`aorlati`
+
+Testing Integration
+~~~~~~~~~~~~~~~~~~~
+The development framework now integrates tools for automatic tests development
+and execution.
+
+.. sectionauthor:: :ref:`mbartolini`
+
+Build automation
+~~~~~~~~~~~~~~~~
+The build process has been reorganized in order to have nightly builds and 
+build status reports
+
+.. sectionauthor:: :ref:`mbartolini`
+
+Change log
+----------
+A complete and browsable change log of this release may be consulted from our
+`tracking system <http://www.med.ira.inaf.it/mantisbt/search.php?project_id=12&sticky_issues=on&fixed_in_version=ESCS-0.4&sortby=last_updated&dir=DESC&hide_status_id=-2&match_type=0>`_.
