@@ -10,8 +10,8 @@ or inefficiencies in the code. The records are sorted according to the main
 operation areas in which the problems arise. 
 
 .. note:: **Users are advised to read these “hints” at the beginning of the 
-   session and before attempting (possibly unnecessary) heavy-handed operations on  
-   the system.** 
+   session and before attempting (possibly unnecessary) heavy-handed operations 
+   on the system.** 
 
 
 Setup
@@ -22,9 +22,22 @@ Setup
    * **The initial setup fails, but it is difficult to assess what goes 
      wrong.**
 
+Instead of using the overall setup commands, give in the *operatorInput* the 
+**individual commands** which deal with the different sub-systems, so that it 
+is easier to identify the misbehaving element.
+
+For example, the setupLLP command can be substituted by (the actual 
+receiversMode code to be used depends on the desired setup):: 
+
+    > antennaReset
+    > antennaSetup=KKC    
+    > servoSetup=KKC     
+    > receiversSetup=KKC
+    > initialize=KKC    
+    > device=0
+    > calOff
 
 For other receivers, the codes of course vary. 
-
 
 
 
