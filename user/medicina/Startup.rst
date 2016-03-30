@@ -39,13 +39,13 @@ and give::
 
 	> escsClients 
 
-This opens 8 panels at once: 
+This opens 9 panels at once: 
 
     * operatorInput - terminal for command line input
     * antennaBoss 
     * observatory 
     * mount 
-    * genericBackend 
+    * genericBackend (x2)
     * receiversBoss
     * scheduler
     * logging
