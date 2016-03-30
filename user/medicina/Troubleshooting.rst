@@ -33,18 +33,6 @@ Schedules
 
 .. admonition:: PROBLEM:  
 
-    * **I’ve launched a surely correct schedule, but ESCS replies that 
-      it contains errors and does not run it.** 
-
-Check for typos, as the system does not acknowledge with a proper error 
-message when the commanded schedule is not found – e.g. because you wrote 
-a **wrong schedule name** – instead it replies that “the schedule contains 
-errors”. 
-
-
-
-.. admonition:: PROBLEM:  
-
     * **I’ve launched a surely correct schedule, but parts of the system 
       crashed.**
 
