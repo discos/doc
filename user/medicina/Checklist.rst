@@ -76,9 +76,6 @@ Desktop, connect to (1) as “observer”.
 	Use schedulecreator (see its own guide): 
 	$ schedulecreator –c [configfile] [out_directory] 
 
-.. NOTE::
-   If using XARCOS, edit schedule in order to tune its internal frequency and the frontend LO
-
 **Parse the schedule** (2):: 
 
 	$ scheduleChecker [schedulename].scd 
@@ -93,8 +90,8 @@ Desktop, connect to (1) as “observer”.
 	* *Case A\:* when using MANAGEMENT/Fitszilla, launch the quick-look (2)::
  
 		$ idl 
-		IDL> .r fits_look    (or fits_look_mf if observing with the MF receiver) 
-		IDL> fits_look
+		IDL> .r fitslook    (or fits_look_mf if observing with the MF receiver) 
+		IDL> fitslook
 
 	* *Case B\:* when using MANAGEMENT/Point, launch the quick-look (2)::
  

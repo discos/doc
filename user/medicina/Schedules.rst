@@ -11,7 +11,8 @@ The detailed structure of the several files composing a schedule is explained
 in this separate guide :download:`pdf <attachments/MED-MAN-SCHEDULES-02.pdf>`
 Schedules for the most common continuum and spectroscopy observing modes (OTF 
 cross-scans and maps, raster maps and ON-OFF) can be easily generated using a 
-tool called **schedulecreator**.   
+tool called **basie**. It can be found, together with its user manual, here:
+`Basie repository <http://github.com/discos/basie/>`_ 
   
 Once a schedule is ready, it must be copied to the folder reserved to the 
 project.
@@ -63,6 +64,9 @@ acquisition::
 Instead, to stop the schedule allowing the completion of the present file::
 
     > haltSchedule
+
+
+
 
 
 
