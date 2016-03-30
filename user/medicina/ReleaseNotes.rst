@@ -14,7 +14,7 @@ Authors:
 Issue	     Release     What’s  
              Date        new
 ===========  =========== =====================================================
-04           30/03/16    | **Release for ESCS 0.5** 
+04           30/03/16    | **Release for ESCS 0.4** 
                          | Spectroscopy observations now available. 
                          | FITS/schedule sections removed from this document
                          | and placed in separate manuals. 
