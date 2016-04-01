@@ -44,6 +44,16 @@ For other receivers, the codes of course vary.
 Schedules
 =========
 
+.. admonition:: WARNING:  
+
+**Always** stop your schedules with::
+
+    > haltSchedule
+
+when you are using XARCOS; otherwise it will keep a busy status and the next 
+operations will become impossible to perform. 
+
+
 .. admonition:: PROBLEM:  
 
     * **I’ve launched a surely correct schedule, but parts of the system 
@@ -64,7 +74,7 @@ or, if you have already given the project=code command::
 
     * **Dead time between consecutive subscans is much longer than expected**
 
-With ESCS 0.5 it is necessary to delete from the schedules all the post-scan 
+With ESCS 0.4 it is necessary to delete from the schedules all the post-scan 
 wait times, as the system now takes automatically care of computing and 
 applying proper delays according to the deceleration ramps duration. 
 If you specify a wait time in your post-scan procedures, it will add to the 

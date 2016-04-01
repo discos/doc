@@ -103,7 +103,7 @@ Desktop, connect to (1) as “observer”.
 	
 **Stop the schedule** (op)::
 
-	> stopSchedule
+	> haltSchedule
 
 **Copy the data** (2) 
 	—> Get the latest subfolders written in the main data folder 

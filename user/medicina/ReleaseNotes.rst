@@ -18,7 +18,8 @@ Issue	     Release     What’s
                          | Spectroscopy observations now available. 
                          | FITS/schedule sections removed from this document
                          | and placed in separate manuals. 
-                         | Update on data quick-look tools. 
+                         | Update on data quick-look tools and on 
+                         | troubleshooting/hints. 
 -----------  ----------- -----------------------------------------------------
 03           18/02/14    | Addition of new details on BCK schedule files
 -----------  ----------- -----------------------------------------------------
