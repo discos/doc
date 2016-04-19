@@ -6,7 +6,7 @@ New features
 ------------
 
 SARDARAS backend integrated
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The Roach component was integrated, even if some caveat must be taken
 into account.
@@ -145,7 +145,7 @@ values are avilable:
 .. sectionauthor:: :ref:`aorlati`, :ref:`srighini`
 
 Alias name for fully integrated backends
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 The command *chooseBackend* now allows the use of aliases for backends. 
 Standard names continue to work regularly.
 The mnemonic names or aliases are the following:

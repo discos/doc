@@ -148,4 +148,4 @@ build status reports
 Change log
 ----------
 A complete and browsable change log of this release may be consulted from our
-`tracking system <http://www.med.ira.inaf.it/mantisbt/search.php?project_id=13&sticky_issues=off&fixed_in_version=NURAGHE-0.5&sortby=last_updated&dir=DESC&hide_status_id=-2&match_type=0>`_.
+`tracking system`_.
