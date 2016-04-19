@@ -44,8 +44,9 @@ For other receivers, the codes of course vary.
 Schedules
 =========
 
-.. admonition:: WARNING:  
-
+.. admonition:: PROBLEM:  
+    * **I’ve stopped an XARCOS schedule and no further operation is accepted by the system.**
+      
 **Always** stop your schedules with::
 
     > haltSchedule
