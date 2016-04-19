@@ -5,7 +5,7 @@ Data formats and online quick-look
 **********************************
 
 Details on the FITS file structure are given in a separate document. Download 
-it here: :download:`pdf <attachments/SRT-MAN-10000-003-3.pdf>` 
+it here: :download:`pdf <attachments/MED-MAN-FITS-02.pdf>` 
 
 Waiting for a comprehensive GUI which is going to include also a real-time 
 preview of the data under acquisition, users are provided with two different 
