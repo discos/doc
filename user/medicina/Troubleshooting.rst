@@ -45,8 +45,9 @@ Schedules
 =========
 
 .. admonition:: PROBLEM:  
+
     * **I’ve stopped an XARCOS schedule and no further operation is accepted 
-    by the system.**
+      by the system.**
       
 **Always** stop your schedules with::
 
