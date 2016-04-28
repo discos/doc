@@ -129,7 +129,8 @@ Back to the commands:
    offsets and they are mutually exclusive! If the user commands the offsets
    several times in a row (in one or different frames) only the last one will
    be effective. **Offsets specified within schedules, at subscan level, sum 
-   up to these user-defined offsets.**
+   up to these user-defined offsets, but only if they are expressed in the 
+   same frame.** Otherwise, the overall (or "system") offsets are zeroed. 
 
 On with the list:
 

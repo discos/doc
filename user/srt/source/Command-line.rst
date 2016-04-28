@@ -342,15 +342,20 @@ Caveat on offsets
 
 As seen in :ref:`Antenna-operations`, there are commands used to set (or null) 
 user-defined offsets.  
-They are: ``radeOffsets``, ``azelOffsets`` and ``lonlatOffsets``.
+They are: ``radecOffsets``, ``azelOffsets`` and ``lonlatOffsets``.
 Such commands set **overall offsets** which **remain active** until they are 
 explicitly changed/nulled by another call of one of the three commands.
 
 Further offsets, having for example the purpose of pointing the antenna to an 
-off-source position, are specified inside schedules, at the subscan level (see 
-the separate guide to schedules). **The subscan-level offsets sum up to the 
-overall offsets**, and they are zeroed by default every time a new subscan is 
-commanded.
+off-source position, are specified inside schedules, at subscan level (see 
+the separate guide to schedules). **Subscan-level offsets sum up to the 
+system offsets ONLY if their coordinate frames coincide**, otherwise the system
+offsets are zeroed. In practice, when performing observations that imply the
+setting of offsets in a certain frame (EQ, HOR, GAL), the system offsets must
+have been set/achieved accordingly (e.g. performing Point scans in the same
+frame), or will be lost.
+Subscan-based offsets - the ones commanded via the schedule - are zeroed by 
+default every time a new subscan is commanded.
 
 
    

@@ -45,8 +45,25 @@ Schedules
 =========
 
 .. admonition:: PROBLEM:  
+
+<<<<<<< HEAD
+    * **I've performed cross-scans in order to fine-tune the pointing, but
+    the measured offsets are not actually applied to the following 
+    acquisitions**
+    
+System offsets, such as the ones measured with a Point acquisition, sum up to 
+the ones indicated inside schedules ONLY if they are expressed in the same 
+coordinate frame. This means that, if you perform observations using EQ offsets, 
+also the fine-pointing cross-scans must be carried out in the EQ frame. The 
+same holds for HOR scans. If there is a frame mismatch, the system offsets are 
+automatically rejected (bug under fixing).
+
+.. admonition:: PROBLEM:
+  
+=======
+>>>>>>> origin/master
     * **I’ve stopped an XARCOS schedule and no further operation is accepted 
-    by the system.**
+      by the system.**
       
 **Always** stop your schedules with::
 
@@ -69,7 +86,6 @@ an extra “ / ”: the *startSchedule* command must be either given as::
 or, if you have already given the project=code command:: 
 
     > startSchedule=[schedname].scd,[N]
-
 
 
 .. admonition:: PROBLEM:  

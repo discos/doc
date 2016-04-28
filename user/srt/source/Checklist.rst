@@ -64,9 +64,19 @@ Notice that actions take place in three different “locations”:
 	—> the following command on (1): 
 		$ calibrationtoolclient MANAGEMENT/Point            (to display the plots) 
 	> crossScan=HOR,0.5d,00:00:20   (set proper parameters according to your beamsize) 
-	> azelOffsets=0d,0d             (only if wanting to reject the measured offsets!)	
+	> azelOffsets=0d,0d             (if wanting to reject the measured offsets)	
 	> focusScan=60,00:01:00 
-	> clearServoOffsets             (only if wanting to reject the updated focus position!)
+	> clearServoOffsets             (if wanting to reject the updated focus position)
+
+.. note:: BEWARE:  
+
+    * **System offsets, such as the ones measured with a Point acquisition, 
+    sum up to the ones indicated inside schedules ONLY if they are 
+    expressed in the same coordinate frame.**
+    This means that, if you perform observations using EQ offsets, also the
+    fine-pointing cross-scans must be carried out in the EQ frame. The same
+    holds for HOR scans. If there is a frame mismatch, the system offsets are
+    automatically rejected (bug under fixing).
 
 **If needed, choose and set the spectrometer** (op)::
  
