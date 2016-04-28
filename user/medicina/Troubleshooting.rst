@@ -46,7 +46,6 @@ Schedules
 
 .. admonition:: PROBLEM:  
 
-<<<<<<< HEAD
     * **I've performed cross-scans in order to fine-tune the pointing, but
     the measured offsets are not actually applied to the following 
     acquisitions**
@@ -60,8 +59,6 @@ automatically rejected (bug under fixing).
 
 .. admonition:: PROBLEM:
   
-=======
->>>>>>> origin/master
     * **I’ve stopped an XARCOS schedule and no further operation is accepted 
       by the system.**
       
