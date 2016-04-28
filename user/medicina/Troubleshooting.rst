@@ -47,8 +47,8 @@ Schedules
 .. admonition:: PROBLEM:  
 
     * **I've performed cross-scans in order to fine-tune the pointing, but
-    the measured offsets are not actually applied to the following 
-    acquisitions**
+      the measured offsets are not actually applied to the following 
+      acquisitions**
     
 System offsets, such as the ones measured with a Point acquisition, sum up to 
 the ones indicated inside schedules ONLY if they are expressed in the same 

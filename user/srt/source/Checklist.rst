@@ -71,8 +71,8 @@ Notice that actions take place in three different “locations”:
 .. admonition:: WARNING:  
 
     * **System offsets, such as the ones measured with a Point acquisition, sum 
-    up to the ones indicated inside schedules ONLY if they are expressed in the 
-    same coordinate frame.**
+      up to the ones indicated inside schedules ONLY if they are expressed in 
+      the same coordinate frame.**
 
 This means that, if you perform observations using EQ offsets, also the 
 fine-pointing cross-scans must be carried out in the EQ frame. The same
