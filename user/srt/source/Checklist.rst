@@ -68,7 +68,7 @@ Notice that actions take place in three different “locations”:
 	> focusScan=60,00:01:00 
 	> clearServoOffsets             (if wanting to reject the updated focus position)
 
-.. note:: BEWARE:  
+.. admonition:: WARNING:  
 
     * **System offsets, such as the ones measured with a Point acquisition, sum 
     up to the ones indicated inside schedules ONLY if they are expressed in the 
