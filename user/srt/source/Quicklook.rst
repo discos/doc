@@ -8,7 +8,7 @@ Details on the FITS file structure are given in a separate document. Download
 it here: :download:`pdf <attachments/SRT-MAN-10000-003-3.pdf>` 
 
 Waiting for a comprehensive GUI which is going to include also a real-time 
-preview of the data under acquisition, users are provided with two different 
+preview of the data under acquisition, users are provided with different 
 tools in order to inspect the data produced by the TPB and XARCOS. 
 
 If writer is MANAGEMENT/FitsZilla
@@ -43,8 +43,19 @@ nature. Read all the program options using::
    Data streams in antenna temperature are available - and selectable - only 
    for the TPB and under the condition that a Tsys has been correctly acquired 
    prior to the execution of the scan. 
+   
+For spectral acquisitions in ON-OFF mode, you can also use:: 
 
-Please report any problem/request about this tool, as it is under development.
+    IDL> .r onoff
+    IDL> onoff, dutyc='N_on:N_off:N_cal' 
+    
+in order to display, once a full scan has been acquired, the (ON-OFF)/OFF data. 
+For extensive info about its usage, give::
+
+    IDL> onoff, /help    
+
+Please report any problem/request about these tools, as they are under 
+development.
 
 .. figure:: images/Quicklook.png
    :scale: 100%
