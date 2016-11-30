@@ -1,10 +1,10 @@
-.. _E_Retrieving-the-data: 
+.. _EN_Retrieving-the-data: 
 
 *******************
 Retrieving the data
 *******************
 
-Open a terminal on escsConsole. Yoor data folder is::
+Open a terminal on the euser machine. Yoor data folder is::
 
     ~/data
 

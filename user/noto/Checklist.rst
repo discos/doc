@@ -1,4 +1,4 @@
-.. _E_Checklist-for-schedule-based-observations: 
+.. _EN_Checklist-for-schedule-based-observations: 
 
 *****************************************
 Checklist for schedule-based observations
@@ -6,15 +6,16 @@ Checklist for schedule-based observations
 
 Notice that actions take place in three different “locations”:
 
-  * **(1)** = action to be performed in a terminal on escsRemote
-  * **(2)** = action to be performed in a terminal on escsConsole
+  * **(1)** = action to be performed in a terminal on escs
+  * **(2)** = action to be performed in a terminal on euser
   * **(op)** = command to be given in the *operatorInput* panel of ESCS
 
 
 **Login on both (1) and (2)** 
-*Locally*: login on (2) using your projectName, then Using the VNC icon on the 
-Desktop, connect to (1) as “observer”.
-*Remotely*: connect via VNC to (1) as "observer", then use ssh to access (2). 
+*Locally*: login on (2) using the euser credentials, then Using the ESCS icon 
+on the Desktop, connect to (1).
+*Remotely*: connect via VNC to (1) with the proper credentials, 
+then use ssh to access (2). 
 
 
 **Launch the monitors, if necessary** (1):: 
@@ -24,8 +25,7 @@ Desktop, connect to (1) as “observer”.
 **Initial setup** (op)::
 
 	> antennaReset  (if resuming after the emergency stop button is released)  
-
-	> setupCCC      (or other receiver code) 
+	> bandaC        (or other setup code) 
 
 **Tune the local oscillator, if any** (op)::
 
@@ -39,17 +39,11 @@ Desktop, connect to (1) as “observer”.
 	—> e.g. goTo=180d,45d
 
 
-**Always explicitly choose the Total Power backend (XARCOS might have been left active)** (op)::
-	
-	> chooseBackend=BACKENDS/TotalPower    
-
-
 **Measure the cold sky signal level** (op)::
 
 	> getTpi 
 	> setAttenuation=[sect],[att] 
 	—> iteratively adjust attenuations until the level is about 850 counts 
-
 
 **Get a Tsys** (op)::
 
@@ -70,38 +64,31 @@ Desktop, connect to (1) as “observer”.
 
     * **System offsets, such as the ones measured with a Point acquisition, sum 
       up to the ones indicated inside schedules ONLY if they are expressed in 
-      the same coordinate frame.**
-
-This means that, if you perform observations using EQ offsets, also the 
-fine-pointing cross-scans must be carried out in the EQ frame. The same
-holds for HOR scans. If there is a frame mismatch, the system offsets are
-automatically rejected (bug under fixing).
-
-**If needed, choose and set the spectrometer** (op)::
- 
-	> chooseBackend=BACKENDS/XBackends 
-	> initialize=[code]
+      the same coordinate frame.** This means that, if you perform observations 
+      using EQ offsets, also the fine-pointing cross-scans must be carried out 
+      in the EQ frame. The same holds for HOR scans. If there is a frame 
+      mismatch, the system offsets are automatically rejected (bug under fixing).
 
 **Create a schedule** (2):: 
 
-	Use schedulecreator (see its own guide): 
+	Use basie, the schedule creator (see its own guide): 
 	$ basie –c [configfile] [out_directory] 
+	—> Move the schedule files to the proper folder
 
 **Parse the schedule** (2):: 
 
 	$ scheduleChecker [schedulename].scd 
-	—> Move the schedule files to the observing machine 
 
 **Launch the schedule** (op):: 
 		
-	> startSchedule=[project/][schedulename].scd,[N]
+	> startSchedule=[schedulename].scd,[N]
  
-**Data quick-look (continuum only)**
+**Data quick-look**
 
 	* *Case A\:* when using MANAGEMENT/Fitszilla, launch the quick-look (2)::
  
 		$ idl 
-		IDL> .r fitslook    (or fits_look_mf if observing with the MF receiver) 
+		IDL> .r fitslook    
 		IDL> fitslook
 
 	* *Case B\:* when using MANAGEMENT/Point, launch the quick-look (2)::
@@ -121,7 +108,12 @@ automatically rejected (bug under fixing).
 
 **Stow the antenna** (op)::
  
-	> telescopePark
+	> antennaPark
+	
+**Stow the minor servo and active surface** (op)::
+
+    > asPark
+    > servoPark
 
 **Close the monitors, if necessary** (1)::
 

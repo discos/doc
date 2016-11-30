@@ -1,4 +1,4 @@
-.. _E_Troubleshooting-and-temporary-procedures:
+.. _EN_Troubleshooting-and-temporary-procedures:
 
 ****************************************
 Troubleshooting and temporary procedures
@@ -26,14 +26,14 @@ Instead of using the overall setup commands, give in the *operatorInput* the
 **individual commands** which deal with the different sub-systems, so that it 
 is easier to identify the misbehaving element.
 
-For example, the setupKKC command can be substituted by (the actual 
+For example, the setupXXP command can be substituted by (the actual 
 receiversMode code to be used depends on the desired setup):: 
 
     > antennaReset
-    > antennaSetup=KKC    
-    > servoSetup=KKC     
-    > receiversSetup=KKC
-    > initialize=KKC    
+    > antennaSetup=XXP    
+    > servoSetup=XXP     
+    > receiversSetup=XXP
+    > initialize=XXP    
     > device=0
     > calOff
 
@@ -57,18 +57,6 @@ also the fine-pointing cross-scans must be carried out in the EQ frame. The
 same holds for HOR scans. If there is a frame mismatch, the system offsets are 
 automatically rejected (bug under fixing).
 
-.. admonition:: PROBLEM:
-  
-    * **I’ve stopped an XARCOS schedule and no further operation is accepted 
-      by the system.**
-      
-**Always** stop your schedules with::
-
-    > haltSchedule
-
-when you are using XARCOS; otherwise it will keep a busy status and the next 
-operations will become impossible to perform. 
-
 
 .. admonition:: PROBLEM:  
 
@@ -84,14 +72,4 @@ or, if you have already given the project=code command::
 
     > startSchedule=[schedname].scd,[N]
 
-
-.. admonition:: PROBLEM:  
-
-    * **Dead time between consecutive subscans is much longer than expected**
-
-With ESCS 0.4 it is necessary to delete from the schedules all the post-scan 
-wait times, as the system now takes automatically care of computing and 
-applying proper delays according to the deceleration ramps duration. 
-If you specify a wait time in your post-scan procedures, it will add to the 
-system-computed delays. 
 

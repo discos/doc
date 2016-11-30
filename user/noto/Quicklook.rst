@@ -1,4 +1,4 @@
-.. _E_Data-formats-and-online-quick-look:
+.. _EN_Data-formats-and-online-quick-look:
 
 **********************************
 Data formats and online quick-look
@@ -9,14 +9,14 @@ it here: :download:`pdf <attachments/MED-MAN-FITS-02.pdf>`
 
 Waiting for a comprehensive GUI which is going to include also a real-time 
 preview of the data under acquisition, users are provided with two different 
-tools in order to inspect the data produced by the TPB and XARCOS. 
+tools in order to inspect the data produced by the TPB. 
 
 If writer is MANAGEMENT/FitsZilla
 =================================
 When acquiring FITS files through a schedule, there is an IDL tool available 
 for the almost-realtime quick-look of the saved data.
  
-Open a terminal on *escsConsole*. Launch IDL::
+Open a terminal on *euser*. Launch IDL::
 
     $ idl
 

@@ -77,7 +77,7 @@ escsConsole: access to schedules, logs and data
 -----------------------------------------------
 
 Directly use escsConsole for the data quicklook and retrieval (see dedicated 
-sections), for the generation of schedules using schedulecreator and for tools 
+sections), for the generation of schedules using basie and for tools 
 as DS9 or FV.
 Login credentials are specific to each project. Once logged in, in your home 
 you can find the following folders, whose names are self-explanatory::
@@ -112,5 +112,5 @@ logs are stored, simply open a terminal on your computer and use::
 
 	> ssh –X projectName@192.167.189.54
 
-Hence you can launch IDL, use schedulecreator, retrieve your data, etc… 
+Hence you can launch IDL, use basie, retrieve your data, etc… 
 
