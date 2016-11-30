@@ -22,22 +22,20 @@ which there are the FITS files (one for each subscan).
 
 Scan folder names are composed as: 
 
-**YYYMMDD-HHMMSS-Project-Suffix**
+**YYYMMDD-HHMMSS-User-Suffix**
 
 where 
 	
     * **HHMMSS** is the UT time associated to the first sample of the 
       acquisition
-    * **Project** is the code/name specified using the ``project=`` command, 
-	  or when starting a schedule with 
-	  ``startSchedule=[project/][schedulename].scd,[N]``
+    * **User** is the user code (at the moment it can only be "euser") 
     * **Suffix** is a user-defined string retrieved from the schedule files. 
 	  Though no control can be applied on the choice/check of this string, 
 	  the agreement is that it should coincide with the target name. 
 
 FITS files, each corresponding to a subscan, are composed as: 
 
-**YYYYMMDD-HHMMSS-Project-Suffix_Scan#_Subscan#.fits**
+**YYYYMMDD-HHMMSS-User-Suffix_Scan#_Subscan#.fits**
 
 Data can be copied from *escsConsole* to your laptop using  'ssh’  or   
 ‘rsync –e ssh’  commands.
@@ -46,7 +44,7 @@ Data can be copied from *escsConsole* to your laptop using  'ssh’  or
 .. note:: When recording manually-acquired data in FITS format, the output 
    files are still accessible from the euser machine, yet they are found in a 
    peculiar path, different from the one employed when schedules run.
-   You can find these FITS files in /archive/extraData
+   You can find these FITS files in /archive/extraData. 
    This implies that they also cannot be automatically showed by the quick-look 
    procedure. 
 
