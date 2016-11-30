@@ -36,10 +36,10 @@ Here follow all the commands exploitable in ESCS:
 
 .. describe:: > antennaSetup=[code] 
    
-   (``code`` can be `` ``, `` ``, …)
+   (``code`` can be ``PRIM`` or ``SEC``)
    unstows the antenna, sets it to tracking mode and configures the 
-   pointing model according to the specified receiver. It does NOT 
-   perform the receiver and backend setup
+   pointing model according to the specified focus (primary or secondary). 
+   It does NOT perform the receiver and backend setup
 
 .. describe:: > antennaStop
 
@@ -51,6 +51,20 @@ Here follow all the commands exploitable in ESCS:
 
    sets the antenna to PROGRAMTRACK mode. 
    It does not change the pointing model or any receiver setup
+   
+.. describe:: > asOff
+
+   disables the AS tracking: actuators go to the fixed position set for
+   45° of Elevation
+   
+.. describe:: > asOn
+
+   enables the AS tracking: actuators move according to the pointed Elevation 
+   (with a 0.5° step)
+   
+.. describe:: > asPark
+
+   sends all the actuators to their lowest position
 
 .. describe:: > azelOffsets=[double]d,[double]d
 
@@ -59,17 +73,6 @@ Here follow all the commands exploitable in ESCS:
    
    Example: ``> azelOffsets=-0.05d,0.05d``
    
-.. describe:: > bandaC ( , , etc…) 
-
-   unstows the antenna, sets it to tracking mode, selects the pointing model, 
-   and configures the receiver and the backend using default parameters. 
-   In practice, it is a shortcut corresponding to this sequence:: 
-
-			> antennaSetup=[code]
-			> receiversSetup=[receiverCode]
-			> initialize=[receiverCode] 
-			> device=0 
-			> calOff 
 
 .. describe:: > calOn
 
@@ -175,7 +178,7 @@ Here follow all the commands exploitable in ESCS:
 
 .. describe:: > initialize=[code]
    
-   (``code`` can be `` ``, `` ``, `` `` , …) 
+   (``code`` can be ``CCC``, ``XXP``, ``KKC`` , …) 
    configures the backend using the default parameters relative to the selected
    receiver. It does *not* act on the receiver, pointing model or antenna mount
    mode. 
@@ -256,7 +259,7 @@ Here follow all the commands exploitable in ESCS:
 
 .. describe:: > receiversSetup=[code] 
  
-   (``code`` can be `` ``, `` ``, …)		
+   (``code`` can be ``CCC``, ``KKC``, …)		
    configures the receiver using the default parameters. 
    It does *not* act on the backend, pointing model or antenna mount mode
    
@@ -277,7 +280,7 @@ Here follow all the commands exploitable in ESCS:
 
 .. describe:: > servoSetup=[code]
 
-   (``code`` can be `` ``, `` ``, …)
+   (``code`` can be ``CCC``, ``KKC``, …)
    configures the minor servo system only
 
 .. describe:: > setAttenuation=[sect],[att] 
@@ -293,6 +296,18 @@ Here follow all the commands exploitable in ESCS:
 .. describe:: > setSection=[sect],[startFreq],[bw],[feed],[sampleRate],[bins]
 
    configures the backend section sect.
+   
+.. describe:: > setupCCC (setupKKC, etc…) 
+
+   unstows the antenna, sets it to tracking mode, selects the pointing model, 
+   and configures the receiver and the backend using default parameters. 
+   In practice, it is a shortcut corresponding to this sequence:: 
+
+			> antennaSetup=[code]
+			> receiversSetup=[receiverCode]
+			> initialize=[receiverCode] 
+			> device=0 
+			> calOff 
 
 
 .. describe:: > sidereal=[sourcename],[RA],[Dec],[epoch],[sector]
@@ -348,18 +363,6 @@ Here follow all the commands exploitable in ESCS:
  
    sets a delay (in seconds) which is applied before the system reads/executes 
    the next command
-   
-.. describe:: > winkingMark=[integer]
- 
-   activates the winking (i.e. fast switching) calibration mark, whose period
-   in milliseconds is given as an integer parameter. To switch the mark off, 
-   simply command a zero-ms period. This must **always** be done when the 
-   winking mark is not needed anymore.
-   
-   Example:  ``> winkingMark=40`` activates the mark so that is alternately 
-   stays ON for 40 ms and OFF for 40 ms.
-   
-   While:  ``> winkingMark=0`` switches the mark off 
    
 
 .. describe:: > wx  

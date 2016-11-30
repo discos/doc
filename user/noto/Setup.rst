@@ -15,7 +15,7 @@ the minor servo setup. This is done by means of a unique command, which is
 specific for the wanted receiver, to be written in the **operatorInput**. 
 The currently available choices are::
 
-    > bandaC     for the C-band receiver 
+    > setupCCC     for the C-band receiver 
 
 .. note:: Spaces within the command line content are **not** allowed!
 
@@ -34,7 +34,7 @@ Receiver  LO freq     Frontend    Backend         Observed    Observed
 --------  ----------  ----------  --------------  ----------  -----------------
 code      \(MHz\)     \(MHz\)     \(MHz\)         \(MHz\)     \(MHz\)
 ========  ==========  ==========  ==============  ==========  ================= 
-bandaC    4600        4620-5020   50-730          400         4620-5020
+CCC       4600        4620-5020   50-730          400         4620-5020
 ========  ==========  ==========  ==============  ==========  =================
 
 Notice that the true observed band depends on the **intersection between the 
