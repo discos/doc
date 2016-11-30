@@ -25,7 +25,7 @@ then use ssh to access (2).
 **Initial setup** (op)::
 
 	> antennaReset  (if resuming after the emergency stop button is released)  
-	> bandaC        (or other setup code) 
+	> setupCCC      (or other setup code) 
 
 **Tune the local oscillator, if any** (op)::
 
@@ -95,7 +95,7 @@ then use ssh to access (2).
  
 		$ calibrationtoolclient MANAGEMENT/Point
 
-	* *Case C\:* when using MANAGEMENT/CalibrationTool, launch the quick-look (2):: 
+	* *Case C\:* when using MANAGEMENT/CalibrationTool, launch the quick-look (1):: 
 
 		$ calibrationtoolclient MANAGEMENT/CalibrationTool
 	

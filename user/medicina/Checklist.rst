@@ -108,7 +108,7 @@ automatically rejected (bug under fixing).
  
 		$ calibrationtoolclient MANAGEMENT/Point
 
-	* *Case C\:* when using MANAGEMENT/CalibrationTool, launch the quick-look (2):: 
+	* *Case C\:* when using MANAGEMENT/CalibrationTool, launch the quick-look (1):: 
 
 		$ calibrationtoolclient MANAGEMENT/CalibrationTool
 	

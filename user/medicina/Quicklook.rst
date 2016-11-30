@@ -58,7 +58,7 @@ If writer is MANAGEMENT/Point or MANAGEMENT/CalibrationTool
 When data are acquired – both manually or through a schedule – using the Point 
 or CalibrationTool writers, the quick-look must be performed using the 
 CalibrationToolClient. 
-Open a terminal on nuraghe-obs1 and use the command:: 
+Open a terminal on escsRemote and use the command:: 
 
     $ calibrationtoolclient  [componentName]
 
