@@ -26,14 +26,14 @@ Instead of using the overall setup commands, give in the *operatorInput* the
 **individual commands** which deal with the different sub-systems, so that it 
 is easier to identify the misbehaving element.
 
-For example, the setupXXP command can be substituted by (the actual 
+For example, the bandaC command can be substituted by (the actual 
 receiversMode code to be used depends on the desired setup):: 
 
     > antennaReset
-    > antennaSetup=XXP    
-    > servoSetup=XXP     
-    > receiversSetup=XXP
-    > initialize=XXP    
+    > antennaSetup=  
+    > servoSetup=     
+    > receiversSetup= 
+    > initialize=   
     > device=0
     > calOff
 
@@ -66,9 +66,9 @@ automatically rejected (bug under fixing).
 Pay attention to the syntax, you might have inserted unwanted characters like 
 an extra “ / ”: the *startSchedule* command must be either given as::
 
-    > startSchedule=[project]/[schedname].scd,[N]
+    > startSchedule=euser/[schedname].scd,[N]
 
-or, if you have already given the project=code command:: 
+or, as long as euser is the only available user, as::
 
     > startSchedule=[schedname].scd,[N]
 

@@ -140,11 +140,9 @@ where string can be:
 
 
 .. note:: When recording **manually-acquired** data in FITS format, the 
-   **output files** are stored in a peculiar path which is not accessible to 
-   users. This implies that they also cannot be shown by the quick-look 
-   procedure. This temporary situation, which requires the involvement of a 
-   system administrator in order to retrieve the data, will be corrected in 
-   the next release of ESCS. 
+   **output files** are stored in a peculiar path: /archive/extraData. 
+   This implies that they also cannot be shown by the quick-look 
+   procedure. 
 
 Once the recorder is set, acquisitions on a target can be performed as follows. 
 First, set the target:: 
@@ -342,7 +340,7 @@ Caveat on offsets
 As seen in :ref:`EN_Antenna-operations`, there are commands used to set 
 (or null) user-defined offsets.  
 They are: ``radeOffsets``, ``azelOffsets`` and ``lonlatOffsets``.
-Such commands set **overall offsets** which **remain active** until they are 
+Such commands set **system offsets** which **remain active** until they are 
 explicitly changed/nulled by another call of one of the three commands.
 
 Further offsets, having for example the purpose of pointing the antenna to an 

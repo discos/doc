@@ -129,7 +129,9 @@ Back to the commands:
    offsets and they are mutually exclusive! If the user commands the offsets
    several times in a row (in one or different frames) only the last one will
    be effective. **Offsets specified within schedules, at subscan level, sum 
-   up to these user-defined offsets if they match in reference frame.**
+   up to these user-defined offsets if they match in reference frame. If there 
+   is a frame mismatch, the system offsets are automatically rejected (bug 
+   under fixing)**
 
 
 On with the list:
