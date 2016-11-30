@@ -9,15 +9,14 @@ Overview
 What ESCS is
 ============
 
-ESCS is the DISCOS control software flavour produced for the Medicina radio 
-telescope. 
+ESCS is the DISCOS control software flavour produced for the Medicina and Noto
+radio telescopes. 
 It is a distributed system based on ACS (ALMA Common Software), commanding all
 the devices of the telescope and allowing the user to perform single-dish
 observations in the most common modes. 
 As of today, the code actually implemented for the telescopes (i.e. excluding
-the huge ACS framework) amounts to about 548000 lines (467400 if not
-considering comments). 
-Even VLBI (or guest-backend) observations partly rely on Nuraghe, as it must be
+the huge ACS framework) amounts to > 550000 active lines. 
+Even VLBI (or guest-backend) observations partly rely on ESCS, as it must be
 used to perform the focus selection and the frontend setup. 
 
 This guide is meant to help the observer in the use of ESCS, without dealing
