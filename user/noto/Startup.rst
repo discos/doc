@@ -14,7 +14,7 @@ Logistics
 Observations involve the use of two machines, called escs and euser, located 
 in the 32-m dish control room: 
 
-.. figure:: images/Postazioni_ESCSN.png
+.. figure:: images/Postazioni_ESCSN.jpg
    :scale: 80%
    :alt: Observing machine
    :align: center
