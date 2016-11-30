@@ -4,7 +4,7 @@
 Retrieving the data
 *******************
 
-Open a terminal on escsConsole. Yoor data folder is::
+Open a terminal on escsConsole. Your data folder is::
 
     ~/data
 

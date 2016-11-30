@@ -4,7 +4,7 @@
 Retrieving the data
 *******************
 
-Open a terminal on the euser machine. Yoor data folder is::
+Open a terminal on the euser machine. Your data folder is::
 
     ~/data
 
