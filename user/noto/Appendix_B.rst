@@ -22,7 +22,9 @@ procedures inside schedules.
 command makes sense in their schedule, according to their specific needs and 
 goals: this is something that no schedule parser can check!
 
-Here follow all the commands exploitable in Nuraghe:
+Here follow all the commands exploitable in ESCS:
+
+.. note:: Spaces within the command line content are **not** allowed!
 
 .. describe:: > antennaPark
 
@@ -34,7 +36,7 @@ Here follow all the commands exploitable in Nuraghe:
 
 .. describe:: > antennaSetup=[code] 
    
-   (``code`` can be ``CCB``, ``KKG``, …)
+   (``code`` can be `` ``, `` ``, …)
    unstows the antenna, sets it to tracking mode and configures the 
    pointing model according to the specified receiver. It does NOT 
    perform the receiver and backend setup
@@ -56,6 +58,18 @@ Here follow all the commands exploitable in Nuraghe:
    it is the actual offset run on the sky at the source Elevation. 
    
    Example: ``> azelOffsets=-0.05d,0.05d``
+   
+.. describe:: > bandaC ( , , etc…) 
+
+   unstows the antenna, sets it to tracking mode, selects the pointing model, 
+   and configures the receiver and the backend using default parameters. 
+   In practice, it is a shortcut corresponding to this sequence:: 
+
+			> antennaSetup=[code]
+			> receiversSetup=[receiverCode]
+			> initialize=[receiverCode] 
+			> device=0 
+			> calOff 
 
 .. describe:: > calOn
 
@@ -67,8 +81,7 @@ Here follow all the commands exploitable in Nuraghe:
 
 .. describe:: > chooseBackend=[string]  
 
-   selects the backend; *string* can be ``BACKENDS/TotalPower`` or 
-   ``BACKENDS/XBackends``
+   selects the backend; *string* can be ``BACKENDS/TotalPower`` 
 
 .. describe:: >  chooseRecorder=[string]
   
@@ -162,7 +175,7 @@ Here follow all the commands exploitable in Nuraghe:
 
 .. describe:: > initialize=[code]
    
-   (``code`` can be ``CCC``, ``XXP``, ``KKC`` , …) 
+   (``code`` can be `` ``, `` ``, `` `` , …) 
    configures the backend using the default parameters relative to the selected
    receiver. It does *not* act on the receiver, pointing model or antenna mount
    mode. 
@@ -243,7 +256,7 @@ Here follow all the commands exploitable in Nuraghe:
 
 .. describe:: > receiversSetup=[code] 
  
-   (``code`` can be ``CCC``, ``XXP``, …)		
+   (``code`` can be `` ``, `` ``, …)		
    configures the receiver using the default parameters. 
    It does *not* act on the backend, pointing model or antenna mount mode
    
@@ -264,7 +277,7 @@ Here follow all the commands exploitable in Nuraghe:
 
 .. describe:: > servoSetup=[code]
 
-   (``code`` can be ``CCC``, ``KKC``, …)
+   (``code`` can be `` ``, `` ``, …)
    configures the minor servo system only
 
 .. describe:: > setAttenuation=[sect],[att] 
@@ -281,17 +294,6 @@ Here follow all the commands exploitable in Nuraghe:
 
    configures the backend section sect.
 
-.. describe:: > setupCCC (setupCCCL, setupXXP, etc…) 
-
-   unstows the antenna, sets it to tracking mode, selects the pointing model, 
-   and configures the receiver and the backend using default parameters. 
-   In practice, it is a shortcut corresponding to this sequence:: 
-
-			> antennaSetup=[code]
-			> receiversSetup=[receiverCode]
-			> initialize=[receiverCode] 
-			> device=0 
-			> calOff 
 
 .. describe:: > sidereal=[sourcename],[RA],[Dec],[epoch],[sector]
  

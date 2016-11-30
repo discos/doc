@@ -110,7 +110,7 @@ then use ssh to access (2).
  
 	> antennaPark
 	
-**Stow the minor servo and active surface** (op)::
+**Stow the and active surface and minor servo** (op)::
 
     > asPark
     > servoPark

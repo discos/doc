@@ -101,7 +101,7 @@ automatically rejected (bug under fixing).
 	* *Case A\:* when using MANAGEMENT/Fitszilla, launch the quick-look (2)::
  
 		$ idl 
-		IDL> .r fitslook    (or fits_look_mf if observing with the MF receiver) 
+		IDL> .r fitslook    
 		IDL> fitslook
 
 	* *Case B\:* when using MANAGEMENT/Point, launch the quick-look (2)::
@@ -121,7 +121,7 @@ automatically rejected (bug under fixing).
 
 **Stow the antenna** (op)::
  
-	> telescopePark
+	> antennaPark
 
 **Close the monitors, if necessary** (1)::
 

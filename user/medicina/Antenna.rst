@@ -143,19 +143,3 @@ On with the list:
 
    it stows the antenna
    
-
-.. describe:: > asPark
-
-   it parks the active surface in the reference position for El=45°
-   
-
-.. describe:: > servoPark
-
-   it stows the minor servo system (notice: after antennaPark, always give 
-   this command)
-   
-
-.. describe:: > telescopePark
-
-   it parks all the elements: mount (sending the antenna to stow position) and 
-   minor servo 

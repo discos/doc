@@ -44,11 +44,11 @@ Data can be copied from *escsConsole* to your laptop using  'ssh’  or
 
 
 .. note:: When recording manually-acquired data in FITS format, the output 
-   files are stored in a peculiar path which is not accessible to users. 
-   This implies that they also cannot be shown by the quick-look procedure. 
-   This temporary situation, which requires the involvement of a system 
-   administrator in order to retrieve the data, will be corrected as soon as 
-   possible. 
+   files are still accessible from the euser machine, yet they are found in a 
+   peculiar path, different from the one employed when schedules run.
+   You can find these FITS files in /archive/extraData
+   This implies that they also cannot be automatically showed by the quick-look 
+   procedure. 
 
 You can retrieve your logfiles here::
 
