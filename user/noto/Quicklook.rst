@@ -71,6 +71,9 @@ A graphic window will appear. Its content is given in the following figure.
    :alt: calibrationtoolclient 
    :align: center
 
-.. note:: In this client, the subscan currently being acquired is shown 
-   *in real-time* (upper plot), even if in a low-res version. Under this 
-   display, the last completed subscan - in its full sampling - is shown. 
+In this client, the subscan currently being acquired is shown *in real-time* 
+(upper plot), even if in a low-res version. Under this display, the last 
+completed subscan - in its full sampling - is shown. 
+
+.. note:: You can also launch the calibrationtoolclient using the icon provided 
+   on the euser desktop, without having to open a terminal, etc. 
