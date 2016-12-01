@@ -26,14 +26,14 @@ Instead of using the overall setup commands, give in the *operatorInput* the
 **individual commands** which deal with the different sub-systems, so that it 
 is easier to identify the misbehaving element.
 
-For example, the bandaC command can be substituted by (the actual 
+For example, the setupCCC command can be substituted by (the actual 
 receiversMode code to be used depends on the desired setup):: 
 
     > antennaReset
-    > antennaSetup=  
-    > servoSetup=     
-    > receiversSetup= 
-    > initialize=   
+    > antennaSetup=SEC
+    > servoSetup=CCC     
+    > receiversSetup=CCC 
+    > initialize=CCC   
     > device=0
     > calOff
 

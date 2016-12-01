@@ -21,7 +21,7 @@ steering/pointing:
 
 .. describe:: > antennaSetup=[code]
    
-   ``code``: CCC (MMC, KKC, QQC) 
+   ``code``: ``PRIM`` or ``SEC``
 
    it unstows the antenna (if it is stowed) then it sets the pointing 
    model and the minor servo system according to the selected receiver. 
