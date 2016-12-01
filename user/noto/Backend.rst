@@ -49,17 +49,18 @@ For the TPB, in particular, always use::
 
     > setSection=[sect],*,[bw],*,*,[sampleRate],*
 
-where *bw* can be chosen from a restricted range of options (MHz):
+where *bw* can be chosen between two options (MHz):
 
 	* 300.0   
-	* 730.0   
-	* 1250.0   
-	* 2000.0 
+	* 730.0 
 
-These values do not correspond to the true observed bandwidth, for the reason 
-discussed in Initial Setup. When accumulations of the data “dumps” are required
-before integrating them to the output file, it is possible to set the 
-integration time as follows::
+Larger bandwidths (1250, 2000) are technically possible, but make no sense as 
+long as the receivers' IF bandwidth is restricted to 500 MHz.   
+
+Consider that the above-listed bandwidths do not correspond to the true 
+observed ones, for the reason discussed in Initial Setup. When accumulations 
+of the data “dumps” are requiredbefore integrating them to the output file, it 
+is possible to set the integration time as follows::
 
     > integration=[N] 
 
@@ -77,7 +78,7 @@ If a backend re-initialization is needed, use::
 
     > initialize=[code] 
 	
-(``code`` can be ``CCC``, ``XXP``, etc)
+(``code`` can be ``CCC``, ``MMC``, ``KKC``, ``QQC``)
 
 This command resets the backend only, setting it to the default values foreseen
 for the specified focus/receiver. 

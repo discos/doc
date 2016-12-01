@@ -115,12 +115,6 @@ Here follow all the commands exploitable in ESCS:
 		
    deletes all the queue of the temporised commands
 
-.. describe:: > focusScan=[span],[duration]
-  
-   performs a focus scan over the tracked source, span is in mm along the 
-   z-axis, duration is expressed in ``hh:mm:ss``
-   
-   Example: ``> focusScan=60,00:01:00`` 
 
 .. describe:: > fTrack=[dev]
 
@@ -133,7 +127,7 @@ Here follow all the commands exploitable in ESCS:
 
    * **LO**: only the front-end local oscillator is moved
  
-   * **ALL**: the back-end performa a sub-tuning in the various sections 
+   * **ALL**: the back-end performs a sub-tuning in the various sections 
 
  
 .. describe:: > getAttenuations
@@ -178,7 +172,7 @@ Here follow all the commands exploitable in ESCS:
 
 .. describe:: > initialize=[code]
    
-   (``code`` can be ``CCC``, ``XXP``, ``KKC`` , …) 
+   (``code`` can be ``CCC``, ``MMC``, ``KKC``, ``QQC``, …) 
    configures the backend using the default parameters relative to the selected
    receiver. It does *not* act on the receiver, pointing model or antenna mount
    mode. 
@@ -259,7 +253,7 @@ Here follow all the commands exploitable in ESCS:
 
 .. describe:: > receiversSetup=[code] 
  
-   (``code`` can be ``CCC``, ``KKC``, …)		
+   (``code`` can be ``CCC``, ``MMC``, ``KKC``, ``QQC``, …) 		
    configures the receiver using the default parameters. 
    It does *not* act on the backend, pointing model or antenna mount mode
    
@@ -280,7 +274,7 @@ Here follow all the commands exploitable in ESCS:
 
 .. describe:: > servoSetup=[code]
 
-   (``code`` can be ``CCC``, ``KKC``, …)
+   (``code`` can be ``CCC``, ``MMC``, ``KKC``, ``QQC``, …) 
    configures the minor servo system only
 
 .. describe:: > setAttenuation=[sect],[att] 

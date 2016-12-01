@@ -16,6 +16,9 @@ specific for the wanted receiver, to be written in the **operatorInput**.
 The currently available choices are::
 
     > setupCCC     for the C-band receiver 
+    > setupMMC     for the M-band receiver
+    > setupKKC     for the K-band receiver
+    > setupQQC     for the Q-band receiver
 
 .. note:: Spaces within the command line content are **not** allowed!
 
@@ -28,24 +31,34 @@ bandwidth are set as illustrated in the following table.
 
 .. tabularcolumns:: |c|c|c|c|c|
 
-========  ==========  ==========  ==============  ==========  =================
-Receiver  LO freq     Frontend    Backend         Observed    Observed
-                      RF band     IF band         bandwidth   band
---------  ----------  ----------  --------------  ----------  -----------------
-code      \(MHz\)     \(MHz\)     \(MHz\)         \(MHz\)     \(MHz\)
-========  ==========  ==========  ==============  ==========  ================= 
-CCC       4600        4620-5020   50-730          400         4620-5020
-========  ==========  ==========  ==============  ==========  =================
+========  ==========  ============  ==========  ==========  =================
+Receiver  LO freq     Frontend      Backend     Observed    Observed
+                      RF band       IF band     bandwidth   band
+--------  ----------  ------------  ----------  ----------  -----------------
+code      \(MHz\)     \(MHz\)       \(MHz\)     \(MHz\)     \(MHz\)
+========  ==========  ============  ==========  ==========  ================= 
+CCC       4600        4620-5020     50-730      400         4620-5020
+--------  ----------  ------------  ----------  ----------  -----------------
+MMC                   5100-7250     50-730      500        
+--------  ----------  ------------  ----------  ----------  -----------------
+KKC                   21500-23000   50-730      500        
+--------  ----------  ------------  ----------  ----------  -----------------
+QQC                   39000-43500   50-730      500        
+========  ==========  ============  ==========  ==========  =================
 
 Notice that the true observed band depends on the **intersection between the 
 frontend IF band and the chosen backend filter**. The actual observed 
 bandwidth and the band starting frequency are recorded in the output files 
 (see :ref:`EN_Appendix-C-Output-files`).
 
+.. admonition:: WARNING:  
 
+    * Values reported in the above table might be subject to revision in the 
+      next release of this manual. 
+      
 
-Logfile and project code
-========================
+Logfile
+=======
 
 The default logfile is named **station.log**. 
 If the user wants to change it::

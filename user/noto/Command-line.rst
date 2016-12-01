@@ -282,23 +282,7 @@ where (all angles in degrees):
    producing FITS or MBFITS files) will hold the offsets optimising the 
    pointing, given that no user-defined offset is updated by means of an 
    explicit ``radecOffsets``, ``azelOffsets`` or ``lonlatOffsets`` command.
-
-
-Focus scans
------------ 
-
-Command a focus scan on a previously selected target (by means of the track or 
-sidereal commands)::
-
-	> focusScan=[span],[duration]
-
-where span is the length run on the z-axis expressed in mm, duration is the 
-time length expressed in ``hh:mm:ss``
-
-	e.g. ``> focusScan=60,00:01:00`` 
 	
-The ``focusScan`` command can be used inside schedules as well. See the 
-separate guide to schedules for details. 	
 
 
 Skydips

@@ -21,7 +21,7 @@ steering/pointing:
 
 .. describe:: > antennaSetup=[code]
    
-   ``code``: CCC (XXP, KKC) 
+   ``code``: CCC (MMC, KKC, QQC) 
 
    it unstows the antenna (if it is stowed) then it sets the pointing 
    model and the minor servo system according to the selected receiver. 
@@ -30,7 +30,7 @@ steering/pointing:
 
 .. describe:: > servoSetup=[code]
 
-   ``code``: CCC (XXP, KKC)
+   ``code``: CCC (MMC, KKC, QQC) 
    
    it sets the minor servo system only, without affecting other systems
    

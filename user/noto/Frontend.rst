@@ -32,6 +32,6 @@ The calibration mark can be manually switched on and off respectively with::
 If the user wants to perform the setup for the frontend only (without 
 affecting the mount, the minor servo or the backend), the command is:: 
 
-    > receiversSetup=[code]   (CCC, XXP, KKC)
+    > receiversSetup=[code]   (CCC, MMC, KKC, QQC)
 
  
