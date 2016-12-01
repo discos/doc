@@ -31,14 +31,11 @@ escs: input terminal and system monitors
 ----------------------------------------------
 
 Login to euser using the provided credentials. 
-Then, click on the "ESCS" icon located on the Desktop. It will connect you to 
-escs via a Remote Desktop (vinagre).
-On escs, you should find the input terminal and all the monitors already 
-running. If, instead, you need to start them, open a terminal on the escs 
-remote desktop and give::
-
-	> escsClients 
-
+Then, click on the "CONNECTION TO ESCS" icon located on the Desktop. It will 
+connect you to escs via a remote desktop (vinagre).
+On the escs remote desktop, you should find the input terminal and all the 
+monitors already running. If, instead, you need to start them, click on the 
+icon named "escsConsole".
 This opens 8 panels at once: 
 
     * operatorInput - terminal for command line input
@@ -53,7 +50,8 @@ This opens 8 panels at once:
 Rearrange the panels on the desktop. 
 
 In case any of them does not automatically start, you can manually open them 
-by means of individual command lines, to be given in the open terminal::
+by means of individual command lines, to be given in a terminal (open it
+inside the escs remote desktop)::
 
 	> operatorInput 
 	> antennaBossTui 

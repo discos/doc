@@ -26,23 +26,20 @@ At the IDL prompt, compile and run the program fitslook.pro::
     IDL> fitslook
 
 The last completed FITS file (i.e. the most recent subscan carried out) will be 
-displayed. 
+displayed in terms of arbitrary counts vs sample number (i.e. raw intensity 
+against time). 
 
 .. note:: The program automatically identifies the recorded sections and 
-   plots them all. If you are using the multi-feed receiver with the aim of 
-   actually exploiting only the central feed, adjust your schedule so that only
-   sections 0 and 1 are enabled, otherwise all the sections will be recorded 
-   and displayed. 
+   plots them all.
 
-The plots show the proper file content, according to its continuum or spectral 
-nature. Read all the program options using::
+There are different options in order to plot the datai in terms of other 
+quantities. Read all these options using::
 
     IDL> fitslook, /help
 
-.. note:: By default, fitslook displays raw data (in arbitrary counts). 
-   Data streams in antenna temperature are available - and selectable - only 
-   for the TPB and under the condition that a Tsys has been correctly acquired 
-   prior to the execution of the scan. 
+.. note:: Data streams in antenna temperature are available - and selectable - 
+   only for the TPB and under the condition that a Tsys has been correctly 
+   acquired prior to the execution of the scan. 
 
 Please report any problem/request about this tool, as it is under development.
 
@@ -50,6 +47,10 @@ Please report any problem/request about this tool, as it is under development.
    :scale: 100%
    :alt: Quick-look of a continuum OTF scan acquired with a single-feed receiver 
    :align: center
+   
+.. note:: If you are OK with the default settings, you can also launch the 
+   quicklook using the icon provided on the euser desktop, without having to 
+   start IDL, etc.   
 
 
 If writer is MANAGEMENT/Point or MANAGEMENT/CalibrationTool
