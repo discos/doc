@@ -15,6 +15,7 @@ the minor servo setup. This is done by means of a unique command, which is
 specific for the wanted receiver, to be written in the **operatorInput**. 
 The currently available choices are::
 
+    > setupSXP     for the SX-band receiver
     > setupCCC     for the C-band receiver 
     > setupMMC     for the M-band receiver
     > setupKKC     for the K-band receiver
@@ -47,13 +48,16 @@ Receiver  LO freq     Frontend      Backend     Observed    Observed
 --------  ----------  ------------  ----------  ----------  -----------------
 code      \(MHz\)     \(MHz\)       \(MHz\)     \(MHz\)     \(MHz\)
 ========  ==========  ============  ==========  ==========  ================= 
-CCC       4600        4620-5020     50-730      400         4620-5020
+SXP       2020        2200-2360     50-730      160         2200-2360
+          8080        8180-8580     50-730      400         8180-8580
 --------  ----------  ------------  ----------  ----------  -----------------
-MMC                   5100-7250     50-730      500        
+CCC       4600        4620-5020     50-730      400         4650-5020
 --------  ----------  ------------  ----------  ----------  -----------------
-KKC                   21500-23000   50-730      500        
+MMC (1)   6956        5100-7250     50-730      500         6356-6856 
 --------  ----------  ------------  ----------  ----------  -----------------
-QQC                   39000-43500   50-730      500        
+KKC       21869       21500-23000   50-730      400         21969-22369        
+--------  ----------  ------------  ----------  ----------  -----------------
+QQC       42850       39000-43500   50-730      400         42950-43350
 ========  ==========  ============  ==========  ==========  =================
 
 Notice that the true observed band depends on the **intersection between the 
@@ -61,11 +65,10 @@ frontend IF band and the chosen backend filter**. The actual observed
 bandwidth and the band starting frequency are recorded in the output files 
 (see :ref:`EN_Appendix-C-Output-files`).
 
-.. admonition:: WARNING:  
-
-    * Values reported in the above table might be subject to revision in the 
-      next release of this manual. 
-      
+(1) For this setup, the FITS file will **NOT** report the actual values 
+relative to frequency and bandwidth, as the present ESCS release does not take 
+into account the different conversion taking place for this receiver. 
+  
 
 Logfile
 =======
