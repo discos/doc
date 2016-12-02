@@ -10,13 +10,14 @@ Notice that actions take place in three different “locations”:
   * **(2)** = action to be performed in a terminal on euser
   * **(op)** = command to be given in the *operatorInput* panel of ESCS
 
-
 **Login on both (1) and (2)** 
 *Locally*: login on (2) using the euser credentials, then Using the ESCS icon 
 on the Desktop, connect to (1).
 *Remotely*: connect via VNC to (1) with the proper credentials, 
 then use ssh to access (2). 
 
+.. note:: Remember that spaces within the command line content are **not** 
+   allowed!
 
 **Launch the monitors, if necessary** (1):: 
 

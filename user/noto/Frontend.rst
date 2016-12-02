@@ -4,6 +4,18 @@
 Frontend operations
 *******************
 
+.. admonition:: WARNING:  
+
+    * It is necessary to manually select the observing focus using the hardware 
+      IF switch located in the control room. The figure below illustrates this
+      rack.  
+
+.. figure:: images/Focus_switch.jpg
+   :scale: 80%
+   :alt: Hardware switch in charge of selecting the IF lines to be used, i.e. 
+   selecting the observing focus. 
+   :align: center
+
 
 General rules
 =============

@@ -20,9 +20,19 @@ The currently available choices are::
     > setupKKC     for the K-band receiver
     > setupQQC     for the Q-band receiver
 
-.. note:: Spaces within the command line content are **not** allowed!
+.. admonition:: WARNING:  
 
-The above setup command sets the antenna mount, the minor servos, the selected 
+    * It is necessary to manually select the observing focus using the hardware 
+      IF switch located in the control room. The figure below illustrates this
+      rack.  
+
+.. figure:: images/Focus_switch.jpg
+   :scale: 80%
+   :alt: Hardware switch in charge of selecting the IF lines to be used, i.e. 
+   selecting the observing focus. 
+   :align: center
+
+The general setup command sets the antenna mount, the minor servos, the selected 
 receiver and the default backend (TotalPower) according to **default 
 parameters**. The antenna mode is set to **ProgramTrack** (allowing tracking 
 and the execution of schedules), while the Local Oscillator frequency and the 
