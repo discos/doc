@@ -1,0 +1,125 @@
+ESCS 0.5
+===========
+ESCS 0.4 was released by March, 2017.
+Some features are not fully completed. Their inclusion in the relase is meant to allow further testing and technical commissioning in sight of the final deployment of the capability. 
+
+New features
+------------
+
+SARDARAS backend
+~~~~~~~~~~~~~~~~
+
+The Roach component, able to control the SARADARAS backend, has been pre-released. Some caveats must be taken
+into account.
+
+This version is directly derived from the SRT installation. Even though at the SRT is fully functional, at Medicina
+some more testings are required. 
+
+The Roach backend is connected directly to the focus selector (total
+power backend) so bandwidth and signal level fed into the Roach are controlled
+through the total power component. For example the attenuation (command
+*setAttenuation*) of the Raoch component is binded to the TP.
+
+
+There are some available configurations. Each configuration is specific for a single
+installed receiver. More confugrations will be avilable when the commisisoning stage is over.
+The following table shows the deafulat value for each setup:
+
+============= ========= ========= ============ =========== =====
+Configuration  FrontEnd Bandwidth TP bandwidth integration bins
+============= ========= ========= ============ =========== =====
+RK00	      KKC	1500MHz   1250Mhz      40 ms       1024
+RC00	      CCC	1500MHz   1250MHz      40 ms	   1024 
+============= ========= ========= ============ =========== =====
+
+A system temperature is also available. The measurment is relative to the
+bandwith portion selected by the *setSection* command.
+
+The merging phase (the raw data coming from the roach are merged with the meta
+data coming from the telescope control system) is perfomed
+almost real time so the user can check his data.
+
+Typically the configuration of the roach backend is done by the schedules.
+Also it is possible to manullay configure the backenf to a sequence of
+commands:
+
+.. code-block:: discos
+
+    > chooseBackend=Roach
+    > initialize=RK00
+    > integration=100
+    > setSection=
+ 
+The setSection syntax follows the general rules:
+
+.. code-block:: discos
+
+    > setSection=input,freq,bw,feed,pol,sr,bins
+
+where:
+	* input: it could only be 0
+	* freq: start frequency (MHz), placeholder \* allowed
+	* bw: band width (MHz), placeholder \* allowed
+	* feed: feed identifier, it cannot be changed, placeholder \* allowed
+	* pol: polarization, it cannot be changed, placeholder \* allowed
+	* sr: sample rate, it cannot be changed, placeholder \* allowed
+	* bins: number of frequency channels,  it could be 1024 or 16384, placeholder \* allowed
+
+At present, the Roach component does not provide a user interface. 
+
+
+Acknowledgement to SARDARAS development team: Andrea Melis, Raimondo Concu, 
+Alessio Trois.
+
+.. sectionauthor:: :ref:`mbartolini`, :ref:`cmigoni`, :ref:`amelis`, :ref:`aorlati`.
+
+
+7 GHz receiver
+~~~~~~~~~~~~~~
+
+Observations with 7GHz receiver are now available. 
+Information on the receiver can be found `here <http://www.med.ira.inaf.it/ManualeMedicina/English/4.1%20Feeds%20and%20Receivers.htm>`_.
+
+The configuration can be enabled by typing the proper command:
+
+.. code-block:: discos
+
+    > setupCHC
+
+Other useful information follows:
+
+Available bands: 
+RF 5900-6300 MHz LO=5900, IF 100-500 MHz
+RF 6500-6900 MHz LO=6400, IF 100-500 MHz
+
+The default configuration is the 6.7GHz one.
+Default bandwidth for the totalpower is 300 MHz, corresponding to this command:
+
+In order to setup backend up:
+.. code-block:: discos
+
+    > initialize=CHC
+
+.. sectionauthor:: :ref:`aorlati`
+
+System changes
+-------------- 
+
+injectCommand
+~~~~~~~~~~~~~
+
+It is now available a program that allows to issue commands [RAL command] to the control system without directly accessing the operator input. 
+Any authorized user (member of the system manager group) can use this command from its shell.
+The command accept just one argument, i.e. the RAL command to issue. It should be noted that a complex command should be included between "".
+
+
+.. code-block:: discos
+	injectCommand [RALCommand]
+
+.. sectionauthor:: :ref:`aorlati`
+
+
+Change log
+----------
+A complete and browsable change log of this release may be consulted from our
+`tracking system <http://www.med.ira.inaf.it/mantisbt/search.php?project_id=12&sticky_issues=on&fixed_in_version=ESCS-0.4&sortby=last_updated&dir=DESC&hide_status_id=-2&match_type=0>`_.

@@ -1,0 +1,64 @@
+ESCS-Noto-0.2
+===========
+ESCS-Noto, version 0.2 was released December the 2nd, 2016.
+This release was the evolution of the prototype installaed Febraury 2015 and contains lots of new updates and improvements.
+in order to have an overall view of capabilities and features, take a look at the release notes of the other production lines and respective user manuals.
+
+New features
+------------
+
+Weather station
+~~~~~~~~~~~~~~~~~~
+The component to read weather parameters is now completed and stable. 
+
+.. sectionauthor:: :ref:`spoppi`
+
+Calibration signal
+~~~~~~~~~~~~~~~~~~~~~~
+The Phase calibration signal is now under control.
+
+.. sectionauthor:: :ref:`aorlati`
+
+Field System
+~~~~~~~~~~~~
+Now the Field System for VLBI observation is a client application of DISCOS. Almost all required features should now be implemented by forwarding all Fully supported and integrated in the system. Some further tests should have been carried on.
+
+.. sectionauthor:: :ref:`cmigoni`
+
+
+Active surface
+~~~~~~~~~~~~~~
+The AS can now be direclty controlled with DISCOS. The low-level M&C is still delegated to the ASCU (ACtive Surface Control Unit). 
+The available commands follow below:
+
+======== ========================================================================
+command  Result
+======== ========================================================================
+asOn		Activate the AS tracking
+asPark   park the acrive surface (all actuators are brought to hardware limit) 
+asOff    Bring the AS to 45° degrees of elevation
+======== ========================================================================
+
+.. sectionauthor:: :ref:`cmigoni`
+
+Subreflector
+~~~~~~~~~~~~
+
+The subrelftor can now be direclty controlled with DISCOS. The low-level M&C is still delegated to the SCU (Subreflector Control Unit). 
+
+======== ========================================================================
+command  Result
+======== ========================================================================
+
+======== ========================================================================
+
+.. sectionauthor:: :ref:`cmigoni`
+
+System changes
+-------------- 
+
+
+
+Change log
+----------
+Not yet available

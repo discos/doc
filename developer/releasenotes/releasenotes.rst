@@ -13,3 +13,7 @@ Release Notes
 .. include:: nuraghe-0.5.txt
 
 .. include:: escs-0.4.txt
+
+.. include:: escs-0.5.txt
+
+.. include:: noto-0.2.txt
