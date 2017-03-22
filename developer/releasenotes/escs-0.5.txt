@@ -119,6 +119,16 @@ The command accept just one argument, i.e. the RAL command to issue. It should b
 .. sectionauthor:: :ref:`aorlati`
 
 
+Minor Chagnges
+--------------
+
+  * **XARCOS**: added a new XK01 backend mode
+  * **TotalPower**: added *calOn* and *calOff* commands. At the moment these are only used in Noto installation
+  * **FTrack**: fixed some bugs.
+  * **ReceiversBoss**: new configuration takes into account the new control PC at Medicina station.
+  * **Scheduler**: inserted support for integration of the *finalizer*. 
+
+
 Change log
 ----------
 A complete and browsable change log of this release may be consulted from our
