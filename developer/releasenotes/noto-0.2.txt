@@ -1,5 +1,5 @@
 ESCS-Noto-0.2
-===========
+=============
 ESCS-Noto, version 0.2 was released December the 2nd, 2016.
 This release was the evolution of the prototype installaed Febraury 2015 and contains lots of new updates and improvements.
 in order to have an overall view of capabilities and features, take a look at the release notes of the other production lines and respective user manuals.
@@ -49,7 +49,7 @@ The subrelftor can now be direclty controlled with DISCOS. The low-level M&C is 
 ======== ========================================================================
 command  Result
 ======== ========================================================================
-
+TDB		TDB
 ======== ========================================================================
 
 .. sectionauthor:: :ref:`cmigoni`

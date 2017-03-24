@@ -114,15 +114,38 @@ The command accept just one argument, i.e. the RAL command to issue. It should b
 
 
 .. code-block:: discos
-	injectCommand [RALCommand]
+
+	> injectCommand [RALCommand]
 
 .. sectionauthor:: :ref:`aorlati`
 
+Support for long-term archive
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Minor Chagnges
+The long-term archive requires an external tool to allow data and meta data collection (fits file, schedules and logs generated during the observation). 
+The tool is called finalizer and is available under the `DISCOS git oranization  <https://github.com/discos/finalyzer>`_.
+The finalizer will run in the background and every duty cycle and it will:
+	* check the if the lock file exists. if it exists exit, otherwise continue to following step
+	* check if the are schedule repot files.
+	* based on the content of each report file pack all required data in a tar file
+	* copy the tarball in the sharable (with long-term archive) area
+
+Generally the tarball produced by the finalizer should contains:
+	* the schedule files
+	* the corresponding log file
+	* all the scans recorded during the schedule execution.
+
+The information stored in the report are:
+	* the location of the backup schedule files
+	* the location of the corresponding log file
+	* all the folder (scans) created during on execution of the schedule
+
+.. sectionauthor:: :ref:`aorlati`
+
+Minor Changes
 --------------
 
-  * **XARCOS**: added a new XK01 backend mode
+  * **XARCOS**: added a new XK01 backend mode, solved a bug taht causes the system to crach on random basis
   * **TotalPower**: added *calOn* and *calOff* commands. At the moment these are only used in Noto installation
   * **FTrack**: fixed some bugs.
   * **ReceiversBoss**: new configuration takes into account the new control PC at Medicina station.
@@ -132,4 +155,4 @@ Minor Chagnges
 Change log
 ----------
 A complete and browsable change log of this release may be consulted from our
-`tracking system <http://www.med.ira.inaf.it/mantisbt/search.php?project_id=12&sticky_issues=on&fixed_in_version=ESCS-0.4&sortby=last_updated&dir=DESC&hide_status_id=-2&match_type=0>`_.
+`tracking system <http://www.med.ira.inaf.it/mantisbt/search.php?project_id=12&sticky_issues=on&fixed_in_version=ESCS-0.5&sortby=last_updated&dir=DESC&hide_status_id=-2&match_type=0>`_.
