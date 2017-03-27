@@ -8,7 +8,7 @@
    :align: center
 
 Development of the Italian Single-dish COntrol System 
-=====================================================
+-----------------------------------------------------
 
 DISCOS is a project by INAF - National Institute for Astrophysics, Italy. 
 It is devoted to the production of the control system for 
@@ -16,10 +16,8 @@ INAF's radio telescopes (Medicina, Noto, Sardinia Radio
 Telescope).  
 
 
-
-####################
 DISCOS documentation
-####################
+====================
 
 .. toctree::
    :maxdepth: 1
