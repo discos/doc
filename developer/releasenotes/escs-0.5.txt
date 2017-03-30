@@ -1,6 +1,6 @@
 ESCS 0.5
 ===========
-ESCS 0.4 was released by March, 2017.
+ESCS 0.5 was released by March, 2017. SVN release 1692.
 Some features are not fully completed. Their inclusion in the relase is meant to allow further testing and technical commissioning in sight of the final deployment of the capability. 
 
 New features
