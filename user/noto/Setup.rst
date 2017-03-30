@@ -29,8 +29,7 @@ The currently available choices are::
 
 .. figure:: images/Focus_switch.jpg
    :scale: 80%
-   :alt: Hardware switch in charge of selecting the IF lines to be used, i.e. 
-   selecting the observing focus. 
+   :alt: Hardware switch in charge of selecting the IF lines to be used, i.e. selecting the observing focus.
    :align: center
 
 The general setup command sets the antenna mount, the minor servos, the selected 
