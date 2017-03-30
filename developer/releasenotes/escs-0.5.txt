@@ -125,17 +125,20 @@ Support for long-term archive
 The long-term archive requires an external tool to allow data and meta data collection (fits file, schedules and logs generated during the observation). 
 The tool is called finalizer and is available under the `DISCOS git oranization  <https://github.com/discos/finalyzer>`_.
 The finalizer will run in the background and every duty cycle and it will:
+
 	* check the if the lock file exists. if it exists exit, otherwise continue to following step
 	* check if the are schedule repot files.
 	* based on the content of each report file pack all required data in a tar file
 	* copy the tarball in the sharable (with long-term archive) area
 
 Generally the tarball produced by the finalizer should contains:
+
 	* the schedule files
 	* the corresponding log file
 	* all the scans recorded during the schedule execution.
 
 The information stored in the report are:
+
 	* the location of the backup schedule files
 	* the location of the corresponding log file
 	* all the folder (scans) created during on execution of the schedule
