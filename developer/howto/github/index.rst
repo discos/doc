@@ -18,6 +18,7 @@ Contents:
    :maxdepth: 2
 
    configure.rst
+   branch_and_merge.rst
 
 
 

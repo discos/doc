@@ -34,7 +34,7 @@ Clone the discos repository
 
 You can now clone the discos repository into a new *discos* folder:
 
-.. code:: bash
+.. code-block:: bash
 
    $ git clone git@github.com:discos/discos.git discos 
    Cloning into 'discos'...
@@ -46,7 +46,7 @@ You can now clone the discos repository into a new *discos* folder:
 
 This will create a new directory called *discos* which will automatically track the remote **master** branch. You can see all the branches hosted on the remote server using the **git branch -a** command.
 
-.. code:: bash
+.. code-block:: bash
 
    $ cd discos
    $ ls 
@@ -77,7 +77,7 @@ Feel free to define it into you *.bashrc* *.bash_profile* ecc.. The command is u
 display an ASCII tree of the repository in a pretty-printed format with colors and
 essential informations about branches and tags.
 
-.. code:: bash
+.. code-block:: bash
 
    * 04fc562 (HEAD -> master, origin/srt-0.1, origin/noto-0.1, origin/medicina-0.1, origin/master, origin/HEAD) added gitignore and readme
    * 50233f3 backport of bugfix in calOn calOff commands from escs-0.5
