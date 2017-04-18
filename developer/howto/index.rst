@@ -13,4 +13,5 @@ Contents:
    installing/index.rst
    integrating/integrating.rst
    textformatting/index.rst
+   github/index.rst
 
