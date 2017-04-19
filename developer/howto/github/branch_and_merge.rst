@@ -1,6 +1,8 @@
-###############################
-Contributing to the development
-###############################
+##################################
+Contributing to DISCOS development
+##################################
+
+.. contents::
 
 ====================================
 Making a change on the master branch
@@ -100,9 +102,9 @@ If we look now at the status and the commit tree of our local repo we can see:
 
 We can see how our newly created commit object is automatically labelled **HEAD** and is positioned one step forward with respect to the remote repository identified by **origin/HEAD** 
 
------------------------------------------
-Pushing a commit to the remote repository
------------------------------------------
+----------------------------------
+Pushing into the remote repository
+----------------------------------
 
 If we want the remote repo to do this same step we need to *push* the commit object into the remote repository: 
 
@@ -129,10 +131,82 @@ We can see how **HEAD** and **origin/HEAD** are now positioned on the same
 commit object. If we look at the repository stored on github.com we would see this same
 commit has appeared. 
 
+============================================
+Developing on a feature branch (RECOMMENDED)
+============================================
 
+Using a new branch for the development of a new feature is a common practice among git
+users. This comes with some advantages: 
 
+  * git branches are lightweight
+  * git merge is really effective, no need to be scared
+  * merging two branches can be realized using a **pull request** mechanism which 
+    enables review of the proposed change 
+  * Pull requests can be tested in isolation before being accepted
 
+For any non trivial change **we strongly recommend** to `adopt this approach <https://confluence.atlassian.com/bitbucket/workflow-for-git-feature-branching-814201830.html>`_ .
 
+---------------------
+Creating a new branch
+---------------------
+
+A new branch can be created on your local copy of the repository using the **checkout** 
+command with the **-b** option:
+
+.. code-block:: bash
+
+   $ git checkout -b feature-branch-example
+   Switched to a new branch 'feature-branch-example'
+   $ git branch -a
+   * feature-branch-example
+     master
+
+We are automatically positioned on the new branch and we can start working on this.
+
+------------------------------------------
+Making changes and moving between branches
+------------------------------------------
+
+We will add another line to the README file and generate the commit on the newly created
+branch:
+
+.. code-block:: bash
+  
+    echo "A different product line is maintained for each radio telescope" >> README.md
+    $ git commit -am "README modified on feature branch" 
+    [feature-branch-example 6dada91] README modified on feature branch
+     1 file changed, 1 insertion(+)
+    $ gittree
+    * 6dada91 (HEAD -> feature-branch-example) README modified on feature branch
+    * 4ba4caa (origin/master, origin/HEAD, master) updated README.md for the doc example
+
+We can see how our commit is positioned on the HEAD of the new branch, that is one step forward with respect to the master branch. 
+In order to make our example a litlle more realistic and demonstrate a more concrete
+pull request, we will add a commit on the master branch. This will also show how to move 
+between branches: 
+
+.. code-block:: bash
+
+   $ git branch
+   * feature-branch-example
+     master
+   $ git checkout master
+   Switched to branch 'master'
+   Your branch is up-to-date with 'origin/master'.
+   $ git branch
+   feature-branch-example
+   * master
+   $ vim .gitignore
+   $ git commit -am "minor change in gitignore"
+   [master 248e9c8] minor change in gitignore
+    1 file changed, 1 insertion(+)
+   $ gittree 
+   * 248e9c8 (HEAD -> master) minor change in gitignore
+     | * 6dada91 (feature-branch-example) README modified on feature branch
+     |/  
+     * 4ba4caa (origin/master, origin/HEAD) updated README.md for the doc example
+
+We can see that the branch **master** has now diverted from **feature-branch-example**
 
 
 
