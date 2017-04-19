@@ -93,9 +93,10 @@ htmlhelp_basename = 'nuraghe'
 
 # Options for LaTeX output
 # ------------------------
+latex_elements = {'inputenc': r'\usepackage[utf8x]{inputenc}', 'utf8extra': ''}
 
 # The paper size ('letter' or 'a4').
-latex_paper_size = 'a4'
+latex_elements['papersize'] = 'a4'
 
 # The font size ('10pt', '11pt' or '12pt').
 latex_font_size = '10pt'
