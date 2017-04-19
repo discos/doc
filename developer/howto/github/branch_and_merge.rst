@@ -202,12 +202,173 @@ between branches:
     1 file changed, 1 insertion(+)
    $ gittree 
    * 248e9c8 (HEAD -> master) minor change in gitignore
-     | * 6dada91 (feature-branch-example) README modified on feature branch
-     |/  
-     * 4ba4caa (origin/master, origin/HEAD) updated README.md for the doc example
+   | * 6dada91 (feature-branch-example) README modified on feature branch
+   |/  
+   * 4ba4caa (origin/master, origin/HEAD) updated README.md for the doc example
 
-We can see that the branch **master** has now diverted from **feature-branch-example**
+We can see that the branch **master** has now diverted from **feature-branch-example**.
+To better understand how git works we can now switch between branches and see how 
+commits are applied to the files:
 
+.. code-block:: bash
 
+   $ git branch
+   feature-branch-example
+   * master
+   $ less .gitignore
+   *~
+   .svn
+   *swp
+   ... 
+   $ less README.md
+   # DISCOS
 
+   Discos is the Development of Italian Single-dish COntrol System
+   DISCOS is in use at three italian radio telescopes
+   
+   $ git checkout feature-branch-example
+   $ git branch
+   * feature-branch-example
+     master
+   $ less .gitignore
+   .svn
+   *swp
+   ... 
+   $ less README.md
+   # DISCOS
+
+   Discos is the Development of Italian Single-dish COntrol System
+   DISCOS is in use at three italian radio telescopes
+   A different product line is maintained for each radio telescope
+
+We can see how the commits are incorporated into the repository depending on the branch.
+
+-------------------------
+Generating a pull request
+-------------------------
+
+Now we want to generate a **pull request** so that the changes made in our feature
+branch can be seen by everyone, reviewed, tested, and eventually merged into the master 
+branch or declined.
+
+We start by pushing the local branch into the remote repository:
+
+.. code-block:: bash
+
+   $ git push -u origin feature-branch-example
+   Counting objects: 3, done.
+   Delta compression using up to 4 threads.
+   Compressing objects: 100% (3/3), done.
+   Writing objects: 100% (3/3), 360 bytes | 0 bytes/s, done.
+   Total 3 (delta 2), reused 0 (delta 0)
+   remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+   To github.com:discos/discos.git
+    * [new branch]      feature-branch-example -> feature-branch-example
+   Branch feature-branch-example set up to track remote branch feature-branch-example from origin.
+
+The **push** command asks git to copy the local branch called *feature-branch-example* 
+into the remote copy at *origin*, that in our case points to the github repo. The **-u**
+option sets this remote branch as *upstream* for this local branch, this means that
+further changes on this branch will be pushed to the remote branch just configured.
+We now move to the github.com site and manage the pull request from there. 
+
+We create the pull request from the new branch directly from the github homepage or 
+navigating to the **branches** tab of the github repo.
+
+.. image:: pull_request_1.png
+
+.. image:: pull_request_2.png
+
+We are now prompted with a page summarizing facts about our pull request.
+At first, if we scroll down the page, we can see a summary of changes introduced by
+this requet:
+
+.. image:: pull_request_3.png
+
+On the top of the page we can actually generate the request. You can see that git 
+is already telling us that the request can be merged without conflicts, 
+you can add comments, ask for a review of someone in particular, assign labels, milestones
+etc.. finally we generate the pull request: 
+
+.. image:: pull_request_4.png
+
+------------------------
+Accepting a pull request
+------------------------
+
+A new page is generated for this pull request. From this page, everybody can review
+the proposed changes, make comments, and eventually accept the request for merging
+it into the master branch: 
+
+.. image:: pull_request_5.png
+
+The request is merged, and we have the possibility to revert it or eventually to delete the feature branch from the remote repo. 
+We will delete this as keeping it will only pollute our environment, now that
+changes have been accepted into master. 
+
+.. image:: pull_request_6.png
+
+------------------------
+Updating your local copy
+------------------------
+
+We can now opsition ourselves on our local master branch and update it 
+to reflect changes in the remote repo: 
+
+.. code-block:: bash
+
+   $ git checkout master
+   $ git pull
+   remote: Counting objects: 1, done.
+   remote: Total 1 (delta 0), reused 0 (delta 0), pack-reused 0
+   Unpacking objects: 100% (1/1), done.
+   From github.com:discos/discos
+     4ba4caa..01726d9  master     -> origin/master
+   Merge made by the 'recursive' strategy.
+     README.md | 1 +
+     1 file changed, 1 insertion(+)
+   $ gittree      
+   *   3f9086f (HEAD -> master) Merge branch 'master' of github.com:discos/discos
+   |\  
+   | *   01726d9 (origin/master, origin/HEAD) Merge pull request #1 from discos/feature-branch-example
+   | |\  
+   | | * 6dada91 (origin/feature-branch-example, feature-branch-example) README modified on feature branch
+   | |/  
+   * | 248e9c8 minor change in gitignore
+   |/  
+   * 4ba4caa updated README.md for the doc example
+   * 04fc562 (origin/srt-0.1, origin/noto-0.1, origin/medicina-0.1) added gitignore and readme
+
+A new commit is automatically created for merging our local changes with changes in the remote branch. 
+We can now push our local changes to the remote branch. 
+
+.. code-block:: bash
+
+   $ git push
+   Counting objects: 5, done.
+   Delta compression using up to 4 threads.
+   Compressing objects: 100% (5/5), done.
+   Writing objects: 100% (5/5), 567 bytes | 0 bytes/s, done.
+   Total 5 (delta 3), reused 0 (delta 0)
+   remote: Resolving deltas: 100% (3/3), completed with 2 local objects.
+   To github.com:discos/discos.git
+      01726d9..3f9086f  master -> master
+
+And see how everything is now aligned: 
+
+.. code-block:: bash
+
+   $ gittree
+   *   3f9086f (HEAD -> master, origin/master, origin/HEAD) Merge branch 'master' of github.com:discos/discos
+   |\  
+   | *   01726d9 Merge pull request #1 from discos/feature-branch-example
+   | |\  
+   | | * 6dada91 (origin/feature-branch-example, feature-branch-example) README modified on feature branch
+   | |/  
+   * | 248e9c8 minor change in gitignore
+   |/  
+   * 4ba4caa updated README.md for the doc example
+
+A number of commits have been created for the purpose of merging branches,
+these could be avoided using different merge strategies.
 
