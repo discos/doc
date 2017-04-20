@@ -1,4 +1,4 @@
-.. _deployment_quickstart:
+.. _deploy_quickstart:
 
 ***********
 Quick start
