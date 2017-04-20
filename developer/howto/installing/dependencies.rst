@@ -52,7 +52,7 @@ As a first step, check if VirtualBox is already installed:
 
 .. code-block:: shell
 
-   $ which virtualbox 
+   $ which virtualbox
    /usr/bin/virtualbox
 
 In case it is not, download the binary file from the
@@ -68,5 +68,5 @@ Now verify if Vagrant is already installed:
 If it is not, download the binary file from
 the `vagrant official website <https://www.vagrantup.com/downloads.html>`_
 and install it.
-At this point you are ready to deploy DISCOS.  The :ref:`deployment_quickstart`
+At this point you are ready to deploy DISCOS.  The :ref:`deploy_quickstart`
 section is a good starting point, because it covers a typical scenario.
