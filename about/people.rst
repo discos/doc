@@ -4,7 +4,6 @@
 *****************************
 DISCOS control software team
 *****************************
-Brief desc.
 
 .. _core-dev:
 
@@ -39,7 +38,6 @@ the astronomical community:
 
 Hardware and network support
 ============================
-Brief desc of this activity:
 
     * :ref:`afara`
 
@@ -89,12 +87,12 @@ currently assegned to:
 
 Observation manager
 -------------------
-The *observation manager* is responsible for to the observations 
-with DISCOS: 
+The *observation manager* is responsible for the observations
+with DISCOS:
 
-    * Medicina: :ref:`aorlati`
+    * Medicina: :ref:`mbartolini`
+    * Sardinia Radio Telescope: :ref:`mbuttu`
     * Noto: ?
-    * Sardinia Radio Telescope: :ref:`cmigoni`
 
 
 .. _user-doc-manager:
