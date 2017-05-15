@@ -44,6 +44,16 @@ then we edit a file and note how git is aware of the new change.
 
   no changes added to commit (use "git add" and/or "git commit -a")
 
+The git status command shows and tracks all the changes made. There are cases this is not the best option.
+If you want to track changes only on files already inder the control of the repository you should add an option.
+
+.. code-block:: bash
+
+	$git status -uno
+	On branch master
+	Your branch is up-to-date with 'origin/master'.
+	nothing to commit (use -u to show untracked files)
+
 Just as SVN, git offers a **diff** command that shows you what changes: 
 
 .. code-block:: bash
