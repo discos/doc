@@ -1,11 +1,22 @@
-*****************
-XKa band receiver
-*****************
+****************************
+Migration to 64 bit platform
+****************************
 
-.. sectionauthor:: :ref:`mbuttu`, :ref:`aorlati`
+.. sectionauthor:: :ref:`mbuttu`
 
-The ``XKaBandReceiver`` component will manage a dual feed receiver, 
-called *Sogliola*, that can operate simultaneously in two bands: 
-X and Ka. The receiver is currently installed in the primary focus of
-the SRT.
+
+DISCOS control software is now going through a long migration process to 
+64 bits paltforms. The next release will support Centos 6.8 and ACS 2017.X.
+
+
+*******************************
+Tracking of Solar System bodies
+*******************************
+
+.. sectionauthor:: :ref:`spoppi`, :ref:`srighini`
+
+
+We plan to add the capability to track any objects (planets, satellites, probes ...) of the
+Solar System. The astrometric omputation will be based on the SPICE toolkit provided by NASA.
+
 
