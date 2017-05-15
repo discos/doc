@@ -20,3 +20,12 @@ We plan to add the capability to track any objects (planets, satellites, probes 
 Solar System. The astrometric omputation will be based on the SPICE toolkit provided by NASA.
 
 
+*******************************
+Tracking of TLE based bodies
+*******************************
+
+.. sectionauthor:: :ref:`spoppi`
+
+Two-Line elements is a data format for orbital objects like artificial satellites. With pyephem it is possible to obtain 
+proper ephemerides.
+
