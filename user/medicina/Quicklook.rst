@@ -25,8 +25,8 @@ At the IDL prompt, compile and run the program fitslook.pro::
     IDL> .r fitslook
     IDL> fitslook
 
-The last completed FITS file (i.e. the most recent subscan carried out) will be 
-displayed. 
+The last completed FITS file (i.e. the most recent subscan carried out, either 
+being a TP or a spectral one) will be displayed. 
 
 .. note:: The program automatically identifies the recorded sections and 
    plots them all. If you are using the multi-feed receiver with the aim of 
@@ -44,12 +44,23 @@ nature. Read all the program options using::
    for the TPB and under the condition that a Tsys has been correctly acquired 
    prior to the execution of the scan. 
 
-Please report any problem/request about this tool, as it is under development.
-
 .. figure:: images/IDL_quicklook.png
    :scale: 100%
    :alt: Quick-look of a continuum OTF scan acquired with a single-feed receiver 
    :align: center
+   
+When performing ON-OFF spectral observations, users might also choose a 
+different quick-look, displaying the (ON-OFF)/OFF result obtained by 
+integrating all the subscans present in the last completed scan.
+Users must specify the duty cycle, e.g. '3:3:1' if each scan is composed by 
+3 on-scans, 3 off-scans and 1 cal-scan. Zero values are accepted. 
+To invoke this program::
+
+    IDL> .r onoff
+    IDL> onoff, dutyc='[N_on]:[N_off]:[N_cal]' 
+    
+Please report any problem/request about these tools, which are constantly under 
+development.
 
 
 If writer is MANAGEMENT/Point or MANAGEMENT/CalibrationTool
