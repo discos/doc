@@ -66,6 +66,8 @@ To invoke this program::
    :alt: Quick-look of the (ON-OFF)/OFF scan, acquired with XARCOS in XK00 mode 
    :align: center
     
+Click on the above images to open the zoomable version. 
+
 Please report any problem/request about these tools, which are constantly under 
 development.
 
