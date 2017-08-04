@@ -73,51 +73,12 @@ The **weather station** measurements can be retrieved with::
 	> wx    
 
 the reply will list ground temperature (\°C), relative humidity (\%), 
-atmospheric pressure (hPa), wind speed (km/h). Updated values are available 
-every 10 seconds. 
+atmospheric pressure (hPa), wind speed (dummy value, at present). 
+Updated values are available every 10 seconds. 
 
-It is also possible to display the atmospheric temperature and the wind 
-parameters (including wind direction) using a graphic interface.
-Activate the meteo client by using the following command in a terminal on 
-nuraghe-obs1::
-
-	$ meteoClient
-
-The following window will appear, it provides self-explanatory information. 
-
-
-.. figure:: images/Screenshot-meteoClient.py-2.png
-   :scale: 80%
-   :alt: meteoClient panel
-   :align: center
-
-**Notice the top graph: the red line corresponds to wind speed = 61 km/h, at 
-which the antenna must be stowed.** 
-
-Considering that weather parameters are not necessarily written in the output 
-files (in particular, wind speed and direction are not stored in the FITS 
-files at present), it is possible to record a separate log containing these 
-parameters plus information on the antenna pointing. 
-Open a terminal on nuraghe-obs1 and execute the following command:: 
-
-	$ windLogger
-
-The script, besides displaying the information on screen, will produce a file 
-which contains:
-
-	* coordinates pointed by the antenna;
-	* atmospheric temperature;
-	* wind speed and direction.   
-
-These logfiles are stored in a dedicated folder on OBS1: 
-
-	/archive/logs/WindLog  (see also section “Retrieving the data”).
-
-Filenames are assigned according to date and time of the script execution. For 
-example, if the script is launched on November 26th 2013 at 13:46:31 UT, the 
-resulting file will be: azel_131126_134631.log 
-During the acquisition, the shell must not be closed. 
-To interrupt the acquisition, use CTRL+C from the keyboard. 
+Opening a web browser, you can also access a
+ `beta-version web page <http://www.med.ira.inaf.it/escs/meteo >`_  where many
+weather parameters are displayed in real time.  
 
 
 

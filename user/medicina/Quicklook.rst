@@ -59,6 +59,11 @@ To invoke this program::
     IDL> .r onoff
     IDL> onoff, dutyc='[N_on]:[N_off]:[N_cal]' 
     
+.. figure:: images/IDL_quicklook_onoff.png
+   :scale: 100%
+   :alt: Quick-look of the (ON-OFF)/OFF scan, acquired with XARCOS in XK00 mode 
+   :align: center
+    
 Please report any problem/request about these tools, which are constantly under 
 development.
 
