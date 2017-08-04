@@ -77,7 +77,7 @@ atmospheric pressure (hPa), wind speed (dummy value, at present).
 Updated values are available every 10 seconds. 
 
 Opening a web browser, you can also access a
-`web page <http://www.ira.inaf.it/escs/meteo/>`_  where many
+`web page <http://www.med.ira.inaf.it/escs/meteo/>`_  where many
 weather parameters are displayed in real time.  This is a beta-version monitor,
 please report any misfunctioning. 
 
