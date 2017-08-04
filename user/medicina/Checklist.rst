@@ -41,21 +41,21 @@ Desktop, connect to (1) as “observer”.
 
 **Always explicitly choose the Total Power backend (XARCOS might have been left active)** (op)::
 	
-	> chooseBackend=BACKENDS/TotalPower    
+	> chooseBackend=TotalPower    
 
 
 **Measure the cold sky signal level** (op)::
 
 	> getTpi 
 	> setAttenuation=[sect],[att] 
-	—> iteratively adjust attenuations until the level is about 850 counts 
+	—> iteratively adjust attenuations until the level is about 800-1000 counts 
 
 
 **Get a Tsys** (op)::
 
 	> tsys
 
-**Pointing and focusing optimisation** (op):: 
+**Pointing optimisation** (op):: 
 
 	> track=name                    (choose a proper calibrator from source catalogue) 
 	> chooseRecorder=MANAGEMENT/Point 
@@ -63,9 +63,7 @@ Desktop, connect to (1) as “observer”.
 		$ calibrationtoolclient MANAGEMENT/Point            (to display the plots) 
 	> crossScan=HOR,0.5d,00:00:20   (set proper parameters according to your beamsize) 
 	> azelOffsets=0d,0d             (only if wanting to reject the measured offsets!)	
-	> focusScan=60,00:01:00 
-	> clearServoOffsets             (only if wanting to reject the updated focus position!)
-	
+		
 .. admonition:: WARNING:  
 
     * **System offsets, such as the ones measured with a Point acquisition, sum 
@@ -79,7 +77,7 @@ automatically rejected (bug under fixing).
 
 **If needed, choose and set the spectrometer** (op)::
  
-	> chooseBackend=BACKENDS/XBackends 
+	> chooseBackend=XArcos 
 	> initialize=[code]
 
 **Create a schedule** (2):: 
@@ -98,11 +96,19 @@ automatically rejected (bug under fixing).
  
 **Data quick-look (continuum only)**
 
-	* *Case A\:* when using MANAGEMENT/Fitszilla, launch the quick-look (2)::
+	* *Case A\:* when using MANAGEMENT/Fitszilla, launch the raw-FITS quick-look (2)::
  
 		$ idl 
 		IDL> .r fitslook    
 		IDL> fitslook
+		
+		or (for ON-OFF spectral acquisitions)
+		
+		$ idl 
+		IDL> .r onoff    
+		IDL> onoff, dutyc='N_on:N_off:N_cal'   
+		(where N_on, N_off, N_cal are integer numbers - may assume zero value) 
+		
 
 	* *Case B\:* when using MANAGEMENT/Point, launch the quick-look (2)::
  
