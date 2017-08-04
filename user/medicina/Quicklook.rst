@@ -59,7 +59,11 @@ To invoke this program::
     IDL> .r onoff
     IDL> onoff, dutyc='[N_on]:[N_off]:[N_cal]' 
 
+If wanting to display the spectra vs the topocentric radial velocity, use::
 
+    IDL> onoff, dutyc='[N_on]:[N_off]:[N_cal]', xtype='vel'
+
+ 
     
 .. figure:: images/IDL_quicklook_onoff.png
    :scale: 100%
