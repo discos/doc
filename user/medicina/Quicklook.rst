@@ -58,6 +58,8 @@ To invoke this program::
 
     IDL> .r onoff
     IDL> onoff, dutyc='[N_on]:[N_off]:[N_cal]' 
+
+
     
 .. figure:: images/IDL_quicklook_onoff.png
    :scale: 100%
