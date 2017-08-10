@@ -172,7 +172,7 @@ dell'antenna, mentre:
   di scansione (vale 0 per gli assi ``HOR_LON`` e ``HOR_LAT``) sia dal
   dal puntamento (azimuth, elevazione e settore)
 
-* :math:`P_{dt}` è il delta di angolo parallatico rispetto a :math:`P_{ip}`
+* :math:`P_{dp}` è il delta di angolo parallatico rispetto a :math:`P_{ip}`
 
 Nelle configurazioni ottimizzate (``BSC_OPT`` e ``CUSTOM_OPT``) 
 si ha :math:`P_{ip} = 0`. Queste configurazioni sono utili quando si
