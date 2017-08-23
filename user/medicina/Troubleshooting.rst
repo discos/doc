@@ -17,6 +17,25 @@ operation areas in which the problems arise.
 Setup
 =====
 
+
+.. admonition:: PROBLEM: 
+
+   * **The Scheduler panel shows a FAILURE flag.**
+
+Due to a system bug, such flag **might** not indicate an actual problem. 
+Usually, when the FAILURE status is fake, the launch of a new schedule resets 
+it. If you are already running a schedule, stop it and re-launch it from the 
+scan_subscan that was next due. 
+
+If you are performing the initial setup, get to the point of launching a 
+schedule and check whether the flag resets to OK. 
+Pay then attention to the fact that new acquisitions are 
+correctly recorded (i.e. verify the presence of new FITS files, using the
+quick-look tools or checking the updates in the output data folder).  
+If the FAILURE status persists and observations do not proceed correctly, call
+for assistance.
+
+ 
 .. admonition:: PROBLEM: 
 
    * **The initial setup fails, but it is difficult to assess what goes 
@@ -38,8 +57,6 @@ receiversMode code to be used depends on the desired setup)::
     > calOff
 
 For other receivers, the codes of course vary. 
-
-
 
 Schedules
 =========
