@@ -9,7 +9,7 @@ manually perform measurements and observations **through the TPB**, which
 might as well pave the way – as preliminary checks – to longer lasting 
 sessions carried out via schedules. 
 
-Raw counts readouts
+Raw-counts readouts
 ===================
 
 The **raw counts readout** (called Tpi) of the signal can be obtained with::
