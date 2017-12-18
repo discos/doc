@@ -30,17 +30,33 @@ Verify if Alsible is already installed:
 .. code-block:: shell
 
    ansible --version
-   ansible 2.3.0.0
+   ansible 2.3.2.0
 
-If the command ``ansible --version`` fails, than install Ansible by
-executing the following command:
+If the command ``ansible --version`` fails, than you have to install Ansible.
+
+Ansible requires the package ``sshpass`` to be installed properly. You can install it with the following command:
 
 .. code-block:: shell
 
-    $ pip install "ansible>==2.3"
+    $ sudo yum install sshpass
+
+...if you are using a Red-Hat based distro or:
+
+.. code-block:: shell
+
+    $ sudo apt-get install sshpass
+
+...if you are using a Debian based one.
+
+Then you can install Ansible by executing the following command:
+
+.. code-block:: shell
+
+    $ pip install "ansible==2.3.2"
 
 In case the ``pip install`` command fails, try to install Ansible
-(greather than 2.0) as explained in the `official ansible website
+(greater than 2.0, lesser than 2.4, otherwise the provisioning procedure could fail)
+as explained in the `official ansible website
 <http://docs.ansible.com/ansible/intro_installation.html#installation>`_.
 
 
@@ -52,7 +68,7 @@ As a first step, check if VirtualBox is already installed:
 
 .. code-block:: shell
 
-   $ which virtualbox
+   $ which virtualbox 
    /usr/bin/virtualbox
 
 In case it is not, download the binary file from the
