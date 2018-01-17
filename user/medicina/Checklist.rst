@@ -21,9 +21,7 @@ Desktop, connect to (1) as “observer”.
 
 	$ escsConsole 
 
-**Initial setup** (op)::
-
-	> antennaReset  (if resuming after the emergency stop button is released)  
+**Initial setup** (op):: 
 
 	> setupCCC      (or other receiver code) 
 
