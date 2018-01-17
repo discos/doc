@@ -94,7 +94,7 @@ automatically rejected (bug under fixing).
 		
 	> startSchedule=[project/][schedulename].scd,[N]
  
-**Data quick-look (continuum only)**
+**Data quick-look**
 
 	* *Case A\:* when using MANAGEMENT/Fitszilla, launch the raw-FITS quick-look (2)::
  
@@ -110,7 +110,7 @@ automatically rejected (bug under fixing).
 		(where N_on, N_off, N_cal are integer numbers - may assume zero value) 
 		
 
-	* *Case B\:* when using MANAGEMENT/Point, launch the quick-look (2)::
+	* *Case B\:* when using MANAGEMENT/Point, launch the quick-look (1)::
  
 		$ calibrationtoolclient MANAGEMENT/Point
 
