@@ -6,15 +6,13 @@ Checklist for schedule-based observations
 
 Notice that actions take place in three different “locations”:
 
-  * **(1)** = action to be performed in a terminal on escsRemote
-  * **(2)** = action to be performed in a terminal on escsConsole
+  * **(1)** = action to be performed in a terminal on escsRemote (.57)
+  * **(2)** = action to be performed in a terminal on escsConsole (.54)
   * **(op)** = command to be given in the *operatorInput* panel of ESCS
 
 
 **Login on both (1) and (2)** 
-*Locally*: login on (2) using your projectName, then Using the VNC icon on the 
-Desktop, connect to (1) as “observer”.
-*Remotely*: connect via VNC to (1) as "observer", then use ssh to access (2). 
+Connect via VNC to (1) as "observer", then use ssh to access (2). 
 
 
 **Launch the monitors, if necessary** (1):: 
@@ -56,11 +54,11 @@ Desktop, connect to (1) as “observer”.
 **Pointing optimisation** (op):: 
 
 	> track=name                    (choose a proper calibrator from source catalogue) 
-	> chooseRecorder=MANAGEMENT/Point 
+	> chooseRecorder=MANAGEMENT/CalibrationTool 
 	—> the following command on (1): 
-		$ calibrationtoolclient MANAGEMENT/Point            (to display the plots) 
-	> crossScan=HOR,0.5d,00:00:20   (set proper parameters according to your beamsize) 
-	> azelOffsets=0d,0d             (only if wanting to reject the measured offsets!)	
+		$ calibrationtoolclient  (to display the plots) 
+	> crossScan=HOR,0.5d,00:00:20    (set proper parameters according to your beamsize) 
+	> azelOffsets=0d,0d              (only if wanting to reject the measured offsets!)	
 		
 .. admonition:: WARNING:  
 
@@ -106,15 +104,16 @@ automatically rejected (bug under fixing).
 		IDL> .r onoff    
 		IDL> onoff, dutyc='N_on:N_off:N_cal'   
 		(where N_on, N_off, N_cal are integer numbers - may assume zero value) 
-		
 
-	* *Case B\:* when using MANAGEMENT/Point, launch the quick-look (1)::
- 
-		$ calibrationtoolclient MANAGEMENT/Point
 
-	* *Case C\:* when using MANAGEMENT/CalibrationTool, launch the quick-look (1):: 
+	* *Case B\:* when using MANAGEMENT/CalibrationTool, launch the quick-look (1):: 
 
 		$ calibrationtoolclient MANAGEMENT/CalibrationTool
+
+**Weather conditions and webcam (in a web browser)**
+
+	Weather: www.med.ira.inaf.it/escs/meteo
+        Webcam: www.med.ira.inaf.it/webcam.html 
 	
 **Stop the schedule** (op)::
 

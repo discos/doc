@@ -6,7 +6,7 @@ Troubleshooting and temporary procedures
 
 The following sections list the solutions to the most common problems 
 encountered by users, including indications on how to deal with present bugs 
-or inefficiencies in the code. The records are sorted according to the main 
+or inefficiencies in the system. The records are sorted according to the main 
 operation areas in which the problems arise. 
 
 .. note:: **Users are advised to read these “hints” at the beginning of the 
@@ -48,15 +48,14 @@ is easier to identify the misbehaving element.
 For example, the setupKKC command can be substituted by (the actual 
 receiversMode code to be used depends on the desired setup):: 
 
-    > antennaReset
     > antennaSetup=KKC    
-    > servoSetup=KKC     
     > receiversSetup=KKC
     > initialize=KKC    
     > device=0
     > calOff
 
 For other receivers, the codes of course vary. 
+
 
 Schedules
 =========
@@ -72,7 +71,20 @@ the ones indicated inside schedules ONLY if they are expressed in the same
 coordinate frame. This means that, if you perform observations using EQ offsets, 
 also the fine-pointing cross-scans must be carried out in the EQ frame. The 
 same holds for HOR scans. If there is a frame mismatch, the system offsets are 
-automatically rejected (bug under fixing).
+automatically rejected (this bug is under fixing).
+
+
+.. admonition:: PROBLEM:
+
+    * **My schedules don’t parse because of issues in the .bck file.**
+
+Basie still suffers from a bug. If you insert fine-pointing scans into your 
+schedule, basie will generate too many backend configuration procedures inside 
+the .bck file. Such file must contain only unique procedures, i.e. there must 
+not be clones having the same name. 
+To solve this, edit the .bck file eliminating all duplicates (pay attention not
+to remove too many items…). 
+
 
 .. admonition:: PROBLEM:
   
@@ -106,7 +118,8 @@ or, if you have already given the project=code command::
 
     * **Dead time between consecutive subscans is much longer than expected**
 
-With ESCS 0.4 it is necessary to delete from the schedules all the post-scan 
+Are your schedules old? 
+With ESCS 0.4 it is necessary to delete from old schedules all the post-scan 
 wait times, as the system now takes automatically care of computing and 
 applying proper delays according to the deceleration ramps duration. 
 If you specify a wait time in your post-scan procedures, it will add to the 

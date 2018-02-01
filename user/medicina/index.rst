@@ -13,6 +13,7 @@ Contents:
 
    ReleaseNotes.rst
    Introduction.rst
+   Troubleshooting.rst
    Checklist.rst
    Startup.rst
    Setup.rst
@@ -28,5 +29,4 @@ Contents:
    Appendix_B.rst
    Appendix_C.rst
    Appendix_D.rst
-   Troubleshooting.rst
    FaultReport.rst
