@@ -26,7 +26,7 @@ Open a VNC session and connect to::
 You will be asked to insert a password. 
 A remote desktop will then appear. In it, the ESCS system should already be up 
 and running, and you should see all the textual clients referring to the 
-different container of the system. If you don't see them, first check the 
+different containers of the system. If you don't see them, first check the 
 bottom bar, as they might have been reduced to icons. 
 If indeed they are all missing and you need to start the clients, 
 open a terminal and use::
