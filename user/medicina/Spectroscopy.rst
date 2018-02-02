@@ -1,12 +1,12 @@
 .. _E_Spectral-line-observations: 
 
-**************************
-Spectral line observations
-**************************
+**********************************
+Command-line spectral observations
+**********************************
 
 Spectral line observations can either take place exploiting proper schedules 
-(see dedicated documents on how the schedules must be written or how to 
-produce them with the *schedulecreator* tool) or by means of command-line 
+(see dedicated checklist, and the documents on how the schedules must be written 
+or how to produce them with the *basie* tool) or by means of command-line 
 operations. Here this command-line scenario is described.  
 
 Line rest frequency
@@ -119,5 +119,5 @@ tuning:
 
 Acquiring data
 ==============
-See :ref:`Command-line-measurements-and-acquisitions`  
+See :ref:`E_Command-line-measurements-and-acquisitions`  
 
