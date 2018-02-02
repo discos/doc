@@ -4,7 +4,8 @@
 Fault report
 ************
 
-Users are required to report all faults and misbehaviors by means of the 
-ticketing system:
+Users are kindly requested to report all faults and misbehaviors by writing to
+observing@ira.inaf.it 
 
+A ticketing system will be implemented as soon as possible. 
 
