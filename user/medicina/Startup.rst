@@ -53,7 +53,8 @@ by means of individual command lines, to be given in a terminal shell::
 	$ antennaBossTui 
 	$ observatoryTui 
 	$ mountTui 
-	$ genericBackendTui BACKENDS/TotalPower  (or other backend code)
+	$ genericBackendTui BACKENDS/TotalPower
+	$ genericBackendTui BACKENDS/XArcos
 	$ receiversBossTui
 	$ schedulerTui
 	$ loggingDisplay
@@ -75,11 +76,12 @@ sections), for the generation of schedules using basie and for tools
 as DS9 or FV. 
 Login credentials are specific to each project, you will connect via ssh 
 as follows, using a terminal shell (you can take advantage of the different
-virtual desktops, in order not to crowd the system desktop):  
+virtual desktops, in order not to crowd the system desktop)::  
 
 	$ ssh –X projectName@192.167.189.54
 
-in your home you can find the following folders, whose names are self-explanatory::
+in your home you can find the following folders, whose names are 
+self-explanatory::
 
     ~/data  
     ~/schedules
