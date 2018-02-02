@@ -35,7 +35,22 @@ quick-look tools or checking the updates in the output data folder).
 If the FAILURE status persists and observations do not proceed correctly, call
 for assistance.
 
- 
+
+.. admonition:: PROBLEM: 
+
+   * **After a setup, the antenna slews to an unwanted position, even though
+    I have never commanded any pointing*
+
+This depends on the Antenna Control Unit (ACU) behavior: the ACU, after a setup,
+always commands the antenna to go to the last pointed position. This is very
+inconvenient, and ESCS cannot directly stop it at the moment. You may
+immediately stop the slewing by commanding, right after the setup, a properly 
+nearby position using goTo=[Az'd',El'd'] so that, while you complete your setup 
+procedures, the dish stops very near the present position. If the antenna is, 
+for example, unstowing, the commanded position could be goTo=180d,80d as it is
+very near the 180d,90d stow position.  
+
+
 .. admonition:: PROBLEM: 
 
    * **The initial setup fails, but it is difficult to assess what goes 
@@ -72,18 +87,6 @@ coordinate frame. This means that, if you perform observations using EQ offsets,
 also the fine-pointing cross-scans must be carried out in the EQ frame. The 
 same holds for HOR scans. If there is a frame mismatch, the system offsets are 
 automatically rejected (this bug is under fixing).
-
-
-.. admonition:: PROBLEM:
-
-    * **My schedules don’t parse because of issues in the .bck file.**
-
-Basie still suffers from a bug. If you insert fine-pointing scans into your 
-schedule, basie will generate too many backend configuration procedures inside 
-the .bck file. Such file must contain only unique procedures, i.e. there must 
-not be clones having the same name. 
-To solve this, edit the .bck file eliminating all duplicates (pay attention not
-to remove too many items…). 
 
 
 .. admonition:: PROBLEM:
@@ -125,3 +128,34 @@ applying proper delays according to the deceleration ramps duration.
 If you specify a wait time in your post-scan procedures, it will add to the 
 system-computed delays. 
 
+
+Quick-look tools
+================
+
+.. admonition:: PROBLEM:  
+
+    * **The calibrationtoolclient does not open**
+
+In order for the client to start, the CalibrationTool writer must be active. 
+So, you either wait for it to be active while the schedule runs, and then you 
+timely start the client by giving the proper command in a terminal shell, or 
+you open it before launching any schedule and explicitly invoking the 
+CalibrationTool using the command chooseRecorder=MANAGEMENT/CalibrationTool in 
+the operatorInput panel, then starting the client in the terminal shell. 
+
+
+.. admonition:: PROBLEM:  
+
+    * **The IDL quick-look procedures abort, or they do not actually show the 
+      latest acquisitions**
+
+These tools are all but refined. Ideally, they always show the last completed
+FITS subscan (fitslook.pro) or the last completed ON-OFF-CAL spectrum 
+(onoff.pro). Yet, to do so while avoiding incomplete subscans or unsuitable 
+files, they sometime fail. Folders containing one subscan only, as it is often 
+the case with skydips, will never produce a display, because as soon as the FITS 
+is complete a new folder is generated, and the procedure points to it. 
+When UT midnight comes, the procedure might not automatically switch to the 
+new YYYMYMMDD tree, so you might need to stop and restart it to go on 
+displaying the incoming data. Please report any problem and your "wishlist" 
+about these tools. 
