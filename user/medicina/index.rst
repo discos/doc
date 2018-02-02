@@ -14,7 +14,8 @@ Contents:
    ReleaseNotes.rst
    Introduction.rst
    Troubleshooting.rst
-   Checklist.rst
+   ChecklistTP.rst
+   ChecklistXA.rst
    Startup.rst
    Setup.rst
    Antenna.rst

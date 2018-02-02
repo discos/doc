@@ -1,8 +1,8 @@
-.. _E_Checklist-for-schedule-based-observations: 
+.. _E_Checklist-for-total_power-observations: 
 
-*****************************************
-Checklist for schedule-based observations
-*****************************************
+*****************************************************
+Checklist for Total Power schedule-based observations
+*****************************************************
 
 Notice that actions take place in three different “locations”:
 
@@ -21,7 +21,7 @@ Connect via VNC to (1) as "observer", then use ssh to access (2).
 
 **Initial setup** (op):: 
 
-	> setupCCC      (or other receiver code) 
+	> setupCCC      (or other receiver code: XXP, KKC) 
 
 **Tune the local oscillator, if any** (op)::
 
@@ -71,12 +71,7 @@ fine-pointing cross-scans must be carried out in the EQ frame. The same
 holds for HOR scans. If there is a frame mismatch, the system offsets are
 automatically rejected (bug under fixing).
 
-**If needed, choose and set the spectrometer** (op)::
- 
-	> chooseBackend=XArcos 
-	> initialize=[code]
-
-**Create a schedule** (2):: 
+**If needed, create a schedule** (2):: 
 
 	Use schedulecreator (see its own guide): 
 	$ basie –c [configfile] [out_directory] 
@@ -98,17 +93,10 @@ automatically rejected (bug under fixing).
 		IDL> .r fitslook    
 		IDL> fitslook
 		
-		or (for ON-OFF spectral acquisitions)
-		
-		$ idl 
-		IDL> .r onoff    
-		IDL> onoff, dutyc='N_on:N_off:N_cal'   
-		(where N_on, N_off, N_cal are integer numbers - may assume zero value) 
+	* *Case B\:* if also using MANAGEMENT/CalibrationTool, launch the quick-look (1):: 
 
-
-	* *Case B\:* when using MANAGEMENT/CalibrationTool, launch the quick-look (1):: 
-
-		$ calibrationtoolclient MANAGEMENT/CalibrationTool
+		$ calibrationtoolclient MANAGEMENT/CalibrationTool   
+                  (—> it opens only if the CalibratioTool writer is currently selected!)
 
 **Weather conditions and webcam (in a web browser)**
 
@@ -117,7 +105,7 @@ automatically rejected (bug under fixing).
 	
 **Stop the schedule** (op)::
 
-	> haltSchedule
+	> stopSchedule
 
 **Copy the data** (2) 
 	—> Get the latest subfolders written in the main data folder 
