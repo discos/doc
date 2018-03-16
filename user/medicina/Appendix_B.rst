@@ -277,7 +277,7 @@ Here follow all the commands exploitable in ESCS:
    usually the values are identical) This LO frequency corresponds to: 
    SkyFreq(@band start) – 100 MHz when using the TPB
 
-.. describe:: > setSection=[sect],[startFreq],[bw],[feed],[sampleRate],[bins]
+.. describe:: > setSection=[sect],[startFreq],[bw],[feed],[mode],[sampleRate],[bins]
 
    configures the backend section sect.
 
