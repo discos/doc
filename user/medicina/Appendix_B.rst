@@ -99,12 +99,6 @@ Here follow all the commands exploitable in ESCS:
 		
    deletes all the queue of the temporised commands
 
-.. describe:: > focusScan=[span],[duration]
-  
-   performs a focus scan over the tracked source, span is in mm along the 
-   z-axis, duration is expressed in ``hh:mm:ss``
-   
-   Example: ``> focusScan=60,00:01:00`` 
 
 .. describe:: > fTrack=[dev]
 
@@ -310,14 +304,15 @@ Here follow all the commands exploitable in ESCS:
  
    performs an OTF acquisition at the current azimuth position, spanning in 
    elevation from *El1* to *El2* (both expressed in degrees, with ‘d’ suffix), 
-   in *duration* seconds. 
-   A recorder must have previously been enabled in order to save the data. 
+   in *duration* time expressed as hh:mm:ss. 
+   A recorder must have previously been enabled in order to save the data, and
+   the antenna must have received a pointing command as ``track`` or ``goTo`` 
 
 .. describe:: > startSchedule=[project/][schedulename].scd,[N]
  
    runs schedule *schedulename*.scd (project is the ID of the observing 
    project, it is optional if it has already been input through the 
-   ``projectCode`` command), reading it from line *N*  
+   ``project`` command), reading it from line *N*  
 
 .. describe:: > stopSchedule 
 
