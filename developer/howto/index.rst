@@ -14,4 +14,5 @@ Contents:
    integrating/integrating.rst
    textformatting/index.rst
    github/index.rst
+   eventlogging/index.rst
 
