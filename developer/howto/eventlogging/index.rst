@@ -22,13 +22,13 @@ DISCOS customized logging system
 	
 	* System loggings (messages are not shown to the user, they are stored in system log file)
 	
-	* Custom loggings (messages are reported to the user, the same message is stored into bothsystem end user logfile)
+	* Custom loggings (messages are reported to the user, the same message is stored into both system and user logfile)
 	
 	* System exceptions (The user is not directly notified of the exception and the event is logged only into system log file)
 	 
-	* Custom exceptions (The user is notified of the exception and the event is logged into boht system and user log file)
+	* Custom exceptions (The user is notified of the exception and the event is logged into both system and user log file)
 	 
-	* Custom exceptions messages (This is a special case allowing the developer to present a specific message to the user when an exception is risen inside an operation triggered by the user. The message is shown in the operator input)
+	* Interaction with operator input (This is a special case allowing the developer to present a specific message to the user when an exception is risen inside an operation triggered by the user. The message is shown in the operator input)
 
 Contents:
 
