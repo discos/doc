@@ -1,0 +1,9 @@
+[ITEM title="introduzione di due nuove colonne nella tabella Section del FitsZilla"]
+Le due colonne, epsresse in MHz, riportano l'esatta frequenza di campionamento del backend.
+Questo dovrebbe superare il problem a derivante dall'utilizzo di SARDA che campiona dalla continua in su
+ed non ha un conversione interna.
+Da riportare nella guida utente e nel documenti di riferimento del fits.
+Tutti i riferimenti qui https://github.com/discos/discos/pull/258
+[/ITEM]
+
+
