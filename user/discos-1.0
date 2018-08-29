@@ -7,3 +7,14 @@ Tutti i riferimenti qui https://github.com/discos/discos/pull/258
 [/ITEM]
 
 
+[ITEM title="backend SARDARA"]
+Inserisco le modifiche da apportare al documento https://discos.readthedocs.io/en/latest/user/srt/source/Backend.html
+
+Per scegliere il backend il comando è chooseBackend=Sardara.
+
+Le configurazioni possibili sono:
+SK00, SK03, SK06, SK77, SC00, SL00, SP00 (L/R)
+SK00S, SK03S, SK06S, SK77S, SC00S, SL00S, SP00S (Full Stokes)
+
+Il comando setSection può essere utilizzato per tutte le sezioni (0-13)
+[/ITEM]
