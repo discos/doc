@@ -19,6 +19,7 @@ but also the longer-term aims and directions of the project:
     * :ref:`cmigoni`
     * :ref:`aorlati`
     * :ref:`spoppi`
+    * :ref:`gcarboni`
 
 
 .. _astro_referees:
@@ -69,7 +70,7 @@ Project manager
 ---------------
 The *project manager* heads the whole DISCOS project and has
 in charge the software releasing.
-This responsibility is currently assegned to :ref:`aorlati`. 
+This responsibility is currently assigned to :ref:`aorlati`. 
 
 .. _support-scientist:
 
@@ -78,7 +79,7 @@ Support scientist
 -----------------
 The *support scientist* is responsible for every communication 
 related to DISCOS changes that affect the users. This responsibility is 
-currently assegned to:
+currently assigned to:
 
     * Medicina: :ref:`srighini`
     * Noto: ?
@@ -90,18 +91,16 @@ Observation manager
 The *observation manager* is responsible for the observations
 with DISCOS:
 
-    * Medicina: :ref:`mbartolini`
+    * Medicina: :ref:`srighini`
     * Sardinia Radio Telescope: :ref:`mbuttu`
     * Noto: ?
-
 
 .. _user-doc-manager:
 
 User's documentation
 --------------------
 The *user's documentation manager* is responsible for the :ref:`user`
-contents. This responsibility is currently assegned to :ref:`srighini`. 
-
+contents. This responsibility is currently assigned to :ref:`srighini`. 
 
 .. _dev-manager:
 
@@ -112,16 +111,13 @@ contents, for the software (and documentation) repository and for the
 whole development process.
 This responsibility is currently assigned to :ref:`mbuttu`. 
 
-
 Deploying and continuous integration
 ------------------------------------
-This responsibility is currently assigned to :ref:`mbartolini`.
-
+This responsibility is currently assigned to :ref:`gcarboni`.
 
 Provisioning
 ------------
-This responsibility is currently assigned to :ref:`afara`.
-
+This responsibility is currently assigned to :ref:`gcarboni`.
 
 People involved in the project
 ==============================
@@ -144,12 +140,23 @@ a member of the `Sardinia Radio Telescope staff
 <http://www.srt.inaf.it/staff/>`_.
 
 
+.. _gcarboni:
+
+Giuseppe Carboni
+----------------
+`Giuseppe <mailto:giuseppe.carboni@inaf.it>`_ works
+at the `Osservatorio Astronomico di Cagliari
+<http://www.oa-cagliari.inaf.it/>`_, and he is 
+a member of the `Sardinia Radio Telescope staff
+<http://www.srt.inaf.it/staff/>`_.
+
+
 .. _cmigoni:
 
 Carlo Migoni
 ------------
-`Carlo <mailto: migoni@oa-cagliari.inaf.it>`_ works
-for the `Osservatorio Astronomico di Cagliari
+`Carlo <mailto: carlo.migoni@inaf.it>`_ works
+at the `Osservatorio Astronomico di Cagliari
 <http://www.oa-cagliari.inaf.it/>`_, and he is 
 a member of the `Sardinia Radio Telescope staff
 <http://www.srt.inaf.it/staff/>`_.
@@ -159,23 +166,22 @@ a member of the `Sardinia Radio Telescope staff
 
 Antonietta Fara
 ---------------
-`Antonietta <mailto:righin_s@ira.inaf.it>`_...
+`Antonietta <mailto:antonietta.fara@inaf.it>`_...
 
 
 .. _amelis:
 
 Andrea Melis
 ------------
-`Andrea Melis <mailto:amelis@ira.inaf.it>`_...
+`Andrea Melis <mailto:andrea.melis@inaf.it>`_...
 
 
 .. _aorlati:
 
 Andrea Orlati
 -------------
-`Andrea <mailto:a.orlati@ira.inaf.it>`_ works at the `Medicina Radiotelescope 
+`Andrea <mailto:andrea.orlati@inaf.it>`_ works at the `Medicina Radiotelescope 
 <http://www.med.ira.inaf.it/>`_ of the INAF - Institute of Radioastronomy.
-Address:
 
  | via Fiorentina, 3513
  | 40059 - Medicina (BO) - Italy
@@ -186,7 +192,7 @@ Address:
 
 Sergio Poppi
 ------------
-`Sergio <mailto:spoppi@oa-cagliari.inaf.it>`_ works
+`Sergio <mailto:sergio.poppi@inaf.it>`_ works
 for the `Osservatorio Astronomico di Cagliari
 <http://www.oa-cagliari.inaf.it/>`_, and he is 
 a member of the `Sardinia Radio Telescope staff
@@ -197,7 +203,7 @@ a member of the `Sardinia Radio Telescope staff
 
 Simona Righini
 --------------
-`Simona <mailto:righin_s@ira.inaf.it>`_: user manual, 
+`Simona <mailto:simona.righini@ira.inaf.it>`_: user manual, 
 software specification definition, ...
 
 .. _pcassaro:
