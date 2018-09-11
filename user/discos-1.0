@@ -18,3 +18,8 @@ SK00S, SK03S, SK06S, SK77S, SC00S, SL00S, SP00S (Full Stokes)
 
 Il comando setSection può essere utilizzato per tutte le sezioni (0-13)
 [/ITEM]
+
+[ITEM title="backend SARDARA"]
+Il tempo necessario per configurare Sardara (comando initialize) nelle modalità SK77 o SK77S è pari a circa due minuti.
+[/ITEM]
+
