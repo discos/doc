@@ -132,8 +132,8 @@ System changes
 
 FitsZilla fits file
 ~~~~~~~~~~~~~~~~~~~
-The "signal" keyword was added to the mian header. Presently, three possible 
-values are avilable:
+The "signal" keyword was added to the main header. Presently, three possible 
+values are available:
 
 .. code-block:: discos
 
