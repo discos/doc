@@ -73,7 +73,7 @@ Here follow all the commands exploitable in ESCS:
 .. describe:: >  chooseRecorder=[string]
   
    selects the backend; *string* can be ``MANAGEMENT/FitsZilla``, 
-   ``MANAGEMENT/MBFitsWriter`` or ``MANAGEMENT/Point``
+   ``MANAGEMENT/CalibrationTool`` or ``MANAGEMENT/Point``
 
 .. describe:: > clearServoOffsets   
 
