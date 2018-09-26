@@ -44,3 +44,13 @@ Vedi release notes: https://discos.readthedocs.io/en/latest/developer/releasenot
 Il tempo necessario per configurare Sardara (comando initialize) nelle modalità SK77 o SK77S è pari a circa due minuti.
 [/ITEM]
 
+[ITEM title="backend SARDARA"]
+Modificata la chiave SIGNAL dentro il main header del fits. Dettagli direttamente nella issue:
+https://github.com/discos/discos/issues/239
+
+Da modificare al documento di riferimento del FITS.
+
+[/ITEM]
+
+
+
