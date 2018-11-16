@@ -161,7 +161,7 @@ The SRT has a new device (IFDistributor) capable to perform down conversion and 
 L-band receiver is configured.
 The control of the local oscillator and the down conversion is transparent and can be done
 as already described. In particular, all the caveats regarding the limits still hold. In case
-a filtering of the IF bandwidth is required (e.g. when observing with the DFB3) the command ifd must
+a filtering of the IF bandwidth is required (e.g. when observing with the DFB3) the command ``ifd`` must
 be used: 
 
    > ifd=[filterid]
