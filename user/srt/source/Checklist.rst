@@ -11,7 +11,7 @@ Notice that actions take place in three different “locations”:
   * **(op)** = command to be given in the *operatorInput* panel of DISCOS
 
 
-**Login on both (dc)** 
+**Login on (dc)** 
 
 **Launch the monitors, if necessary** (dc):: 
 

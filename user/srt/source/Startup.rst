@@ -21,9 +21,9 @@ Login
 What to use viewer01 for
 ========================
 
-This machine is accessed to manage the ACS Command Center. 
-Under ordinary conditions it is of no use to the observers, who should access it
-only in case they need to reboot discos/ACS.  
+This machine is accessed to manage the ACS Command Center and the Active Surface
+GUI. Under ordinary conditions it is used to monitor the AS status, plus it 
+is to be accessed to reboot discos/ACS when needed.  
 You can login with::
 
     username: discos       pwd:  **********
