@@ -14,7 +14,7 @@ operatorInput
    :align: center
 
 
-This is the **input console** where users write Nuraghe commands. 
+This is the **input console** where users write DISCOS commands. 
 The prompt is just a sequential number enclosed in <>. 
 If a command is properly read, the system replies repeating the command itself,
 followed by the operation results (if they are foreseen). Otherwise, an error 
@@ -285,7 +285,7 @@ When observing with the TPB, look for:
   * **Busy**: when schedules are running, it must turn yellow. 
     If it does not, the backend is not acquiring.
 
-With Nuraghe 0.6, an additional set of keywords was inserted: 
+With DISCOS 0.6, an additional set of keywords was inserted: 
 
   * **ExternalMark**: it turns yellow when the external mark control is enabled
   
@@ -454,7 +454,7 @@ To close the monitor, type ``exit`` in its prompt (the grey line).
 .. note:: All the monitors can be closed at a time using the command (in a 
    terminal on OBS1)::
 
-	$ nuragheConsole --stop
+	$ DISCOSConsole --stop
 	
 	
 Logging Display

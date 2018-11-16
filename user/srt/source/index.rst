@@ -3,8 +3,8 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Observing at the SRT with Nuraghe
-=================================
+Observing at the SRT with DISCOS
+================================
 
 Contents:
 
@@ -29,5 +29,4 @@ Contents:
    Appendix_B.rst
    Appendix_C.rst
    Appendix_D.rst
-   Troubleshooting.rst
    FaultReport.rst

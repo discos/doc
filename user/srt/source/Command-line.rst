@@ -80,7 +80,7 @@ every 10 seconds.
 It is also possible to display the atmospheric temperature and the wind 
 parameters (including wind direction) using a graphic interface.
 Activate the meteo client by using the following command in a terminal on 
-nuraghe-obs1::
+DISCOS-obs1::
 
 	$ meteoClient
 
@@ -99,7 +99,7 @@ Considering that weather parameters are not necessarily written in the output
 files (in particular, wind speed and direction are not stored in the FITS 
 files at present), it is possible to record a separate log containing these 
 parameters plus information on the antenna pointing. 
-Open a terminal on nuraghe-obs1 and execute the following command:: 
+Open a terminal on DISCOS-obs1 and execute the following command:: 
 
 	$ windLogger
 

@@ -6,7 +6,7 @@ Release notes
 
 Authors: 
 
-	* DISCOS software group
+	* DISCOS team
 
 
 

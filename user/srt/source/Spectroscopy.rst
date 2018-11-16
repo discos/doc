@@ -117,7 +117,7 @@ tuning:
     band of the receiver or the back-end input bandwidth, an error rises.
 
 
-Acquiring data
-==============
+Manually acquiring data
+=======================
 See :ref:`Command-line-measurements-and-acquisitions`  
 

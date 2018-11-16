@@ -22,7 +22,7 @@ procedures inside schedules.
 command makes sense in their schedule, according to their specific needs and 
 goals: this is something that no schedule parser can check!
 
-Here follow all the commands exploitable in Nuraghe:
+Here follow all the commands exploitable in DISCOS:
 
 .. describe:: > antennaPark
 

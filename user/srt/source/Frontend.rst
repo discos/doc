@@ -45,7 +45,7 @@ affecting the mount, the minor servo or the backend), the command is::
 Specific notes for the L/P receiver
 ===================================
 
-The L/P receiver is actually seen by Nuraghe as a group of three different 
+The L/P receiver is actually seen by DISCOS as a group of three different 
 receivers, each having its own setup code: 
 
   	* **PPP** 	for the usage of the P band only
@@ -112,7 +112,7 @@ allowed in LLL mode.
 
 Local Oscillator for L-band observations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Starting from the release of Nuraghe 0.6, it is possible to use the ``setLO`` 
+Starting from the release of DISCOS 0.6, it is possible to use the ``setLO`` 
 command for this receiver, in the operator input console::
 
     > receiversSetup=LLP
