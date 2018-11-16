@@ -18,9 +18,12 @@ Once logged in, you will find specific folders under your home folder,
 in particular 
 
      * **data**   Folder containing the data acquired by running schedules
+       when observing with XARCOS or the TPB
+     * **sardaraData**  Folder containing the data acquired by running schedules
+       when observing with SARDARA
      * **extraData**  Folder containing the data acquired by using command lines 
      * **logs**  Folder where logfiles are stored
-     * **schedules** Folder where your schedules must be written
+     * **schedules** Folder where your schedules must be uploaded to
      
 Your disk space can also be remotely accessed, as long as you connect to it 
 from the SRT campus network. Use::
@@ -29,12 +32,16 @@ from the SRT campus network. Use::
 
 To retrieve your data, open a terminal on your machine and use::
 
-     $ scp -r [project-code]@discos-console:/home/data/[YYYYMMDD] .
+     $ scp -r [project-code]@discos-console:./data/[YYYYMMDD] .
+     
+For SARDARA data, this becomes::
+
+     $ scp -r [project-code]@discos-console:./sardaraData/[YYYYMMDD] . 
 
 When you need to upload your schedules to the system, instead, open a terminal
 on your machine and write::
 
-     $ scp [schedulename].* [project-code]@discos-console:/home/schedules
+     $ scp [schedulename].* [project-code]@discos-console:./schedules
 
    
     
