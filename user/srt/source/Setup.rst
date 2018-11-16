@@ -9,7 +9,7 @@ Initial setup
 Antenna overall setup
 =====================
 
-When opening a Nuraghe observing session, it is necessary to perform a setup 
+When opening a DISCOS observing session, it is necessary to perform a setup 
 which includes the antenna unstow, the mount configuration in tracking mode, 
 the minor servo setup. This is done by means of a unique command, which is 
 specific for the wanted receiver, to be written in the **operatorInput**. 
@@ -76,10 +76,9 @@ where \[code\] is:
 .. warning:: Check the AS status! 
    In case the system - or just the AS - was rebooted, pay attention to 
    give the ``asSetup`` command only once all the AS actuators are online and 
-   ready. You can check this condition selecting the "AS" desktop, where you 
-   will find the GUI shown below. Red pixels in the graphical representation of
-   the AS indicate off-line actuators, while green pixels identify the on-line
-   actuators. 
+   ready. You can check this condition in the GUI shown below. Red pixels in 
+   the graphical representation of the AS indicate off-line actuators, while 
+   green pixels identify the on-line actuators. 
    
 .. figure:: images/AS-status.png
    :scale: 100%

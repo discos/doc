@@ -12,8 +12,8 @@ where *bckname* is the name of the backend. The currently available
 choices are: 
  
 	* TotalPower
-	* XBackends   (for the XARCOS spectrometer)
-	* Roach       (for SARDARA, the ROACH-based spectrometer)  
+	* Xarcos      (for the XARCOS spectrometer)
+	* Sardara     (for SARDARA, the ROACH-based spectrometer)  
 
 
 .. _total-power-focus-selector:
@@ -99,7 +99,7 @@ to observe only with a different feed).
 XARCOS
 ======
 
-This spectrometer is fully integrated in Nuraghe, which means that Nuraghe can 
+This spectrometer is fully integrated in DISCOS, which means that DISCOS can 
 command the device, receive data from it and then write these data using a 
 standard output (FITS format).
 
@@ -173,7 +173,7 @@ described in the configuration defaults.
 
 A valid example of setup and setSection usage, then, is::
 
-    > chooseBackend=BACKENDS/XBackends
+    > chooseBackend=BACKENDS/Xarcos
     > initialize=XC00   
     > setSection=0,155.0,31.25,*,*,62.5,*
 
@@ -190,7 +190,7 @@ values.
 
 SARDARA
 =======
-This is a ROACH-based spectrometer. 
+This is a ROACH-based spectrometer, now fully integrated in DISCOS. 
 In order to configure it, select it with the chooseBackend command as described
 above and use one of the following commands in the operatorInput: 
 
@@ -212,12 +212,8 @@ above and use one of the following commands in the operatorInput:
    
 By default, the spectral bin number is set to 1024 and the filter bandwidth 
 to 1500 MHz (except for the RP00 configuration, which uses a 500 MHz bandwidth).
-These nominal bandwidths do not correspond to the actual ones, even if they are
-the ones written in the output files. 
-The reason is the following: in order to avoid aliasing, it is necessary to 
-set narrower bandwidths in the focus selector (the TPB). In particular, the TPB
-bandwidth is automatically set, when initializing SARDARA, to 1250 MHz (300 MHz 
-when observing with the P-band receiver).  
+The actually observed bandwidth and frequency range are reported in the FITS
+files (see the dedicated documentation). 
 
 Users can change the frequency bin number to 16384, using:: 
 
