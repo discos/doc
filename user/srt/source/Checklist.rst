@@ -105,15 +105,16 @@ automatically rejected (bug under fixing).
 
 **Data quick-look** (dc)::
 
-        Launch the real-time quick-look of the data under acquisition
-        by double-clicking on the quicklook.html icon on the desktop 
+    Launch the real-time quick-look of the data under acquisition
+    by double-clicking on the quicklook.html icon on the desktop 
 		
 **Stop the schedule** (op)::
 
 	> stopSchedule
 
-**Copy the data** (dc) 
-	—> Get the latest subfolders written in the main data folder 
+**Copy the data** (dc)::
+ 
+	Get your data, see :ref:`Retrieving-the-data` 
 
 **Stow the antenna** (op)::
  

@@ -40,7 +40,7 @@ You can login with::
     username: observer       pwd:  **********
 
 If VNC is not active, open a terminal and use the vncStart command, which is going to 
-connect to the **discos-console** machine. 
+connect to the **discos-console** machine:: 
 
     login: observer     pwd: **********
 
@@ -133,5 +133,5 @@ The help() command shows the complete command list::
 
 
 .. note:: **discos-console** is also the location where users need to
-copy their schedules to, and where they can retrieve their data from. 
-See section XXX for details.
+   copy their schedules to, and where they can retrieve their data from. 
+   See section :ref:`Retrieving-the-data` for details.

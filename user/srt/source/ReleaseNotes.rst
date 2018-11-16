@@ -18,24 +18,14 @@ Here are the new elements it introduces:
 
 .. describe:: New logistics
   
-   ddd
-
 .. describe:: SARDARA configurations and commands
   
-   ddd
-
 .. describe:: New data quick-look tool
   
-   ddd
-
-.. describe:: FITS update: new columns in the SECTION TABLE
+.. describe:: FITS update: new columns in the SECTION TABLE, new values for the SIGNAL
+   keyword in main header
   
-   ddd
-
 .. describe:: summary.fits update
-
-   ddd 
-   
 
 
 
