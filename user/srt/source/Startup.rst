@@ -23,10 +23,15 @@ What to use viewer01 for
 
 This machine is accessed to manage the ACS Command Center and the Active Surface
 GUI. Under ordinary conditions it is used to monitor the AS status, plus it 
-is to be accessed to reboot discos/ACS when needed.  
+is to be accessed to reboot discos/ACS whenever needed.  
 You can login with::
 
     username: discos       pwd:  **********
+
+If VNC is not active, open a terminal and use the vncStart command, which is 
+automatically going to connect to the **discos-manager** machine:: 
+
+    login: discos     pwd: **********
 
 
 What to use viewer02 for
