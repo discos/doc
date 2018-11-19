@@ -8,10 +8,10 @@ Tutti i riferimenti qui https://github.com/discos/discos/pull/258
 
 
 [ITEM title="backend SARDARA"]
+NB: il backend non si chiama più roach ma SARDARA che vine identificato come BACKENDS/SARDARA opure come shortcut
+SARDARA
 Inserisco le modifiche da apportare al documento https://discos.readthedocs.io/en/latest/user/srt/source/Backend.html
-
 Per scegliere il backend il comando è chooseBackend=Sardara.
-
 Le configurazioni possibili sono:
 SK00, SK03, SK06, SK77, SC00, SL00, SP00 (L/R)
 SK00S, SK03S, SK06S, SK77S, SC00S, SL00S, SP00S (Full Stokes)
@@ -19,7 +19,35 @@ SK00S, SK03S, SK06S, SK77S, SC00S, SL00S, SP00S (Full Stokes)
 Il comando setSection può essere utilizzato per tutte le sezioni (0-13)
 [/ITEM]
 
+[ITEM title="injectCommand"]
+"da mettere in guida utente?" 
+Da bash consente di inviare un comando a discos senza avre l'operator input aperto.
+Utilizzo: injectCommand wx
+Se il control software non è attivo, non sortisce effetti.
+[/ITEM]
+
+
+[ITEM title="console changes"]
+Aggiunto alla console il display per gli user log. (Disclaimer: molte informazioni non sono ancora messe in quel display)
+per lanciare la console "discosConsole" 
+per chiuderla "discosConsole --stop"
+[/ITEM]
+
+[ITEM title="IFD distributor (SRT only)"]
+Vedi release notes: https://discos.readthedocs.io/en/latest/developer/releasenotes/releasenotes.html
+[/ITEM]
+
+[ITEM title="nuova macchina console utente e VNC"]
+[/ITEM]
+
 [ITEM title="backend SARDARA"]
 Il tempo necessario per configurare Sardara (comando initialize) nelle modalità SK77 o SK77S è pari a circa due minuti.
 [/ITEM]
 
+[ITEM title="backend SARDARA"]
+Modificata la chiave SIGNAL dentro il main header del fits. Dettagli direttamente nella issue:
+https://github.com/discos/discos/issues/239
+
+Da modificare al documento di riferimento del FITS.
+
+[/ITEM]
