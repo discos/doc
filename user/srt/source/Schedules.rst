@@ -6,9 +6,9 @@ Generating and launching a schedule
 
 A schedule is a set of files where all the geometry/timing/frequency details 
 of a sequence of data acquisitions are specified, according to a syntax that 
-enables Nuraghe to read and execute them. 
+enables DISCOS to read and execute them. 
 The detailed structure of the several files composing a schedule is explained 
-in this separate guide :download:`pdf <attachments/SRT-MAN-10000-004-3.pdf>`
+in this separate guide :download:`pdf <attachments/SRT-MAN-10000-004-4.pdf>`
 Schedules for the most common continuum and spectroscopy observing modes (OTF 
 cross-scans and maps, raster maps and ON-OFF) can be easily generated using a 
 tool called **basie**. It can be found, together with its user manual, here:
@@ -33,7 +33,7 @@ if the project command had been used. If both the choices are made, i.e. if
 the project name was set with project but a string is also inserted in the 
 startSchedule command, the latter overrides the former.  
 Then follows the schedule name, in particular the name of the SCD file. *N* is 
-the identifier of the scan or subscan from which Nuraghe must start reading it 
+the identifier of the scan or subscan from which DISCOS must start reading it 
 – it is particularly useful in case of a sequential (i.e. not time-based) 
 schedule. *N* can be the scan number, e.g. 2, or the scan_subscan 
 specification, e.g. 2_5. 
@@ -42,7 +42,7 @@ You can specify **when to start** the schedule (in UT)::
 
     > startSchedule=[project/][schedname].scd,[N]@[DOY-HH:MM:SS]
 
-Nuraghe reads the configuration parameters from the schedule, which can be 
+DISCOS reads the configuration parameters from the schedule, which can be 
 relative both to the receiver and the backend, and accordingly sets these 
 devices. This might take several seconds, especially when using the MF 
 receiver. While the setup takes place, several values change in the TPB 

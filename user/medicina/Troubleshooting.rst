@@ -39,7 +39,7 @@ for assistance.
 .. admonition:: PROBLEM: 
 
    * **After a setup, the antenna slews to an unwanted position, even though
-     I have never commanded any pointing*
+     I have never commanded any pointing**
 
 This depends on the Antenna Control Unit (ACU) behavior: the ACU, after a setup,
 always commands the antenna to go to the last pointed position. This is very

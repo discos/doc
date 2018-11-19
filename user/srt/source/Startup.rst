@@ -1,94 +1,64 @@
-.. _Nuraghe-startup:
+.. _discos-startup:
 
-***************
-Nuraghe startup
-***************
+**************
+DISCOS startup
+**************
 
 
 Login
 =====
 
-.. figure:: images/Postazioni_Nuraghe.jpg
+.. figure:: images/Postazioni_DISCOS.jpg
    :scale: 80%
    :alt: Observing machines
    :align: center
  
-Observations take place using the **nuraghe-obs1** machine. 
+.. note:: **passwords are provided by the project friend**. As the control room logistics 
+   might be updated, be sure to contact the project friend before your session 
+   starts, in order to get the latest information. 
+
+
+What to use viewer01 for
+========================
+
+This machine is accessed to manage the ACS Command Center and the Active Surface
+GUI. Under ordinary conditions it is used to monitor the AS status, plus it 
+is to be accessed to reboot discos/ACS whenever needed.  
+You can login with::
+
+    username: discos       pwd:  **********
+
+If VNC is not active, open a terminal and use the vncStart command, which is 
+automatically going to connect to the **discos-manager** machine:: 
+
+    login: discos     pwd: **********
+
+
+What to use viewer02 for
+========================
+
+Observations take place using the **viewer02** machine, 
+in turn exploiting a VNC connection to the **discos-console** machine.
+ 
 You can login with::
 
     username: observer       pwd:  **********
 
+If VNC is not active, open a terminal and use the vncStart command, which is going to 
+connect to the **discos-console** machine:: 
 
-Data inspection and pre-reduction can be accessed through a Linux machine, named
-nuraghe-obs3, located on the right of OBS1 and connected to a very large
-display fixed on the wall.
-If this machine is shut down, or if exiting from the screensaver asks for
-a login, use::
+    login: observer     pwd: **********
 
-    username: observer       pwd:  **********
-
-On the desktop you will find a VNC icon providing connection to the remote
-desktop of **nuraghe-obs2** (op), where data inspection and pre-reduction
-tools are present::    
-
-    login: [projectcode]     pwd: **********
-
-You can start a single VNC session on OBS2: if you start another session (e.g. 
-from a laptop), the first one will be closed. You are allowed to open remote 
-ssh sessions from a laptop to nuraghe-obs1 and nuraghe-obs2. 
-The VNC desktop is larger than the monitor; you can scroll them horizontally 
+The VNC desktop might be larger than the monitor; you can scroll horizontally 
 using the bottom scrollbar. Beware that, when launching programs, they might 
 open windows in the invisible desktop area! 
 
+Once logged in on discos-console, *you should find the input terminal and all the 
+monitors already running*. If this is not the case, open a new terminal, then::
 
-.. note:: **passwords are provided locally**. As the control room logistics 
-   might be updated, be sure to contact the local personnel before your session 
-   starts, in order to get the latest information. 
+    $  discosConsole 
 
-
-
-What to do in OBS1
-==================
-
-OBS1 is the destination for your schedules, and is the machine where you 
-run the system (with commands such as nuragheConsole, etc…).
-
-
-What to do in OBS2
-==================
-
-OBS2 is used to generate schedules with **basie** and to retrieve the data 
-(with the exception of the files produced by the Roach spectrometer). See
-details in :ref:`Retrieving-the-data`. 
-You can check the name and location of the relevant folders - where your 
-schedules, data and logfiles are stored - by opening a terminal and launching::
-
-    $ mySession
-
-Remember to always copy your schedules to the foreseen folder on OBS1.
-
-On OBS2 you can also launch the online quick-look. Read details in the 
-dedicated section :ref:`Data-formats-and-online-quick-look`.
-
-
-What to do in OBS3
-==================
-
-OBS3 is a support server used to open VNC connections to nuraghe-obs2 and to 
-connect external usb drives to copy your data.  
-See details in :ref:`Retrieving-the-data`.
-
-
-Input terminal and system monitors (OBS1)
-=========================================
-
-Once logged in on OBS1, *you should find the input terminal and all the 
-monitors already running*. 
-If, instead, you need to start them, open a new terminal, then::
-
-    $  nuragheConsole 
-
-This command opens 8 panels at once: 
+This command opens 9 panels at once: 
 
 	* **operatorInput** - terminal for command line input
 	* **AntennaBoss** 
@@ -98,25 +68,23 @@ This command opens 8 panels at once:
 	* **Receivers**
 	* **Scheduler**
 	* **MinorServo**
+        * **ACS Custom Logger**
 
 Rearrange the panels on the desktop according to your preferences. 
-In case any of them does not automatically start, you can manually open them 
+In case any of them does not automatically start, or if you close
+any of them by accident, you can manually open them 
 by means of individual command lines, to be given in the open terminal::
 
    $ operatorInput
    $ antennaBossTui 
-   $ genericBackendTui BACKENDS/TotalPower  (or other backend code)
+   $ genericBackendTui BACKENDS/TotalPower  (or XARCOS, or SARDARA)
    $ mountTui 
    $ observatoryTui 
    $ receiversBossTui
    $ schedulerTui
    $ minorservoBossTui
+   $ loggingDisplay        
     
-Finally, manually open the **logging display** by giving the following 
-command in a shell::
-
-   $ loggingDisplay    
-
     
 All the antenna/receiver/backend setup procedures are performed via the 
 operatorInput window, which is also used to start/stop the schedules. 
@@ -168,3 +136,7 @@ The help() command shows the complete command list::
        wait
        wx
 
+
+.. note:: **discos-console** is also the location where users need to
+   copy their schedules to, and where they can retrieve their data from. 
+   See section :ref:`Retrieving-the-data` for details.

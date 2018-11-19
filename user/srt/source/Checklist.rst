@@ -6,16 +6,16 @@ Checklist for schedule-based observations
 
 Notice that actions take place in three different “locations”:
 
-  * **(1)** = action to be performed in a terminal on the observing machine
-  * **(2)** = action to be performed in a terminal on the data-access machine
-  * **(op)** = command to be given in the *operatorInput* panel of Nuraghe
+  * **(dc)** = action to be performed in a terminal on the observing machine 
+    (viewer02), within the VNC connection to *discos-console*
+  * **(op)** = command to be given in the *operatorInput* panel of DISCOS
 
 
-**Login on both (1) and (2)** 
+**Login on (dc)** 
 
-**Launch the monitors, if necessary** (1):: 
+**Launch the monitors, if necessary** (dc):: 
 
-	$ nuragheConsole 
+	$ discosConsole 
 
 **Initial setup** (op)::
 
@@ -41,7 +41,7 @@ Notice that actions take place in three different “locations”:
 	—> e.g. goTo=180d,45d
 
 
-**Always explicitly choose the Total Power backend (XARCOS might have been left active)** (op)::
+**Always explicitly choose the Total Power backend (a spectrometer might have been left active)** (op)::
 	
 	> chooseBackend=BACKENDS/TotalPower    
 
@@ -50,7 +50,7 @@ Notice that actions take place in three different “locations”:
 
 	> getTpi 
 	> setAttenuation=[sect],[att] 
-	—> iteratively adjust attenuations until the level is about 850 counts 
+	—> iteratively adjust attenuations until the level is in the 800-1000 count range 
 
 
 **Get a Tsys** (op)::
@@ -81,59 +81,44 @@ automatically rejected (bug under fixing).
 
 **If needed, choose and set the spectrometer** (op)::
  
-	> chooseBackend=BACKENDS/XBackends  (or Roach)
+	> chooseBackend=XARCOS  (or SARDARA)
 	> initialize=[code]
 
-**Create a schedule** (2):: 
+**Create a schedule** (dc):: 
 
 	Use the *basie* schedule creator (read its guide for details): 
 	$ basie –c [configfile] [out_directory] 
 
-**Copy all the schedule files** (2):: 
+**Copy all the schedule files** (dc):: 
 
-    Copy the schedule to the destination folder on OBS1.
-    If needed, be reminded of the folder location using: 
-    $ mySession
+    Copy the schedule to the destination folder on discos-console.
+
     
-**Parse the schedule** (1):: 
+**Parse the schedule** (dc):: 
 
 	$ scheduleChecker [schedulename].scd 
-	—> Move the schedule files to the observing machine 
+
 
 **Launch the schedule** (op):: 
 		
 	> startSchedule=[project/][schedulename].scd,[N]
- 
-**Data quick-look (TPB and XARCOS FITS only)**
 
-	* *Case A\:* when using MANAGEMENT/Fitszilla, launch the quick-look (2)::
- 
-		$ idl 
-		IDL> .r fitslook     
-		IDL> fitslook
+**Data quick-look** (dc)::
 
-	* *Case B\:* when using MANAGEMENT/Point, launch the quick-look (1)::
- 
-		$ calibrationtoolclient MANAGEMENT/Point
-
-	* *Case C\:* when using MANAGEMENT/CalibrationTool, launch the quick-look (1):: 
-
-		$ calibrationtoolclient MANAGEMENT/CalibrationTool
-	
+    Launch the real-time quick-look of the data under acquisition
+    by double-clicking on the quicklook.html icon on the desktop 
+		
 **Stop the schedule** (op)::
 
 	> stopSchedule
 
-**Copy the data** (2) 
-	—> Get the latest subfolders written in the main data folder 
+**Copy the data** (dc)::
+ 
+	Get your data, see :ref:`Retrieving-the-data` 
 
 **Stow the antenna** (op)::
  
 	> telescopePark
-
-**Close the monitors, if necessary** (1)::
-
-	$ nuragheConsole —-stop   (individual panels are closed typing “exit” in their command lines)
  
 
 

@@ -73,12 +73,7 @@ Here follow all the commands exploitable in ESCS:
 .. describe:: >  chooseRecorder=[string]
   
    selects the backend; *string* can be ``MANAGEMENT/FitsZilla``, 
-   ``MANAGEMENT/MBFitsWriter`` or ``MANAGEMENT/Point``
-
-.. describe:: > clearServoOffsets   
-
-   zeroes the subreflector system-defined offsets (e.g. the ones resulting 
-   from a focus scan) 
+   ``MANAGEMENT/CalibrationTool`` or ``MANAGEMENT/Point``
 
 .. describe:: > crossScan=[scanFrame],[span],[duration] 
 
@@ -251,16 +246,6 @@ Here follow all the commands exploitable in ESCS:
    The specified values will hold until different ones are commanded, or 
    until a new general *setup* command is entered. 
    
-   
-.. describe:: > servoPark 
-
-   stows the minor servo system
-
-.. describe:: > servoSetup=[code]
-
-   (``code`` can be ``CCC``, ``KKC``, …)
-   configures the minor servo system only
-
 .. describe:: > setAttenuation=[sect],[att] 
 		
    sets to *att* (dB) the attenuator of section *sect*
@@ -317,10 +302,6 @@ Here follow all the commands exploitable in ESCS:
 .. describe:: > stopSchedule 
 
    immediately stops the running schedule, truncating the acquisition
-
-.. describe:: > telescopePark
-  
-   stows the antenna and parks both the AS and the MS
 
 .. describe:: > ti
   

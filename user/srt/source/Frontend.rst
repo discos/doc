@@ -45,7 +45,7 @@ affecting the mount, the minor servo or the backend), the command is::
 Specific notes for the L/P receiver
 ===================================
 
-The L/P receiver is actually seen by Nuraghe as a group of three different 
+The L/P receiver is actually seen by DISCOS as a group of three different 
 receivers, each having its own setup code: 
 
   	* **PPP** 	for the usage of the P band only
@@ -110,9 +110,10 @@ The last two characters in the code identify the polarisation mode
 The **XX chars are placeholders** for the P-band configuration, which is not 
 allowed in LLL mode. 
 
+
 Local Oscillator for L-band observations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Starting from the release of Nuraghe 0.6, it is possible to use the ``setLO`` 
+Starting from the release of DISCOS 0.6, it is possible to use the ``setLO`` 
 command for this receiver, in the operator input console::
 
     > receiversSetup=LLP
@@ -152,6 +153,28 @@ set a LO value that brings the IFs outside the range of the low-pass filter::
     > receiversMode=XXL4    (Band 1300:1800)
     > setLO=200             (IF band: 1100:1600)
     Error - Value out of legal ranges
+
+
+IF distributor
+~~~~~~~~~~~~~~
+The SRT has a new device (IFDistributor) capable to perform down conversion and IF filtering when the
+L-band receiver is configured.
+The control of the local oscillator and the down conversion is transparent and can be done
+as already described. In particular, all the caveats regarding the limits still hold. In case
+a filtering of the IF bandwidth is required (e.g. when observing with the DFB3) the command ``ifd`` must
+be used: 
+
+   > ifd=[filterid]
+
+============= ================== ===============
+FILTER ID     Central Freq (MHz) Bandwidth (MHz)
+============= ================== ===============
+BW-NARROW     576                115 
+BW-MEDIUM     640                230
+BW-WIDE       768                460
+BW-UNFILTERED see L-Band	
+============= ================== ===============
+
 
 
 PLP (dual band)

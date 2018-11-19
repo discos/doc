@@ -6,59 +6,26 @@ Release notes
 
 Authors: 
 
-	* Righini, S. and the DISCOS software group
+	* DISCOS team
 
 
 
 Current release: what's new
 ===========================
 
-**Nuraghe 0.6** is the present release. 
+**DISCOS 1.0** is the present release. 
 Here are the new elements it introduces:
 
-.. describe:: New backend
- 
-   SARDARA, ROACH-based spectro-polarimeter. SARDARA can now be configured via 
-   Nuraghe (see :ref:`sardara`)
-
-.. describe:: L-band receiver tunable LO 
-
-   when exploiting the LLP receiver configuration, it is possible to tune the 
-   Local Oscillator (see :ref:`Frontend-operations`)
-    
-.. describe:: Wind Park 
-
-   an auto-stow procedure activates in the presence of excessively strong wind 
-   (see :ref:`Weather-parameters`)
-    
-.. describe:: Updates in the spectral FITS content 
+.. describe:: New logistics
   
-   addition of the 'SIGNAL' keyword in the primary header. The 'DATE' keyword 
-   inside the primary header has been replaced by the 'DATE-OBS' one  (see the 
-   external PDF linked in the :ref:`Retrieving-the-data` section)
-     
-.. describe:: Generation of schedules 
-
-   schedules must now be generated on nuraghe-obs2, where a new tool is 
-   available; it is called *basie* and it is an evolved version of the previous 
-   software. It produces schedules also for the XARCOS and SARDARA backends 
-   (for spectro-polarimetry observations). OTF and raster mapping schedules are 
-   designed in order to optimally exploit the multi-feed receiver, including 
-   its derotation (download `basie documentation <http://github.com/discos/basie/raw/master/Basie_user_manual.pdf>`_ )
-    
-.. describe:: FITS Quick-look
-   
-   files produced both by the Total Power Backend and XARCOS are now displayed 
-   by the IDL tool *fitslook* (notice the underscore was removed from its name). 
-   It is as usual available on nuraghe-obs2. It automatically adjusts the 
-   display features according to the continuum/spectral content of the FITS 
-   files (see :ref:`Data-formats-and-online-quick-look`)
-    
-.. describe:: mySession command 
-
-   when using your terminals on nuraghe-obs2, you can have all the info about 
-   where your data, schedules and logfiles are located with the unified 
-   *mySession* command (see :ref:`Retrieving-the-data`)
+.. describe:: SARDARA configurations and commands
+  
+.. describe:: New data quick-look tool
+  
+.. describe:: FITS update: new columns in the SECTION TABLE, new values for the SIGNAL
+   keyword in main header
+  
+.. describe:: summary.fits update
 
 
 
@@ -69,6 +36,22 @@ History
 Issue	     Release     What’s  
              Date        new
 ===========  =========== =====================================================
+13           15/11/18    | **Release of DISCOS 1.0**
+                         | New logistics (observing machines and relative 
+                         | login). 
+                         | SARDARA is now fully integrated; addition of new
+                         | configurations and capabilities. 
+                         | New online data quick-look, replacing the previous
+                         | procedures. 
+                         | Updates in the FITS files content (inside the 
+                         | SECTION TABLE) and in the summary.fits content
+                         | (several keywords are not set to NULL anymore)   
+                         | This release is to be paired to the following
+                         | documents
+                         | * DISCOS schedule structure (v. 1)
+                         | * FITS and MBFITS output formats in DISCOS (v. 1)
+                         | * basie User Manual (v. 1)
+-----------  ----------- -----------------------------------------------------
 12           29/01/16    | **Release of NURAGHE 0.6**
                          | Addition of the SARDARA back-end. 
                          | New instructions for LLP LO setup.

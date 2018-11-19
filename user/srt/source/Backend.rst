@@ -12,8 +12,8 @@ where *bckname* is the name of the backend. The currently available
 choices are: 
  
 	* TotalPower
-	* XBackends   (for the XARCOS spectrometer)
-	* Roach       (for SARDARA, the ROACH-based spectrometer)  
+	* Xarcos      (for the XARCOS spectrometer)
+	* Sardara     (for SARDARA, the ROACH-based spectrometer)  
 
 
 .. _total-power-focus-selector:
@@ -99,7 +99,7 @@ to observe only with a different feed).
 XARCOS
 ======
 
-This spectrometer is fully integrated in Nuraghe, which means that Nuraghe can 
+This spectrometer is fully integrated in DISCOS, which means that DISCOS can 
 command the device, receive data from it and then write these data using a 
 standard output (FITS format).
 
@@ -173,7 +173,7 @@ described in the configuration defaults.
 
 A valid example of setup and setSection usage, then, is::
 
-    > chooseBackend=BACKENDS/XBackends
+    > chooseBackend=BACKENDS/Xarcos
     > initialize=XC00   
     > setSection=0,155.0,31.25,*,*,62.5,*
 
@@ -190,41 +190,76 @@ values.
 
 SARDARA
 =======
-This is a ROACH-based spectrometer. 
+This is a ROACH-based spectrometer, now fully integrated in DISCOS. 
 In order to configure it, select it with the chooseBackend command as described
 above and use one of the following commands in the operatorInput: 
 
-.. describe:: > initialize=RP00 
+.. describe:: > initialize=SP00 
    
-   This is to use P-band receiver 
-   
-.. describe:: > initialize=RL00 
-   
-   This is to use L-band receiver 
+   This is to use P-band receiver in L/R mode
 
-.. describe:: > initialize=RC00 
+.. describe:: > initialize=SP00S 
    
-   This is to use C-band receiver 
+   This is to use P-band receiver in full Stokes mode
    
-.. describe:: > initialize=RK00 
+.. describe:: > initialize=SL00 
    
-   This is to use K-band receiver (central feed only)
+   This is to use L-band receiver in L/R mode
+
+.. describe:: > initialize=SL00S 
+   
+   This is to use L-band receiver in full Stokes mode
+
+.. describe:: > initialize=SC00 
+   
+   This is to use C-band receiver in L/R 
+
+.. describe:: > initialize=SC00S 
+   
+   This is to use C-band receiver in full Stokes mode
+   
+.. describe:: > initialize=SK00 
+   
+   This is to use K-band receiver (central feed only) in L/R 
+
+.. describe:: > initialize=SK00S 
+   
+   This is to use K-band receiver (central feed only) in full Stokes mode
+
+.. describe:: > initialize=SK03 
+   
+   This is to use K-band receiver (feeds number 0 and 3) in L/R 
+
+.. describe:: > initialize=SK03S 
+   
+   This is to use K-band receiver (feeds number 0 and 3) in full Stokes mode
+
+.. describe:: > initialize=SK06 
+   
+   This is to use K-band receiver (feeds number 0 and 6) in L/R 
+
+.. describe:: > initialize=SK06S
+   
+   This is to use K-band receiver (feeds number 0 and 6) in full Stokes mode
+
+.. describe:: > initialize=SK77 
+   
+   This is to use K-band receiver (all the 7 feeds) in L/R 
+
+.. describe:: > initialize=SK77S 
+   
+   This is to use K-band receiver (all the 7 feeds) in full Stokes mode
    
 By default, the spectral bin number is set to 1024 and the filter bandwidth 
 to 1500 MHz (except for the RP00 configuration, which uses a 500 MHz bandwidth).
-These nominal bandwidths do not correspond to the actual ones, even if they are
-the ones written in the output files. 
-The reason is the following: in order to avoid aliasing, it is necessary to 
-set narrower bandwidths in the focus selector (the TPB). In particular, the TPB
-bandwidth is automatically set, when initializing SARDARA, to 1250 MHz (300 MHz 
-when observing with the P-band receiver).  
+The actually observed bandwidth and frequency range are reported in the FITS
+files (see the dedicated documentation). 
 
 Users can change the frequency bin number to 16384, using:: 
 
-    > setSection=0,*,*,*,*,*,16384
+    > setSection=[sect],*,*,*,*,*,16384
 
-Notice that, when using the ``setSection`` command, the only accepted section
-number will be 0. 
+Where *sect* is the section number. 
 Users can also change the integration time::
 
     > integration=[N] 
@@ -232,7 +267,7 @@ Users can also change the integration time::
 where *N* is given in milliseconds.
 Attenuations can be handled with the command:: 
 
-    > setAttenuation=0,[att] 
+    > setAttenuation=[sect],[att] 
 
 where *att* can vary form 0 dB to 15 dB, with a 1 dB step. This attenuation 
 is actually applied at the focus selector level. 

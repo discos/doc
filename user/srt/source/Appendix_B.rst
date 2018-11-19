@@ -22,7 +22,7 @@ procedures inside schedules.
 command makes sense in their schedule, according to their specific needs and 
 goals: this is something that no schedule parser can check!
 
-Here follow all the commands exploitable in Nuraghe:
+Here follow all the commands exploitable in DISCOS:
 
 .. describe:: > antennaPark
 
@@ -78,7 +78,7 @@ Here follow all the commands exploitable in Nuraghe:
 .. describe:: >  chooseRecorder=[string]
   
    selects the backend; *string* can be ``MANAGEMENT/FitsZilla``, 
-   ``MANAGEMENT/MBFitsWriter`` or ``MANAGEMENT/Point``
+   ``MANAGEMENT/CalibrationTool`` or ``MANAGEMENT/Point``
 
 .. describe:: > clearServoOffsets   
 
@@ -296,7 +296,7 @@ Here follow all the commands exploitable in Nuraghe:
    usually the values are identical) This LO frequency corresponds to: 
    SkyFreq(@band start) – 100 MHz when using the TPB
 
-.. describe:: > setSection=[sect],[startFreq],[bw],[feed],[sampleRate],[bins]
+.. describe:: > setSection=[sect],[startFreq],[bw],[feed],[mode],[sampleRate],[bins]
 
    configures the backend section sect.
 
@@ -342,8 +342,10 @@ Here follow all the commands exploitable in Nuraghe:
  
    performs an OTF acquisition at the current azimuth position, spanning in 
    elevation from *El1* to *El2* (both expressed in degrees, with ‘d’ suffix), 
-   in *duration* seconds. 
-   A recorder must have previously been enabled in order to save the data. 
+   in *duration* time, expressed as hh:mm:ss. 
+   A recorder must have previously been enabled in order to save the data, and 
+   a reference sky position must have been specified via a ``sidereal``, 
+   ``track`` or ``goTo`` command. 
 
 .. describe:: > startSchedule=[project/][schedulename].scd,[N]
  

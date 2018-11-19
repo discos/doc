@@ -89,12 +89,7 @@ Here follow all the commands exploitable in ESCS:
 .. describe:: >  chooseRecorder=[string]
   
    selects the backend; *string* can be ``MANAGEMENT/FitsZilla``, 
-   ``MANAGEMENT/MBFitsWriter`` or ``MANAGEMENT/Point``
-
-.. describe:: > clearServoOffsets   
-
-   zeroes the subreflector system-defined offsets (e.g. the ones resulting 
-   from a focus scan) 
+   ``MANAGEMENT/CalibrationTool`` or ``MANAGEMENT/Point``
 
 .. describe:: > crossScan=[scanFrame],[span],[duration] 
 
@@ -267,15 +262,6 @@ Here follow all the commands exploitable in ESCS:
    The specified values will hold until different ones are commanded, or 
    until a new general *setup* command is entered. 
    
-   
-.. describe:: > servoPark 
-
-   stows the minor servo system
-
-.. describe:: > servoSetup=[code]
-
-   (``code`` can be ``CCC``, ``MMC``, ``KKC``, ``QQC``, …) 
-   configures the minor servo system only
 
 .. describe:: > setAttenuation=[sect],[att] 
 		
@@ -287,7 +273,7 @@ Here follow all the commands exploitable in ESCS:
    usually the values are identical) This LO frequency corresponds to: 
    SkyFreq(@band start) – 100 MHz when using the TPB
 
-.. describe:: > setSection=[sect],[startFreq],[bw],[feed],[sampleRate],[bins]
+.. describe:: > setSection=[sect],[startFreq],[bw],[feed],[mode],[sampleRate],[bins]
 
    configures the backend section sect.
    
@@ -321,8 +307,10 @@ Here follow all the commands exploitable in ESCS:
  
    performs an OTF acquisition at the current azimuth position, spanning in 
    elevation from *El1* to *El2* (both expressed in degrees, with ‘d’ suffix), 
-   in *duration* seconds. 
-   A recorder must have previously been enabled in order to save the data. 
+   in *duration* time, expressed in hh:mm:ss. 
+   A recorder must have previously been enabled in order to save the data, and a
+   reference position must have been selected via a ``sidereal``, ``track`` or
+   ``goTo`` command. 
 
 .. describe:: > startSchedule=[project/][schedulename].scd,[N]
  
@@ -333,10 +321,6 @@ Here follow all the commands exploitable in ESCS:
 .. describe:: > stopSchedule 
 
    immediately stops the running schedule, truncating the acquisition
-
-.. describe:: > telescopePark
-  
-   stows the antenna and parks both the AS and the MS
 
 .. describe:: > ti
   
