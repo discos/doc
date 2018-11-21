@@ -12,7 +12,7 @@ Contents:
    installing/index.rst
    testing/index.rst
    integrating/integrating.rst
-   textformatting/index.rst
    github/index.rst
    eventlogging/index.rst
+   textformatting/index.rst
 

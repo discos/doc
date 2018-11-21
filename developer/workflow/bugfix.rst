@@ -1,11 +1,11 @@
-****************
-How to fix a bug
-****************
+**********************
+How to deal with a bug
+**********************
 Once we have confirmed the existence of a bug, we do not never start 
 fixing it until we have reproduced that bug in a unit test. 
 So, if we want to fix a bug, we have to:
 
-    * work in the nuraghe-x-dev environment
+    * work in the discos-x-dev environment
     * write a small, simple and fast test that reproduces the bug
     * ensure the test breaks
     * fix the code
