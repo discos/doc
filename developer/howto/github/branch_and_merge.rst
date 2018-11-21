@@ -1,6 +1,6 @@
-##################################
-Contributing to DISCOS development
-##################################
+######################
+Contributing to DISCOS 
+######################
 
 .. contents::
 
@@ -8,9 +8,8 @@ Contributing to DISCOS development
 Making a change on the master branch
 ====================================
 
-The **master** branch is our main development branch, we should do our best to keep
+The **master** branch is our main development branch, we do our best to keep
 it stable and clean but we should never assume that master is a production-stable branch. 
-Consider this as the old svn trunk.
 
 Working on the master branch is simple, the only difference with svn is that now 
 you work on a local copy of the project, and commits are done on your workstation 
@@ -21,7 +20,7 @@ on the remote repository stored on github.com so that others can access your cha
 Making a commit in your local repository
 ----------------------------------------
 
-First we verify that our repository is up-to-date with the remote reposiroty, 
+First we verify that our repository is up-to-date with the remote repository, 
 then we edit a file and note how git is aware of the new change.
 
 .. code-block:: bash
@@ -32,7 +31,7 @@ then we edit a file and note how git is aware of the new change.
   nothing to commit, working tree clean
   $ git branch
   * master
-  $ echo "DISCOS is in use at three italian radio telescopes" >> README.md
+  $ echo "DISCOS is in use at three Italian radio telescopes" >> README.md
   $ git status
   On branch master
   Your branch is up-to-date with 'origin/master'.
@@ -45,7 +44,7 @@ then we edit a file and note how git is aware of the new change.
   no changes added to commit (use "git add" and/or "git commit -a")
 
 The git status command shows and tracks all the changes made. There are cases this is not the best option.
-If you want to track changes only on files already inder the control of the repository you should add an option.
+If you want to track changes only on files already under the control of the repository you should add an option.
 
 .. code-block:: bash
 
@@ -70,7 +69,7 @@ Just as SVN, git offers a **diff** command that shows you what changes:
      +DISCOS is in use at three italian radio telescopes
 
 We now add the changes to the next commit operation and create a new commit object
-with an associated message: 
+with an associated message. If the commit deals with an open issue the test should reference the issue: 
 
 .. code-block:: bash 
 
@@ -83,8 +82,8 @@ with an associated message:
 
         modified:   README.md
 
-   $ git commit -m "updated README.md for the doc example" 
-   [master 4ba4caa] updated README.md for the doc example
+   $ git commit -m "fix issue #xxx: updated README.md for the doc example" 
+   [master 4ba4caa] fix issue #xxx: updated README.md for the doc example
     1 file changed, 1 insertion(+)
 
 We can see how git has just created a new *commit* on our local repository. The commit
@@ -95,7 +94,7 @@ commit automatically using the *-a* option, without explicitly adding the files:
 
 .. code-block:: bash
  
-   $ git commit -am "updated README.md for the doc example" 
+   $ git commit -am "fix issue #xxx: updated README.md for the doc example" 
 
 If we look now at the status and the commit tree of our local repo we can see:
 

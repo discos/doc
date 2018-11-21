@@ -149,10 +149,22 @@ FitsZilla fits file
 ~~~~~~~~~~~~~~~~~~~
 The ''SECTION TABLE'' a been extended by adding two additional columns ''frequency'' and ''bandwidth''.
 This data reports (in MHz) the effective start frequency and bandwidth of the bands sampled by the currently
+configured backend.
+Some keyword in summary.fits have now meaningful values (EXPTIME, LOGFILE ecc. for example). A more
+detailed list of this keywords can found in user documentation.
+
 
 .. sectionauthor:: :ref:`aorlati`
 
+Bootup procedure
+~~~~~~~~~~~~~~~~
+The DISCOS bootup has been reviewed. The frontend is still acscommandcenter based
+but the ssh protocol is used instead of the acsdeamons. This should both improve the ease of use 
+and speed up the completion of the process. 
+
+.. sectionauthor:: :ref:`aorlati`, :ref:`gcarboni`
+
 Change log
 ----------
-A change log of this release may be retrived from this :download:`document <images/discos01-rc01_log.pdf>`
+A change log of this release may be retrieved from this :download:`document <images/discos1.0_changelog.pdf>`
 

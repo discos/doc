@@ -1,13 +1,13 @@
 .. _workflow:
  
-##################
-Component workflow
-##################
+####################
+Development workflow
+####################
 
 .. topic:: Abstract
 
-   Brief intro about the goal of this section and the TDD in general.
-   See :ref:`testing-howto` for details.
+   This section illustrates how the development of new features and the bugs fixing is pursued in our team.
+   This workflow is highly TDD as detailed in :ref:`testing-howto`.
 
 Contents:
 
