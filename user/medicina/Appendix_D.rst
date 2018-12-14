@@ -17,7 +17,7 @@ etc… ESCS uses these parameters to make computations during certain
 operations (e.g. when calibration tools are used – under development, they 
 will be described in future releases of this manual):
   
- |	name			RA J2000	Dec J2000
+ |	lllll			RA J2000	Dec J2000
  |				hh mm ss.ssss	 dd mm ss.sss
  |	**w3oh**		02 27 04.1	+61 52 22
  |	**3c48**		01 37 41.2996	+33 09 35.079
