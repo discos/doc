@@ -8,7 +8,7 @@ Appendix A - Monitor panels full description
 operatorInput
 =============
 
-.. figure:: images/Screenshot-OperatorInput.png
+.. image:: images/Screenshot-OperatorInput.png
    :scale: 100%
    :alt: operatorInput TUI
    :align: center
@@ -25,7 +25,7 @@ To close the window, type ``exit``.
 AntennaBoss
 ===========
 
-.. figure:: images/Screenshot-AntennaBoss.png
+.. image:: images/Screenshot-AntennaBoss.png
    :scale: 100%
    :alt: AntennaBoss TUI
    :align: center
@@ -148,7 +148,7 @@ To close the monitor, type ``exit`` in its prompt (the grey line).
 Observatory
 ===========
 
-.. figure:: images/Screenshot-Observatory.png
+.. image:: images/Screenshot-Observatory.png
    :scale: 100%
    :alt: Observatory TUI
    :align: left
@@ -186,7 +186,7 @@ To close the monitor, type ``exit`` in its prompt (the grey line).
 Mount
 =====
 
-.. figure:: images/Screenshot-Mount.png
+.. image:: images/Screenshot-Mount.png
    :scale: 100%
    :alt: Mount TUI
    :align: center
@@ -249,7 +249,7 @@ To close the monitor, type ``exit`` in its prompt (the grey line).
 GenericBackend
 ==============
 
-.. figure:: images/Screenshot-GenericBackend.png
+.. image:: images/Screenshot-GenericBackend.png
    :scale: 100%
    :alt: GenericBackend TUI
    :align: center
@@ -306,7 +306,7 @@ To close the monitor, type ``exit`` in its prompt (the grey line).
 ReceiversBoss
 =============
 
-.. figure:: images/Screenshot-Receivers.png
+.. image:: images/Screenshot-Receivers.png
    :scale: 100%
    :alt: Receivers TUI
    :align: left
@@ -376,7 +376,7 @@ To close the monitor, type ``exit`` in its prompt (the grey line).
 Scheduler
 =========
 
-.. figure:: images/Screenshot-Scheduler.png
+.. image:: images/Screenshot-Scheduler.png
    :scale: 100%
    :alt: Scheduler TUI
    :align: left
@@ -421,7 +421,7 @@ To close the monitor, type ``exit`` in its prompt (the grey line).
 MinorServo
 ==========
 
-.. figure:: images/Screenshot-MinorServo.png
+.. image:: images/Screenshot-MinorServo.png
    :scale: 100%
    :alt: Minor Servo TUI
    :align: left
@@ -460,7 +460,7 @@ To close the monitor, type ``exit`` in its prompt (the grey line).
 Logging Display
 ===============
 
-.. figure:: images/Screenshot-loggingDisplay.png
+.. image:: images/Screenshot-loggingDisplay.png
    :scale: 100%
    :alt: Logging display
    :align: left
