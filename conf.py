@@ -110,6 +110,8 @@ latex_documents = [
    u'DISCOS CS team', 'manual'),
 ]
 
+pdf_break_level = 0
+
 # The name of an image file (relative to this directory) to place at the top of
 # the title page.
 #latex_logo = None
