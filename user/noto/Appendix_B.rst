@@ -73,6 +73,10 @@ Here follow all the commands exploitable in ESCS:
    
    Example: ``> azelOffsets=-0.05d,0.05d``
    
+.. describe:: > calmux=[code]
+   
+   (``code`` can be ``TOTALPOWER``, ``DBBC``) 
+   configures the calibration diode multiplexer 
 
 .. describe:: > calOn
 

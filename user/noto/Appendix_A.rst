@@ -366,44 +366,9 @@ running schedule, if any.
 To close the monitor, type ``exit`` in its prompt (the grey line). 
 
 
-MinorServo
-==========
+.. note:: All the monitors can be closed at a time using the command::
 
-.. figure:: images/Screenshot-MinorServo.png
-   :scale: 100%
-   :alt: Minor Servo TUI
-   :align: left
-
-This monitor shows details on the Minor Servo systems:
-
-  * **Current Setup**: current setup code (**CCC**, **XXP**, **KKC**,
-    …)
-
-  * **Ready**: when green, the receiver is in its working position
-
-  * **Starting** : when green, the minor servo are moving in order to put 
-    the selected receiver in its working position
-
-  * **AS Conf**: when green, the subreflector position is computed by assuming 
-    the primary mirror surface is shaped and active (it is changing 
-    with the antenna elavation)
-
-  * **Elevation Track**: when green, the subreflector is changing its 
-    position with the elevation
-
-  * **Scan active**: when green, a scan is active. That means either the system 
-    is performing a scan or a scan is terminated and so the system is waiting 
-    for a stopScan command or for a new scan 
-
-  * **Scanning**: when green, the system is performing a scan
-
-To close the monitor, type ``exit`` in its prompt (the grey line). 
-
-
-.. note:: All the monitors can be closed at a time using the command (in a 
-   terminal on escsRemote)::
-
-	$ escsConsole --stop
+	$ discosConsole --stop
 	
 	
 Logging Display

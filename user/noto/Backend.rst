@@ -59,7 +59,7 @@ long as the receivers' IF bandwidth is restricted to 500 MHz.
 
 Consider that the above-listed bandwidths do not correspond to the true 
 observed ones, for the reason discussed in Initial Setup. When accumulations 
-of the data “dumps” are requiredbefore integrating them to the output file, it 
+of the data “dumps” are required before integrating them to the output file, it 
 is possible to set the integration time as follows::
 
     > integration=[N] 
@@ -91,5 +91,25 @@ pointing accuracy. This is accomplished using the command::
 
 which uploads to the system the parameters relative to section number [sect] 
 (you can generally use 0, which exists for all the receivers, unless you need 
-to observe only with a different feed).   
+to observe only with a different feed).
 
+
+.. _EN_calmux-focus-selector:
+
+Calmux - calibration diode multiplexer
+======================================
+
+The Calmux is a multiplexer that allows to choose which backned is entitled to control the
+calibration diode on the frontend. This device is required when more than one backend has the
+capability to exploit the fast switching. In Noto the DBBC (for VLBI) and the TotalPower have such
+a feature. When observing with DISCOS the proper calmux configuration is done transparently during
+setup phase. In case specific configuration is required, use::
+
+    > calmux=[code] 
+	
+(``code`` can be ``TOTALPOWER``, ``DBBC``)
+
+.. admonition:: WARNING:  
+
+	* Since then calmux control port is single-client, it is mandatory for DISCOS to proper configure it to make sure that no other client are connected at the time of the telescope setup.
+ 

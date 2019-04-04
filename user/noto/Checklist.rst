@@ -4,24 +4,21 @@
 Checklist for schedule-based observations
 *****************************************
 
-Notice that actions take place in three different “locations”:
+Notice that actions can take place locally or remotely.
 
-  * **(1)** = action to be performed in a terminal on escs
-  * **(2)** = action to be performed in a terminal on euser
-  * **(op)** = command to be given in the *operatorInput* panel of ESCS
+**Login control system(1)** 
+*Locally*: login on discos-manager using the discos credentials. 
+*Remotely*: connect via VNC to discos-manager with the proper credentials and instructions
+that can be provided by local staff. 
+**login your user or poject home(2)** you can ssh into discos-manager with proper credentials.
 
-**Login on both (1) and (2)** 
-*Locally*: login on (2) using the euser credentials, then Using the ESCS icon 
-on the Desktop, connect to (1).
-*Remotely*: connect via VNC to (1) with the proper credentials, 
-then use ssh to access (2). 
 
 .. note:: Remember that spaces within the command line content are **not** 
    allowed!
 
-**Launch the monitors, if necessary** (1):: 
+**Launch the monitors, if necessary**:: 
 
-	$ escsConsole 
+	$ discosConsole(1) 
 
 **Initial setup** (op)::
 
@@ -118,7 +115,7 @@ then use ssh to access (2).
 
 **Close the monitors, if necessary** (1)::
 
-	$ escsConsole —-stop   (individual panels are closed typing “exit” in their command lines)
+	$ discosConsole —-stop   (individual panels are closed typing “exit” in their command lines)
  
 
 

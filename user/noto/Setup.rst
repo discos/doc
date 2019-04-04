@@ -9,7 +9,7 @@ Initial setup
 Antenna overall setup
 =====================
 
-When opening an ESCS observing session, it is necessary to perform a setup 
+When opening an DISCOS observing session, it is necessary to perform a setup 
 which includes the antenna unstow, the mount configuration in tracking mode, 
 the minor servo setup. This is done by means of a unique command, which is 
 specific for the wanted receiver, to be written in the **operatorInput**. 
@@ -66,7 +66,7 @@ bandwidth and the band starting frequency are recorded in the output files
 (see :ref:`EN_Appendix-C-Output-files`).
 
 (1) For this setup, the FITS file will **NOT** report the actual values 
-relative to frequency and bandwidth, as the present ESCS release does not take 
+relative to frequency and bandwidth, as the present DISCOS release does not take 
 into account the different conversion taking place for this receiver. 
   
 
