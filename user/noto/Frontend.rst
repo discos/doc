@@ -41,7 +41,7 @@ The calibration mark can be manually switched on and off respectively with::
 
 .. admonition:: WARNING:  
 
-    * Even if the calibration diode is a device inclueded in the frontend, it is
+    * Even if the calibration diode is a device included in the frontend, it is
       controlled through the TotalPower backend. As a consequence, the "calmux"
       must be properly configured - see details in the backend section.
 

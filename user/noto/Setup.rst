@@ -9,7 +9,7 @@ Initial setup
 Antenna overall setup
 =====================
 
-When opening an DISCOS observing session, it is necessary to perform a setup 
+When opening a DISCOS observing session, it is necessary to perform a setup 
 which includes the antenna unstow, the mount configuration in tracking mode, 
 the minor servo setup. This is done by means of a unique command, which is 
 specific for the wanted receiver, to be written in the **operatorInput**. 

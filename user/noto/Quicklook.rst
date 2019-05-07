@@ -15,11 +15,13 @@ If writer is MANAGEMENT/FitsZilla
 When acquiring FITS files through a schedule, there is a tool available 
 for the almost-realtime quick-look of the saved data.
  
-Open an internet browser and visit the page "http://XXX.XXX.XXX.XXX:8080". The address
-correspond to discos-manager workstation. Otherwise if you're directly connected to discos-manager
-though ssh you can simply visit "http://localhost:8080".
+Open an internet browser and visit the page "http://XXX.XXX.XXX.XXX:8080".
+The address corresponds to the discos-manager workstation. Otherwise if
+you are directly connected to discos-manager through ssh you can simply
+visit "http://localhost:8080".
 
-The last completed FITS file (i.e. the most recent subscan carried out) will be displayed with some ancillary information.
+The last completed FITS file (i.e. the most recent subscan carried out)
+will be displayed with some ancillary information.
 
 .. note:: The program automatically identifies the recorded sections and 
    plots them all.
