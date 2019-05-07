@@ -4,12 +4,12 @@
 Checklist for schedule-based observations
 *****************************************
 
-Notice that actions can take place locally or remotely.
+Notice that actions can take place either locally or remotely.
 
 **Login control system(1)** 
 *Locally*: login on discos-manager using the discos credentials. 
 *Remotely*: connect via VNC to discos-manager with the proper credentials and instructions
-that can be provided by local staff. 
+provided by local staff. 
 **login your user or poject home(2)** you can ssh into discos-manager with proper credentials.
 
 
@@ -18,7 +18,7 @@ that can be provided by local staff.
 
 **Launch the monitors, if necessary**:: 
 
-	$ discosConsole(1) 
+	$ discosConsole
 
 **Initial setup** (op)::
 

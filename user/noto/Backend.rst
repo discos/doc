@@ -99,11 +99,11 @@ to observe only with a different feed).
 Calmux - calibration diode multiplexer
 ======================================
 
-The Calmux is a multiplexer that allows to choose which backned is entitled to control the
+The Calmux is a multiplexer that allows to choose which backend is entitled to control the
 calibration diode on the frontend. This device is required when more than one backend has the
-capability to exploit the fast switching. In Noto the DBBC (for VLBI) and the TotalPower have such
-a feature. When observing with DISCOS the proper calmux configuration is done transparently during
-setup phase. In case specific configuration is required, use::
+capability to exploit the fast switching. This is the case for DBBC (VLBI) and TotalPower
+backends in Noto. When observing with DISCOS, the proper calmux configuration is set
+transparently during the setup phase. In case specific configuration is required, use::
 
     > calmux=[code] 
 	
@@ -111,5 +111,5 @@ setup phase. In case specific configuration is required, use::
 
 .. admonition:: WARNING:  
 
-	* Since then calmux control port is single-client, it is mandatory for DISCOS to proper configure it to make sure that no other client are connected at the time of the telescope setup.
+	* Since then calmux control port is single-client, it is mandatory for DISCOS to proper configure it to make sure that no other clients are connected at the time of the telescope setup.
  

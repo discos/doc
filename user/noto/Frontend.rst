@@ -41,9 +41,9 @@ The calibration mark can be manually switched on and off respectively with::
 
 .. admonition:: WARNING:  
 
-    * Even if the calibration diode is a frontend device, its control is indirectly done through the 
-      Total Power so the "calmux" should be properly configured (check more details on backend section).
-
+    * Even if the calibration diode is a device inclueded in the frontend, it is
+      controlled through the TotalPower backend. As a consequence, the "calmux"
+      must be properly configured - see details in the backend section.
 
 If the user wants to perform the setup for the frontend only (without 
 affecting the mount, the minor servo or the backend), the command is:: 
