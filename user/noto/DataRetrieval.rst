@@ -4,7 +4,7 @@
 Retrieving the data
 *******************
 
-Open a terminal on the euser machine. Your data folder is::
+Open a terminal on the discos-manager machine(using your userID). Your data folder is::
 
     ~/data
 
@@ -37,12 +37,12 @@ FITS files, each corresponding to a subscan, are composed as:
 
 **YYYYMMDD-HHMMSS-User-Suffix_Scan#_Subscan#.fits**
 
-Data can be copied from *escsConsole* to your laptop using  'ssh’  or   
+Data can be copied to your laptop using  'ssh’  or   
 ‘rsync –e ssh’  commands.
 
 
 .. note:: When recording manually-acquired data in FITS format, the output 
-   files are still accessible from the euser machine, yet they are found in a 
+   files are still accessible from the discos-manager machine, yet they are found in a 
    peculiar path, different from the one employed when schedules run.
    You can find these FITS files in /archive/extraData. 
    This implies that they also cannot be automatically showed by the quick-look 

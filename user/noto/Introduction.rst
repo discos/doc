@@ -6,10 +6,10 @@ Overview
 ********
 
 
-What ESCS is
+What DISCOS is
 ============
 
-ESCS is the DISCOS control software flavour produced for the Medicina and Noto 
+DISCOS is the control software produced for the Medicina, Noto and SRT 
 radio telescopes. 
 It is a distributed system based on ACS (ALMA Common Software), commanding all
 the devices of the telescope and allowing the user to perform single-dish
@@ -17,7 +17,7 @@ observations in the most common modes.
 As of today, the code actually implemented for the telescopes (i.e. excluding
 the huge ACS framework) amounts to > 550000 active lines. 
 
-This guide is meant to help the observer in the use of ESCS, without dealing
+This guide is meant to help the observer in the use of DISCOS, without dealing
 with the “behind-the-curtains” complex details of the system. 
 This release focuses on **single-dish continuum
 observations**, as the fully integrated backend available on-site is the
@@ -26,7 +26,7 @@ software implementations are continuously updated, this manual will forcibly
 undergo frequent revisions. 
  
 Here follows a simple schematization of the observing system, helpful to
-visualize all the main devices ESCS deals with and the most important
+visualize all the main devices DISCOS deals with and the most important
 operations it performs. 
 *Notice: the features not yet available in this release are shown in brackets*.
 
