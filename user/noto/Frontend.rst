@@ -24,7 +24,7 @@ To change the frontend Local Oscillator frequency, use the following command::
     > setLO=[freq1];[freq2];…;[freqN]
 
 Notice the semicolon. Ideally, different values could be assigned to different 
-IFs, thus tuning each section to a different sub-band. For the present 
+IFs, thus tuning each IFs to a different sub-band. For the present 
 hardware, though, this is not possible, so a single value must be specified: 
 
 	e.g. ``> setLO=4900`` 
@@ -39,10 +39,14 @@ The calibration mark can be manually switched on and off respectively with::
     > calOn 
     > calOff
 
+.. admonition:: WARNING:  
+
+    * Even if the calibration diode is a device included in the frontend, it is
+      controlled through the TotalPower backend. As a consequence, the "calmux"
+      must be properly configured - see details in the backend section.
 
 If the user wants to perform the setup for the frontend only (without 
 affecting the mount, the minor servo or the backend), the command is:: 
 
     > receiversSetup=[code]   (CCC, MMC, KKC, QQC)
 
- 

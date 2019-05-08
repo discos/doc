@@ -13,7 +13,7 @@ inside the LIS file) or in the command::
 Along with their J2000 Equatorial coordinates, the catalogue records usually 
 contain further information such as apparent size, proper motion, radial 
 velocity, coefficients of the *Ott et al.* polynomials describing the spectra, 
-etc… ESCS uses these parameters to make computations during certain 
+etc… DISCOS uses these parameters to make computations during certain 
 operations (e.g. when calibration tools are used – under development, they 
 will be described in future releases of this manual).
 

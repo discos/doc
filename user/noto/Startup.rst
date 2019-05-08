@@ -1,8 +1,8 @@
 .. _ESCSN-startup:
 
-************
-ESCS startup
-************
+**************
+DISCOS startup
+**************
 
 
 Logistics
@@ -11,31 +11,20 @@ Logistics
 .. note:: **passwords are provided locally**. Be sure to contact the local 
    personnel before your session starts, in order to get the latest information. 
 
-Observations involve the use of two machines, called escs and euser, located 
-in the 32-m dish control room: 
+Observations with DISCOS involve the use of one machine called discos-manager and located 
+in the 32-m dish control room, the euser workstation is devoted to VLBI: 
 
 .. figure:: images/Postazioni_ESCSN.jpg
    :scale: 80%
    :alt: Observing machine
-   :align: center
- 
-On-site observations
-====================
+   :align: center 
 
-The involved hardware is composed by two PCs with displays on the table facing 
-the window, just next to the AS control panel.
-When the observers perform their acquisitions on-site, they exploit the 
-euser machine only (the one on the right). 
-
-escs: input terminal and system monitors
+discos: input terminal and system monitors
 ----------------------------------------------
 
-Login to euser using the provided credentials. 
-Then, click on the "CONNECTION TO ESCS" icon located on the Desktop. It will 
-connect you to escs via a remote desktop (vinagre).
-On the escs remote desktop, you should find the input terminal and all the 
-monitors already running. If, instead, you need to start them, click on the 
-icon named "escsConsole".
+Login to discos-manager using the provided credentials. 
+You should find the input terminal and all the 
+monitors already running. If, instead, you need to start them, use the bash command  "discosConsole".
 This opens 8 panels at once: 
 
     * operatorInput - terminal for command line input
@@ -50,8 +39,7 @@ This opens 8 panels at once:
 Rearrange the panels on the desktop. 
 
 In case any of them does not automatically start, you can manually open them 
-by means of individual command lines, to be given in a terminal (open it
-inside the escs remote desktop)::
+by means of individual command lines, to be given in a terminal::
 
 	> operatorInput 
 	> antennaBossTui 
@@ -71,8 +59,8 @@ see :ref:`EN_Appendix-A-Monitor-panels-full-description` and
 their content and a list of all the commands available for the operatorInput 
 (they can be inserted in schedules as well).
 
-euser: access to schedules, logs and data
------------------------------------------------
+your user or project account: access to schedules, logs and data
+----------------------------------------------------------------
 
 Directly use euser for the data quicklook and retrieval (see dedicated 
 sections), for the generation of schedules using the "basie" tool and for tools 
@@ -93,21 +81,21 @@ are self-explanatory::
 =====================================================
 
 It is possible to remotely perform the observations, exploiting a VNC 
-connection to escs. Open a VNC session and connect to::
+connection to discos(instruction provided by local staff). Open a VNC session and connect to::
 
-	192.167.187.XXX:1  (i.e. port 5901) 
+	192.167.187.XXX
 
 You will be asked to insert a password (again, passwords are provided by the 
 local staff). If you need to start the clients, open a terminal and command::
 
-	> escsClients
+	> discosConsole
 
 and follow the same instructions provided for observations carried out on site. 
 
 To access your data, schedules and logs, simply open a terminal on your 
 computer and use::
 
-	> ssh –X euser@192.167.187.16 
+	> ssh –X [your-account]@192.167.187.xx 
 
-Hence you can launch IDL, use basie, retrieve your data, etc… 
+Hence you can use basie, retrieve your data, etc… 
 
