@@ -151,7 +151,7 @@ Observatory
 .. figure:: images/Screenshot-Observatory.png
    :scale: 100%
    :alt: Observatory TUI
-   :align: left
+   :align: center
 
 
 It is devoted to the station coordinates and times:
@@ -294,7 +294,7 @@ ReceiversBoss
 .. figure:: images/Screenshot-Receivers.png
    :scale: 100%
    :alt: Receivers TUI
-   :align: left
+   :align: center
 
 This monitor summarizes the frontend setup. The bottom part is devoted to the
 derotator (dewar positioner), when available. 
@@ -327,7 +327,7 @@ Scheduler
 .. figure:: images/Screenshot-Scheduler.png
    :scale: 100%
    :alt: Scheduler TUI
-   :align: left
+   :align: center
 
 This monitor shows details on the selected data acquisition devices and on the 
 running schedule, if any.
@@ -377,7 +377,7 @@ Logging Display
 .. figure:: images/Screenshot-loggingDisplay.png
    :scale: 100%
    :alt: Logging display
-   :align: left
+   :align: center
 
 This panel is not part of the general Console, so it must be individually
 opened/closed. 
