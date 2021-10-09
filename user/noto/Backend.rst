@@ -113,3 +113,17 @@ transparently during the setup phase. In case a specific configuration is requir
 
 	* Since then calmux control port is single-client, it is mandatory for DISCOS to properly configure it to make sure that no other clients are connected at the time of the telescope setup.
  
+ 
+ .. _EN_ifdist-if-distributor:
+
+Ifdist - IF Distributor
+======================================
+
+The IF Distributors system allows to change the patch of IF and to set attenuation and to retrieve the current value of configuratoion. 
+When observing with DISCOS, you can use::
+
+    > ifdist=[input],[pol],[att] 
+	
+(``input`` can be ``1``, ``2``)
+
+
