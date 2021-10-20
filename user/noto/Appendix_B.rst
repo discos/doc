@@ -169,6 +169,13 @@ Here follow all the commands exploitable in ESCS:
  
    completes the current scan and then stops the schedule
 
+.. describe:: > ifdist=[int]input,[int]pol,[double]att
+ 
+   set/get the configuration for IF Distributor
+   * [input] can be 1 or 2
+   * [pol] can be -1 to get the current value of att for selected input, or a value in the range 0 - 6
+   * [att] can be -1 to get the current value of att for selected input, or a value in the range 0 - 63 (each step is 0.5 dB)
+
 .. describe:: > initialize=[code]
    
    (``code`` can be ``CCC``, ``MMC``, ``KKC``, ``QQC``, …) 
