@@ -119,11 +119,13 @@ transparently during the setup phase. In case a specific configuration is requir
 Ifdist - IF Distributor
 ======================================
 
-The IF Distributors system allows to change the patch of IF and to set attenuation and to retrieve the current value of configuratoion. 
+The IF Distributors system allows to change the patch of IF, to set attenuation and to retrieve the values of current configuratoion. 
 When observing with DISCOS, you can use::
 
     > ifdist=[input],[pol],[att] 
 	
 (``input`` can be ``1``, ``2``)
+(``pol`` can be ``-1`` to get the current value of att for selected input, or a value in the range ``0 - 6``)
+(``att`` can be ``-1`` to get the current value of att for selected input, or a value in the range ``0 - 63`` (each step is 0.5 dB))
 
 
