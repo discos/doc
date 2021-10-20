@@ -125,7 +125,9 @@ When observing with DISCOS, you can use::
     > ifdist=[input],[pol],[att] 
 	
 (``input`` can be ``1``, ``2``)
+
 (``pol`` can be ``-1`` to get the current value of att for selected input, or a value in the range ``0 - 6``)
+
 (``att`` can be ``-1`` to get the current value of att for selected input, or a value in the range ``0 - 63`` (each step is 0.5 dB))
 
 
