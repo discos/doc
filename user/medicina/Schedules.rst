@@ -64,6 +64,11 @@ acquisition::
 Instead, to stop the schedule allowing the completion of the present file::
 
     > haltSchedule
+    
+.. admonition:: WARNING: 
+    
+When using XARCOS, **always** use *haltSchedule*, or the backend will remain
+in a busy status and will not accept further commands. 
 
 
 
