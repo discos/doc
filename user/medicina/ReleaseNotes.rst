@@ -14,6 +14,14 @@ Authors:
 Issue	     Release     What’s  
              Date        new
 ===========  =========== =====================================================
+05           14/02/22    | ** Release for DISCOS 1.06 ** 
+                         | First 64-bit DISCOS release for Medicina.
+                         | C-high (CHC) receiver now fully supported.
+                         | ProjectID in schedule files must coincide with the
+                         | one in use during observations.  
+                         | DIMED attenuator can be commanded via DISCOS.         
+                         | Updates in the FITS format content. 
+-----------  ----------- -----------------------------------------------------
 04           30/03/16    | **Release for ESCS 0.4** 
                          | Spectroscopy observations now available. 
                          | FITS/schedule sections removed from this document

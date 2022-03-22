@@ -43,7 +43,7 @@ for assistance.
 
 This depends on the Antenna Control Unit (ACU) behavior: the ACU, after a setup,
 always commands the antenna to go to the last pointed position. This is very
-inconvenient, and ESCS cannot directly stop it at the moment. You may
+inconvenient, and DISCOS cannot directly stop it at the moment. You may
 immediately stop the slewing by commanding, right after the setup, a properly 
 nearby position using goTo=[Az'd',El'd'] so that, while you complete your setup 
 procedures, the dish stops very near the present position. If the antenna is, 
@@ -116,14 +116,17 @@ or, if you have already given the project=code command::
 
     > startSchedule=[schedname].scd,[N]
 
+IMPORTANT: the projectID written inside the .scd schedule file MUST coincide with the 
+project in use, otherwise an error will rise and the schedule will not be launched. 
+
 
 .. admonition:: PROBLEM:  
 
     * **Dead time between consecutive subscans is much longer than expected**
 
-Are your schedules old? 
-With ESCS 0.4 it is necessary to delete from old schedules all the post-scan 
-wait times, as the system now takes automatically care of computing and 
+Are your schedules very old? 
+It is now necessary to delete from old schedules all the post-scan 
+wait times, as the system takes automatically care of computing and 
 applying proper delays according to the deceleration ramps duration. 
 If you specify a wait time in your post-scan procedures, it will add to the 
 system-computed delays. 

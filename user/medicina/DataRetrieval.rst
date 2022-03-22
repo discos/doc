@@ -4,14 +4,13 @@
 Retrieving the data
 *******************
 
-Open a terminal on escsConsole. Your data folder is::
+Open a terminal on the projects/data/schedules machine. Your data folder is::
 
     ~/data
 
 Inside that folder, subfolders named according to the date (YYYYMMDD) will be 
 automatically created during acquisitions. 
-Taking into account the choice of the FITS format, the only one so far fully 
-tested, the date-dependent folder contains a subfolder for every scan, inside 
+The date-dependent folder contains a subfolder for every scan, inside 
 which there are the FITS files (one for each subscan).
 
 .. figure:: images/FolderScheme.png
@@ -39,8 +38,7 @@ FITS files, each corresponding to a subscan, are composed as:
 
 **YYYYMMDD-HHMMSS-Project-Suffix_Scan#_Subscan#.fits**
 
-Data can be copied from *escsConsole* to your laptop using  'ssh’  or   
-‘rsync –e ssh’  commands.
+Data can be copied to your laptop using the procedure provided by the user support.
 
 
 .. note:: When recording manually-acquired data in FITS format, the output 

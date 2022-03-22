@@ -93,7 +93,7 @@ When performing manually commanded acquisitions, it is necessary to
 
 where string can be: 
 
-	* **MANAGEMENT/Point** (default) text output in the logfile, used for 
+	* **MANAGEMENT/Point** (default) text output in the logfile only, used for 
 	  pointing calibration	
 	* **MANAGEMENT/CalibrationTool** text output in .dat file, used for 
 	  pointing calibration  
@@ -104,9 +104,7 @@ where string can be:
 .. note:: When recording **manually-acquired** data in FITS format, the 
    **output files** are stored in a peculiar path which is not accessible to 
    users. This implies that they also cannot be shown by the quick-look 
-   procedure. This temporary situation, which requires the involvement of a 
-   system administrator in order to retrieve the data, will be corrected in 
-   the next release of ESCS. 
+   procedure. 
 
 Once the recorder is set, acquisitions on a target can be performed as follows. 
 First, set the target:: 
