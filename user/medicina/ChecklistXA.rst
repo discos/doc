@@ -6,27 +6,31 @@ Checklist for spectral schedule-based observations
 
 Notice that actions take place in three different “locations”:
 
-  * **(1)** = action to be performed in a terminal on escsRemote (.57)
-  * **(2)** = action to be performed in a terminal on escsConsole (.54)
+  * **(1)** = action to be performed in a terminal on the observing machine (the one with the DISCOS system interface)
+  * **(2)** = action to be performed in a terminal on the project/schedule/data machine
   * **(op)** = command to be given in the *operatorInput* panel of ESCS
 
 
 **Login on both (1) and (2)** 
-Connect via VNC to (1) as "observer", then use ssh to access (2). 
+Connect via VNC to (1) as "observer", from there use ssh to access (2) with your project-specific account. 
 
 
 **Launch the monitors, if necessary** (1):: 
 
-	$ escsConsole 
+	$ discosConsole 
+
+**Set the project name** (op)::
+
+	> project=[projectID]  
 
 **Initial setup** (op):: 
 
-	> setupCCC      (or other receiver code: XXP, KKC) 
+	> setupKKC      (or other receiver code: CCC, XXP) 
 
 **Tune the local oscillator, if any** (op)::
 
 	> setLO=[freq] 
-	—> e.g. setLO=4900 - start frequency of the observed band will depend on the backend
+	—> e.g. setLO=22000 - start frequency of the observed band will depend on the backend
 
 
 **Point the antenna to a reference position** (op)::
@@ -51,13 +55,13 @@ Connect via VNC to (1) as "observer", then use ssh to access (2).
 
 	> tsys
 
-**Pointing optimisation** (op):: 
+**Pointing check** (op):: 
 
 	> track=name                    (choose a proper calibrator from source catalogue) 
 	> chooseRecorder=MANAGEMENT/CalibrationTool 
 	—> the following command on (1): 
 		$ calibrationtoolclient  (to display the plots) 
-	> crossScan=HOR,0.5d,00:00:20    (set proper parameters according to your beamsize) 
+	> crossScan=HOR,0.2d,00:00:15    (set proper parameters according to your beamsize) 
 	> azelOffsets=0d,0d              (only if wanting to reject the measured offsets!)	
 		
 .. admonition:: WARNING:  
@@ -92,7 +96,19 @@ automatically rejected (bug under fixing).
 
 **Launch the schedule** (op):: 
 		
-	> startSchedule=[project/][schedulename].scd,[N]
+	> startSchedule=[schedulename].scd,[N]
+
+If you haven't previously specified the project ID using the ``project`` command,
+you need to insert it in the schedule path:: 
+
+	> startSchedule=[projectID]/[schedulename].scd,[N]
+
+.. admonition:: WARNING:  
+
+    * **The project ID written inside the .scd schedule file MUST coincide
+      with the one invoked during the observations (and thus with the project-specific 
+      path it is stored into).**
+
  
 **Data quick-look**
 
@@ -113,7 +129,7 @@ automatically rejected (bug under fixing).
 	* *Case B\:* when using MANAGEMENT/CalibrationTool, launch the quick-look (1):: 
 
 		$ calibrationtoolclient MANAGEMENT/CalibrationTool
-                  (—> it opens only if the CalibratioTool writer is currently selected!)
+                  (—> it opens only if the CalibrationTool writer is currently selected!)
 
 **Weather conditions and webcam (in a web browser)**
 
@@ -131,9 +147,7 @@ automatically rejected (bug under fixing).
  
 	> antennaPark
 
-**Close the monitors, if necessary** (1)::
 
-	$ escsConsole —-stop   (individual panels are closed typing “exit” in their command lines)
  
 
 

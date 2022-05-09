@@ -86,6 +86,14 @@ Here follow all the commands exploitable in ESCS:
    computes the beamsize, taking into account the present receiver and backend
    configurations relative to section sect
 
+.. describe:: > dmed=[config]
+   
+   This command configures an additional set of programmable attenuators (DIMED device). 
+   The available configurations consist in pre-defined sets of values: ‘sun’ is meant 
+   for solar observations, ‘default’ must be used for all the other acquisitions. 
+   When commanding an overall setup, such as ``setupKKC``, the configuration is set 
+   back to 'default'.    
+
 .. describe:: > flush=[N]
   
    deletes the N-th element in the queue of temporised commands

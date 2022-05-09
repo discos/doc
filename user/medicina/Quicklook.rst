@@ -13,10 +13,26 @@ tools in order to inspect the data produced by the TPB and XARCOS.
 
 If writer is MANAGEMENT/FitsZilla
 =================================
-When acquiring FITS files through a schedule, there is an IDL tool available 
+
+The main quick-look tool is now web-based.
+On the observing machine, go to a free desktop, so as you don't interfere with
+the DISCOS system TUIs, and click on the "Quicklook" icon.
+A web page will open. There, you will see a plot showing the raw content of 
+last completed FITS file.  
+
+.. admonition:: WARNING: 
+
+   * **The web-based tool does not work with spectral acquisitions**
+
+Due to a bug, only total power acquisitions can, at the moment, be viewed with 
+this new tool. 
+
+
+When acquiring FITS files through a schedule, there is also the old IDL tool available 
 for the almost-realtime quick-look of the saved data.
  
-Open a terminal on *escsConsole*. Launch IDL::
+Open a terminal on the projects machine (see instructions provided by user support). 
+Launch IDL::
 
     $ idl
 
@@ -82,14 +98,14 @@ If writer is MANAGEMENT/Point or MANAGEMENT/CalibrationTool
 When data are acquired – both manually or through a schedule – using the Point 
 or CalibrationTool writers, the quick-look must be performed using the 
 CalibrationToolClient. 
-Open a terminal on escsRemote and use the command:: 
+Open a terminal on the observing machine and use the command:: 
 
     $ calibrationtoolclient  [componentName]
 
 where componentName is either MANAGEMENT/Point or MANAGEMENT/CalibrationTool. 
 A graphic window will appear. Its content is given in the following figure. 
 
-.. figure:: images/CalToolClient.png
+.. figure:: images/CalToolClient.gif
    :scale: 80%
    :alt: calibrationtoolclient 
    :align: center

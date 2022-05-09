@@ -6,13 +6,13 @@ Backend operations
 
 The backend to be used can be manually selected as follows:: 
 
-    > chooseBackend=BACKENDS/[bckname]
+    > chooseBackend=[bckname]
 
 where *bckname* is the name of the backend. At present, the only available 
 choices are: 
  
 	* TotalPower
-	* XBackends   (for the XARCOS spectrometer)  
+	* XArcos   
 
 
 
@@ -25,7 +25,7 @@ Total Power - focus selector
    the signal from the wanted receiver to any other backend. For this reason, 
    it **must** be set up even when acquisitions take place using another 
    backend.  This is accomplished simply using the overall setup commands 
-   (such as ``setupCCC``, etc…).
+   (such as ``setupKKC``, etc…).
 
 Bandwidth and sampling rate can be changed using:: 
 
@@ -57,7 +57,11 @@ where *bw* can be chosen from a restricted range of options (MHz):
 	* 1250.0   
 	* 2000.0 
 
-These values do not correspond to the true observed bandwidth, for the reason 
+Notice: not all the receivers have RF bands large enough to employ the wide-band
+filters. In particular, only the KKC receiver can be used with the 1250 and 2000 MHz 
+filters. 
+
+The nominal *bw* values do not correspond to the true observed bandwidth, for the reason 
 discussed in Initial Setup. When accumulations of the data “dumps” are required
 before integrating them to the output file, it is possible to set the 
 integration time as follows::
@@ -98,7 +102,7 @@ to observe only with a different feed).
 XARCOS
 ======
 
-This spectrometer is fully integrated in ESCS, which means that ESCS can 
+This spectrometer is fully integrated in DISCOS, which means that DISCOS can 
 command the device, receive data from it and then write these data using a 
 standard output (FITS format).
 
@@ -152,7 +156,7 @@ described in the configuration defaults.
 
 A valid example of setup and setSection usage, then, is::
 
-    > chooseBackend=BACKENDS/XBackends
+    > chooseBackend=XArcos
     > initialize=XC00   
     > setSection=0,155.0,31.25,*,*,62.5,*
 

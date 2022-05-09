@@ -113,3 +113,34 @@ transparently during the setup phase. In case a specific configuration is requir
 
 	* Since then calmux control port is single-client, it is mandatory for DISCOS to properly configure it to make sure that no other clients are connected at the time of the telescope setup.
  
+ 
+ .. _EN_ifdist-if-distributor:
+
+Ifdist - IF Distributor
+======================================
+
+The IF Distributors system allows to change the patch of IF, to set attenuation and to retrieve the values of current configuratoion. 
+When observing with DISCOS, you can use::
+
+    > ifdist=[input],[pol],[att] 
+
+	
+``input`` can be:
+	* ``1`` to select output on A
+	* ``2`` to select output on B
+
+``pol`` can be:
+	* ``-1`` to get the current value of pol for selected input
+	* ``0`` no input selected
+	* ``1`` vertex Right Pol (A input) or ricevitore in vertex Left Pol (B input)
+	* ``2`` L Right Pol (A input) L Left Pol (B input)
+	* ``3`` X Right Pol (A input) ricevitore X Left Pol (B input)
+	* ``4`` S Right Pol (A input) ricevitore S Left Pol (B input)
+	* ``5`` spare (A input) S Right Pol (for geo obs.) (B input)
+	* ``6`` spare (A input) spare (B input)
+
+``att`` can be:
+	* ``-1`` to get the current value of att for selected input
+	* a value in the range ``0 - 63``, each step is 0.5 dB
+
+

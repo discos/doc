@@ -9,7 +9,7 @@ Initial setup
 Antenna overall setup
 =====================
 
-When opening an ESCS observing session, it is necessary to perform a setup 
+When opening a DISCOS observing session, it is necessary to perform a setup 
 which includes the antenna unstow, the mount configuration in tracking mode, 
 the minor servo setup. This is done by means of a unique command, which is 
 specific for the wanted receiver, to be written in the **operatorInput**. 
@@ -17,6 +17,8 @@ The currently available choices are::
 
     > setupCCCL  for the C-band receiver (narrow bandwidth)
     > setupCCC   for the C-band receiver (wide bandwidth)
+    > setupCHCL  for the C-high-band receiver (narrow bandwidth)
+    > setupCHC   for the C-high-band receiver (wide bandwidth)
     > setupXXP   for the X-band receiver
     > setupKKC   for the K-band receiver 
 
@@ -40,6 +42,8 @@ code      \(MHz\)     \(MHz\)     \(MHz\)         \(MHz\)     \(MHz\)
 ========  ==========  ==========  ==============  ==========  ================= 
 CCCL      4600        100-250     50-250           150        4700-4850
 CCC       4600        100-900     50-780           680        4700-5380
+CHCL      4600        100-250     50-250           150        6500-6650
+CHC       4600        100-900     50-780           680        6500-7180
 XXP       8080        100-900     50-780           680        8180-8860 
 KKC       21964       100-2100    50-2400          2000       22064-24064
 ========  ==========  ==========  ==============  ==========  =================

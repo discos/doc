@@ -1,37 +1,42 @@
 .. _ESCS-startup:
 
-************
-ESCS startup
-************
+**************
+DISCOS startup
+**************
 
 
 Logistics
 =========
 
-.. note:: **passwords are provided locally**. 
-   Be sure to contact the single-dish operations staff before your session 
+.. note:: **IP addresses and passwords are provided by the user support**. 
+   Be sure to contact the user support before your session 
    starts, in order to get the latest information. 
 
-Observations are always carried out through a VNC remote connection to a 
-machine called escsRemote. Once connected, some of the operations must be 
-carried out connecting via ssh to another machine called escsConsole.  
+Operations are always carried out through a VNC remote connection to the 
+observing machine. Schedules and data can be accessed by reaching a different 
+machine, which we can name "projects machine".
 
-escsRemote: ESCS panels
------------------------
+
+.. figure:: images/Macchine_DISCOS.png
+   :scale: 100%
+   :alt: The two machines and their tasks. 
+   :align: center
+
+
+Observing machine: the system
+-----------------------------
  
-Open a VNC session and connect to::
+Open a VNC session and connect to the observing machine, following the
+instructions provided by the user support. 
 
-	192.167.189.57:2  (i.e. port 5902) 
-
-You will be asked to insert a password. 
-A remote desktop will then appear. In it, the ESCS system should already be up 
+A remote desktop will then appear. In it, the DISCOS system should already be up 
 and running, and you should see all the textual clients referring to the 
-different containers of the system. If you don't see them, first check the 
+different containers/elements of the system. If you don't see them, first check the 
 bottom bar, as they might have been reduced to icons. 
 If indeed they are all missing and you need to start the clients, 
 open a terminal and use::
 
-	$ escsClients
+	$ discosClients
 
 This opens 9 panels at once: 
 
@@ -54,7 +59,7 @@ by means of individual command lines, to be given in a terminal shell::
 	$ observatoryTui 
 	$ mountTui 
 	$ genericBackendTui BACKENDS/TotalPower
-	$ genericBackendTui BACKENDS/XArcos
+	$ genericBackendTui BACKENDS/XBackends
 	$ receiversBossTui
 	$ schedulerTui
 	$ loggingDisplay
@@ -68,17 +73,20 @@ see :ref:`E_Appendix-A-Monitor-panels-full-description` and
 their content and a list of all the commands available for the operatorInput 
 (they can be inserted in schedules as well).
 
-escsConsole: access to schedules, logs and data
------------------------------------------------
 
-Use escsConsole for the data quicklook and retrieval (see dedicated 
+Projects machine: access to schedules, logs and data
+----------------------------------------------------
+
+A second machine is used for data retrieval (see dedicated 
 sections), for the generation of schedules using basie and for tools 
-as DS9 or FV. 
-Login credentials are specific to each project, you will connect via ssh 
-as follows, using a terminal shell (you can take advantage of the different
-virtual desktops, in order not to crowd the system desktop)::  
+such as DS9 or FV. 
+Login credentials are specific to each project. 
+While working on the observing machine, you can connect to the
+projects machine via ssh using a terminal shell (you can take advantage 
+of the different virtual desktops, in order not to crowd the 
+system desktop)::    
 
-	$ ssh –X projectName@192.167.189.54
+	$ ssh –X [projectID]@[IP_address]
 
 in your home you can find the following folders, whose names are 
 self-explanatory::
@@ -88,7 +96,7 @@ self-explanatory::
     ~/logs
 
 .. note:: users can generate subfolders according to their needs to store 
-   their schedules, but, in order to be executed, schedules must be places 
-   exactly in their ~/schedules folder. 
+   their schedules, but, in order to be executed, schedules must be placed 
+   exactly in the ~/schedules folder. 
 
 

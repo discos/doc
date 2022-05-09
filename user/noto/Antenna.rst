@@ -33,7 +33,12 @@ steering/pointing:
    ``code``: CCC (MMC, KKC, QQC) 
    
    it sets the minor servo system only, without affecting other systems
+
+ 
+.. describe:: > setElevationTracking=[code]
+   ``code``: (ON, OFF) 
    
+   enable (ON) or disable (OFF) the minor servo system elevation tracking
 
 .. describe:: > antennaTrack
 

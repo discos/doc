@@ -7,7 +7,7 @@ Overview
 
 
 What DISCOS is
-============
+==============
 
 DISCOS is the control software produced for the Medicina, Noto and SRT 
 radio telescopes. 

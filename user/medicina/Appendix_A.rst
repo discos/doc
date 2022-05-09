@@ -14,7 +14,7 @@ operatorInput
    :align: center
 
 
-This is the **input console** where users write ESCS commands. 
+This is the **input console** where users write DISCOS commands. 
 The prompt is just a sequential number enclosed in <>. 
 If a command is properly read, the system replies repeating the command itself,
 followed by the operation results (if they are foreseen). Otherwise, an error 
@@ -381,9 +381,9 @@ To close the window, click on its dedicated icon.
 
 
 .. note:: All the monitors can be closed at a time using the command (in a 
-   terminal on escsRemote)::
+   terminal on the observing machine)::
 
-	$ escsConsole --stop
+	$ discosConsole --stop
 
 
  
