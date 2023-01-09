@@ -149,16 +149,10 @@ the operatorInput panel, then starting the client in the terminal shell.
 
 .. admonition:: PROBLEM:  
 
-    * **The IDL quick-look procedures abort, or they do not actually show the 
-      latest acquisitions**
+    * **The web-based quick-look is not showing XARCOS data**
 
-These tools are all but refined. Ideally, they always show the last completed
-FITS subscan (fitslook.pro) or the last completed ON-OFF-CAL spectrum 
-(onoff.pro). Yet, to do so while avoiding incomplete subscans or unsuitable 
-files, they sometime fail. Folders containing one subscan only, as it is often 
-the case with skydips, will never produce a display, because as soon as the FITS 
-is complete a new folder is generated, and the procedure points to it. 
-When UT midnight comes, the procedure might not automatically switch to the 
-new YYYMYMMDD tree, so you might need to stop and restart it to go on 
-displaying the incoming data. Please report any problem and your "wishlist" 
-about these tools. 
+This is a known bug, presently under fixing. The old IDL tools are not available 
+anymore, so at the moment there is no option to visually inspect XARCOS data
+in realtime.
+
+  
