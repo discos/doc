@@ -108,11 +108,7 @@ operations will become impossible to perform.
       crashed.**
 
 Pay attention to the syntax, you might have inserted unwanted characters like 
-an extra “ / ”: the *startSchedule* command must be either given as::
-
-    > startSchedule=[project]/[schedname].scd,[N]
-
-or, if you have already given the project=code command:: 
+an extra “ / ”: the *startSchedule* command must be given as::
 
     > startSchedule=[schedname].scd,[N]
 
