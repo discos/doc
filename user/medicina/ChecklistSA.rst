@@ -1,8 +1,8 @@
-.. _E_Checklist-for-total_power-observations: 
+.. _E_Checklist-for-spectral-observations_SARDARA: 
 
-*****************************************************
-Checklist for Total Power schedule-based observations
-*****************************************************
+******************************************************
+Checklist for schedule-based observations with SARDARA
+******************************************************
 
 Notice that actions take place in three different “locations”:
 
@@ -30,7 +30,7 @@ Connect via VNC to (1) as "observer", from there use ssh to access (2) with your
 **Tune the local oscillator, if any** (op)::
 
 	> setLO=[freq] 
-	—> e.g. setLO=23400 - start frequency of the observed band will depend on the backend
+	—> e.g. setLO=22000 - start frequency of the observed band will depend on the backend
 
 
 **Point the antenna to a reference position** (op)::
@@ -47,16 +47,15 @@ Connect via VNC to (1) as "observer", from there use ssh to access (2) with your
 **Measure the cold sky signal level** (op)::
 
 	> getTpi 
-	> setAttenuation=[sect],[att] 
-	—> iteratively adjust attenuations until the level is about 800-1000 counts 
+	> setAttenuation=[sect],[att]  (values range from 0 dB to 15 dB, 1-dB step)
+	—> iteratively adjust attenuations until the level is about 700-900 counts 
 
 
 **Get a Tsys** (op)::
 
-	> tsys 
+	> tsys
 
-
-**Pointing check and optimisation, if needed** (op):: 
+**Pointing check** (op):: 
 
 	> track=name                    (choose a proper calibrator from source catalogue) 
 	> chooseRecorder=MANAGEMENT/CalibrationTool 
@@ -74,7 +73,32 @@ Connect via VNC to (1) as "observer", from there use ssh to access (2) with your
 This means that, if you perform observations using EQ offsets, also the 
 fine-pointing cross-scans must be carried out in the EQ frame. The same
 holds for HOR scans. If there is a frame mismatch, the system offsets are
-automatically rejected.
+automatically rejected (bug under fixing).
+
+**Choose and set the spectrometer** (op)::
+ 
+	> chooseBackend=Sardara 
+	> initialize=[code]      (e.g. SCC00, SCC00S, SK00, SK00S)
+
+**If non-default parameters are needed, configure the sections** (op)::
+
+	> setSection=[sect],[startFreq],[bw],[feed],[mode],[sampleRate],[bins]
+
+Remember: for full-Stokes setups, only section 0 is to be configured. 
+For spectral-only setups, both sections 0 and 1 must be configured. 
+
+** Measure RMS in order to verify the signal level ** (op)::
+
+	> getRms
+
+Values should be included in the 20-22 range. If they are not, adjust the attenuation
+levels as follows and repeat the RMS measurement.
+
+**If needed, set the attenuators** (op):: 
+
+        > setAttenuation=[sect],[att]   
+
+Each attenuator can be set from 0 dB to 15 dB, with a 1-dB step.
 
 **If needed, create a schedule** (2):: 
 
@@ -86,14 +110,6 @@ automatically rejected.
 	$ scheduleChecker [schedulename].scd 
 	—> Move the schedule files to the observing machine 
 
-**For solar observations ONLY** (op):: 
-
-        > dmed=sun 
-
-This command sets the DIMED attenuators to the high values
-that are specific for solar observations. When returning to non-solar
-acquisitions, use ``dmed=default``
-
 **Launch the schedule** (op):: 
 		
 	> startSchedule=[schedulename].scd,[N]
@@ -104,14 +120,10 @@ acquisitions, use ``dmed=default``
       with the one invoked during the observations (and thus with the project-specific 
       path it is stored into).**
 
-	 
-**Data quick-look**
-Use the online quick-look provided on the second desktop pf the remote machine. 
-	
-Notice: if also using MANAGEMENT/CalibrationTool, launch the quick-look (1):: 
+ 
+**Data quick-look** 
 
-	$ calibrationtoolclient MANAGEMENT/CalibrationTool   
-          (—> it opens only if the CalibrationTool writer is currently selected!)
+ Use the online quick-look provided on the second desktop of the remote machine.  
 
 **Weather conditions and webcam (in a web browser)**
 
@@ -120,15 +132,16 @@ Notice: if also using MANAGEMENT/CalibrationTool, launch the quick-look (1)::
 	
 **Stop the schedule** (op)::
 
-	> stopSchedule
+	> haltSchedule
 
 **Copy the data** (2) 
 	—> Get the latest subfolders written in the main data folder 
 
-**Stow the antenna and restore the default user** (op)::
+**Stow the antenna and restore default user** (op)::
  
 	> antennaPark
 	> project=staff
+         
 
 
  

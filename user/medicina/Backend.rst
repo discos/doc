@@ -8,10 +8,11 @@ The backend to be used can be manually selected as follows::
 
     > chooseBackend=[bckname]
 
-where *bckname* is the name of the backend. At present, the only available 
+where *bckname* is the name of the backend. At present, the available 
 choices are: 
  
 	* TotalPower
+	* Sardara
 	* XArcos   
 
 
@@ -99,6 +100,97 @@ to observe only with a different feed).
 
 
 
+SARDARA
+=======
+
+This is a spectroscopic-polarimeter, at present offered in SHARED RISK. 
+In order to configure it, select it with the ``chooseBackend`` 
+command 
+
+    > chooseBackend=Sardara
+
+and use one of the following commands in operatorInput: 
+
+
+.. describe:: > initialize=SCC00 
+
+   This configuration is for the usage of the Clow-band receiver, 
+   in spectral mode only (LCP and RCP spectra). 
+
+.. describe:: > initialize=SCC00S 
+
+   This configuration is for the usage of the Clow-band receiver, 
+   in full-Stokes mode (LCP and RCP spectra and Stokes parameters). 
+
+.. describe:: > initialize=SCH00 
+
+   This configuration is for the usage of the Chigh-band receiver, 
+   in spectral mode only (total intensity spectra). 
+
+.. describe:: > initialize=SCH00S 
+
+   This configuration is for the usage of the Chigh-band receiver, 
+   in full-Stokes mode (LCP and RCP spectraand Stokes parameters). 
+
+.. describe:: > initialize=SK00 
+
+   This configuration is for the usage of the K-band reference feed, 
+   in spectral mode only (total intensity spectra). 
+
+.. describe:: > initialize=SK00S 
+
+   This configuration is for the usage of the K-band reference feed, 
+   in full-Stokes mode (LCP and RCP spectra and Stokes parameters). 
+
+
+Ideally, configuration details can be changed using the ``setSection`` command:: 
+
+    > setSection=[sect],[startFreq],[bw],[feed],[mode],[sampleRate],[bins]
+
+where:
+
+	* *[sect]*		is an integer specifying the section number
+	* *[startFreq]*		is the initial frequency for the section 
+	* *[bw]* 		is a double for the bandwidth 
+	* *[feed]*	 	is the number of the feed connected to the section 
+	* *[mode]*		is the polarisation mode	
+	* *[sampleRate]*  	is also given in MHz 
+	* *[bins]* 		is the number of frequency bins for the given section
+
+However, the present implementation allows the user to change only part of 
+these parameters, in particular: 
+
+	* *[bw]* – bandwidth must be chosen from the following values 
+	  (all are expressed in MHz): 420 or 1500.  
+
+	* *[sampleRate]* – it must amount to twice the bandwidth (i.e. 840 or 3000). 
+
+	* *[bins]* – its value can be either 1024 or 16384.
+
+.. warning:: When using a full-Stokes setup, only section 0 is to be configured. 
+   Instead, when using spectral-only setups, both Sections 0 and 1 must be configured. 
+
+Valid examples of setup and ``setSection`` usage, then, are::
+
+    > chooseBackend=Sardara
+    > initialize=SK00   
+    > setSection=0,*,1500,*,*,3000,16384
+    > setSection=1,*,1500,*,*,3000,16384
+
+    > chooseBackend=Sardara
+    > initialize=SK00S   
+    > setSection=0,*,420,*,*,840,1024
+
+where asterisks indicate which parameters are to be set according to default 
+values. 
+
+
+.. warning:: Observations with this back-end still pose issues with the 
+   activation of the calibration mark. System temperature measurements might not be
+   carried out correctly, so it is best to avoid them in schedules. 
+
+
+
 XARCOS
 ======
 
@@ -106,7 +198,7 @@ This spectrometer is fully integrated in DISCOS, which means that DISCOS can
 command the device, receive data from it and then write these data using a 
 standard output (FITS format).
 
-In order to configure the spectrometer, select it with the chooseBackend 
+In order to configure the spectrometer, select it with the ``chooseBackend`` 
 command and use one of the following commands in operatorInput: 
 
 .. describe:: > initialize=XK00 
@@ -123,7 +215,7 @@ command and use one of the following commands in operatorInput:
    of 62.5 MHz, 8 MHz, 2 MHz and 0.5 MHz, each having 2048(x4) channels. 
    Each digital sample has an 8-bit representation.
 
-Ideally, configuration details can be changed using the setSection command:: 
+Ideally, configuration details can be changed using the ``setSection`` command:: 
 
     > setSection=[sect],[startFreq],[bw],[feed],[mode],[sampleRate],[bins]
 
@@ -154,7 +246,7 @@ these parameters, in particular:
 Users must not change the feed, mode and bins parameters, which are fixed as 
 described in the configuration defaults. 
 
-A valid example of setup and setSection usage, then, is::
+A valid example of setup and ``setSection`` usage, then, is::
 
     > chooseBackend=XArcos
     > initialize=XC00   
@@ -163,8 +255,10 @@ A valid example of setup and setSection usage, then, is::
 where asterisks indicate which parameters are to be set according to default 
 values. 
 
-.. warning:: At present, integration time is equal to **10 seconds**. 
-   Shorter integrations might be available in the future. Data transfer requires 
-   about **2 seconds** for each integration, thus take this overhead into 
-   consideration when estimating how long your schedules are going to last. 
+.. warning:: Integration time is equal to **10 seconds**. 
+   Data transfer requires about **2 seconds** for each integration, thus take 
+   this overhead into consideration when estimating how long your schedules 
+   are going to last. 
+
+
 
