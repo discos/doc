@@ -184,6 +184,7 @@ Valid examples of setup and ``setSection`` usage, then, are::
 where asterisks indicate which parameters are to be set according to default 
 values. 
 
+
 .. warning:: Observations with this back-end still pose issues with the 
    activation of the calibration mark. System temperature measurements might not be
    carried out correctly, so it is best to avoid them in schedules. 

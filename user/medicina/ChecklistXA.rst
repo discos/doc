@@ -1,14 +1,14 @@
-.. _E_Checklist-for-spectral-observations: 
+.. _E_Checklist-for-spectral-observations_XARCOS: 
 
-**************************************************
-Checklist for spectral schedule-based observations
-**************************************************
+*****************************************************
+Checklist for schedule-based observations with XARCOS
+*****************************************************
 
 Notice that actions take place in three different “locations”:
 
   * **(1)** = action to be performed in a terminal on the observing machine (the one with the DISCOS system interface)
   * **(2)** = action to be performed in a terminal on the project/schedule/data machine
-  * **(op)** = command to be given in the *operatorInput* panel of ESCS
+  * **(op)** = command to be given in the *operatorInput* panel of DISCOS
 
 
 **Login on both (1) and (2)** 
@@ -98,11 +98,6 @@ automatically rejected (bug under fixing).
 		
 	> startSchedule=[schedulename].scd,[N]
 
-If you haven't previously specified the project ID using the ``project`` command,
-you need to insert it in the schedule path:: 
-
-	> startSchedule=[projectID]/[schedulename].scd,[N]
-
 .. admonition:: WARNING:  
 
     * **The project ID written inside the .scd schedule file MUST coincide
@@ -112,29 +107,12 @@ you need to insert it in the schedule path::
  
 **Data quick-look**
 
-	* *Case A\:* when using MANAGEMENT/Fitszilla, launch the raw-FITS quick-look (2)::
- 
-		$ idl 
-		IDL> .r fitslook    
-		IDL> fitslook
-		
-		or (to inspect complete (ON-OFF)/OFF spectral acquisitions)
-		
-		$ idl 
-		IDL> .r onoff    
-		IDL> onoff, dutyc='N_on:N_off:N_cal'   
-		(where N_on, N_off, N_cal are integer numbers - may assume zero value) 
-
-
-	* *Case B\:* when using MANAGEMENT/CalibrationTool, launch the quick-look (1):: 
-
-		$ calibrationtoolclient MANAGEMENT/CalibrationTool
-                  (—> it opens only if the CalibrationTool writer is currently selected!)
+Quick-look for XARCOS data is not available at the moment. 
 
 **Weather conditions and webcam (in a web browser)**
 
-	Weather: www.med.ira.inaf.it/escs/meteo
-        Webcam: www.med.ira.inaf.it/webcam.html 
+Weather: www.med.ira.inaf.it/escs/meteo
+Webcam: www.med.ira.inaf.it/webcam.html 
 	
 **Stop the schedule** (op)::
 
@@ -143,9 +121,11 @@ you need to insert it in the schedule path::
 **Copy the data** (2) 
 	—> Get the latest subfolders written in the main data folder 
 
-**Stow the antenna** (op)::
+**Stow the antenna and restore default user** (op)::
  
 	> antennaPark
+	> project=staff
+         
 
 
  

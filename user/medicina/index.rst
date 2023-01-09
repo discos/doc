@@ -3,8 +3,8 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Observing at Medicina with ESCS
-===============================
+Observing at Medicina with DISCOS
+=================================
 
 Contents:
 
@@ -16,6 +16,7 @@ Contents:
    Troubleshooting.rst
    ChecklistTP.rst
    ChecklistXA.rst
+   ChecklistSA.rst
    Startup.rst
    Setup.rst
    Antenna.rst
