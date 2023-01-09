@@ -87,7 +87,11 @@ automatically rejected (bug under fixing).
 Remember: for full-Stokes setups, only section 0 is to be configured. 
 For spectral-only setups, both sections 0 and 1 must be configured. 
 
-** Measure RMS in order to verify the signal level ** (op)::
+**If a non-default value is needed, set the integration** (op)::
+
+	> integration=[n]  (expressed in milliseconds)
+
+**Measure RMS in order to verify the signal level** (op)::
 
 	> getRms
 
