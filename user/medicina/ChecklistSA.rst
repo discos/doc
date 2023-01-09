@@ -87,7 +87,7 @@ automatically rejected (bug under fixing).
 Remember: for full-Stokes setups, only section 0 is to be configured. 
 For spectral-only setups, both sections 0 and 1 must be configured. 
 
-** Measure RMS in order to verify the signal level ** 
+** Measure RMS in order to verify the signal level ** (op)::
 
 	> getRms
 
@@ -127,8 +127,8 @@ Each attenuator can be set from 0 dB to 15 dB, with a 1-dB step.
 
 **Weather conditions and webcam (in a web browser)**
 
-Weather: www.med.ira.inaf.it/escs/meteo
-Webcam: www.med.ira.inaf.it/webcam.html 
+	Weather: www.med.ira.inaf.it/escs/meteo
+	Webcam: www.med.ira.inaf.it/webcam.html 
 	
 **Stop the schedule** (op)::
 

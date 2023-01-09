@@ -111,8 +111,8 @@ Quick-look for XARCOS data is not available at the moment.
 
 **Weather conditions and webcam (in a web browser)**
 
-Weather: www.med.ira.inaf.it/escs/meteo
-Webcam: www.med.ira.inaf.it/webcam.html 
+	Weather: www.med.ira.inaf.it/escs/meteo
+	Webcam: www.med.ira.inaf.it/webcam.html 
 	
 **Stop the schedule** (op)::
 

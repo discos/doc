@@ -116,7 +116,7 @@ Notice: if also using MANAGEMENT/CalibrationTool, launch the quick-look (1)::
 **Weather conditions and webcam (in a web browser)**
 
 	Weather: www.med.ira.inaf.it/escs/meteo
-        Webcam: www.med.ira.inaf.it/webcam.html 
+	Webcam: www.med.ira.inaf.it/webcam.html 
 	
 **Stop the schedule** (op)::
 
