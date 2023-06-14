@@ -109,4 +109,4 @@ class DISCOSLexer(RegexLexer):
     }
 
 def setup(sphinx):
-    sphinx.add_lexer("discos", DISCOSLexer())
+    sphinx.add_lexer("discos", DISCOSLexer)
