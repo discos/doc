@@ -132,6 +132,16 @@ and use one of the following commands in operatorInput:
    This configuration is for the usage of the Chigh-band receiver, 
    in full-Stokes mode (LCP and RCP spectraand Stokes parameters). 
 
+.. describe:: > initialize=SX00 
+
+   This configuration is for the usage of the X-band receiver, 
+   in spectral mode only (total intensity spectra). 
+
+.. describe:: > initialize=SX00S 
+
+   This configuration is for the usage of the X-band receiver, 
+   in full-Stokes mode (LCP and RCP spectra and Stokes parameters). 
+
 .. describe:: > initialize=SK00 
 
    This configuration is for the usage of the K-band reference feed, 
@@ -142,7 +152,9 @@ and use one of the following commands in operatorInput:
    This configuration is for the usage of the K-band reference feed, 
    in full-Stokes mode (LCP and RCP spectra and Stokes parameters). 
 
-
+All of the above configurations set, by default, Sardara's bandwidth to 1500 MHz
+and the focus selector (TPB) bandwidth to 730 MHz for X band and 1250 MHz for 
+all the other receivers.  
 Ideally, configuration details can be changed using the ``setSection`` command:: 
 
     > setSection=[sect],[startFreq],[bw],[feed],[mode],[sampleRate],[bins]
