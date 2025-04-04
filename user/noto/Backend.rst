@@ -43,6 +43,11 @@ where:
 	* *[bins]* 		is the number of frequency bins for the given section 
 	  (not applicable for TPB)
 
+To select all sections of the backend, an asterisk can be used instead of
+specifying the desired section::
+
+    > setSection=*,*,[bw],*,*,[sampleRate],*
+
 To leave a parameter at its previously set value, or equivalently skip it when 
 it is not applicable, use an asterisk. 
 For the TPB, in particular, always use::
