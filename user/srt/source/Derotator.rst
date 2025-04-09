@@ -34,12 +34,12 @@ provided in the output FITS files (see dedicated documentation), are:
 ==== ================= =================  
 Feed x-offset (arcsec) y-offset (arcsec)
 ==== ================= =================
-1         68.800           -119.165
-2        -68.800           -119.165
-3       -137.600              0.000
-4        -68.800            119.165
-5         68.800            119.165
-6        137.600              0.000
+1       -137.600              0.000
+2        -68.800            119.165
+3         68.800            119.165
+4        137.600              0.000
+5         68.800           -119.165
+6        -68.800           -119.165
 ==== ================= =================  
 
 In order to be transformed in Az-El offsets, a cos(El) factor must be taken 
