@@ -129,7 +129,7 @@ Rewinding
 =========
 The dewar can rotate within a limited range due to physical constraints.
 For the K-band 7-feed receiver this range, wrt the rest position, goes from
--85.77° to +125.23°.  
+-117.5° to +142.5°.
 This means that it is necessary to periodically rewind it in order to achieve
 the desired feed positions. It can happen both when a new scan is commanded and 
 during long acquisitions, when the parallactic angle variation overcomes the 
