@@ -98,9 +98,10 @@ virtual machine with this script, you can simply execute the following code:
 
 .. code-block:: console
 
-   $ discos-login manager
-   discos@manager's password:
-   (branch?) discos@manager ~ $
+  $ discos-login manager
+  discos@manager's password:
+  (branch?) discos@manager ~ $
+
 
 The `discos-login` command handles the login procedure by internally executing
 the following command:
